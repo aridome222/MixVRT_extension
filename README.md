@@ -1,1 +1,2 @@
 # Zenn_selenium
+Selenium IDEで作成したスクリプトをDocker-Selenium環境で実行してテストを行うためのリポジトリです。

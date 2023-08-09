@@ -1,0 +1,16 @@
+from bs4 import BeautifulSoup
+from lxml import etree
+
+# ページソースを取得
+page_source = self.driver.page_source
+
+# BeautifulSoupでパース
+soup = BeautifulSoup(page_source, "lxml")
+
+# lxmlでXPathを生成
+root = etree.fromstring(str(soup))
+xpaths = root.xpath("//*")
+
+# XPathを表示
+for xpath in xpaths:
+    print(xpath.getroottree().getpath(xpath))
