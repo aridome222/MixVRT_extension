@@ -67,11 +67,31 @@ class TestAddNewRecord_ver4():
     # element = self.driver.find_element(By.CSS_SELECTOR, "[data-v-a41ff850]")
     element = self.driver.find_element(By.XPATH, "//*[@data-v-a41ff850]")
     self.driver.execute_script("arguments[0].click();", element)
-    element = self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(6) .v-card__actions .v-btn__content")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element).perform()
+    # ページソースを取得
+    page_source = self.driver.page_source
+
+    # BeautifulSoupを使ってbody部分のみを抽出
+    soup = BeautifulSoup(page_source, 'html.parser')
+    body_content = soup.body
+
+    # 正規表現オブジェクトを作成
+    pattern = re.compile("input-")
+
+    # bodyから正規表現に一致するテキストを含む要素をすべて取得
+    matches = body_content.find_all(attrs={"id": pattern})
+
+    # 結果が表示されるかどうかで違う処理を行う
+    if matches: # 結果が表示される場合
+        print("一致する要素が見つかりました")
+        for match in matches:
+            print(match)
+    else: # 結果が表示されない場合
+        print("一致する要素が見つかりませんでした")
+    # element = self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(6) .v-card__actions .v-btn__content")
+    # actions = ActionChains(self.driver)
+    # actions.move_to_element(element).perform()
     # element = self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[6]/div/div/div[1]/div/span/span/div/div/div[1]/div/input")
-    element = self.driver.find_element(By.XPATH, "//*[@data-v-a41ff850]")
+    element = self.driver.find_element(By.XPATH, "//*[@data-v-a41ff850 and @class=\"v-text-field__slot\"]")
     # キーボードのショートカットで入力内容を全選択
     element.send_keys(Keys.CONTROL + "a")
     # キーボードのショートカットで入力内容を削除
