@@ -60,9 +60,9 @@ def save_screenShot(self):
   if not os.path.exists(output_dir):
       os.makedirs(output_dir)
   # 現在の日付を取得してフォーマット
-  current_date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+  current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
   # ファイル名を生成
-  output_file_name = f"singleLineText_{current_date}.png"
+  output_file_name = f"SLT_view_b4_{current_date}.png"
 
   # ファイルパスを作成
   output_file_path = os.path.join(output_dir, output_file_name)
