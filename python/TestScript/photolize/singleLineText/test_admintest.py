@@ -37,13 +37,14 @@ class TestAdmintest():
     self.driver.find_element(By.ID, "password").send_keys("31g8ar7p")
     self.driver.find_element(By.CSS_SELECTOR, ".uk-button").click()
     # 有留テストアプリに移動する
+    WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.LINK_TEXT, "アプリ一覧を見る")))
     self.driver.find_element(By.LINK_TEXT, "アプリ一覧を見る").click()
-    # self.driver.find_element(By.LINK_TEXT, "有留テストアプリ").click()
-    # self.driver.find_element(By.LINK_TEXT, "有留テストアプリ").click() # この行をコメントアウトする
-    element = self.driver.find_element(By.LINK_TEXT, "有留テストアプリ") # この行を追加する
-    actions = ActionChains(self.driver) # この行を追加する
-    actions.move_to_element(element).click().perform() # この行を追加する
+    WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.LINK_TEXT, "有留テストアプリ")))
+    element = self.driver.find_element(By.ID, "item_151")
+    link = element.find_element(By.LINK_TEXT, "有留テストアプリ")
+    self.driver.execute_script("arguments[0].click();", link)
     # いろいろ操作
+    WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//div[4]/div/div/div")))
     self.driver.find_element(By.XPATH, "//div[4]/div/div/div").click()
     self.driver.find_element(By.CSS_SELECTOR, "td:nth-child(1) > input").click()
     element = self.driver.find_element(By.CSS_SELECTOR, ".selectedDraggable")
@@ -106,27 +107,28 @@ class TestAdmintest():
     actions.move_to_element(element).perform()
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
     actions = ActionChains(self.driver)
-    actions.move_to_element(element, 0, 0).perform()
+    actions.move_to_element(element).perform()
     element = self.driver.find_element(By.CSS_SELECTOR, ".v-btn:nth-child(7) > .v-btn__content")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
     actions = ActionChains(self.driver)
-    actions.move_to_element(element, 0, 0).perform()
+    actions.move_to_element(element).perform()
     element = self.driver.find_element(By.CSS_SELECTOR, ".v-btn:nth-child(9) > .v-btn__content")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
     actions = ActionChains(self.driver)
-    actions.move_to_element(element, 0, 0).perform()
+    actions.move_to_element(element).perform()
     element = self.driver.find_element(By.CSS_SELECTOR, ".v-app-bar__nav-icon > .v-btn__content")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
     self.driver.find_element(By.CSS_SELECTOR, ".v-app-bar__nav-icon > .v-btn__content").click()
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
     actions = ActionChains(self.driver)
-    actions.move_to_element(element, 0, 0).perform()
-    self.driver.find_element(By.CSS_SELECTOR, ".v-list-item:nth-child(1) > .v-list-item__title").click()
+    actions.move_to_element(element).perform()
+    element = self.driver.find_element(By.CSS_SELECTOR, ".v-list-item:nth-child(1) > .v-list-item__title")
+    self.driver.execute_script("arguments[0].click();", element)
     assert self.driver.switch_to.alert.text == "アプリ一覧にもどってもよろしいでしょうか？保存されていないデータは消失します。"
     self.driver.switch_to.alert.accept()
     # ログアウトして画面を閉じる
