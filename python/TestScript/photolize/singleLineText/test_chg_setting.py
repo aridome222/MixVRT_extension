@@ -43,10 +43,17 @@ class Test_chg_setting():
     element = self.driver.find_element(By.ID, "item_151")
     link = element.find_element(By.LINK_TEXT, "有留テストアプリ")
     self.driver.execute_script("arguments[0].click();", link)
-    # いろいろ操作
+    ### 「初期値／編集」 ###
+    # 単一行テキスト1を選択
     WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//div[4]/div/div/div")))
     self.driver.find_element(By.XPATH, "//div[4]/div/div/div").click()
-    self.driver.find_element(By.CSS_SELECTOR, "td:nth-child(1) > input").click()
+    # テキストボックス内の文字を消して新しく文字を入力
+    element = self.driver.find_element(By.CSS_SELECTOR, "td:nth-child(1) > input")
+    element.send_keys(Keys.CONTROL + "a")
+    element.send_keys(Keys.DELETE)
+    self.driver.find_element(By.CSS_SELECTOR, "td:nth-child(1) > input").send_keys("テスト１")
+    ### 「表示設定」 ###
+    # 配置を選択
     element = self.driver.find_element(By.CSS_SELECTOR, ".selectedDraggable")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).click_and_hold().perform()
@@ -60,18 +67,30 @@ class Test_chg_setting():
     self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) select").click()
     dropdown = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) select")
     dropdown.find_element(By.XPATH, "//option[. = 'センター中央寄せ']").click()
+    # 文字の大きさを選択
     self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(2) select").click()
     dropdown = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(2) select")
     dropdown.find_element(By.XPATH, "//option[. = '8']").click()
+    # 縦書き
     self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(3) > td > .small").click()
+    # 埋め込み表示
     self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(4) > td > .small").click()
+    # 非表示
     self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(5) > td > .small").click()
+    ### 「入力ルール設定」 ###
+    # 必須入力
     self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) .small").click()
+    # 半角英数のみ
     self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(2) .small").click()
+    # メールアドレス入力
     self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(3) label > .small").click()
+    # URL入力
     self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(4) label > .small").click()
+    # 重複禁止
     self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(5) label > .small").click()
+    # 編集不可
     self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(6) .small").click()
+    # 最大文字数を設定
     self.driver.find_element(By.CSS_SELECTOR, ".toolbar-position-inp:nth-child(1) > .small").send_keys("1")
     self.driver.find_element(By.CSS_SELECTOR, ".toolbar-position-inp:nth-child(1) > .small").click()
     self.driver.find_element(By.CSS_SELECTOR, ".toolbar-position-inp:nth-child(1) > .small").send_keys("2")
@@ -87,6 +106,7 @@ class Test_chg_setting():
     self.driver.find_element(By.CSS_SELECTOR, ".toolbar-position-inp:nth-child(1) > .small").click()
     self.driver.find_element(By.CSS_SELECTOR, ".toolbar-position-inp:nth-child(1) > .small").send_keys("6")
     self.driver.find_element(By.CSS_SELECTOR, ".toolbar-position-inp:nth-child(1) > .small").click()
+    # 最小文字数を設定
     self.driver.find_element(By.CSS_SELECTOR, ".toolbar-position-inp:nth-child(2) > .small").send_keys("1")
     self.driver.find_element(By.CSS_SELECTOR, ".toolbar-position-inp:nth-child(2) > .small").click()
     self.driver.find_element(By.CSS_SELECTOR, ".toolbar-position-inp:nth-child(2) > .small").send_keys("2")
@@ -98,37 +118,26 @@ class Test_chg_setting():
     self.driver.find_element(By.CSS_SELECTOR, ".toolbar-position-inp:nth-child(2) > .small").click()
     self.driver.find_element(By.CSS_SELECTOR, ".toolbar-position-inp:nth-child(2) > .small").send_keys("4")
     self.driver.find_element(By.CSS_SELECTOR, ".toolbar-position-inp:nth-child(2) > .small").click()
+    # パレットから新しい単一行テキストボックスをドラッグ＆ドロップ
     dragged = self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(1) > .drag-item")
     dropped = self.driver.find_element(By.CSS_SELECTOR, ".v-responsive__content")
     actions = ActionChains(self.driver)
     actions.drag_and_drop(dragged, dropped).perform()
-    element = self.driver.find_element(By.CSS_SELECTOR, ".v-btn:nth-child(5)")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element).perform()
-    element = self.driver.find_element(By.CSS_SELECTOR, "body")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element).perform()
-    element = self.driver.find_element(By.CSS_SELECTOR, ".v-btn:nth-child(7) > .v-btn__content")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element).perform()
-    element = self.driver.find_element(By.CSS_SELECTOR, "body")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element).perform()
-    element = self.driver.find_element(By.CSS_SELECTOR, ".v-btn:nth-child(9) > .v-btn__content")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element).perform()
-    element = self.driver.find_element(By.CSS_SELECTOR, "body")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element).perform()
-    element = self.driver.find_element(By.CSS_SELECTOR, ".v-app-bar__nav-icon > .v-btn__content")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element).perform()
-    self.driver.find_element(By.CSS_SELECTOR, ".v-app-bar__nav-icon > .v-btn__content").click()
-    element = self.driver.find_element(By.CSS_SELECTOR, "body")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element).perform()
+    # # 保存する
+    # element = self.driver.find_element(By.CSS_SELECTOR, ".v-btn:nth-child(9)")
+    # actions = ActionChains(self.driver)
+    # actions.move_to_element(element).perform()
+    # element = self.driver.find_element(By.CSS_SELECTOR, "body")
+    # actions = ActionChains(self.driver)
+    # actions.move_to_element(element).perform()
+    # self.driver.find_element(By.CSS_SELECTOR, ".mdi-content-save").click()
+    # WebDriverWait(self.driver, 10).until(EC.alert_is_present())
+    # assert self.driver.switch_to.alert.text == "保存しました"
+    # self.driver.switch_to.alert.accept()
+    # アプリ一覧画面に戻る
     element = self.driver.find_element(By.CSS_SELECTOR, ".v-list-item:nth-child(1) > .v-list-item__title")
     self.driver.execute_script("arguments[0].click();", element)
+    WebDriverWait(self.driver, 10).until(EC.alert_is_present())
     assert self.driver.switch_to.alert.text == "アプリ一覧にもどってもよろしいでしょうか？保存されていないデータは消失します。"
     self.driver.switch_to.alert.accept()
     # ログアウトして画面を閉じる
