@@ -41,9 +41,10 @@ class TestSingleLineText_addShot():
     self.driver.find_element(By.ID, "input-14").send_keys("aridome")
     self.driver.find_element(By.CSS_SELECTOR, ".btn > .v-btn__content").click()
     # 有留アプリテストを選択
-    self.driver.find_element(By.CSS_SELECTOR, ".py-0:nth-child(12) .v-responsive__content").click()
+    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div/div[2]/main/div/div[2]/div[2]/div/div[13]/a/div/div/div[2]/div").click()
     # 新規レコードを選択
     self.driver.find_element(By.CSS_SELECTOR, ".v-btn__content > span").click()
+    time.sleep(5)
     # 新規レコードを保存
     self.driver.find_element(By.CSS_SELECTOR, ".fa-floppy-disk > path").click()
     WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".theme--light:nth-child(2) > .v-btn__content"))).click()

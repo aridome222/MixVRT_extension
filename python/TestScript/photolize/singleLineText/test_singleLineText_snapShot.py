@@ -41,7 +41,7 @@ class TestSingleLineText_snapShot():
     self.driver.find_element(By.ID, "input-14").send_keys("aridome")
     self.driver.find_element(By.CSS_SELECTOR, ".btn > .v-btn__content").click()
     # 有留アプリテストを選択
-    self.driver.find_element(By.CSS_SELECTOR, ".py-0:nth-child(12) .v-responsive__content").click()
+    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div/div[2]/main/div/div[2]/div[2]/div/div[13]/a/div/div/div[2]/div").click()
     # 最新のビューを選択
     self.driver.find_element(By.CSS_SELECTOR, ".ag-row-even:nth-child(1) .mr-1:nth-child(2) .v-icon").click()
     # スクリーンショットをとる
