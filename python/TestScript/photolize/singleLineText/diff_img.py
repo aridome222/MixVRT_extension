@@ -10,8 +10,8 @@ output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
-output_file_name_A = 'base.png'
-output_file_name_B = 'chg_position.png'
+output_file_name_A = 'high_SVG.png'
+output_file_name_B = 'chg_fontSize.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)

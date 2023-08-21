@@ -9,3 +9,14 @@ RUN apt-get install -y libgl1-mesa-dev
 RUN python3 -m pip install --upgrade pip setuptools
 RUN python3 -m pip install scikit-build
 RUN yes 1 | python3 -m pip install opencv-python
+
+RUN pip install aspose-words
+RUN pip install svgwrite
+
+RUN pip install svglib
+RUN pip install reportlab
+RUN pip install pdf2image
+RUN apt-get update
+RUN apt-get install -y poppler-utils
+
+
