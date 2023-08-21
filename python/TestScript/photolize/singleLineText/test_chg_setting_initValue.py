@@ -56,17 +56,17 @@ class Test_chg_setting_initValue():
     self.driver.find_element(By.CSS_SELECTOR, "td:nth-child(1) > input").send_keys("テスト１")
     time.sleep(3)
 
-    # # 保存する
-    # element = self.driver.find_element(By.CSS_SELECTOR, ".v-btn:nth-child(9)")
-    # actions = ActionChains(self.driver)
-    # actions.move_to_element(element).perform()
-    # element = self.driver.find_element(By.CSS_SELECTOR, "body")
-    # actions = ActionChains(self.driver)
-    # actions.move_to_element(element).perform()
-    # self.driver.find_element(By.CSS_SELECTOR, ".mdi-content-save").click()
-    # WebDriverWait(self.driver, 10).until(EC.alert_is_present())
-    # assert self.driver.switch_to.alert.text == "保存しました"
-    # self.driver.switch_to.alert.accept()
+    # 保存する
+    element = self.driver.find_element(By.CSS_SELECTOR, ".v-btn:nth-child(9)")
+    actions = ActionChains(self.driver)
+    actions.move_to_element(element).perform()
+    element = self.driver.find_element(By.CSS_SELECTOR, "body")
+    actions = ActionChains(self.driver)
+    actions.move_to_element(element).perform()
+    self.driver.find_element(By.CSS_SELECTOR, ".mdi-content-save").click()
+    WebDriverWait(self.driver, 10).until(EC.alert_is_present())
+    assert self.driver.switch_to.alert.text == "保存しました"
+    self.driver.switch_to.alert.accept()
     # アプリ一覧画面に戻る
     element = self.driver.find_element(By.CSS_SELECTOR, ".v-list-item:nth-child(1) > .v-list-item__title")
     self.driver.execute_script("arguments[0].click();", element)

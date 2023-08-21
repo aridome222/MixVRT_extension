@@ -10,8 +10,8 @@ output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
-output_file_name_A = 'SLT_view_before.png'
-output_file_name_B = 'SLT_view_after.png'
+output_file_name_A = 'SLT_view_after.png'
+output_file_name_B = 'SLT_view_after2.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
@@ -69,7 +69,7 @@ result_add = cv2.addWeighted(imgA, 0.3, result_bin_rgb, 0.7, 2.2) # ２.２は�
 # current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
 # ファイル名を生成
 # output_file_name = f"diff_view_{current_date}.png"
-output_file_name = f"diff_view.png"
+output_file_name = f"diff_view2.png"
 
 # ファイルパスを作成
 output_file_path = os.path.join(output_dir, output_file_name)
