@@ -1,4 +1,5 @@
 # This code example demonstrates how to convert PNG to SVG
+# 参考サイト：https://blog.aspose.com/ja/words/convert-png-to-svg-in-python/
 import aspose.words as aw
 import os
 from datetime import datetime
@@ -16,7 +17,7 @@ output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
-output_file_name = 'base.png'
+output_file_name = 'test01.png'
 # ファイルパスを作成
 output_file_path = os.path.join(output_dir, output_file_name)
 
@@ -41,6 +42,6 @@ if not os.path.exists(output_dir):
 # output_file_path = os.path.join(output_dir, output_file_name)
 
 # Save image as SVG
-shape.get_shape_renderer().save(f"{output_dir}/test.svg", saveOptions)
+shape.get_shape_renderer().save(f"{output_dir}/test01.svg", saveOptions)
 
 print(f"pngからsvgに変換した画像を保存しました")

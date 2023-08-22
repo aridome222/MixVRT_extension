@@ -1,3 +1,4 @@
+# 参考サイト：https://chayarokurokuro.hatenablog.com/entry/2021/11/22/104748
 import base64 # 標準ライブラリ
 import svgwrite
 import os
@@ -11,7 +12,7 @@ input_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
 if not os.path.exists(input_dir):
     os.makedirs(input_dir)
 # ファイル名を生成
-input_file_name = 'base.png'
+input_file_name = 'test02.png'
 # ファイルパスを作成
 input_file_path = os.path.join(input_dir, input_file_name)
 
@@ -33,9 +34,9 @@ with open(input_file_path, "rb") as f:
 # 変換後ファイルを書き込む準備
 dwg = svgwrite.Drawing(output_file_path)
 
-# 保存画像のサイズ等指定と書き込み
-dwg.add(dwg.image('data:image/jpg;base64,' + img.decode("ascii"), 
-                  size=(500, 500)
+# 保存画像のサイズ等指定と書き込み（サイズ指定が面倒）
+dwg.add(dwg.image('data:image/png;base64,' + img.decode("ascii"), 
+                  size=(627, 390)
                  )
         )
 

@@ -1,3 +1,4 @@
+# 参考サイト：https://qiita.com/grv2688/items/44f9e0ddd429afbb26a2
 import cv2
 from datetime import datetime
 import matplotlib.pyplot as plt
@@ -62,8 +63,6 @@ result_bin = cv2.morphologyEx(result_bin, cv2.MORPH_OPEN, kernel) # オープニ
 # 二値画像をRGB形式に変換し、2枚の画像を重ねる。
 result_bin_rgb = cv2.cvtColor(result_bin, cv2.COLOR_GRAY2RGB)
 result_add = cv2.addWeighted(imgA, 0.3, result_bin_rgb, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
-
-
 
 # 現在の日付を取得してフォーマット
 current_date = datetime.now().strftime("%m-%d_%H-%M-%S")

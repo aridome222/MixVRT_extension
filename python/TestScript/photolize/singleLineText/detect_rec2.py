@@ -1,4 +1,4 @@
-# 参考サイト：https://sosotata.com/spot7differences/
+# 参考サイト：https://gazushige.com/blog/319668e7-c5ac-470c-a28e-f01214e69a8a
 import cv2
 import os
 from datetime import datetime
@@ -9,31 +9,37 @@ output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
-output_file_name_A = 'base.png'
+output_file_name_A = 'high_svg.png'
 output_file_name_B = 'chg_position.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
-img1 = cv2.imread(output_file_path_A, cv2.IMREAD_GRAYSCALE)
-img2 = cv2.imread(output_file_path_B, cv2.IMREAD_GRAYSCALE)
+img1 = cv2.imread(output_file_path_A, cv2.COLOR_BGR2GRAY)
+img2 = cv2.imread(output_file_path_B, cv2.COLOR_BGR2GRAY)
 
-clahe = cv2.createCLAHE(clipLimit=30.0, tileGridSize=(10,10))
-img1 = clahe.apply(img1)
-img2 = clahe.apply(img2)
+# Convert images to grayscale
+img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
+img2_gray = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
 
-img1 = cv2.GaussianBlur(img1,(13,13),0) # GaussianBlurのパラメータは適宜調整
-img2 = cv2.GaussianBlur(img2,(13,13),0) # GaussianBlurのパラメータは適宜調整
+# Resize images to the same size
+height, width = img2.shape[:2] # img2のサイズを取得
+img1_gray = cv2.resize(img1_gray, (width, height)) # img1をimg2と同じサイズにリサイズ
 
-diff = cv2.absdiff(img1, img2)
-ret, diff = cv2.threshold(diff, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
-diff = cv2.GaussianBlur(diff,(11,11),0) # GaussianBlurのパラメータは適宜調整
+# Calculate absolute difference between the two images
+diff = cv2.absdiff(img1_gray, img2_gray)
 
-img2 = cv2.imread(output_file_path_B)
+# Apply threshold to identify significant differences
+thresh = 30
+diff[diff < thresh] = 0
+diff[diff >= thresh] = 255
+
+# Find contours of significant differences
 contours, hierarchy = cv2.findContours(diff, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-for c in contours:
-    x, y, w, h = cv2.boundingRect(c)
-    if w > 1 and h > 1: # ゴミ検出を除去するために15 x 15未満の小さい領域を対象外とする
-        cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 255, 0), 1)
+
+# Draw rectangles around the differences
+for contour in contours:
+    (x, y, w, h) = cv2.boundingRect(contour)
+    cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 0, 255), 1)
 
 # 現在の日付を取得してフォーマット
 current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
