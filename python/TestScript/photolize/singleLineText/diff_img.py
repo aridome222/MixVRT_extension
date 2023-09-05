@@ -19,7 +19,7 @@ output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
 imgA = cv2.imread(output_file_path_A)
 imgB = cv2.imread(output_file_path_B)
-# OpenCVはBRGフォーマットなので、RGBへ変換する
+# OpenCVはBGRフォーマットなので、RGBへ変換する
 imgA = cv2.cvtColor(imgA, cv2.COLOR_BGR2RGB)
 imgB = cv2.cvtColor(imgB, cv2.COLOR_BGR2RGB)
 # 画像サイズを取得
@@ -66,6 +66,35 @@ result_bin = cv2.morphologyEx(result_bin, cv2.MORPH_OPEN, kernel) # オープニ
 result_bin_rgb = cv2.cvtColor(result_bin, cv2.COLOR_GRAY2RGB)
 result_add = cv2.addWeighted(imgA, 0.3, result_bin_rgb, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
 
+### 変更前と変更後の色分け ###
+## 変更前の色付け ##
+# 白色の範囲を定義
+lower_white = (128, 128, 128)  # 下限（B、G、R）
+upper_white = (254, 254, 254)  # 上限（B、G、R）
+
+# 白色の範囲内にあるピクセルをマスクとして取得
+white_mask = cv2.inRange(result_add, lower_white, upper_white)
+
+# 新しい色（緑色）を指定
+new_color = (0, 255, 0)  # (B、G、R)
+
+# ピクセルの色を変更
+result_add[white_mask > 0] = new_color
+
+## 変更後の色付け ##
+# 白色の範囲を定義
+lower_white = (255, 255, 255)  # 下限（B、G、R）
+upper_white = (255, 255, 255)  # 上限（B、G、R）
+
+# 白色の範囲内にあるピクセルをマスクとして取得
+white_mask = cv2.inRange(result_add, lower_white, upper_white)
+
+# 新しい色（赤色）を指定
+new_color = (0, 0, 255)  # (B、G、R)
+
+# ピクセルの色を変更
+result_add[white_mask > 0] = new_color
+
 ### 差分が検出されたか判定 ###
 # 2値画像（result_bin）の白いピクセル（差分が存在する部分）の数をカウント
 white_pixel_count = cv2.countNonZero(result_bin)
@@ -85,10 +114,11 @@ else:
 # 現在の日付を取得してフォーマット
 current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
 # ファイル名を生成
-output_file_name = f"diff_{current_date}.png"
-# output_file_name = f"diff_view2.png"
+output_file_name = f"diff_color_{current_date}.png"
+# output_file_name = f"diff_{current_date}.png"
 
-output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_high_png/")
+output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_color_high_png/")
+# output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_high_png/")
 
 # ファイルパスを作成
 output_file_path = os.path.join(output_dir2, output_file_name)
