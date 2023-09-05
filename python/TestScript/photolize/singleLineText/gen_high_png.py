@@ -12,7 +12,7 @@ input_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "svg_img/")
 if not os.path.exists(input_dir):
     os.makedirs(input_dir)
 # ファイル名を生成
-input_file_name = 'test.svg'
+input_file_name = 'chg_embed.svg'
 # ファイルパスを作成
 input_file_path = os.path.join(input_dir, input_file_name)
 
@@ -24,12 +24,19 @@ renderPDF.drawToFile(drawing, pdf_file_path)
 # PDFファイルをPNGファイルに変換する
 pdf_images = convert_from_path(pdf_file_path, dpi=500)  # 解像度を設定
 
-# 現在の日付を取得してフォーマット
-current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
-# ファイル名を生成
-output_file_name = f"high_svg_{current_date}.png"
+# PDFファイルを削除する
+if os.path.exists(pdf_file_path):
+    os.remove(pdf_file_path)
 
-output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
+# # 現在の日付を取得してフォーマット
+# current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
+# ファイル名を生成
+output_file_name = f"{input_file_name.split('.')[0]}.png"
+
+output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/")
+# フォルダが存在しない場合は作成
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
 
 # ファイルパスを作成
 output_file_path = os.path.join(output_dir, output_file_name)

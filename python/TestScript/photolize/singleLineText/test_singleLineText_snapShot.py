@@ -41,12 +41,12 @@ class TestSingleLineText_snapShot():
     self.driver.find_element(By.ID, "input-14").send_keys("aridome")
     self.driver.find_element(By.CSS_SELECTOR, ".btn > .v-btn__content").click()
     # 有留アプリテストを選択
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div/div[2]/main/div/div[2]/div[2]/div/div[13]/a/div/div/div[2]/div").click()
+    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div/div[2]/main/div/div[2]/div[2]/div/div[15]/a/div/div/div[2]/div").click()
     # 最新のビューを選択
     self.driver.find_element(By.CSS_SELECTOR, ".ag-row-even:nth-child(1) .mr-1:nth-child(2) .v-icon").click()
     # スクリーンショットをとる
     save_screenShot(self)
-    time.sleep(3) # 目視確認
+    # time.sleep(3) # 目視確認
     # ログアウトする
     self.driver.find_element(By.CSS_SELECTOR, ".v-avatar > img").click()
     self.driver.find_element(By.CSS_SELECTOR, ".v-btn--text > .v-btn__content").click()
@@ -66,13 +66,9 @@ def save_screenShot(self):
 
   # ファイルパスを作成
   output_file_path = os.path.join(output_dir, output_file_name)
-  
-  # # get width and height of the page
-  # w = self.driver.execute_script("return document.body.scrollWidth;")
-  # h = self.driver.execute_script("return document.body.scrollHeight;")
 
-  # # set window size
-  # self.driver.set_window_size(w,h)
+  # スクロールバーが表示されないようにサイズを設定
+  self.driver.set_window_size(1366, 1040)
 
   # 追加: ここでフルページのスクリーンショットを取る
   self.driver.save_screenshot(output_file_path)

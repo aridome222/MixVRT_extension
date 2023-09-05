@@ -5,14 +5,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
+
 # 保存先ディレクトリを作成
-output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
+output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/")
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
-output_file_name_A = 'high_SVG.png'
-output_file_name_B = 'chg_fontSize.png'
+output_file_name_A = 'base.png'
+output_file_name_B = 'base.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
@@ -52,6 +53,7 @@ imgB_transform = cv2.warpPerspective(imgB, M, (wA, hA))
 # imgAとdst_imgの差分を求めてresultとする。グレースケールに変換。
 result = cv2.absdiff(imgA, imgB_transform)
 result_gray = cv2.cvtColor(result, cv2.COLOR_BGR2GRAY)
+
 # 二値化
 _, result_bin = cv2.threshold(result_gray, 50, 255, cv2.THRESH_BINARY) # 閾値は50
 
@@ -64,13 +66,29 @@ result_bin = cv2.morphologyEx(result_bin, cv2.MORPH_OPEN, kernel) # オープニ
 result_bin_rgb = cv2.cvtColor(result_bin, cv2.COLOR_GRAY2RGB)
 result_add = cv2.addWeighted(imgA, 0.3, result_bin_rgb, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
 
+### 差分が検出されたか判定 ###
+# 2値画像（result_bin）の白いピクセル（差分が存在する部分）の数をカウント
+white_pixel_count = cv2.countNonZero(result_bin)
+
+# ある閾値以上の白いピクセルが存在する場合、差分があると判断する
+threshold = 100  # 適切な閾値を選択
+red_text_start = "\033[91m"
+red_text_end = "\033[0m"
+green_text_start = "\033[92m"
+green_text_end = "\033[0m"
+
+if white_pixel_count > threshold:
+    print(f"{red_text_start}差分が検出されました{red_text_end}")
+else:
+    print(f"{green_text_start}異常なし{green_text_end}")
+
 # 現在の日付を取得してフォーマット
 current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
 # ファイル名を生成
 output_file_name = f"diff_{current_date}.png"
 # output_file_name = f"diff_view2.png"
 
-output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_img/")
+output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_high_png/")
 
 # ファイルパスを作成
 output_file_path = os.path.join(output_dir2, output_file_name)
