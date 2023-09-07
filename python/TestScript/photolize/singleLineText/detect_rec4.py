@@ -14,6 +14,7 @@ output_file_name_B = 'chg_position.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
+
 img1 = cv2.imread(output_file_path_A, cv2.COLOR_BGR2GRAY)
 img2 = cv2.imread(output_file_path_B, cv2.COLOR_BGR2GRAY)
 
@@ -39,14 +40,20 @@ contours, hierarchy = cv2.findContours(diff, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX
 # Draw rectangles around the differences
 for contour in contours:
     (x, y, w, h) = cv2.boundingRect(contour)
-    cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 0, 255), 2)
+    if w > 1 and h > 1:
+        if img2[y:y+h, x:x+w].mean() > img1[y:y+h, x:x+w].mean():
+            # 差異が２枚目の画像で大きい場合、赤色で表示
+            cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 0, 255), 2)
+        else:
+            # 差異が１枚目の画像で大きい場合、緑色で表示
+            cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
 # # 現在の日付を取得してフォーマット
 # current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
 
-output_file_name = f"draw_rec2_high_{output_file_name_B.split('_')[1]}"
+output_file_name = f"draw_rec4_high_{output_file_name_B.split('_')[1]}"
 
-output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "draw_rec2_high_png")
+output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "draw_rec4_high_png")
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir2):
     os.makedirs(output_dir2)

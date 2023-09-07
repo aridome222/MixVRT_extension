@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 # 保存先ディレクトリを作成
-output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
+output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/")
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
@@ -33,14 +33,17 @@ contours, hierarchy = cv2.findContours(diff, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX
 for c in contours:
     x, y, w, h = cv2.boundingRect(c)
     if w > 1 and h > 1: # ゴミ検出を除去するために15 x 15未満の小さい領域を対象外とする
-        cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 255, 0), 1)
+        cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 255, 0), 3)
 
-# 現在の日付を取得してフォーマット
-current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
+# # 現在の日付を取得してフォーマット
+# current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
 
-output_file_name = f"draw_rec_{current_date}.png"
+output_file_name = f"draw_rec_high_{output_file_name_B.split('_')[1]}"
 
-output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "draw_rec_img")
+output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "draw_rec_high_png")
+# フォルダが存在しない場合は作成
+if not os.path.exists(output_dir2):
+    os.makedirs(output_dir2)
 
 # ファイルパスを作成
 output_file_path = os.path.join(output_dir2, output_file_name)
