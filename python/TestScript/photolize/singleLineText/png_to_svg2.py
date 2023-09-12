@@ -1,3 +1,4 @@
+# 不採用
 # 参考サイト：https://chayarokurokuro.hatenablog.com/entry/2021/11/22/104748
 import base64 # 標準ライブラリ
 import svgwrite

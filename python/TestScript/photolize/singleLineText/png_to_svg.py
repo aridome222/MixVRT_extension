@@ -1,3 +1,4 @@
+# png_to_high_pngで採用
 # This code example demonstrates how to convert PNG to SVG
 # 参考サイト：https://blog.aspose.com/ja/words/convert-png-to-svg-in-python/
 import aspose.words as aw

@@ -1,3 +1,4 @@
+# 色付けありの差異検出
 # 参考サイト：https://qiita.com/grv2688/items/44f9e0ddd429afbb26a2
 import cv2
 from datetime import datetime

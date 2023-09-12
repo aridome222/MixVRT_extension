@@ -39,10 +39,11 @@ class Test_chg_setting_initValue():
     # 有留テストアプリに移動する
     WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.LINK_TEXT, "アプリ一覧を見る")))
     self.driver.find_element(By.LINK_TEXT, "アプリ一覧を見る").click()
-    WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.LINK_TEXT, "有留テストアプリ")))
-    element = self.driver.find_element(By.ID, "item_151")
-    link = element.find_element(By.LINK_TEXT, "有留テストアプリ")
-    self.driver.execute_script("arguments[0].click();", link)
+    self.driver.get("https://staging-admin.photolize.jp/admin/appli/edit_vue/151")
+    # WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.LINK_TEXT, "有留テストアプリ")))
+    # element = self.driver.find_element(By.ID, "item_151")
+    # link = element.find_element(By.LINK_TEXT, "有留テストアプリ")
+    # self.driver.execute_script("arguments[0].click();", link)
     # 単一行テキスト1を選択
     WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//div[4]/div/div/div")))
     self.driver.find_element(By.XPATH, "//div[4]/div/div/div").click()
