@@ -32,8 +32,19 @@ diff = cv2.absdiff(img1_gray, img2_gray)
 ret, diff = cv2.threshold(diff, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 diff = cv2.GaussianBlur(diff, (11, 11), 0)
 
+# # エッジ検出を行う
+# edges = cv2.Canny(diff, threshold1=30, threshold2=100)
+
+# # 輪郭検出を行う
+# contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+# # 輪郭を描画する
+# cv2.drawContours(img2, contours, -1, (0, 255, 0), 2)  # 緑色の輪郭を描画
+
 # ２つの画像の差分を表示
 contours, _ = cv2.findContours(diff, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+print("抽出された輪郭の数:", len(contours))
+
 for c in contours:
     x, y, w, h = cv2.boundingRect(c)
     if w > 1 and h > 1:

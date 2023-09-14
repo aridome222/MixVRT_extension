@@ -67,6 +67,59 @@ result_bin = cv2.morphologyEx(result_bin, cv2.MORPH_OPEN, kernel) # オープニ
 result_bin_rgb = cv2.cvtColor(result_bin, cv2.COLOR_GRAY2RGB)
 result_add = cv2.addWeighted(imgA, 0.3, result_bin_rgb, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
 
+### 枠づけ ###
+# 画像Aから画像Bを引くことで1枚目の画像の差分のみを取得
+diff_img1 = cv2.subtract(imgA, imgB_transform)
+diff_img1_gray = cv2.cvtColor(diff_img1, cv2.COLOR_BGR2GRAY)  # グレースケールに変換
+
+# 二値化
+_, diff_img1_bin = cv2.threshold(diff_img1_gray, 50, 255, cv2.THRESH_BINARY)  # 閾値は50
+
+# カーネルを準備（オープニング用）
+kernel = np.ones((2, 2), np.uint8)
+# オープニング（収縮→膨張）実行 ノイズ除去
+diff_img1_bin = cv2.morphologyEx(diff_img1_bin, cv2.MORPH_OPEN, kernel)  # オープニング（収縮→膨張）。ノイズ除去。
+
+# # 差分画像に輪郭を描画
+# contours, _ = cv2.findContours(diff_img1_bin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+# for c in contours:
+#     x, y, w, h = cv2.boundingRect(c)
+#     if w > 1 and h > 1:
+#         cv2.rectangle(diff_img1, (x, y), (x + w, y + h), (0, 0, 255), 3)  # 赤枠を描画
+
+# ２つの画像の差分を表示
+contours, _ = cv2.findContours(diff_img1_bin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+print("抽出された輪郭の数:", len(contours))
+
+for c in contours:
+    x, y, w, h = cv2.boundingRect(c)
+    if w > 1 and h > 1:
+        if imgB[y:y+h, x:x+w].mean() > imgA[y:y+h, x:x+w].mean():
+            # 差異が２枚目の画像で大きい場合、赤色で表示
+            cv2.rectangle(imgB, (x, y), (x + w, y + h), (0, 0, 255), 3)
+        else:
+            # 差異が１枚目の画像で大きい場合、緑色で表示
+            cv2.rectangle(imgB, (x, y), (x + w, y + h), (0, 255, 0), 3)
+
+# 画像Bから画像Aを引くことで2枚目の画像の差分のみを取得
+diff_img2 = cv2.subtract(imgB_transform, imgA)
+diff_img2_gray = cv2.cvtColor(diff_img2, cv2.COLOR_BGR2GRAY)  # グレースケールに変換
+
+# 二値化
+_, diff_img2_bin = cv2.threshold(diff_img2_gray, 50, 255, cv2.THRESH_BINARY)  # 閾値は50
+
+# カーネルを準備（オープニング用）
+kernel = np.ones((2, 2), np.uint8)
+# オープニング（収縮→膨張）実行 ノイズ除去
+diff_img2_bin = cv2.morphologyEx(diff_img2_bin, cv2.MORPH_OPEN, kernel)  # オープニング（収縮→膨張）。ノイズ除去。
+
+# 差分画像に輪郭を描画
+contours, _ = cv2.findContours(diff_img2_bin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+for c in contours:
+    x, y, w, h = cv2.boundingRect(c)
+    if w > 1 and h > 1:
+        cv2.rectangle(diff_img2, (x, y), (x + w, y + h), (0, 0, 255), 3)  # 緑枠を描画
+
 ### 変更前と変更後の色分け ###
 ## 変更前の色付け ##
 # 白色の範囲を定義
@@ -125,6 +178,6 @@ output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_col
 output_file_path = os.path.join(output_dir2, output_file_name)
 
 # 画像を保存する
-cv2.imwrite(output_file_path, result_add)
+cv2.imwrite(output_file_path, imgB)
 
 print(f"2つの画像の差異を示した画像を{output_file_path}に保存しました")

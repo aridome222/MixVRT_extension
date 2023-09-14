@@ -32,22 +32,70 @@ diff = cv2.absdiff(img1_gray, img2_gray)
 ret, diff = cv2.threshold(diff, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 diff = cv2.GaussianBlur(diff, (11, 11), 0)
 
-# 差分画像から枠の座標を取得
-contours, _ = cv2.findContours(diff, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+### 枠づけ ###
 red_rectangles = []  # 赤枠の情報を格納するリスト
 green_rectangles = []  # 緑枠の情報を格納するリスト
 
-for c in contours:
+# 画像Aから画像Bを引くことで1枚目の画像の差分のみを取得
+diff_img1 = cv2.subtract(img1_gray, img2_gray)
+diff_img2 = cv2.subtract(img2_gray, img1_gray)
+
+# 二値化
+ret, diff_img1 = cv2.threshold(diff_img1, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+diff_img1 = cv2.GaussianBlur(diff_img1, (11, 11), 0)
+ret, diff_img2 = cv2.threshold(diff_img2, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+diff_img2 = cv2.GaussianBlur(diff_img2, (11, 11), 0)
+
+# 差分画像に輪郭を描画
+contours1, _ = cv2.findContours(diff_img1, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+contours2, _ = cv2.findContours(diff_img2, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+all_contours = contours1 + contours2
+print("抽出された輪郭の数:", len(all_contours))
+for c in all_contours:
     x, y, w, h = cv2.boundingRect(c)
     if w > 1 and h > 1:
         if img2[y:y+h, x:x+w].mean() > img1[y:y+h, x:x+w].mean():
             # 差異が２枚目の画像で大きい場合、赤色で表示
-            cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 0, 255), 3)
+            cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 0, 255), 2)
             red_rectangles.append((x, y, w, h))
         else:
             # 差異が１枚目の画像で大きい場合、緑色で表示
             cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 255, 0), 3)
             green_rectangles.append((x, y, w, h))
+        
+
+# 画像Bから画像Aを引くことで2枚目の画像の差分のみを取得
+# diff_img2 = cv2.subtract(img2_gray, img1_gray)
+
+# 二値化
+# ret, diff_img2 = cv2.threshold(diff_img2, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+# diff_img2 = cv2.GaussianBlur(diff_img2, (11, 11), 0)
+
+# 差分画像に赤い枠を描画
+# contours, _ = cv2.findContours(diff_img2, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+# print("抽出された輪郭の数:", len(contours))
+# for c in contours:
+#     x, y, w, h = cv2.boundingRect(c)
+#     if w > 1 and h > 1:
+#         cv2.rectangle(diff_img2, (x, y), (x + w, y + h), (0, 0, 255), 3)  # 赤枠を描画
+#         red_rectangles.append((x, y, w, h))
+
+# 差分画像から枠の座標を取得
+# contours, _ = cv2.findContours(diff, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+# red_rectangles = []  # 赤枠の情報を格納するリスト
+# green_rectangles = []  # 緑枠の情報を格納するリスト
+
+# for c in contours:
+#     x, y, w, h = cv2.boundingRect(c)
+#     if w > 1 and h > 1:
+#         if img2[y:y+h, x:x+w].mean() > img1[y:y+h, x:x+w].mean():
+#             # 差異が２枚目の画像で大きい場合、赤色で表示
+#             cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 0, 255), 3)
+#             red_rectangles.append((x, y, w, h))
+#         else:
+#             # 差異が１枚目の画像で大きい場合、緑色で表示
+#             cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 255, 0), 3)
+#             green_rectangles.append((x, y, w, h))
 
 # 赤枠の座標をy座標が0に近い順、次にx座標が0に近い順にソート
 red_rectangles.sort(key=lambda rect: (rect[1], rect[0]))
@@ -80,8 +128,8 @@ for i, (x1, y1, w1, h1) in enumerate(red_rectangles, start=1):
             print(f"赤枠 {i} と緑枠 {j} は対応します")
 
 # 差分画像を保存
-output_file_name = f"draw_rec3_judge_high_{output_file_name_B.split('_')[1]}"
-output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "draw_rec3_judge_high_png")
+output_file_name = f"draw_rec3_judge2_high_{output_file_name_B.split('_')[1]}"
+output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "draw_rec3_judge2_high_png")
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir2):
     os.makedirs(output_dir2)
