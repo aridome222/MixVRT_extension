@@ -1,5 +1,6 @@
 # 参考サイト：https://qiita.com/skryoooo/items/a37455bef54321a6195a
 # 上記のサイトのjavascriptコードをpythonコードに書き換えた
+# png_to_high_pngで採用
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPDF
 import os

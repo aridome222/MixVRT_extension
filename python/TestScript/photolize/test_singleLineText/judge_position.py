@@ -10,7 +10,7 @@ output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
-output_file_name_A = '_base.png'
+output_file_name_A = 'base.png'
 output_file_name_B = 'chg_position.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
@@ -133,14 +133,12 @@ if count > 0:
 else:
     print(f"{green_text_start}配置の差異はありません{green_text_end}")
 
-# if white_pixel_count > threshold:
-#     print(f"{red_text_start}差異が検出されました{red_text_end}")
-# else:
-#     print(f"{green_text_start}異常なし{green_text_end}")
-
 # 差分画像を保存
-output_file_name = f"draw_rec3_judge2_high_{output_file_name_B.split('_')[1]}"
-output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "draw_rec3_judge2_high_png")
+if output_file_name_B == "base.png":
+    output_file_name = f"judge_high_{output_file_name_B}"
+else:
+    output_file_name = f"judge_high_{output_file_name_B.split('_')[1]}"
+output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "judge_high_png")
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir2):
     os.makedirs(output_dir2)

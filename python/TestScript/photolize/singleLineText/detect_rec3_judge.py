@@ -1,3 +1,4 @@
+# 連番の色枠付き画像を生成＆対応する赤枠と緑枠を出力＆赤枠と緑枠の座標と幅と高さを出力
 # 参考サイト：https://sosotata.com/spot7differences/
 import cv2
 import os

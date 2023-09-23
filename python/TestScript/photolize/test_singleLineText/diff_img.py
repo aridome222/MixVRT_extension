@@ -1,4 +1,4 @@
-# 色付けなしの差異検出
+# 色付けありの差異検出
 # 参考サイト：https://qiita.com/grv2688/items/44f9e0ddd429afbb26a2
 import cv2
 from datetime import datetime
@@ -8,13 +8,13 @@ import os
 
 
 # 保存先ディレクトリを作成
-output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
+output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/")
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
 output_file_name_A = 'base.png'
-output_file_name_B = 'chg_fontSize.png'
+output_file_name_B = 'chg_position.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
@@ -46,46 +46,6 @@ good = matches[:int(len(matches) * 0.15)]
 # 対応が取れた特徴点の座標を取り出す？
 src_pts = np.float32([kpA[m.queryIdx].pt for m in good]).reshape(-1,1,2)
 dst_pts = np.float32([kpB[m.trainIdx].pt for m in good]).reshape(-1,1,2)
-
-
-#######
-# 文字の特徴抽出と比較
-text_size_threshold = 10  # 文字の大きさの閾値を設定（適切な値に調整）
-# src_ptsとdst_ptsの対応する特徴点を使って、文字の大きさを比較
-text_sizes_src = []  # 画像Aの文字の大きさを格納するリスト
-text_sizes_dst = []  # 画像Bの文字の大きさを格納するリスト
-
-for src_pt, dst_pt in zip(src_pts, dst_pts):
-    x1, y1 = src_pt[0]
-    x2, y2 = dst_pt[0]
-    
-    # 文字の大きさを計算（例: ユークリッド距離）
-    text_size = np.sqrt((x2 - x1)**2 + (y2 - y1)**2)
-    
-    text_sizes_src.append(text_size)
-
-# 画像Bの文字の大きさと比較
-for dst_pt, src_pt in zip(dst_pts, src_pts):
-    x1, y1 = dst_pt[0]
-    x2, y2 = src_pt[0]
-    
-    # 文字の大きさを計算（例: ユークリッド距離）
-    text_size = np.sqrt((x2 - x1)**2 + (y2 - y1)**2)
-    
-    text_sizes_dst.append(text_size)
-
-# 文字の大きさの差異を評価
-text_size_diff = np.abs(np.array(text_sizes_src) - np.array(text_sizes_dst))
-
-# 差異の閾値を設定して判定
-text_size_diff_threshold = 5  # 適切な閾値を設定（大きさの差異が許容範囲内か調整）
-if np.any(text_size_diff > text_size_diff_threshold):
-    print("文字の大きさに差異があります")
-else:
-    print("文字の大きさに差異はありません")
-#######
-
-
 # findHomography:二つの画像から得られた点の集合を与えると、その物体の投射変換を計算する
 M, mask = cv2.findHomography(dst_pts, src_pts, cv2.RANSAC,5.0) # dst_img作成の際だけ使う。warpperspectiveの使い方がわかってない。
 # imgBを透視変換。
@@ -107,6 +67,35 @@ result_bin = cv2.morphologyEx(result_bin, cv2.MORPH_OPEN, kernel) # オープニ
 result_bin_rgb = cv2.cvtColor(result_bin, cv2.COLOR_GRAY2RGB)
 result_add = cv2.addWeighted(imgA, 0.3, result_bin_rgb, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
 
+### 変更前と変更後の色分け ###
+## 変更前の色付け ##
+# 白色の範囲を定義
+lower_white = (128, 128, 128)  # 下限（B、G、R）
+upper_white = (254, 254, 254)  # 上限（B、G、R）
+
+# 白色の範囲内にあるピクセルをマスクとして取得
+white_mask = cv2.inRange(result_add, lower_white, upper_white)
+
+# 新しい色（緑色）を指定
+new_color = (0, 255, 0)  # (B、G、R)
+
+# ピクセルの色を変更
+result_add[white_mask > 0] = new_color
+
+## 変更後の色付け ##
+# 白色の範囲を定義
+lower_white = (255, 255, 255)  # 下限（B、G、R）
+upper_white = (255, 255, 255)  # 上限（B、G、R）
+
+# 白色の範囲内にあるピクセルをマスクとして取得
+white_mask = cv2.inRange(result_add, lower_white, upper_white)
+
+# 新しい色（赤色）を指定
+new_color = (0, 0, 255)  # (B、G、R)
+
+# ピクセルの色を変更
+result_add[white_mask > 0] = new_color
+
 ### 差異が検出されたか判定 ###
 # 2値画像（result_bin）の白いピクセル（差分が存在する部分）の数をカウント
 white_pixel_count = cv2.countNonZero(result_bin)
@@ -126,14 +115,17 @@ else:
 # 現在の日付を取得してフォーマット
 current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
 # ファイル名を生成
-output_file_name = f"diff_{output_file_name_B.split('_')[1]}"
+output_file_name = f"diff_color_{current_date}.png"
 # output_file_name = f"diff_{current_date}.png"
 
-output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_img/")
+output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_color_high_png/")
 # output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_high_png/")
 
 # ファイルパスを作成
 output_file_path = os.path.join(output_dir2, output_file_name)
+# フォルダが存在しない場合は作成
+if not os.path.exists(output_dir2):
+    os.makedirs(output_dir2)
 
 # 画像を保存する
 cv2.imwrite(output_file_path, result_add)
