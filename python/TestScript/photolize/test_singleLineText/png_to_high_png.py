@@ -21,7 +21,7 @@ input_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
 if not os.path.exists(input_dir):
     os.makedirs(input_dir)
 # ファイル名を生成
-input_file_name = 'chg_position.png'
+input_file_name = 'require_notWork.png'
 # ファイルパスを作成
 input_file_path = os.path.join(input_dir, input_file_name)
 
@@ -58,7 +58,7 @@ pdf_file_path = os.path.join(output_dir, "image.pdf")
 renderPDF.drawToFile(drawing, pdf_file_path)
 
 # PDFファイルをPNGファイルに変換する
-pdf_images = convert_from_path(pdf_file_path, dpi=400)  # 解像度を設定
+pdf_images = convert_from_path(pdf_file_path, dpi=300)  # 解像度を設定
 
 # PDFファイルを削除する
 if os.path.exists(pdf_file_path):

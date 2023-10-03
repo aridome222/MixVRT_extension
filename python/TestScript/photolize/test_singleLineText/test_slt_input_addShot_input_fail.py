@@ -49,13 +49,13 @@ class Test_slt_input_addShot():
     # 新規レコードを選択
     self.driver.find_element(By.CSS_SELECTOR, "#appli-layout > div.appli-template-foot > a").click()
     ## 表示された入力フォームの入力欄に任意の文字を入力（入力規制の入力欄のみ）##
-    # 入力必須
-    self.driver.find_element(By.CSS_SELECTOR, ".plz-elm:nth-child(8) > .disp-wrap").click()
-    element = self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(10) .v-card__actions .v-btn__content")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element).perform()
-    self.driver.find_element(By.ID, "input-367").send_keys("テスト")
-    self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(10) .v-card__actions .v-btn__content").click()
+    # # 入力必須
+    # self.driver.find_element(By.CSS_SELECTOR, ".plz-elm:nth-child(8) > .disp-wrap").click()
+    # element = self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(10) .v-card__actions .v-btn__content")
+    # actions = ActionChains(self.driver)
+    # actions.move_to_element(element).perform()
+    # self.driver.find_element(By.ID, "input-367").send_keys("テスト")
+    # self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(10) .v-card__actions .v-btn__content").click()
     # 半角英数のみ
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
     actions = ActionChains(self.driver)
@@ -124,20 +124,20 @@ class Test_slt_input_addShot():
     self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(20) .v-card__actions .v-btn__content").click()
     # 新規レコードを保存
     self.driver.find_element(By.CSS_SELECTOR, ".fa-floppy-disk > path").click()
-    element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".theme--light:nth-child(2) > .v-btn__content")))
-    element.click()
-    element = self.driver.find_element(By.XPATH, "//*[@id='AppliWrap']/div[35]/div/div/div[2]/button/span")
-    self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
-    element.click()
-
-    # 最新のビューを選択
-    self.driver.find_element(By.CSS_SELECTOR, ".ag-row-even:nth-child(1) .mr-1:nth-child(2) .v-icon").click()
+    # element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".theme--light:nth-child(2) > .v-btn__content")))
+    # element.click()
+    time.sleep(3)
     # スクリーンショットをとる
     save_screenShot(self)
+
+    # # 最新のビューを選択
+    # self.driver.find_element(By.CSS_SELECTOR, ".ag-row-even:nth-child(1) .mr-1:nth-child(2) .v-icon").click()
+    # # スクリーンショットをとる
+    # save_screenShot(self)
     # time.sleep(3) # 目視確認
-    # ログアウトする
-    self.driver.find_element(By.CSS_SELECTOR, ".v-avatar > img").click()
-    self.driver.find_element(By.CSS_SELECTOR, ".v-btn--text > .v-btn__content").click()
+    # # ログアウトする
+    # self.driver.find_element(By.CSS_SELECTOR, ".v-avatar > img").click()
+    # self.driver.find_element(By.CSS_SELECTOR, ".v-btn--text > .v-btn__content").click()
     # 画面を閉じる
     self.driver.close()
 
