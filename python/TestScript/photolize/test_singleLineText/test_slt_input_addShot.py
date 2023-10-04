@@ -64,7 +64,7 @@ class Test_slt_input_addShot():
     element = self.driver.find_element(By.CSS_SELECTOR, "#appliDisplayArea > div:nth-child(8) > div.disp-wrap.input.flex_c_c.fontsize5 > div")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[32]/div/div/div[1]/div/span/span/div/div/div[1]/div/input").send_keys("test")
+    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[31]/div/div/div[1]/div/span/span/div/div/div[1]/div/input").send_keys("test")
     self.driver.find_element(By.CSS_SELECTOR, "#AppliWrap > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__actions.text-right > button > span").click()
     # メールアドレス入力
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
@@ -72,7 +72,7 @@ class Test_slt_input_addShot():
     actions.move_to_element(element).perform()
     self.driver.find_element(By.CSS_SELECTOR, ".plz-elm:nth-child(25) > .disp-wrap").click()
     time.sleep(1)
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[27]/div/div/div[1]/div/span/span/div/div/div[1]/div/input").send_keys("a@test.com")
+    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[26]/div/div/div[1]/div/span/span/div/div/div[1]/div/input").send_keys("a@test.com")
     self.driver.find_element(By.CSS_SELECTOR, "#AppliWrap > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__actions.text-right > button > span").click()
     # URL入力
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
@@ -92,7 +92,7 @@ class Test_slt_input_addShot():
     element = self.driver.find_element(By.CSS_SELECTOR, "#appliDisplayArea > div:nth-child(21) > div.disp-wrap.input.flex_c_c.fontsize5 > div")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[23]/div/div/div[1]/div/span/span[1]/div/div/div[1]/div/input").send_keys("テスト")
+    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[22]/div/div/div[1]/div/span/span[1]/div/div/div[1]/div/input").send_keys("テスト")
     self.driver.find_element(By.CSS_SELECTOR, "#AppliWrap > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__actions.text-right > button > span").click()
     # 編集不可
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
@@ -111,7 +111,7 @@ class Test_slt_input_addShot():
     element = self.driver.find_element(By.CSS_SELECTOR, "#appliDisplayArea > div:nth-child(22) > div.disp-wrap.input.flex_c_c.fontsize5 > div")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[24]/div/div/div[1]/div/span/span/div/div/div[1]/div/input").send_keys("テスト")
+    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[23]/div/div/div[1]/div/span/span/div/div/div[1]/div/input").send_keys("テスト")
     self.driver.find_element(By.CSS_SELECTOR, "#AppliWrap > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__actions.text-right > button > span").click()
     # 最小文字数（３文字）
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
@@ -121,13 +121,13 @@ class Test_slt_input_addShot():
     element = self.driver.find_element(By.CSS_SELECTOR, "#appliDisplayArea > div:nth-child(19) > div.disp-wrap.input.flex_c_c.fontsize5 > div")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[21]/div/div/div[1]/div/span/span/div/div/div[1]/div/input").send_keys("テスト")
+    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[20]/div/div/div[1]/div/span/span/div/div/div[1]/div/input").send_keys("テスト")
     self.driver.find_element(By.CSS_SELECTOR, "#AppliWrap > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__actions.text-right > button > span").click()
     # 新規レコードを保存
     self.driver.find_element(By.CSS_SELECTOR, ".fa-floppy-disk > path").click()
     element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".theme--light:nth-child(2) > .v-btn__content")))
     element.click()
-    element = self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[37]/div/div/div[2]/button/span")
+    element = self.driver.find_element(By.CSS_SELECTOR, "#AppliWrap > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__actions > button > span")
     self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
     element.click()
 

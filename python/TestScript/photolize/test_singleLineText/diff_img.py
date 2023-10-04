@@ -14,7 +14,7 @@ if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
 output_file_name_A = 'base2.png'
-output_file_name_B = 'chg_embed.png'
+output_file_name_B = 'chg_noDisp.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
