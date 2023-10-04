@@ -40,8 +40,8 @@ class TestSingleLineText_snapShot():
     self.driver.find_element(By.ID, "input-11").send_keys("aridome")
     self.driver.find_element(By.ID, "input-14").send_keys("aridome")
     self.driver.find_element(By.CSS_SELECTOR, ".btn > .v-btn__content").click()
-    # 有留アプリテストを選択
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div/div[2]/main/div/div[2]/div[2]/div/div[15]/a/div/div/div[2]/div").click()
+    # 有留アプリに直接飛ぶ
+    self.driver.get("https://staging-user.photolize.jp/appli/index?app_id=151")
     # 最新のビューを選択
     self.driver.find_element(By.CSS_SELECTOR, ".ag-row-even:nth-child(1) .mr-1:nth-child(2) .v-icon").click()
     # スクリーンショットをとる
@@ -68,7 +68,7 @@ def save_screenShot(self):
   output_file_path = os.path.join(output_dir, output_file_name)
 
   # スクロールバーが表示されないようにサイズを設定
-  self.driver.set_window_size(1366, 1040)
+  self.driver.set_window_size(1050, 1150) # 幅×高さ
 
   # 追加: ここでフルページのスクリーンショットを取る
   self.driver.save_screenshot(output_file_path)
