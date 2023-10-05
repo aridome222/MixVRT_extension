@@ -33,6 +33,7 @@ akaze = cv2.AKAZE_create()
 kpA, desA = akaze.detectAndCompute(imgA,None)
 kpB, desB = akaze.detectAndCompute(imgB,None)
 
+## imgAとimgBの画像サイズが違う場合に行う処理 ##
 # imageBを透視変換する
 # 透視変換: 斜めから撮影した画像を真上から見た画像に変換する感じ
 # BFMatcher型のオブジェクトを作成する
