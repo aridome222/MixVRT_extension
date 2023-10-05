@@ -48,14 +48,14 @@ class Test_slt_input_addShot():
     self.driver.get("https://staging-user.photolize.jp/appli/index?app_id=151")
     # 新規レコードを選択
     self.driver.find_element(By.CSS_SELECTOR, "#appli-layout > div.appli-template-foot > a").click()
-    ## 表示された入力フォームの入力欄に任意の文字を入力（入力規制の入力欄のみ）##
-    # # 入力必須
-    # self.driver.find_element(By.CSS_SELECTOR, ".plz-elm:nth-child(8) > .disp-wrap").click()
-    # element = self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(10) .v-card__actions .v-btn__content")
-    # actions = ActionChains(self.driver)
-    # actions.move_to_element(element).perform()
-    # self.driver.find_element(By.ID, "input-367").send_keys("テスト")
-    # self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(10) .v-card__actions .v-btn__content").click()
+    ## urlでないものを入力 ##
+    # 入力必須
+    self.driver.find_element(By.CSS_SELECTOR, ".plz-elm:nth-child(8) > .disp-wrap").click()
+    element = self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(10) .v-card__actions .v-btn__content")
+    actions = ActionChains(self.driver)
+    actions.move_to_element(element).perform()
+    self.driver.find_element(By.ID, "input-367").send_keys("テスト")
+    self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(10) .v-card__actions .v-btn__content").click()
     # 半角英数のみ
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
     actions = ActionChains(self.driver)
@@ -81,7 +81,7 @@ class Test_slt_input_addShot():
     element = self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(11) .v-card__actions .v-btn__content")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
-    self.driver.find_element(By.ID, "input-373").send_keys("https://test")
+    self.driver.find_element(By.ID, "input-373").send_keys("https/test")
     self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(11) .v-card__actions .v-btn__content").click()
     # 重複禁止
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
@@ -143,7 +143,7 @@ class Test_slt_input_addShot():
 
 def save_screenShot(self):
   # 保存先ディレクトリを指定
-  output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
+  output_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "img/")
   # フォルダが存在しない場合は作成
   if not os.path.exists(output_dir):
       os.makedirs(output_dir)

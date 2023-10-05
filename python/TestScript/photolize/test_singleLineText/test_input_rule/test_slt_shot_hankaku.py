@@ -48,103 +48,102 @@ class Test_slt_input_addShot():
     self.driver.get("https://staging-user.photolize.jp/appli/index?app_id=151")
     # 新規レコードを選択
     self.driver.find_element(By.CSS_SELECTOR, "#appli-layout > div.appli-template-foot > a").click()
-    ## 表示された入力フォームの入力欄に任意の文字を入力（入力規制の入力欄のみ）##
+    ## 半角英数のみの入力欄に半角英数以外を入力 ##
     # 入力必須
     self.driver.find_element(By.CSS_SELECTOR, ".plz-elm:nth-child(8) > .disp-wrap").click()
     element = self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(10) .v-card__actions .v-btn__content")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[10]/div/div/div[1]/div/span/span/div/div/div[1]/div/input").send_keys("テスト")
+    self.driver.find_element(By.ID, "input-367").send_keys("テスト")
     self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(10) .v-card__actions .v-btn__content").click()
     # 半角英数のみ
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
     self.driver.find_element(By.CSS_SELECTOR, ".plz-elm:nth-child(30) > .disp-wrap").click()
-    element = self.driver.find_element(By.CSS_SELECTOR, "#appliDisplayArea > div:nth-child(8) > div.disp-wrap.input.flex_c_c.fontsize5 > div")
+    element = self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(31) .v-card__actions .v-btn__content")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[31]/div/div/div[1]/div/span/span/div/div/div[1]/div/input").send_keys("test")
-    self.driver.find_element(By.CSS_SELECTOR, "#AppliWrap > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__actions.text-right > button > span").click()
+    self.driver.find_element(By.ID, "input-508").send_keys("テスト")
+    self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(31) .v-card__actions .v-btn__content").click()
     # メールアドレス入力
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
     self.driver.find_element(By.CSS_SELECTOR, ".plz-elm:nth-child(25) > .disp-wrap").click()
-    time.sleep(1)
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[26]/div/div/div[1]/div/span/span/div/div/div[1]/div/input").send_keys("a@test.com")
-    self.driver.find_element(By.CSS_SELECTOR, "#AppliWrap > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__actions.text-right > button > span").click()
+    self.driver.find_element(By.ID, "input-475").send_keys("a@test.com")
+    self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(26) .v-card__actions > .v-btn").click()
     # URL入力
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
     self.driver.find_element(By.CSS_SELECTOR, ".plz-elm:nth-child(9) > .disp-wrap").click()
-    element = self.driver.find_element(By.CSS_SELECTOR, "#appliDisplayArea > div:nth-child(9) > div.disp-wrap.input.flex_c_c.fontsize2 > div")
+    element = self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(11) .v-card__actions .v-btn__content")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[11]/div/div/div[1]/div/span/span/div/div/div[1]/div/input").send_keys("https://test")
+    self.driver.find_element(By.ID, "input-373").send_keys("https://test")
     self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(11) .v-card__actions .v-btn__content").click()
     # 重複禁止
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
     self.driver.find_element(By.CSS_SELECTOR, ".plz-elm:nth-child(21) > .disp-wrap").click()
-    element = self.driver.find_element(By.CSS_SELECTOR, "#appliDisplayArea > div:nth-child(21) > div.disp-wrap.input.flex_c_c.fontsize5 > div")
+    element = self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(22) .v-card__actions .v-btn__content")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[22]/div/div/div[1]/div/span/span[1]/div/div/div[1]/div/input").send_keys("テスト")
-    self.driver.find_element(By.CSS_SELECTOR, "#AppliWrap > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__actions.text-right > button > span").click()
+    self.driver.find_element(By.ID, "input-449").send_keys("テスト")
+    self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(22) .v-card__actions .v-btn__content").click()
     # 編集不可
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
     self.driver.find_element(By.CSS_SELECTOR, ".plz-elm:nth-child(31) > .disp-wrap").click()
-    element = self.driver.find_element(By.CSS_SELECTOR, "#appliDisplayArea > div:nth-child(31) > div.disp-wrap.input.flex_c_c.fontsize5")
+    element = self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(32) .v-icon")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
-    self.driver.find_element(By.CSS_SELECTOR, "#AppliWrap > div.v-dialog__content.v-dialog__content--active > div > div > header > div > button > span > i").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(32) .v-icon").click()
     # 最大文字数（３文字）
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
     self.driver.find_element(By.CSS_SELECTOR, ".plz-elm:nth-child(22) > .disp-wrap").click()
-    element = self.driver.find_element(By.CSS_SELECTOR, "#appliDisplayArea > div:nth-child(22) > div.disp-wrap.input.flex_c_c.fontsize5 > div")
+    element = self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(23) .v-card__actions .v-btn__content")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[23]/div/div/div[1]/div/span/span/div/div/div[1]/div/input").send_keys("テスト")
-    self.driver.find_element(By.CSS_SELECTOR, "#AppliWrap > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__actions.text-right > button > span").click()
+    self.driver.find_element(By.ID, "input-456").send_keys("テスト")
+    self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(23) .v-card__actions .v-btn__content").click()
     # 最小文字数（３文字）
     element = self.driver.find_element(By.CSS_SELECTOR, "body")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
     self.driver.find_element(By.CSS_SELECTOR, ".plz-elm:nth-child(19) > .disp-wrap").click()
-    element = self.driver.find_element(By.CSS_SELECTOR, "#appliDisplayArea > div:nth-child(19) > div.disp-wrap.input.flex_c_c.fontsize5 > div")
+    element = self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(20) .v-card__actions .v-btn__content")
     actions = ActionChains(self.driver)
     actions.move_to_element(element).perform()
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[20]/div/div/div[1]/div/span/span/div/div/div[1]/div/input").send_keys("テスト")
-    self.driver.find_element(By.CSS_SELECTOR, "#AppliWrap > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__actions.text-right > button > span").click()
+    self.driver.find_element(By.ID, "input-437").send_keys("テスト")
+    self.driver.find_element(By.CSS_SELECTOR, ".v-dialog__content:nth-child(20) .v-card__actions .v-btn__content").click()
     # 新規レコードを保存
     self.driver.find_element(By.CSS_SELECTOR, ".fa-floppy-disk > path").click()
-    element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".theme--light:nth-child(2) > .v-btn__content")))
-    element.click()
-    element = self.driver.find_element(By.CSS_SELECTOR, "#AppliWrap > div.v-dialog__content.v-dialog__content--active > div > div > div.v-card__actions > button > span")
-    self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
-    element.click()
-
-    # 最新のビューを選択
-    self.driver.find_element(By.CSS_SELECTOR, ".ag-row-even:nth-child(1) .mr-1:nth-child(2) .v-icon").click()
+    # element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".theme--light:nth-child(2) > .v-btn__content")))
+    # element.click()
+    time.sleep(3)
     # スクリーンショットをとる
     save_screenShot(self)
+
+    # # 最新のビューを選択
+    # self.driver.find_element(By.CSS_SELECTOR, ".ag-row-even:nth-child(1) .mr-1:nth-child(2) .v-icon").click()
+    # # スクリーンショットをとる
+    # save_screenShot(self)
     # time.sleep(3) # 目視確認
-    # ログアウトする
-    self.driver.find_element(By.CSS_SELECTOR, ".v-avatar > img").click()
-    self.driver.find_element(By.CSS_SELECTOR, ".v-btn--text > .v-btn__content").click()
+    # # ログアウトする
+    # self.driver.find_element(By.CSS_SELECTOR, ".v-avatar > img").click()
+    # self.driver.find_element(By.CSS_SELECTOR, ".v-btn--text > .v-btn__content").click()
     # 画面を閉じる
     self.driver.close()
 
 def save_screenShot(self):
   # 保存先ディレクトリを指定
-  output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
+  output_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "img/")
   # フォルダが存在しない場合は作成
   if not os.path.exists(output_dir):
       os.makedirs(output_dir)

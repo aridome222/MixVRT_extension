@@ -1,4 +1,4 @@
-# 色付けなしの差異検出
+# 色付けありの差異検出
 # 参考サイト：https://qiita.com/grv2688/items/44f9e0ddd429afbb26a2
 import cv2
 from datetime import datetime
@@ -8,13 +8,13 @@ import os
 
 
 # 保存先ディレクトリを作成
-output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
+output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/")
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
-output_file_name_A = 'base.png'
-output_file_name_B = 'chg_position.png'
+output_file_name_A = 'maxChar_Work.png'
+output_file_name_B = 'test.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
@@ -67,6 +67,35 @@ result_bin = cv2.morphologyEx(result_bin, cv2.MORPH_OPEN, kernel) # オープニ
 result_bin_rgb = cv2.cvtColor(result_bin, cv2.COLOR_GRAY2RGB)
 result_add = cv2.addWeighted(imgA, 0.3, result_bin_rgb, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
 
+### 変更前と変更後の色分け ###
+## 変更前の色付け ##
+# 白色の範囲を定義
+lower_white = (128, 128, 128)  # 下限（B、G、R）
+upper_white = (254, 254, 254)  # 上限（B、G、R）
+
+# 白色の範囲内にあるピクセルをマスクとして取得
+white_mask = cv2.inRange(result_add, lower_white, upper_white)
+
+# 新しい色（緑色）を指定
+new_color = (0, 255, 0)  # (B、G、R)
+
+# ピクセルの色を変更
+result_add[white_mask > 0] = new_color
+
+## 変更後の色付け ##
+# 白色の範囲を定義
+lower_white = (255, 255, 255)  # 下限（B、G、R）
+upper_white = (255, 255, 255)  # 上限（B、G、R）
+
+# 白色の範囲内にあるピクセルをマスクとして取得
+white_mask = cv2.inRange(result_add, lower_white, upper_white)
+
+# 新しい色（赤色）を指定
+new_color = (0, 0, 255)  # (B、G、R)
+
+# ピクセルの色を変更
+result_add[white_mask > 0] = new_color
+
 ### 差異が検出されたか判定 ###
 # 2値画像（result_bin）の白いピクセル（差分が存在する部分）の数をカウント
 white_pixel_count = cv2.countNonZero(result_bin)
@@ -86,10 +115,10 @@ else:
 # 現在の日付を取得してフォーマット
 current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
 # ファイル名を生成
-output_file_name = f"diff_{output_file_name_B.split('_')[1]}"
+output_file_name = f"diff_color_{current_date}.png"
 # output_file_name = f"diff_{current_date}.png"
 
-output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_img/")
+output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_color_high_png/")
 # output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_high_png/")
 
 # ファイルパスを作成
@@ -97,8 +126,8 @@ output_file_path = os.path.join(output_dir2, output_file_name)
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir2):
     os.makedirs(output_dir2)
-    
+
 # 画像を保存する
-cv2.imwrite(output_file_path, result_gray)
+cv2.imwrite(output_file_path, result_add)
 
 print(f"2つの画像の差異を示した画像を{output_file_path}に保存しました")
