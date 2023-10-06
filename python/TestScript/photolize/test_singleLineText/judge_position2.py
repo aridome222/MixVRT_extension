@@ -11,8 +11,8 @@ output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
-output_file_name_A = 'maxChar_Work.png'
-output_file_name_B = 'maxChar_notWork.png'
+output_file_name_A = 'base.png'
+output_file_name_B = 'chg_position.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
@@ -28,6 +28,16 @@ img2_gray = clahe.apply(img2_gray)
 
 img1_gray = cv2.GaussianBlur(img1_gray, (13, 13), 0)
 img2_gray = cv2.GaussianBlur(img2_gray, (13, 13), 0)
+
+print("img1_gray shape:", img1_gray.shape)
+print("img2_gray shape:", img2_gray.shape)
+
+
+width = 3423
+height = 3484
+# 画像のサイズを一致させる
+img1_gray = cv2.resize(img1_gray, (width, height))  # widthとheightは適切なサイズに置き換える
+img2_gray = cv2.resize(img2_gray, (width, height))
 
 # 画像の差分を計算
 diff = cv2.absdiff(img1_gray, img2_gray)
