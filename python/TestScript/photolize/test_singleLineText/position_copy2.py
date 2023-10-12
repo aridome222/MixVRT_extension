@@ -70,8 +70,8 @@ green_color = (0, 255, 0)  # (B、G、R)
 red_color = (0, 0, 255)  # (B、G、R)
 
 # ピクセルの色を変更
-result_bin1_rgb[white_mask1 > 0] = green_color
-result_bin2_rgb[white_mask2 > 0] = red_color
+result_bin1_rgb[white_mask1 > 0] = red_color
+result_bin2_rgb[white_mask2 > 0] = green_color
 
 # 二値画像をRGB形式に変換し、2枚の画像を重ねる。
 # result_add1 = cv2.add(img1, result_bin1_rgb)

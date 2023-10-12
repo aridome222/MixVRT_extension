@@ -14,8 +14,8 @@ output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
-output_file_name_A = 'maxChar_Work.png'
-output_file_name_B = 'maxChar_notWork.png'
+output_file_name_A = 'test.png'
+output_file_name_B = 'chg_position.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
@@ -71,13 +71,14 @@ green_color = (0, 255, 0)  # (B、G、R)
 red_color = (0, 0, 255)  # (B、G、R)
 
 # ピクセルの色を変更
-result_bin1_rgb[white_mask1 > 0] = green_color
-result_bin2_rgb[white_mask2 > 0] = red_color
+result_bin1_rgb[white_mask1 > 0] = red_color
+result_bin2_rgb[white_mask2 > 0] = green_color
 
 # 二値画像をRGB形式に変換し、2枚の画像を重ねる。
 result_diff = cv2.add(result_bin1_rgb, result_bin2_rgb)
 # result = cv2.addWeighted(img1, 0.3, result_diff, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
 
+### 色付きの差分のみの画像を、元の画像に重ね合わせる ###
 source_image = result_diff
 target_image = img1
 
