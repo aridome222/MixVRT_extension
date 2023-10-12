@@ -70,10 +70,10 @@ result_bin_rgb = cv2.cvtColor(result_bin, cv2.COLOR_GRAY2RGB)
 result_add = cv2.addWeighted(imgA, 0.3, result_bin_rgb, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
 
 ### 変更前と変更後の色分け ###
-## 変更前の色付け ##
+## 変更後の色付け ##
 # 白色の範囲を定義
-lower_white = (128, 128, 128)  # 下限（B、G、R）
-upper_white = (254, 254, 254)  # 上限（B、G、R）
+lower_white = (255, 255, 255)  # 下限（B、G、R）
+upper_white = (255, 255, 255)  # 上限（B、G、R）
 
 # 白色の範囲内にあるピクセルをマスクとして取得
 white_mask = cv2.inRange(result_add, lower_white, upper_white)
@@ -84,10 +84,10 @@ new_color = (0, 255, 0)  # (B、G、R)
 # ピクセルの色を変更
 result_add[white_mask > 0] = new_color
 
-## 変更後の色付け ##
+## 変更前の色付け ##
 # 白色の範囲を定義
-lower_white = (255, 255, 255)  # 下限（B、G、R）
-upper_white = (255, 255, 255)  # 上限（B、G、R）
+lower_white = (128, 128, 128)  # 下限（B、G、R）
+upper_white = (254, 254, 254)  # 上限（B、G、R）
 
 # 白色の範囲内にあるピクセルをマスクとして取得
 white_mask = cv2.inRange(result_add, lower_white, upper_white)

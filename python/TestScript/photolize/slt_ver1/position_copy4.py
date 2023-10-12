@@ -19,8 +19,8 @@ if not os.path.exists(output_dir):
     subprocess.call(command, shell=True)
 
 # ファイル名を生成
-output_file_name_A = 'base.png'
-output_file_name_B = 'chg_initValue.png'
+output_file_name_A = 'Work_minChar.png'
+output_file_name_B = 'noWork_minChar.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
@@ -44,23 +44,20 @@ diff_img2 = cv2.subtract(img1_gray, img2_gray)
 diff = cv2.absdiff(img1_gray, img2_gray)
 
 # 二値化
-ret, diff_img1 = cv2.threshold(diff_img1, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+ret, diff_img1 = cv2.threshold(diff_img1, 190, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 # diff_img1 = cv2.GaussianBlur(diff_img1, (11, 11), 0)
-ret, diff_img2 = cv2.threshold(diff_img2, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+ret, diff_img2 = cv2.threshold(diff_img2, 190, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 # diff_img2 = cv2.GaussianBlur(diff_img2, (11, 11), 0)
-ret, diff_img = cv2.threshold(diff, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
 # カーネルを準備（オープニング用）
 kernel = np.ones((2,2),np.uint8)
 # オープニング（収縮→膨張）実行 ノイズ除去
 result_bin1 = cv2.morphologyEx(diff_img1, cv2.MORPH_OPEN, kernel) # オープニング（収縮→膨張）。ノイズ除去。
 result_bin2 = cv2.morphologyEx(diff_img2, cv2.MORPH_OPEN, kernel) # オープニング（収縮→膨張）。ノイズ除去。
-result_bin = cv2.morphologyEx(diff_img, cv2.MORPH_OPEN, kernel) # オープニング（収縮→膨張）。ノイズ除去。
 
 # 二値画像をRGB形式に変換
 result_bin1_rgb = cv2.cvtColor(result_bin1, cv2.COLOR_GRAY2RGB)
 result_bin2_rgb = cv2.cvtColor(result_bin2, cv2.COLOR_GRAY2RGB)
-result_bin_rgb = cv2.cvtColor(result_bin2, cv2.COLOR_GRAY2RGB)
 
 ### 変更前と変更後の色分け ###
 # 白色の範囲を定義
@@ -72,17 +69,13 @@ upper_white = np.array([255, 255, 255])  # 上限（B、G、R）
 # 白色の範囲内にあるピクセルをマスクとして取得
 white_mask1 = cv2.inRange(result_bin1_rgb, lower_white, upper_white)
 white_mask2 = cv2.inRange(result_bin2_rgb, lower_white, upper_white)
-white_mask = cv2.inRange(result_bin_rgb, lower_white, upper_white)
 
 # 緑色を指定
 green_color = (0, 255, 0)  # (B、G、R)
 # 赤色を指定
 red_color = (0, 0, 255)  # (B、G、R)
-# 黄色を指定
-yellow_color = (0, 255, 255)  # (B、G、R)
 
 # ピクセルの色を変更
-result_bin_rgb[white_mask > 0] = yellow_color
 result_bin1_rgb[white_mask1 > 0] = red_color
 result_bin2_rgb[white_mask2 > 0] = green_color
 
@@ -130,7 +123,7 @@ if not os.path.exists(output_dir2):
 output_file_path = os.path.join(output_dir2, output_file_name)
 
 # 画像を保存する
-cv2.imwrite(output_file_path, diff)
+cv2.imwrite(output_file_path, result)
 
 print(f"2つの画像の差異部分に枠をつけたカラー画像を{output_file_path}に保存しました")
 

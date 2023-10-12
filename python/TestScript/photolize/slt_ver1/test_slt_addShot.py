@@ -21,7 +21,7 @@ import subprocess
 class Test_slt_input_addShot():
   def setup_method(self, method):
     options = Options()
-    options.add_argument('--headless')  # ヘッドレスモードでブラウザを起動
+    # options.add_argument('--headless')  # ヘッドレスモードでブラウザを起動
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     self.driver = webdriver.Remote(command_executor='http://chrome:4444/wd/hub', options=options)

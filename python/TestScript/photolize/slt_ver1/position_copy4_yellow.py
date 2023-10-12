@@ -6,15 +6,21 @@
 import cv2
 import os
 import numpy as np
+import subprocess
+
 
 # 保存先ディレクトリを作成
 output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/")
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
+    command = f"sudo chown -R aridome:aridome {output_dir}"
+    # コマンドを実行
+    subprocess.call(command, shell=True)
+
 # ファイル名を生成
-output_file_name_A = 'maxChar_Work.png'
-output_file_name_B = 'maxChar_notWork.png'
+output_file_name_A = 'base_label.png'
+output_file_name_B = 'chg_label.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
@@ -23,11 +29,11 @@ img1 = cv2.imread(output_file_path_A)
 img2 = cv2.imread(output_file_path_B)
 
 # clathを使って、コントラス強調
-clahe = cv2.createCLAHE(clipLimit=30.0, tileGridSize=(10, 10))
+# clahe = cv2.createCLAHE(clipLimit=30.0, tileGridSize=(10, 10))
 img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
 img2_gray = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
-img1_gray = clahe.apply(img1_gray)
-img2_gray = clahe.apply(img2_gray)
+# img1_gray = clahe.apply(img1_gray)
+# img2_gray = clahe.apply(img2_gray)
 
 # img1_gray = cv2.GaussianBlur(img1_gray, (13, 13), 0)
 # img2_gray = cv2.GaussianBlur(img2_gray, (13, 13), 0)
@@ -42,16 +48,19 @@ ret, diff_img1 = cv2.threshold(diff_img1, 0, 255, cv2.THRESH_BINARY + cv2.THRESH
 # diff_img1 = cv2.GaussianBlur(diff_img1, (11, 11), 0)
 ret, diff_img2 = cv2.threshold(diff_img2, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 # diff_img2 = cv2.GaussianBlur(diff_img2, (11, 11), 0)
+ret, diff_img = cv2.threshold(diff, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
 # カーネルを準備（オープニング用）
 kernel = np.ones((2,2),np.uint8)
 # オープニング（収縮→膨張）実行 ノイズ除去
 result_bin1 = cv2.morphologyEx(diff_img1, cv2.MORPH_OPEN, kernel) # オープニング（収縮→膨張）。ノイズ除去。
 result_bin2 = cv2.morphologyEx(diff_img2, cv2.MORPH_OPEN, kernel) # オープニング（収縮→膨張）。ノイズ除去。
+result_bin = cv2.morphologyEx(diff_img, cv2.MORPH_OPEN, kernel) # オープニング（収縮→膨張）。ノイズ除去。
 
 # 二値画像をRGB形式に変換
 result_bin1_rgb = cv2.cvtColor(result_bin1, cv2.COLOR_GRAY2RGB)
 result_bin2_rgb = cv2.cvtColor(result_bin2, cv2.COLOR_GRAY2RGB)
+result_bin_rgb = cv2.cvtColor(result_bin2, cv2.COLOR_GRAY2RGB)
 
 ### 変更前と変更後の色分け ###
 # 白色の範囲を定義
@@ -63,13 +72,17 @@ upper_white = np.array([255, 255, 255])  # 上限（B、G、R）
 # 白色の範囲内にあるピクセルをマスクとして取得
 white_mask1 = cv2.inRange(result_bin1_rgb, lower_white, upper_white)
 white_mask2 = cv2.inRange(result_bin2_rgb, lower_white, upper_white)
+white_mask = cv2.inRange(result_bin_rgb, lower_white, upper_white)
 
 # 緑色を指定
 green_color = (0, 255, 0)  # (B、G、R)
 # 赤色を指定
 red_color = (0, 0, 255)  # (B、G、R)
+# 黄色を指定
+yellow_color = (0, 255, 255)  # (B、G、R)
 
 # ピクセルの色を変更
+result_bin_rgb[white_mask > 0] = yellow_color
 result_bin1_rgb[white_mask1 > 0] = red_color
 result_bin2_rgb[white_mask2 > 0] = green_color
 
@@ -79,7 +92,7 @@ result_bin2_rgb[white_mask2 > 0] = green_color
 # img1_color = cv2.cvtColor(diff_img1, cv2.COLOR_GRAY2RGB)
 result_diff = cv2.add(result_bin1_rgb, result_bin2_rgb)
 # result = cv2.add(img1, result_diff)
-result = cv2.addWeighted(img1, 0.3, result_diff, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
+result = cv2.addWeighted(img1, 0.25, result_diff, 0.75, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
 # result_add1 = cv2.addWeighted(img1, 0.3, result_bin1_rgb, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
 # img2_color = cv2.cvtColor(diff_img2, cv2.COLOR_GRAY2RGB)
 # result_add2 = cv2.addWeighted(result_add1, 0.3, result_bin2_rgb, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
@@ -109,6 +122,9 @@ output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "judge_hi
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir2):
     os.makedirs(output_dir2)
+    command = f"sudo chown -R aridome:aridome {output_dir2}"
+    # コマンドを実行
+    subprocess.call(command, shell=True)
 
 # ファイルパスを作成
 output_file_path = os.path.join(output_dir2, output_file_name)
