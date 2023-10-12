@@ -79,7 +79,7 @@ def save_screenShot(self):
   output_file_path = os.path.join(output_dir, output_file_name)
 
   # スクロールバーが表示されないようにサイズを設定
-  self.driver.set_window_size(1366, 1040)
+  self.driver.set_window_size(1050, 1150) # 幅×高さ
 
   # 追加: ここでフルページのスクリーンショットを取る
   self.driver.save_screenshot(output_file_path)

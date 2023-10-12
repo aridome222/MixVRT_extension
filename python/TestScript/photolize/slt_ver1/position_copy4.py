@@ -1,12 +1,11 @@
-# 今のところ、これを採用
-# 成功作（ただし、position_copy2と比べて背景が明るめというか元画像と同じ輝度、こちらを採用する予定）
+# 成功作（ただし、position_copy3と比べて背景が暗め）
 # diff_color_img.pyをより正確に差分ごとに色分けできるようにしたもの
+# 成功作
 # 連番の色枠付き画像を生成＆対応する赤枠と緑枠を出力＆赤枠と緑枠の座標と幅と高さを出力＆配置の差異判定
 # 参考サイト：https://sosotata.com/spot7differences/
 import cv2
 import os
 import numpy as np
-from datetime import datetime
 import subprocess
 
 
@@ -49,16 +48,19 @@ ret, diff_img1 = cv2.threshold(diff_img1, 0, 255, cv2.THRESH_BINARY + cv2.THRESH
 # diff_img1 = cv2.GaussianBlur(diff_img1, (11, 11), 0)
 ret, diff_img2 = cv2.threshold(diff_img2, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 # diff_img2 = cv2.GaussianBlur(diff_img2, (11, 11), 0)
+ret, diff_img = cv2.threshold(diff, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
 # カーネルを準備（オープニング用）
 kernel = np.ones((2,2),np.uint8)
 # オープニング（収縮→膨張）実行 ノイズ除去
 result_bin1 = cv2.morphologyEx(diff_img1, cv2.MORPH_OPEN, kernel) # オープニング（収縮→膨張）。ノイズ除去。
 result_bin2 = cv2.morphologyEx(diff_img2, cv2.MORPH_OPEN, kernel) # オープニング（収縮→膨張）。ノイズ除去。
+result_bin = cv2.morphologyEx(diff_img, cv2.MORPH_OPEN, kernel) # オープニング（収縮→膨張）。ノイズ除去。
 
 # 二値画像をRGB形式に変換
 result_bin1_rgb = cv2.cvtColor(result_bin1, cv2.COLOR_GRAY2RGB)
 result_bin2_rgb = cv2.cvtColor(result_bin2, cv2.COLOR_GRAY2RGB)
+result_bin_rgb = cv2.cvtColor(result_bin2, cv2.COLOR_GRAY2RGB)
 
 ### 変更前と変更後の色分け ###
 # 白色の範囲を定義
@@ -70,46 +72,30 @@ upper_white = np.array([255, 255, 255])  # 上限（B、G、R）
 # 白色の範囲内にあるピクセルをマスクとして取得
 white_mask1 = cv2.inRange(result_bin1_rgb, lower_white, upper_white)
 white_mask2 = cv2.inRange(result_bin2_rgb, lower_white, upper_white)
+white_mask = cv2.inRange(result_bin_rgb, lower_white, upper_white)
 
 # 緑色を指定
 green_color = (0, 255, 0)  # (B、G、R)
 # 赤色を指定
 red_color = (0, 0, 255)  # (B、G、R)
+# 黄色を指定
+yellow_color = (0, 255, 255)  # (B、G、R)
 
 # ピクセルの色を変更
+result_bin_rgb[white_mask > 0] = yellow_color
 result_bin1_rgb[white_mask1 > 0] = red_color
 result_bin2_rgb[white_mask2 > 0] = green_color
 
 # 二値画像をRGB形式に変換し、2枚の画像を重ねる。
+# result_add1 = cv2.add(img1, result_bin1_rgb)
+# result_add2 = cv2.add(result_add1, result_bin2_rgb)
+# img1_color = cv2.cvtColor(diff_img1, cv2.COLOR_GRAY2RGB)
 result_diff = cv2.add(result_bin1_rgb, result_bin2_rgb)
-# result = cv2.addWeighted(img1, 0.3, result_diff, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
-
-### 色付きの差分のみの画像を、元の画像に重ね合わせる ###
-source_image = result_diff
-target_image = img1
-
-source_hsv = cv2.cvtColor(source_image, cv2.COLOR_BGR2HSV)
-target_hsv = cv2.cvtColor(target_image, cv2.COLOR_BGR2HSV)
-
-# 赤色の範囲を定義（OpenCVではHue値が0-179の範囲で表されます）
-lower_red = np.array([0, 100, 100])
-upper_red = np.array([10, 255, 255])
-
-# 赤色の範囲に対応するマスクを作成
-red_mask = cv2.inRange(source_hsv, lower_red, upper_red)
-
-# 赤色の部分を反映
-target_image[red_mask > 0] = source_image[red_mask > 0]
-
-# 緑色の範囲を定義
-lower_green = np.array([35, 100, 100])
-upper_green = np.array([85, 255, 255])
-
-# 緑色の範囲に対応するマスクを作成
-green_mask = cv2.inRange(source_hsv, lower_green, upper_green)
-
-# 緑色の部分を反映
-target_image[green_mask > 0] = source_image[green_mask > 0]
+# result = cv2.add(img1, result_diff)
+result = cv2.addWeighted(img1, 0.25, result_diff, 0.75, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
+# result_add1 = cv2.addWeighted(img1, 0.3, result_bin1_rgb, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
+# img2_color = cv2.cvtColor(diff_img2, cv2.COLOR_GRAY2RGB)
+# result_add2 = cv2.addWeighted(result_add1, 0.3, result_bin2_rgb, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
 
 ### 差異が検出されたか判定 ###
 # 2値画像（result_bin）の白いピクセル（差分が存在する部分）の数をカウント
@@ -127,17 +113,12 @@ if white_pixel_count > threshold:
 else:
     print(f"{green_text_start}異常なし{green_text_end}")
 
-# 現在の日付を取得してフォーマット
-current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
-# ファイル名を生成
-output_file_name = f"diff_color_{current_date}.png"
-# output_file_name = f"diff_{current_date}.png"
-
-output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_color_high_png/")
-# output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_high_png/")
-
-# ファイルパスを作成
-output_file_path = os.path.join(output_dir2, output_file_name)
+# 差分画像を保存
+if output_file_name_B == "base.png":
+    output_file_name = f"judge_high_{output_file_name_B}"
+else:
+    output_file_name = f"judge_high_{output_file_name_B.split('_')[1]}"
+output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "judge_high_png")
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir2):
     os.makedirs(output_dir2)
@@ -145,7 +126,11 @@ if not os.path.exists(output_dir2):
     # コマンドを実行
     subprocess.call(command, shell=True)
 
-# 画像を保存する
-cv2.imwrite(output_file_path, target_image)
+# ファイルパスを作成
+output_file_path = os.path.join(output_dir2, output_file_name)
 
-print(f"2つの画像の差異を示した画像を{output_file_path}に保存しました")
+# 画像を保存する
+cv2.imwrite(output_file_path, diff)
+
+print(f"2つの画像の差異部分に枠をつけたカラー画像を{output_file_path}に保存しました")
+

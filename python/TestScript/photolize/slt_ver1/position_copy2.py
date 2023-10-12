@@ -19,8 +19,8 @@ if not os.path.exists(output_dir):
     subprocess.call(command, shell=True)
 
 # ファイル名を生成
-output_file_name_A = 'maxChar_Work.png'
-output_file_name_B = 'maxChar_notWork.png'
+output_file_name_A = 'base.png'
+output_file_name_B = 'chg_initValue.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
@@ -29,11 +29,11 @@ img1 = cv2.imread(output_file_path_A)
 img2 = cv2.imread(output_file_path_B)
 
 # clathを使って、コントラス強調
-clahe = cv2.createCLAHE(clipLimit=30.0, tileGridSize=(10, 10))
+# clahe = cv2.createCLAHE(clipLimit=30.0, tileGridSize=(10, 10))
 img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
 img2_gray = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
-img1_gray = clahe.apply(img1_gray)
-img2_gray = clahe.apply(img2_gray)
+# img1_gray = clahe.apply(img1_gray)
+# img2_gray = clahe.apply(img2_gray)
 
 # img1_gray = cv2.GaussianBlur(img1_gray, (13, 13), 0)
 # img2_gray = cv2.GaussianBlur(img2_gray, (13, 13), 0)
@@ -85,7 +85,7 @@ result_bin2_rgb[white_mask2 > 0] = green_color
 # img1_color = cv2.cvtColor(diff_img1, cv2.COLOR_GRAY2RGB)
 result_diff = cv2.add(result_bin1_rgb, result_bin2_rgb)
 # result = cv2.add(img1, result_diff)
-result = cv2.addWeighted(img1, 0.3, result_diff, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
+result = cv2.addWeighted(img1, 0.25, result_diff, 0.75, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
 # result_add1 = cv2.addWeighted(img1, 0.3, result_bin1_rgb, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
 # img2_color = cv2.cvtColor(diff_img2, cv2.COLOR_GRAY2RGB)
 # result_add2 = cv2.addWeighted(result_add1, 0.3, result_bin2_rgb, 0.7, 2.2) # ２.２はガンマ値。大きくすると白っぽくなる
