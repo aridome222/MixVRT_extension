@@ -1,3 +1,4 @@
+# 最大文字数に対して上手く色付きの差分検出ができない、他はできる
 # 色付けありの差異検出
 # 参考サイト：https://qiita.com/grv2688/items/44f9e0ddd429afbb26a2
 import cv2
@@ -14,7 +15,7 @@ if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
 output_file_name_A = 'maxChar_Work.png'
-output_file_name_B = 'test.png'
+output_file_name_B = 'maxChar_notWork.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
