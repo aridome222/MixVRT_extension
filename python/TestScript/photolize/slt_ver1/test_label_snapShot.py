@@ -14,6 +14,7 @@ import json
 import os
 from datetime import datetime
 import difflib
+import subprocess
 
 
 class Test_label_snapShot():
@@ -66,6 +67,9 @@ def save_screenShot(self):
   # フォルダが存在しない場合は作成
   if not os.path.exists(output_dir):
       os.makedirs(output_dir)
+      command = f"sudo chown -R aridome:aridome {output_dir}"
+      # コマンドを実行
+      subprocess.call(command, shell=True)
   # 現在の日付を取得してフォーマット
   current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
   # ファイル名を生成

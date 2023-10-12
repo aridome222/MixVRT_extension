@@ -7,12 +7,18 @@ import cv2
 import os
 import numpy as np
 from datetime import datetime
+import subprocess
+
 
 # 保存先ディレクトリを作成
 output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/")
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
+    command = f"sudo chown -R aridome:aridome {output_dir}"
+    # コマンドを実行
+    subprocess.call(command, shell=True)
+
 # ファイル名を生成
 output_file_name_A = 'test.png'
 output_file_name_B = 'chg_position.png'
@@ -135,6 +141,9 @@ output_file_path = os.path.join(output_dir2, output_file_name)
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir2):
     os.makedirs(output_dir2)
+    command = f"sudo chown -R aridome:aridome {output_dir2}"
+    # コマンドを実行
+    subprocess.call(command, shell=True)
 
 # 画像を保存する
 cv2.imwrite(output_file_path, target_image)

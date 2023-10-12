@@ -1,5 +1,12 @@
 FROM python:3.9-buster
 
+# sudoをインストール
+RUN apt-get update && apt-get install -y sudo
+
+# Dockerfile内でユーザーとグループを設定
+RUN useradd -m -s /bin/bash aridome
+RUN usermod -aG sudo aridome
+
 # pythonで画像処理を行うのに必要
 RUN pip install selenium==4.10.0 pytest Pillow Selenium-Screenshot 
 RUN pip install beautifulsoup4 
