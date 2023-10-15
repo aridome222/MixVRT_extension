@@ -25,10 +25,10 @@ output_file_path_A = os.path.join(output_dir, output_file_name_A)
 
 img1 = cv2.imread(output_file_path_A)
 
-# # コントラストと明るさを調整する
-# alpha = 2.0 # コントラストのスケールファクター
-# beta = 50 # 明るさのオフセット
-# dst = cv2.convertScaleAbs(img1, alpha=alpha, beta=beta)
+# コントラストと明るさを調整する
+alpha = 0.5 # コントラストのスケールファクター
+beta = 50 # 明るさのオフセット
+dst = cv2.convertScaleAbs(img1, alpha=alpha, beta=beta)
 
 img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
 
@@ -116,7 +116,7 @@ if not os.path.exists(output_dir2):
 output_file_path = os.path.join(output_dir2, output_file_name)
 
 # 画像を保存する
-cv2.imwrite(output_file_path, img1_bin)
+cv2.imwrite(output_file_path, dst)
 
 print(f"2つの画像の差異部分に枠をつけたカラー画像を{output_file_path}に保存しました")
 
