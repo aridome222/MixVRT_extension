@@ -19,7 +19,7 @@ if not os.path.exists(output_dir):
     subprocess.call(command, shell=True)
 
 # ファイル名を生成
-output_file_name_A = '1_form.png'
+output_file_name_A = '1_input.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 
