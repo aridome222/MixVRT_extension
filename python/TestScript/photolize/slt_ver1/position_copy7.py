@@ -19,66 +19,30 @@ if not os.path.exists(output_dir):
     subprocess.call(command, shell=True)
 
 # ファイル名を生成
-output_file_name_A = 'base.png'
+output_file_name_A = '1_form.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 
 img1 = cv2.imread(output_file_path_A)
 
-# コントラストと明るさを調整する
-alpha = 0.5 # コントラストのスケールファクター
-beta = 50 # 明るさのオフセット
-dst = cv2.convertScaleAbs(img1, alpha=alpha, beta=beta)
-
 img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
 
-# 白以外の色を抽出する
-lower = np.array([0]) # 下限値（白より小さい値）
-upper = np.array([254]) # 上限値（白より小さい値）
-mask = cv2.inRange(img1_gray, lower, upper) # マスク画像を作成
-# 白以外の色を黒に変更する
-img1_gray[np.where(mask == 255)] = [0] # マスク画像の白い部分に対応する画像の画素を黒にする
-
-# # カーネルを準備（オープニング用）
-# kernel = np.ones((3,3),np.uint8)
-# # オープニング（収縮→膨張）実行 ノイズ除去
-# result = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)
-
-# # 二値化
-# ret, img1_bin = cv2.threshold(img1_gray,0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-
 # 二値化
-ret, img1_bin = cv2.threshold(img1_gray,0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-# # 閾値を半分にする
-# ret = ret / 2
-# # 再度二値化
-# ret, img1_bin = cv2.threshold(img1_gray,ret, 255, cv2.THRESH_BINARY)
-# # 閾値を半分にする
-# ret = ret / 2
-# # 再度二値化
-# ret, img1_bin = cv2.threshold(img1_gray,ret, 255, cv2.THRESH_BINARY)
-# # 閾値を半分にする
-# ret = ret / 2
-# # 再度二値化
-# ret, img1_bin = cv2.threshold(img1_gray,ret, 255, cv2.THRESH_BINARY)
-# # 閾値を半分にする
-# ret = ret / 2
-# # 再度二値化
-# ret, img1_bin = cv2.threshold(img1_gray,ret, 255, cv2.THRESH_BINARY)
-# # 閾値を半分にする
-# ret = ret / 2
-# # 再度二値化
-# ret, img1_bin = cv2.threshold(img1_gray,ret, 255, cv2.THRESH_BINARY)
-
+ret, img1_bin = cv2.threshold(img1_gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 # カーネルを準備（オープニング用）
 kernel = np.ones((2,2),np.uint8)
 # オープニング（収縮→膨張）実行 ノイズ除去
 result_bin1 = cv2.morphologyEx(img1_bin, cv2.MORPH_OPEN, kernel) # オープニング（収縮→膨張）。ノイズ除去。
 
+# # 適応的閾値処理を行う（各ピクセルの周囲の領域におけるガウシアン重みつき平均値を採用、画像のコントラストが比較的高い場合に適している）
+# img1_bin = cv2.adaptiveThreshold(img1_gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 11, 2)
+# # 適応的閾値処理を行う（各ピクセルの周囲の領域における平均値を採用、画像のコントラストが低い場合に有用で、ノイズに対して頑健）
+# img1_bin = cv2.adaptiveThreshold(img1_gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
+
 # エッジ検出を行う 
 threshold1 = 100
 threshold2 = 300
-edges1 = cv2.Canny(result_bin1, threshold1, threshold2)  # 適切な閾値を設定
+edges1 = cv2.Canny(img1_bin, threshold1, threshold2)  # 適切な閾値を設定
 
 # 二値画像をRGB形式に変換
 result_bin1_rgb = cv2.cvtColor(edges1, cv2.COLOR_GRAY2RGB)
@@ -116,7 +80,7 @@ if not os.path.exists(output_dir2):
 output_file_path = os.path.join(output_dir2, output_file_name)
 
 # 画像を保存する
-cv2.imwrite(output_file_path, dst)
+cv2.imwrite(output_file_path, edges1)
 
 print(f"2つの画像の差異部分に枠をつけたカラー画像を{output_file_path}に保存しました")
 
