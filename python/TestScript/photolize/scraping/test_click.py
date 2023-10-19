@@ -38,19 +38,42 @@ class TestClick():
     self.driver.set_window_size(1463, 1032)
     self.driver.find_element(By.ID, "input-7").click()
     self.driver.find_element(By.ID, "input-7").send_keys("company_code26")
-    time.sleep(2)
-    x = 796
-    y = 893
+    # クリックした要素を取得
+    element = self.driver.switch_to.active_element
+    # 属性値を取得
+    id = element.get_attribute("id")
+    value = element.get_attribute("value")
+    print("")
+    print("")
+    print("＜取得した情報＞")
+    print(id)
+    print(value)
+    # self.driver.find_element(By.CSS_SELECTOR, ".v-btn__content").click()
+    element = self.driver.find_element(By.CSS_SELECTOR, ".v-btn__content")
+    # element.click()
+    # coordinate_click(self, element)
+    loc = element.location
+    x, y = loc['x'], loc['y']
+    # print(x)
+    # print(y)
     actions = ActionChains(self.driver)
-    actions.move_to_element_with_offset(self.driver.find_element(By.TAG_NAME, 'body'), x, y).click().perform()
-    time.sleep(2)
+    actions.move_by_offset(x, y)
+    # actions.move_to_element_with_offset(self.driver.find_element(By.TAG_NAME, 'body'), x, y)
+    actions.click()
+    time.sleep(1)
+    actions.perform()
+    time.sleep(1)
     self.driver.find_element(By.ID, "input-11").send_keys("aridome")
     self.driver.find_element(By.ID, "input-14").send_keys("aridome")
-    x = 1203
-    y = 540
+    # self.driver.find_element(By.CSS_SELECTOR, ".btn > .v-btn__content").click()
+    element = self.driver.find_element(By.CSS_SELECTOR, ".btn > .v-btn__content")
+    loc = element.location
+    x, y = loc['x'], loc['y']
+    print(x)
+    print(y)
     actions = ActionChains(self.driver)
-    actions.move_to_element_with_offset(self.driver.find_element(By.TAG_NAME, 'body'), x, y).click().perform()
-    time.sleep(2)
+    actions.move_by_offset(x, y)
+    time.sleep(1)
     
     # ## 有留アプリテストを選択
     # # 直接飛ぶ
@@ -95,6 +118,18 @@ class TestClick():
 
     # 画面を閉じる
     self.driver.close()
+  
+def coordinate_click(self, element):
+  ### 要素の（x, y）座標をActionChainsを使用してクリックする ###
+  loc = element.location
+  x, y = loc['x'], loc['y']
+  print(x)
+  print(y)
+  actions = ActionChains(self.driver)
+  actions.move_to_element_with_offset(self.driver.find_element(By.TAG_NAME, 'body'), x, y)
+  actions.click().perform()
+  # actions.move_by_offset(x, y)
+  # actions.click().perform()
 
 def get_id_from_body(self, keyWord):
   ### HTMLのbody部分から一致した要素をtxtファイルに出力する ###
