@@ -23,6 +23,7 @@ class Test_label_snapShot():
     # options.add_argument('--headless')  # ヘッドレスモードでブラウザを起動
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
+    # options.add_argument('--blink-settings=imagesEnabled=false') # あらかじめChromeの画像を非表示にして開く
     self.driver = webdriver.Remote(command_executor='http://chrome:4444/wd/hub', options=options)
     self.driver.implicitly_wait(10) # 10秒まで待機する
     self.vars = {}

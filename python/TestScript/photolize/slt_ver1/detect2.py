@@ -52,46 +52,17 @@ for cnt in contours:
         approx = cv2.approxPolyDP(cnt,epsilon,True)
         selected_contours.append(approx)
 
-# # 別の画像に輪郭を描画する
-# # result = np.zeros_like(img1)
-# cv2.drawContours(img1, selected_contours, -1, color=255, thickness=2)
-
 # 別の画像に輪郭を描画する
 # result = np.zeros_like(img1)
-result = np.full_like(img1, 255)
-cv2.drawContours(result, selected_contours, -1, color=255, thickness=2)
+cv2.drawContours(img1, selected_contours, -1, color=255, thickness=2)
 
-
-# ファイル名を生成
-output_file_name_B = 'base.png'
-# ファイルパスを作成
-output_file_path_B = os.path.join(output_dir, output_file_name_B)
-img2 = cv2.imread(output_file_path_B)
-
-# 特定の色（青色）の範囲を指定してマスクを作成します
-lower_blue = np.array([100, 0, 0])  # 下限のBGR値
-upper_blue = np.array([255, 100, 100])  # 上限のBGR値
-mask = cv2.inRange(img1, lower_blue, upper_blue)
-
-# マスクを使用して特定の色の部分を抽出します
-blue_part = cv2.bitwise_and(img1, img1, mask=mask)
-
-# マスクの非ゼロの位置を取得します
-non_zero_indices = np.nonzero(mask)
-
-# 抽出した部分をimage2に貼り付けます
-result = img2.copy()
-for i in range(len(non_zero_indices[0])):
-    row, col = non_zero_indices[0][i], non_zero_indices[1][i]
-    result[row, col] = blue_part[row, col]
-
-# # 輪郭に番号を付ける
-# font = cv2.FONT_HERSHEY_SIMPLEX # フォントの種類
-# font_size = 0.5 # フォントのサイズ
-# font_color = (0, 0, 255) # フォントの色（BGR）
-# for i, cnt in enumerate(selected_contours):
-#     x, y, w, h = cv2.boundingRect(cnt) # 矩形領域の座標と幅と高さを取得
-#     cv2.putText(img1, str(i+1), (x+w//2, y+h//2), font, font_size, font_color) # 矩形領域の中心に番号を描画
+# 輪郭に番号を付ける
+font = cv2.FONT_HERSHEY_SIMPLEX # フォントの種類
+font_size = 0.5 # フォントのサイズ
+font_color = (0, 0, 255) # フォントの色（BGR）
+for i, cnt in enumerate(selected_contours):
+    x, y, w, h = cv2.boundingRect(cnt) # 矩形領域の座標と幅と高さを取得
+    cv2.putText(img1, str(i+1), (x+w//2, y+h//2), font, font_size, font_color) # 矩形領域の中心に番号を描画
 
 # # 輪郭から矩形領域の座標情報を取得する
 # rectangles = []
@@ -102,22 +73,22 @@ for i in range(len(non_zero_indices[0])):
 # # 矩形領域の座標情報を表示する
 # print(rectangles)
 
-# # 輪郭から矩形領域の座標情報を取得する
-# rectangles = []
-# for cnt in selected_contours:
-#     x, y, w, h = cv2.boundingRect(cnt) # x, yは左上の座標、w, hは幅と高さ
-#     rectangles.append((x, y, w, h))
+# 輪郭から矩形領域の座標情報を取得する
+rectangles = []
+for cnt in selected_contours:
+    x, y, w, h = cv2.boundingRect(cnt) # x, yは左上の座標、w, hは幅と高さ
+    rectangles.append((x, y, w, h))
 
-# # 矩形領域の数をカウント
-# num_rectangles = len(rectangles)
-# print(f"＜入力欄の数＞: {num_rectangles}個\n")
+# 矩形領域の数をカウント
+num_rectangles = len(rectangles)
+print(f"＜入力欄の数＞: {num_rectangles}個\n")
 
-# # 矩形領域の座標情報をひとつずつ表示する
-# for i, rect in enumerate(rectangles):
-#     print(f"入力欄{i+1}の座標: ({rect[0]}, {rect[1]})")
-#     print(f"入力欄{i+1}の幅: {rect[2]}")
-#     print(f"入力欄{i+1}の高さ: {rect[3]}")
-#     print()
+# 矩形領域の座標情報をひとつずつ表示する
+for i, rect in enumerate(rectangles):
+    print(f"入力欄{i+1}の座標: ({rect[0]}, {rect[1]})")
+    print(f"入力欄{i+1}の幅: {rect[2]}")
+    print(f"入力欄{i+1}の高さ: {rect[3]}")
+    print()
 
 
 # img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
@@ -175,7 +146,7 @@ if not os.path.exists(output_dir2):
 output_file_path = os.path.join(output_dir2, output_file_name)
 
 # 画像を保存する
-cv2.imwrite(output_file_path, result)
+cv2.imwrite(output_file_path, img1)
 
 print(f"2つの画像の差異部分に枠をつけたカラー画像を{output_file_path}に保存しました")
 
