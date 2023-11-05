@@ -1,7 +1,7 @@
 FROM python:3.9-buster
 
-# sudoをインストール
-RUN apt-get update && apt-get install -y sudo
+# sudoとtzdataをインストール
+RUN apt-get update && apt-get install -y sudo tzdata
 
 # Dockerfile内でユーザーとグループを設定
 RUN useradd -m -s /bin/bash aridome
