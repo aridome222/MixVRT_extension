@@ -7,24 +7,60 @@ import numpy as np
 import subprocess
 import math
 
+
+def update_text_positions(contour, text_positions, threshold_distance):
+    """検出した枠において、近い枠同士を結合する"""
+    x, y, w, h = cv2.boundingRect(contour)
+    center_x, center_y = x + w // 2, y + h // 2
+    
+    is_added_to_existing = False
+    for text_position in text_positions:
+        dist = np.sqrt((center_x - text_position[0]) ** 2 + (center_y - text_position[1]) ** 2)
+        if dist < threshold_distance:
+            text_position[0] = (text_position[0] + center_x) // 2
+            text_position[1] = (text_position[1] + center_y) // 2
+            text_position[2] = min(text_position[2], x)
+            text_position[3] = min(text_position[3], y)
+            text_position[4] = max(text_position[4], x + w)
+            text_position[5] = max(text_position[5], y + h)
+            is_added_to_existing = True
+            break
+    
+    if not is_added_to_existing:
+        text_positions.append([x, y, x + w, y + h])
+
+
+def filter_contours_by_area(contours, threshold_area):
+    """面積が一定以下の枠を除外"""
+    filtered_contours = []
+    
+    for contour in contours:
+        area = cv2.contourArea(contour)
+        
+        if area > threshold_area:
+            filtered_contours.append(contour)
+    
+    return filtered_contours
+
+
 # 保存先ディレクトリを作成
 output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/")
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
-output_file_name_A = 'before.png'
-output_file_name_B = 'after.png'
+output_file_name_A = 'base.png'
+output_file_name_B = 'chg_fontSize.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
 
-img1 = cv2.imread(output_file_path_A)
-img2 = cv2.imread(output_file_path_B)
+before_img = cv2.imread(output_file_path_A)
+after_img = cv2.imread(output_file_path_B)
 
 # clahe = cv2.createCLAHE(clipLimit=30.0, tileGridSize=(10, 10))
-img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
-img2_gray = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
+before_gray = cv2.cvtColor(before_img, cv2.COLOR_BGR2GRAY)
+after_gray = cv2.cvtColor(after_img, cv2.COLOR_BGR2GRAY)
 # img1_gray = clahe.apply(img1_gray)
 # img2_gray = clahe.apply(img2_gray)
 
@@ -34,111 +70,58 @@ img2_gray = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
 # print("img1_gray shape:", img1_gray.shape)
 # print("img2_gray shape:", img2_gray.shape)
 
-
-# width = 3423
-# height = 3484
-# # 画像のサイズを一致させる
-# img1_gray = cv2.resize(img1_gray, (width, height))  # widthとheightは適切なサイズに置き換える
-# img2_gray = cv2.resize(img2_gray, (width, height))
-
 # 画像の差分を計算
-diff = cv2.absdiff(img1_gray, img2_gray)
+diff = cv2.absdiff(before_gray, after_gray)
 ret, diff = cv2.threshold(diff, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 diff = cv2.GaussianBlur(diff, (11, 11), 0)
 
 ### 枠づけ ###
 red_rectangles = []  # 赤枠の情報を格納するリスト
 green_rectangles = []  # 緑枠の情報を格納するリスト
-text_positions1 = []  # 変更前画像から変更後画像を引いた差分画像における、文字の位置情報を格納するリスト
-text_positions2 = []  # 変更後画像から変更前画像を引いた差分画像における、文字の位置情報を格納するリスト
+text_positions_before = []  # 変更前画像から変更後画像を引いた差分画像における、文字の位置情報を格納するリスト
+text_positions_after = []  # 変更後画像から変更前画像を引いた差分画像における、文字の位置情報を格納するリスト
 all_text_positions = []  # 上記２つのリストを足し合わせた、文字の位置情報を格納するリスト
-correct_contours1 = [] # text_position1の枠の中心座標を取り除いた、枠の情報を格納するリスト
-correct_contours2 = [] # text_position2の枠の中心座標を取り除いた、枠の情報を格納するリスト
-threshold_distance = 100
+correct_contours_before = [] # text_position1の枠の中心座標を取り除いた、枠の情報を格納するリスト
+correct_contours_after = [] # text_position2の枠の中心座標を取り除いた、枠の情報を格納するリスト
 
 # 二値化
-ret, img1_bin = cv2.threshold(img1_gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-img1_bin = cv2.GaussianBlur(img1_bin, (11, 11), 0)
-ret, img2_bin = cv2.threshold(img2_gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-img2_bin = cv2.GaussianBlur(img2_bin, (11, 11), 0)
+ret, before_bin = cv2.threshold(before_gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+before_bin = cv2.GaussianBlur(before_bin, (11, 11), 0)
+ret, after_bin = cv2.threshold(after_gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+after_bin = cv2.GaussianBlur(after_bin, (11, 11), 0)
 
 # 白黒を逆にする
-img1_bin_reverse = cv2.bitwise_not(img1_bin)
-img2_bin_reverse = cv2.bitwise_not(img2_bin)
+before_bin_reverse = cv2.bitwise_not(before_bin)
+after_bin_reverse = cv2.bitwise_not(after_bin)
 
 # 画像Aから画像Bを引くことで1枚目の画像の差分のみを取得
-diff_before = cv2.subtract(img1_bin_reverse, img2_bin_reverse)
-diff_after = cv2.subtract(img2_bin_reverse, img1_bin_reverse)
+diff_before = cv2.subtract(before_bin_reverse, after_bin_reverse)
+diff_after = cv2.subtract(after_bin_reverse, before_bin_reverse)
 
-# 差分画像に輪郭を描画
-contours1, _ = cv2.findContours(diff_before, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-contours2, _ = cv2.findContours(diff_after, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-all_contours = contours1 + contours2
-print("抽出された枠の数:", len(all_contours))
+# 差分画像内の輪郭を検出
+contours_before, _ = cv2.findContours(diff_before, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+contours_after, _ = cv2.findContours(diff_after, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+all_contours = contours_before + contours_after
+print("検出した枠の数:", len(all_contours))
+
+# 面積が一定以下の輪郭を除外
+threshold_area = 200  # 一定の面積の閾値（適宜調整する）
+filtered_contours_before = filter_contours_by_area(contours_before, threshold_area)
+filtered_contours_after = filter_contours_by_area(contours_after, threshold_area)
+filtered_all_contours = filtered_contours_before + filtered_contours_after
+print("結合処理後の枠の数:", len(filtered_all_contours))
+
+threshold_distance = 100
+# 各枠に対して処理を行う
+for contour in filtered_contours_before:
+    update_text_positions(contour, text_positions_before, threshold_distance)
 
 # 各枠に対して処理を行う
-for contour in contours1:
-    x, y, w, h = cv2.boundingRect(contour)
-    # 枠の中心座標を計算
-    center_x = x + w // 2
-    center_y = y + h // 2
-    
-    # 既存の文字と近くにある場合、同じ枠に追加
-    is_added_to_existing = False
-    for text_position in text_positions1:
-        dist = np.sqrt((center_x - text_position[0]) ** 2 + (center_y - text_position[1]) ** 2)
-        if dist < threshold_distance:  # 適切な距離の閾値を設定
-            text_position[0] = (text_position[0] + center_x) // 2  # 中心座標を更新
-            text_position[1] = (text_position[1] + center_y) // 2
-            text_position[2] = min(text_position[2], x)  # 枠の左上座標を更新
-            text_position[3] = min(text_position[3], y)
-            text_position[4] = max(text_position[4], x + w)  # 枠の右下座標を更新
-            text_position[5] = max(text_position[5], y + h)
-            is_added_to_existing = True
-            break
-    
-    # 新しい枠として追加
-    if not is_added_to_existing:
-        text_positions1.append([center_x, center_y, x, y, x + w, y + h])
+for contour in filtered_contours_after:
+    update_text_positions(contour, text_positions_after, threshold_distance)
 
-        # 各枠に対して処理を行う
-for contour in contours2:
-    x, y, w, h = cv2.boundingRect(contour)
-    # 枠の中心座標を計算
-    center_x = x + w // 2
-    center_y = y + h // 2
-    
-    # 既存の文字と近くにある場合、同じ枠に追加
-    is_added_to_existing = False
-    for text_position in text_positions2:
-        dist = np.sqrt((center_x - text_position[0]) ** 2 + (center_y - text_position[1]) ** 2)
-        if dist < threshold_distance:  # 適切な距離の閾値を設定
-            text_position[0] = (text_position[0] + center_x) // 2  # 中心座標を更新
-            text_position[1] = (text_position[1] + center_y) // 2
-            text_position[2] = min(text_position[2], x)  # 枠の左上座標を更新
-            text_position[3] = min(text_position[3], y)
-            text_position[4] = max(text_position[4], x + w)  # 枠の右下座標を更新
-            text_position[5] = max(text_position[5], y + h)
-            is_added_to_existing = True
-            break
-    
-    # 新しい枠として追加
-    if not is_added_to_existing:
-        text_positions2.append([center_x, center_y, x, y, x + w, y + h])
-
-all_text_positions = text_positions1 + text_positions2
-
-# 適切な枠の情報をもつリストの作成
-for position in text_positions1:
-    x1, y1, x2, y2 = position[2:]
-    correct_contours1.append([x1, y1, x2-x1, y2-y1])
-
-# 適切な枠の情報をもつリストの作成
-for position in text_positions2:
-    x1, y1, x2, y2 = position[2:]
-    correct_contours2.append([x1, y1, x2-x1, y2-y1])
-
-print("検出された枠ペア数:", int(len(all_text_positions)/2))
+all_text_positions = text_positions_before + text_positions_after
+print("枠ペア数:", int(len(all_text_positions)/2))
 
 # # 枠を描画
 # for c in correct_contours:
@@ -155,21 +138,21 @@ print("検出された枠ペア数:", int(len(all_text_positions)/2))
 #             green_rectangles.append((x, y, w, h))
 
 # 枠を描画
-for c in correct_contours1:
+for c in correct_contours_before:
     x, y, w, h = c
 
     if w > 1 and h > 1:
         # 差異が２枚目の画像で大きい場合、赤色で表示
-        cv2.rectangle(img1, (x, y), (x + w, y + h), (0, 0, 255), 3)
+        cv2.rectangle(before_img, (x, y), (x + w, y + h), (0, 0, 255), 3)
         red_rectangles.append((x, y, w, h))
 
 # 枠を描画
-for c in correct_contours2:
+for c in correct_contours_after:
     x, y, w, h = c
 
     if w > 1 and h > 1:
         # 差異が１枚目の画像で大きい場合、緑色で表示
-        cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 255, 0), 4)
+        cv2.rectangle(after_img, (x, y), (x + w, y + h), (0, 255, 0), 4)
         green_rectangles.append((x, y, w, h))
 
 # red_rectangles の各矩形を x^2 + y^2 の和で昇順にソートする
@@ -234,12 +217,12 @@ for i, (x1, y1, w1, h1) in enumerate(red_rectangles, start=1):
 
 # 赤枠に番号を割り振りながら座標を出力
 for i, (x, y, w, h) in enumerate(red_rectangles, start=1):
-    cv2.putText(img1, str(i), (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+    cv2.putText(before_img, str(i), (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
     print(f"赤枠{i:2}: x座標 ={x:5}, y座標 ={y:5}, 幅 ={w:4}, 高さ ={h:3}")
 
 # 緑枠に番号を割り振りながら座標を出力
 for i, (x, y, w, h) in enumerate(green_rectangles, start=1):
-    cv2.putText(img2, str(i), (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3)
+    cv2.putText(after_img, str(i), (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3)
     print(f"緑枠{i:2}: x座標 ={x:5}, y座標 ={y:5}, 幅 ={w:4}, 高さ ={h:3}")
 
 
@@ -296,13 +279,13 @@ if not os.path.exists(output_dir2):
 output_file_path = os.path.join(output_dir2, output_file_name1)
 
 # 画像を保存する
-cv2.imwrite(output_file_path, img1)
+cv2.imwrite(output_file_path, before_img)
 
 # ファイルパスを作成
 output_file_path = os.path.join(output_dir2, output_file_name2)
 
 # 画像を保存する
-cv2.imwrite(output_file_path, img2)
+cv2.imwrite(output_file_path, after_img)
 
 print(f"2つの画像の差異部分に枠をつけたカラー画像をに保存しました")
 

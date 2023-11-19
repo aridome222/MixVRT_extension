@@ -1,4 +1,5 @@
 # 成功作
+# 差分領域の検出ができているかを確認するようのプログラム
 # 連番の色枠付き画像を生成＆対応する赤枠と緑枠を出力＆赤枠と緑枠の座標と幅と高さを出力＆配置の差異判定
 # 参考サイト：https://sosotata.com/spot7differences/
 import cv2
@@ -22,14 +23,14 @@ output_file_path_B = os.path.join(output_dir, output_file_name_B)
 img1 = cv2.imread(output_file_path_A)
 img2 = cv2.imread(output_file_path_B)
 
-# clahe = cv2.createCLAHE(clipLimit=30.0, tileGridSize=(10, 10))
+clahe = cv2.createCLAHE(clipLimit=30.0, tileGridSize=(10, 10))
 img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
 img2_gray = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
-# img1_gray = clahe.apply(img1_gray)
-# img2_gray = clahe.apply(img2_gray)
+img1_gray = clahe.apply(img1_gray)
+img2_gray = clahe.apply(img2_gray)
 
-# img1_gray = cv2.GaussianBlur(img1_gray, (13, 13), 0)
-# img2_gray = cv2.GaussianBlur(img2_gray, (13, 13), 0)
+img1_gray = cv2.GaussianBlur(img1_gray, (13, 13), 0)
+img2_gray = cv2.GaussianBlur(img2_gray, (13, 13), 0)
 
 # print("img1_gray shape:", img1_gray.shape)
 # print("img2_gray shape:", img2_gray.shape)
