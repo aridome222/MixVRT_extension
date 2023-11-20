@@ -105,11 +105,11 @@ all_contours = contours_before + contours_after
 print("検出した枠の数:", len(all_contours))
 
 # 面積が一定以下の輪郭を除外
-threshold_area = 0  # 一定の面積の閾値（適宜調整する）
+threshold_area = 150  # 一定の面積の閾値（適宜調整する）
 filtered_contours_before = filter_contours_by_area(contours_before, threshold_area)
 filtered_contours_after = filter_contours_by_area(contours_after, threshold_area)
 filtered_all_contours = filtered_contours_before + filtered_contours_after
-print("結合処理後の枠の数:", len(filtered_all_contours))
+print("微小輪郭除去後の枠の数:", len(filtered_all_contours))
 
 threshold_distance = 100
 # 各枠に対して処理を行う
