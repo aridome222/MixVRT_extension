@@ -205,8 +205,8 @@ output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
-output_file_name_A = 'before.png'
-output_file_name_B = 'after.png'
+output_file_name_A = 'base.png'
+output_file_name_B = 'chg_fontSize.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
@@ -339,9 +339,12 @@ for i, (x, y, w, h) in enumerate(green_rectangles, start=1):
 
 """
 ### 配置の差分が検出されたか判定 ###
-# 座標の違いから配置の差分を検出
-detect_pos_diff(match_list)
-
+# 対応する枠ペアに対して、座標の違いから配置の差分を検出
+diff_pos_count = detect_pos_diff(match_list)
+if diff_pos_count > 0:
+    print(f"{RED_TEXT_START}配置の差異を {diff_pos_count} 箇所検出しました{RED_TEXT_END}")
+else:
+    print(f"{GREEN_TEXT_START}配置の差異はありません{GREEN_TEXT_END}")
 
 """ 
 
