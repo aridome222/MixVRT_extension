@@ -19,13 +19,14 @@ if not os.path.exists(output_dir):
     subprocess.call(command, shell=True)
 
 # ファイル名を生成
-output_file_name_A = '1_input.png'
+output_file_name_A = 'base.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 
 img1 = cv2.imread(output_file_path_A)
 
 img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
+img1_gray = cv2.GaussianBlur(img1_gray, (11, 11), 0)
 
 # 二値化
 ret, img1_bin = cv2.threshold(img1_gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
