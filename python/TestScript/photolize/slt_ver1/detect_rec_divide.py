@@ -76,7 +76,7 @@ def update_text_positions(contour, text_positions, threshold_distance=100):
         text_positions.append([center_x, center_y, x, y, x + w, y + h])
 
 
-def filter_contours_by_area(contours, threshold_area=50):
+def filter_contours_by_area(contours, threshold_area=150):
     """
     一定の面積以下の輪郭を除外する関数
 

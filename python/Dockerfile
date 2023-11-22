@@ -29,3 +29,15 @@ RUN apt-get install -y poppler-utils
 # スクレイングするのに必要
 RUN pip install beautifulsoup4 
 RUN pip install regex
+
+# Tesseract-OCRに必要
+RUN sudo apt-get install -y tesseract-ocr
+RUN sudo apt-get install tesseract-ocr-jpn
+RUN sudo apt-get install tesseract-ocr-eng
+RUN pip install pytesseract
+
+# Azure-ComputerVisionに必要
+RUN pip install azure-cognitiveservices-vision-computervision
+
+# Azure-OCRに必要
+RUN pip install azure-ai-formrecognizer

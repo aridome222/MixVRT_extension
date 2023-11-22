@@ -1,13 +1,21 @@
 # 成功作
-# 連番の色枠付き画像を生成＆対応する赤枠と緑枠を出力＆赤枠と緑枠の座標と幅と高さを出力＆配置の差異判定
-# 参考サイト：https://sosotata.com/spot7differences/
+# AzureOCRを用いた、画像内のテキストの矩形検出＆描画
+# azure.cognitiveservices.vision.computervisionを使用
+# Tesseractよりかは断然良い
+# ただ、まだテキスト輪郭の検出が微妙
+
 import cv2
 import os
 import numpy as np
 import subprocess
 import math
+import pytesseract
+
+import time
+import io
 
 
+# 色コード
 RED_TEXT_START = "\033[91m"
 RED_TEXT_END = "\033[0m"
 GREEN_TEXT_START = "\033[92m"
@@ -24,6 +32,7 @@ def str_red(text):
     Returns:
     - decorated_text (str): 赤色で装飾された文字列
     """
+
     # return text
     return f"{RED_TEXT_START}{text}{RED_TEXT_END}"
 
@@ -38,6 +47,7 @@ def str_green(text):
     Returns:
     - decorated_text (str): 緑色で装飾された文字列
     """
+
     # return text
     return f"{GREEN_TEXT_START}{text}{GREEN_TEXT_END}"
 
@@ -56,6 +66,7 @@ def update_text_positions(contour, text_positions, threshold_distance=100):
     近い枠同士を結合する。結合された場合は既存のテキスト位置情報を更新し、
     結合されない場合は新しいテキスト位置情報を追加する。
     """
+
     x, y, w, h = cv2.boundingRect(contour)
     center_x, center_y = x + w // 2, y + h // 2
     
@@ -169,6 +180,7 @@ def detect_pos_diff(match_list, tolerance=5):
     Returns:
     - count (int): 配置の差異が検出された箇所の数
     """
+
     count = 0
 
     for i, (red_point, green_point, red_rect, green_rect) in enumerate(match_list, start=1):
@@ -194,6 +206,79 @@ def detect_pos_diff(match_list, tolerance=5):
     return count
 
 
+# def get_text_and_pos(path):
+#     """
+#     画像からテキストの内容と位置を返す関数
+
+#     Parameters:
+#     -  path (str): 画像のパス
+
+#     Returns:
+#     - text_list (list): テキストの内容が格納されたリスト
+#     - position_list (list): テキストの位置が格納されたリスト
+#     """
+
+#     # 画像を読み込む
+#     img = cv2.imread(path)
+
+#     # 画像の形式を取得する
+#     _, ext = os.path.splitext(path) # 拡張子を取得する
+#     ext = ext.lower() # 小文字に変換する
+#     if ext in [".jpg", ".jpeg"]: # JPEG形式の場合
+#         format = ".jpg"
+#     elif ext in [".png"]: # PNG形式の場合
+#         format = ".png"
+#     else: # その他の形式の場合
+#         format = ".png" # PNG形式に変換する
+
+#     # 画像を指定した形式にエンコードする
+#     _, img_encoded = cv2.imencode(format, img)
+
+#     # 画像をバイト列に変換する
+#     img_bytes = io.BytesIO(img_encoded)
+
+#     # readメソッドを呼び出して、非同期に画像からテキストを抽出する
+#     # 引数には、画像のストリームと言語を指定する
+#     # raw=Trueとすることで、レスポンスのヘッダーにオペレーションIDが含まれる
+#     response = client.read_in_stream(img_bytes, language="auto", raw=True)
+#     # response = client.read_in_stream(img_bytes, language="ja", raw=True)
+#     # response = client.read_in_stream(img_bytes, language="en", raw=True)
+
+#     # 結果を取得するためのオペレーションIDを取得する
+#     # ヘッダーのOperation-LocationからオペレーションIDを抽出する
+#     operation_location = response.headers["Operation-Location"]
+#     operation_id = operation_location.split("/")[-1]
+
+#     # 結果が準備できるまで待つ
+#     # get_read_resultメソッドで結果のステータスを確認する
+#     # ステータスがnot_startedまたはrunningでなければ、結果が準備できたと判断する
+#     # 1秒ごとにステータスを確認する
+#     while True:
+#         result = client.get_read_result(operation_id)
+#         if result.status not in [OperationStatusCodes.not_started, OperationStatusCodes.running]:
+#             break
+#         time.sleep(1)
+
+#     # 結果を返す
+#     if result.status == OperationStatusCodes.succeeded:
+#         # テキストの内容と位置を格納するリストを作成する
+#         text_list = []
+#         position_list = []
+#         # 画像内の各テキスト行に対して
+#         for line in result.analyze_result.read_results[0].lines:
+#             # テキストの内容と位置を取得する
+#             text = line.text
+#             bbox = line.bounding_box
+#             # テキストの内容と位置をリストに追加する
+#             text_list.append(text)
+#             position_list.append(bbox)
+#         # テキストの内容と位置のリストを返す
+#         return text_list, position_list
+#     else:
+#         # エラーが発生した場合は、Noneを返す
+#         return None
+
+
 """ 
 
     前処理（画像の読み込み＆画像処理）
@@ -210,20 +295,19 @@ output_file_name_A = 'before.png'
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 
 # 画像読み込み
-before_img = cv2.imread(output_file_path_A)
+img = cv2.imread(output_file_path_A)
 
 # 画像処理（グレースケール化＆平滑化＆ぼかし）
-before_gray = cv2.cvtColor(before_img, cv2.COLOR_BGR2GRAY)
+img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # ヒストグラム均等化は全ての画素の輝度値を均等に分布する。
 # 画像内の局所的な部分（極端に明るいor暗い部分）があると、
 # その部分のコントラスが強調されてしまう。
 # また、ノイズが強い場合、均等化によりノイズが増幅されてしまう。
 # clahe = cv2.createCLAHE(clipLimit=30.0, tileGridSize=(10, 10))
-# before_gray = clahe.apply(before_gray)
-# after_gray = clahe.apply(after_gray)
+# img_gray = clahe.apply(img_gray)
 
-# before_gray = cv2.GaussianBlur(before_gray, (11, 11), 0)
+# img_gray = cv2.GaussianBlur(img_gray, (11, 11), 0)
 
 ### 枠づけ ###
 red_rectangles = []  # 赤枠の情報を格納するリスト
@@ -233,11 +317,11 @@ all_text_positions = []  # 上記２つのリストを足し合わせた、文�
 correct_contours = [] # 赤枠の情報（左上隅座標(x, y)と幅、高さ）を格納するリスト
 
 # 二値化
-ret, before_bin = cv2.threshold(before_gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-# before_bin = cv2.GaussianBlur(before_bin, (11, 11), 0)
+ret, img_bin = cv2.threshold(img_gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+# img_bin = cv2.GaussianBlur(img_bin, (11, 11), 0)
 
 # 白黒を逆にする
-before_bin_reverse = cv2.bitwise_not(before_bin)
+img_bin_reverse = cv2.bitwise_not(img_bin)
 
 
 """ 
@@ -245,53 +329,53 @@ before_bin_reverse = cv2.bitwise_not(before_bin)
     差分検出
 
 """
-# 差分画像内の輪郭を検出
-contours, hierarchy = cv2.findContours(before_bin_reverse, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
-# contours, hierarchy = cv2.findContours(before_bin_reverse, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+# # 差分画像内の輪郭を検出
+# contours, hierarchy = cv2.findContours(img_bin_reverse, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
+# # contours, hierarchy = cv2.findContours(img_bin_reverse, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 
 # internal_contours = [contour for contour in contours if len(cv2.approxPolyDP(contour, 0.12 * cv2.arcLength(contour, True), True)) > 3]
-# 内部の輪郭だけを取得
-internal_contours = []
-for i in range(len(contours)):
-    # 輪郭の階層構造を使用して親と子を判別
-    if hierarchy[0][i][3] != -1:
-        internal_contours.append(contours[i])
+# # 内部の輪郭だけを取得
+# internal_contours = []
+# for i in range(len(contours)):
+#     # 輪郭の階層構造を使用して親と子を判別
+#     if hierarchy[0][i][3] != -1:
+#         internal_contours.append(contours[i])
 
-print("\n---------------------------差分検出結果---------------------------")
-print("【 各処理後の枠数 】")
-print(f"・検出した{str_red('赤枠')}の数: {len(contours)}")
-print(f"・内部の輪郭の{str_red('赤枠')}の数: {len(internal_contours)}")
+# print("\n---------------------------差分検出結果---------------------------")
+# print("【 各処理後の枠数 】")
+# print(f"・検出した{str_red('赤枠')}の数: {len(contours)}")
+# print(f"・内部の輪郭の{str_red('赤枠')}の数: {len(internal_contours)}")
 
-# 面積が一定以下の輪郭を除外
-filtered_contours = filter_contours_by_area(internal_contours)
-print(f"・ノイズ除去後の{str_red('赤枠')}の数: {len(filtered_contours)}")
+# # 面積が一定以下の輪郭を除外
+# filtered_contours = filter_contours_by_area(internal_contours)
+# print(f"・ノイズ除去後の{str_red('赤枠')}の数: {len(filtered_contours)}")
 
 # # 赤枠に対して処理を行う
 # for contour in filtered_contours:
 #     update_text_positions(contour, text_positions)
 # print(f"・近接枠結合後の{str_red('赤枠')}の数: {len(text_positions)}")
 
-# 枠の左上隅座標・幅・高さの情報をもつリストの作成
-for position in filtered_contours:
-    x, y, w, h = cv2.boundingRect(position)
-    correct_contours.append([x, y, x + w, y + h])
+# # 枠の左上隅座標・幅・高さの情報をもつリストの作成
+# for position in filtered_contours:
+#     x, y, w, h = cv2.boundingRect(position)
+#     correct_contours.append([x, y, x + w, y + h])
 
-# 赤枠を描画
-for c in correct_contours:
-    x, y, w, h = c
+# # 赤枠を描画
+# for c in correct_contours:
+#     x, y, w, h = c
 
-    if w > 1 and h > 1:
-        # 差異が２枚目の画像で大きい場合、赤色で表示
-        cv2.rectangle(before_img, (x, y), (x + w, y + h), (0, 0, 255), 3)
-        red_rectangles.append((x, y, w, h))
+#     if w > 1 and h > 1:
+#         # 差異が２枚目の画像で大きい場合、赤色で表示
+#         cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 3)
+#         red_rectangles.append((x, y, w, h))
 
-# red_rectangles の各矩形を x^2 + y^2 の和で昇順にソートする
-red_rectangles.sort(key=lambda rect: math.sqrt(rect[0]**2 + rect[1]**2))
+# # red_rectangles の各矩形を x^2 + y^2 の和で昇順にソートする
+# red_rectangles.sort(key=lambda rect: math.sqrt(rect[0]**2 + rect[1]**2))
 
-# 赤枠に番号を割り振りながら座標を出力
-for i, (x, y, w, h) in enumerate(red_rectangles, start=1):
-    cv2.putText(before_img, str(i), (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
-    # print(f"赤枠{i:2}: x座標 ={x:5}, y座標 ={y:5}, 幅 ={w:4}, 高さ ={h:3}")
+# # 赤枠に番号を割り振りながら座標を出力
+# for i, (x, y, w, h) in enumerate(red_rectangles, start=1):
+#     cv2.putText(img, str(i), (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+#     # print(f"赤枠{i:2}: x座標 ={x:5}, y座標 ={y:5}, 幅 ={w:4}, 高さ ={h:3}")
 
 
 """ 
@@ -306,6 +390,24 @@ for i, (x, y, w, h) in enumerate(red_rectangles, start=1):
 #     print(f"{RED_TEXT_START}配置の差異を {diff_pos_count} 箇所検出しました{RED_TEXT_END}")
 # else:
 #     print(f"{GREEN_TEXT_START}配置の差異はありません{GREEN_TEXT_END}")
+
+
+""" 
+
+    画像内のテキストを囲む矩形を描画
+
+"""
+# OCRを実行してテキストと矩形情報を取得
+result = pytesseract.image_to_data(img_gray, output_type=pytesseract.Output.DICT)
+
+# 矩形情報を取得
+boxes = zip(result['left'], result['top'], result['width'], result['height'])
+
+# 矩形を描画
+for box in boxes:
+    x, y, w, h = box
+    cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
 
 """ 
 
@@ -326,8 +428,8 @@ if not os.path.exists(output_dir2):
 output_file_path = os.path.join(output_dir2, output_file_name1)
 
 # 画像を保存する
-cv2.imwrite(output_file_path, before_img)
-# cv2.imwrite(output_file_path, before_bin_reverse)
+cv2.imwrite(output_file_path, img)
+# cv2.imwrite(output_file_path, img_bin_reverse)
 
 print("------------------------------------------------------------------\n")
 
