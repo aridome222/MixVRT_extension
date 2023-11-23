@@ -298,7 +298,7 @@ output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
-output_file_name_A = 'base.png'
+output_file_name_A = 'after.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 
@@ -615,7 +615,7 @@ else:
 
 """
 ### 差分画像を保存 ###
-output_file_name1 = "before.png"
+output_file_name1 = "after.png"
 output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "azure_cv_ocr")
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir2):

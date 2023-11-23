@@ -17,6 +17,7 @@ from datetime import datetime
 import difflib
 import subprocess
 
+import requests
 
 class TestScrap():
   def setup_method(self, method):
@@ -49,9 +50,18 @@ class TestScrap():
     # 新規レコードの編集を選択
     self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div/div[2]/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[3]/div[2]/div/div/div[1]/div[1]/div/a/span/i").click()
 
-    # ラベルの入力欄を選択
-    element = self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[1]/main/div/div[2]/div/div/div[3]/div[10]/div[1]")
-    element.click()
+    # # 現在いるページのURLを取得
+    # current_url = self.driver.current_url
+    # response = requests.get(current_url)
+    # html_content = response.content
+    # # BeautifulSoupを使用してDOMを解析
+    # soup = BeautifulSoup(html_content, 'lxml')
+    # # DOMツリーを描画
+    # print_tree(soup)
+
+    # # ラベルの入力欄を選択
+    # element = self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div[1]/main/div/div[2]/div/div/div[3]/div[10]/div[1]")
+    # element.click()
 
     # # 少し待つ
     # time.sleep(1)
@@ -63,18 +73,118 @@ class TestScrap():
     soup = BeautifulSoup(page_source, 'html.parser')
     body_content = soup.body
 
-    # 特定の条件に一致する<div>要素を取得
-    pattern = regex.compile(r'[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}\p{Z}ー、。，。]', regex.UNICODE) # regex.compile関数と\p{Z}を使う
+    # テキストが "テスト" である要素を取得
+    target_divs = soup.find_all('div', string='あ')
 
-    # <div>要素内のテキストを検索
-    div_elements = body_content.find_all('div', string=pattern)
+    # 取得した各要素に対して処理を行う例
+    for target_div in target_divs:
+        # 親の div 要素のクラス属性を取得
+        class_value = target_div.parent.get('class')
+        print("クラス属性の値:", class_value)
 
-    # 取得したdiv要素を出力
-    for div in div_elements:
-        print(div.text)
+    # # 必要な要素を取得
+    # target_div = body_content.find('div', class_='disp-wrap input flex_s_s fontsize5')
+
+    # # 取得した要素が存在するか確認
+    # if target_div:
+    #     # テキストを取得
+    #     text_content = target_div.text.strip()
+    #     print("クラス flex_s_s fontsize5 のテキスト:", text_content)
+    # else:
+    #     print("指定したクラスの要素は存在しません")
+
+    # # <div>要素内のすべての<input>タグを取得
+    # input_elements_in_div = body_content.select('div input')
+
+    # # 取得した要素に対して処理を行う例
+    # for input_element in input_elements_in_div:
+    #     print("input要素:", input_element)
+
+    #     # input要素の属性や値を取得
+    #     input_type = input_element.get('type')
+    #     input_name = input_element.get('name')
+    #     input_value = input_element.get('value')
+
+    #     print(f"Type属性: {input_type}, Name属性: {input_name}, Value属性: {input_value}")
+
+    # # ランダムなクラス名を持つ要素を取得
+    # random_class_element = body_content.find(class_=True)
+
+    # # 複数のクラスを持つ要素を取得
+    # div_elements = body_content.find_all('div')
+
+    # # 取得した要素に対して処理を行う例
+    # for div_element in div_elements:
+        # print("div要素:", div_element)
+    # # 特定の条件に一致する<div>要素を取得
+    # pattern = regex.compile(r'[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}\p{Z}ー、。，。]', regex.UNICODE) # regex.compile関数と\p{Z}を使う
+
+    # # <div>要素内のテキストを検索
+    # div_elements = body_content.find_all('div', string=pattern)
+
+    # # 取得したdiv要素を出力
+    # for div in div_elements:
+    #     print(div.text)
+
+        # # スタイル情報を取得
+        # style_attribute = div_element.get('style')
+        # if style_attribute:
+        #     print("div要素:", div_element)
+        #     print("Style属性の値:", style_attribute)
+
+    # # 取得した要素に対して処理を行う例
+    # for element in elements_with_classes:
+    #     class_values = element.get('div')
+
+    #     # スタイル情報を取得
+    #     style_attribute = element.get('style')
+    #     if style_attribute:
+    #         print("div属性の値:", class_values)
+    #         print("Style属性の値:", style_attribute)
+
+    # # 取得した要素が存在する場合、テキストを表示
+    # if random_class_element:
+    #     print("------------------------------")
+    #     # 取得した要素が存在する場合、class 属性の値を表示
+    #     class_value = random_class_element.get('class')
+    #     print("Class属性の値:", class_value)
+
+    #     # # 対象の要素を取得
+    #     # element = self.driver.find_element_by_class_name('v-btn__content')
+
+    #     # スタイル情報を取得
+    #     style_attribute = random_class_element.get_attribute('style')
+    #     print("Style属性の値:", style_attribute)
+
+    #     # スタイル情報を解析
+    #     style_dict = {}
+    #     for declaration in style_attribute.split(';'):
+    #         if ':' in declaration:
+    #             prop, value = declaration.split(':')
+    #             style_dict[prop.strip()] = value.strip()
+
+    #     # フォントサイズを表示
+    #     font_size = style_dict.get('font-size', 'N/A')
+    #     print(f'フォントサイズ: {font_size}')
+    #     print("------------------------------")
+
+    # # 特定の条件に一致する<div>要素を取得
+    # pattern = regex.compile(r'[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}\p{Z}ー、。，。]', regex.UNICODE) # regex.compile関数と\p{Z}を使う
+
+    # # <div>要素内のテキストを検索
+    # div_elements = body_content.find_all('div', string=pattern)
+
+    # # 取得したdiv要素を出力
+    # for div in div_elements:
+    #     print(div.text)
 
     # 画面を閉じる
     self.driver.close()
+
+def print_tree(element, indent=0):
+    print('  ' * indent + element.name)
+    for child in element.find_all(recursive=False):
+        print_tree(child, indent + 1)
 
 def get_id_from_body(self, keyWord):
   ### HTMLのbody部分から一致した要素をtxtファイルに出力する ###

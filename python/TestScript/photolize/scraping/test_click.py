@@ -17,6 +17,7 @@ from datetime import datetime
 import difflib
 import subprocess
 
+import requests
 
 class TestClick():
   def setup_method(self, method):
@@ -36,6 +37,15 @@ class TestClick():
     self.driver.get("https://saruya:saruya@staging-user.photolize.jp/login/basic_auth")
     self.driver.get("https://staging-user.photolize.jp/login")
     self.driver.set_window_size(1463, 1032)
+
+    url = "https://staging-user.photolize.jp/login"
+    response = requests.get(url)
+    html_content = response.content
+    # BeautifulSoupを使用してDOMを解析
+    soup = BeautifulSoup(html_content, 'lxml')
+    # DOMツリーを描画
+    print_tree(soup)
+
     self.driver.find_element(By.ID, "input-7").click()
     self.driver.find_element(By.ID, "input-7").send_keys("company_code26")
     # クリックした要素を取得
@@ -118,6 +128,11 @@ class TestClick():
 
     # 画面を閉じる
     self.driver.close()
+  
+def print_tree(element, indent=0):
+    print('  ' * indent + element.name)
+    for child in element.find_all(recursive=False):
+        print_tree(child, indent + 1)
   
 def coordinate_click(self, element):
   ### 要素の（x, y）座標をActionChainsを使用してクリックする ###
