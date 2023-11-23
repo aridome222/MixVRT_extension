@@ -18,6 +18,10 @@ import time
 import io
 import re
 
+from PIL import Image
+from PIL import ImageFont
+from PIL import ImageDraw
+
 
 # 色コード
 RED_TEXT_START = "\033[91m"
@@ -521,28 +525,89 @@ content_result = result.result()
 # OCR結果を単語ごとにグループ化
 word_groups = []
 current_group = []
+# Unicode プロパティを指定して正規表現パターンをコンパイル
+# pattern = re.compile(r'[^\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFFa-zA-Z0-9ー、。，。]', flags=re.UNICODE)
+pattern = re.compile(r'[^\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFFa-zA-Z0-9ー、。，。:@\\]', flags=re.UNICODE)
 
 for content in content_result:
     for line in content.lines:
-        for word in line.words:
-            current_group.append(word.text)
-        # 行が終わるごとに単語グループをリストに追加
-        word_groups.append(" ".join(current_group))
-        current_group = []
+        for char_or_str in line.words:
+            if len(current_group) == 0:
+                start_x1, start_y1, start_x3, start_y3 = [coord for coord in \
+                        [char_or_str.bounding_box[0].x, char_or_str.bounding_box[0].y, char_or_str.bounding_box[2].x, char_or_str.bounding_box[2].y]]
+            # filtered_char_or_str = pattern.sub('', char_or_str.text)
+            # if len(current_group) == 0:
+            #     # 最初の文字が除外文字ではなかった場合、
+            #     if filtered_char_or_str != '':
+            #         # 最初の文字の左上隅座標情報
+            #         start_x1, start_y1, start_x3, start_y3 = [coord for coord in \
+            #                 [char_or_str.bounding_box[0].x, char_or_str.bounding_box[0].y, char_or_str.bounding_box[2].x, char_or_str.bounding_box[2].y]]
+            #         # 行に１文字しか無かった場合でも文字の矩形を描画できるように右下隅座標を取得
+            #         end_x1, end_y1, end_x3, end_y3 = [coord for coord in \
+            #                 [char_or_str.bounding_box[0].x, char_or_str.bounding_box[0].y, char_or_str.bounding_box[2].x, char_or_str.bounding_box[2].y]]
+            #         current_group.append(filtered_char_or_str)
+            #     continue
+            # else:
+            #     # 途中で除外文字があった場合、その時点で出来た単語を追加する
+            #     if filtered_char_or_str == '':
+            #         # 単語グループをリストに追加
+            #         word_groups.append({
+            #             'text': "".join(current_group),
+            #             'start_coordinates': {'x1': start_x1, 'y1': start_y1, 'x3': start_x3, 'y3': start_y3},
+            #             'end_coordinates': {'x1': end_x1, 'y1': end_y1, 'x3': end_x3, 'y3': end_y3}
+            #         })
+            #         current_group = []
+            #         continue
+
+            # 最後の文字の座標情報を更新
+            end_x1, end_y1, end_x3, end_y3 = [coord for coord in \
+                    [char_or_str.bounding_box[0].x, char_or_str.bounding_box[0].y, char_or_str.bounding_box[2].x, char_or_str.bounding_box[2].y]]
+            current_group.append(char_or_str.text)
+
+        # 単語グループをリストに追加
+        if len(current_group) != 0:
+            word_groups.append({
+                'text': "".join(current_group),
+                'start_coordinates': {'x1': start_x1, 'y1': start_y1, 'x3': start_x3, 'y3': start_y3},
+                'end_coordinates': {'x1': end_x1, 'y1': end_y1, 'x3': end_x3, 'y3': end_y3}
+            })
+            current_group = []
 
 # word_groupsを出力して確認
-for group in word_groups:
-    start_coordinates = group['start_coordinates']
-    end_coordinates = group['end_coordinates']    
-    # 矩形を描画
-    cv2.rectangle(img, (start_coordinates['x1'], start_coordinates['y1']), (end_coordinates['x3'], end_coordinates['y3']), (0, 255, 0), 2)
-    print(group)
+if len(word_groups) != 0:
+    for group in word_groups:
+        text = group['text']
+        start_coords = group['start_coordinates']
+        end_coords = group['end_coordinates']
 
-# for i, group in word_groups:
-#     # 最初の文字の座標情報
-#     st_x1, st_y1, st_x3, st_y3 = [coord for coord in [group[i].bounding_box[0].x, word[i].bounding_box[0].y, word[i].bounding_box[2].x, word[i].bounding_box[2].y]]
-#     ed_x1, ed_y1, ed_x3, ed_y3 = [coord for coord in [group[i].bounding_box[0].x, word[i].bounding_box[0].y, word[i].bounding_box[2].x, word[i].bounding_box[2].y]]
+        # 座標情報を取得
+        start_x1, start_y1 = start_coords['x1'], start_coords['y1']
+        end_x3, end_y3 = end_coords['x3'], end_coords['y3']
 
+        # 矩形を描画
+        upper_left_corner_xy = (int(start_x1), int(start_y1))
+        lower_right_corner_xy = (int(end_x3), int(end_y3))
+        cv2.rectangle(img, upper_left_corner_xy, lower_right_corner_xy, (0, 255, 0), 2)
+
+        # # テキストを画像上に描画
+        # cv2.putText(img, text, (int(start_x1), int(start_y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+        
+        # 日本語フォントのパス
+        font_path = '/mnt/c/Windows/Fonts/MSMINCHO.TTC'
+
+        # フォントを読み込み
+        font_size = 30
+        font = ImageFont.truetype(font_path, font_size) # PILのフォントオブジェクトを作成
+
+        img_pil = Image.fromarray(img) # OpenCVの画像をPILに変換 
+        draw = ImageDraw.Draw(img_pil) # PILの描画オブジェクトを作成 
+        draw.text((int(start_x1), int(start_y1) - 25), text, font=font, fill=(255, 0, 0)) # PILの描画オブジェクトにテキストを描画 
+        img = np.array(img_pil) # PILの画像をOpenCVに変換
+
+        # 検出したテキストを出力
+        print(text)
+else:
+    print("文字を検出できなかった or 画像内に文字が存在しなかった")
 
 """ 
 

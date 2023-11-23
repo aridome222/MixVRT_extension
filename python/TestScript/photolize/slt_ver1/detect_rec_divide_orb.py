@@ -278,6 +278,31 @@ diff_before = cv2.subtract(before_bin_reverse, after_bin_reverse)
 diff_after = cv2.subtract(after_bin_reverse, before_bin_reverse)
 
 
+"""
+
+    AKAZE
+
+"""
+# 特徴点検出器の作成
+orb = cv2.ORB_create()
+
+# 特徴点の検出と記述子の計算
+keypoints1, descriptors1 = orb.detectAndCompute(before_gray, None)
+keypoints2, descriptors2 = orb.detectAndCompute(after_gray, None)
+
+# マッチャーの作成
+bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+
+# マッチング
+matches = bf.match(descriptors1, descriptors2)
+
+# マッチング結果のソート（距離が近い順に）
+matches = sorted(matches, key=lambda x: x.distance)
+
+# マッチング結果の表示
+img_matches = cv2.drawMatches(before_gray, keypoints1, after_gray, keypoints2, matches[:10], None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
+
+
 """ 
 
     差分検出
@@ -389,7 +414,7 @@ if not os.path.exists(output_dir2):
 output_file_path = os.path.join(output_dir2, output_file_name1)
 
 # 画像を保存する
-cv2.imwrite(output_file_path, before_img)
+cv2.imwrite(output_file_path, img_matches)
 
 # ファイルパスを作成
 output_file_path = os.path.join(output_dir2, output_file_name2)

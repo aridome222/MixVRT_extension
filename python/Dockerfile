@@ -28,6 +28,7 @@ RUN apt-get install -y poppler-utils
 
 # スクレイングするのに必要
 RUN pip install beautifulsoup4 
+RUN pip install lxml
 RUN pip install regex
 
 # Tesseract-OCRに必要
@@ -41,3 +42,7 @@ RUN pip install azure-cognitiveservices-vision-computervision
 
 # Azure-OCRに必要
 RUN pip install azure-ai-formrecognizer
+
+# フォントをコピーしてパスを設定
+COPY ./MSMINCHO.TTC /usr/share/fonts/MSMINCHO.TTC
+ENV FONT_PATH=/usr/share/fonts/MSMINCHO.TTC

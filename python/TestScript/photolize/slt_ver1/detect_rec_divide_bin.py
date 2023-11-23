@@ -14,14 +14,33 @@ output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
-output_file_name_A = 'before.png'
-output_file_name_B = 'after.png'
+output_file_name_A = 'q_success.png'
+output_file_name_B = 'q_log.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
 
 img1 = cv2.imread(output_file_path_A)
 img2 = cv2.imread(output_file_path_B)
+
+# 画像1のサイズを取得
+height1, width1, _ = img1.shape
+
+# 画像2のサイズを取得
+height2, width2, _ = img2.shape
+
+# ターゲットのサイズ
+target_width = 2613
+target_height = 2567
+
+# サイズが異なる場合はリサイズ
+if (width1, height1) != (width2, height2):
+    img1 = cv2.resize(img1, (target_width, target_height))
+    img2 = cv2.resize(img2, (target_width, target_height))
+    # # ターゲットの幅を指定し、アスペクト比を維持してリサイズ
+    # width = 1200
+    # img1 = cv2.resize(img1, (width, int(img1.shape[0] * (width / img1.shape[1]))), interpolation=cv2.INTER_AREA)
+    # img2 = cv2.resize(img2, (width, int(img2.shape[0] * (width / img2.shape[1]))), interpolation=cv2.INTER_AREA)
 
 clahe = cv2.createCLAHE(clipLimit=30.0, tileGridSize=(10, 10))
 img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
@@ -31,16 +50,6 @@ img2_gray = clahe.apply(img2_gray)
 
 img1_gray = cv2.GaussianBlur(img1_gray, (13, 13), 0)
 img2_gray = cv2.GaussianBlur(img2_gray, (13, 13), 0)
-
-# print("img1_gray shape:", img1_gray.shape)
-# print("img2_gray shape:", img2_gray.shape)
-
-
-# width = 3423
-# height = 3484
-# # 画像のサイズを一致させる
-# img1_gray = cv2.resize(img1_gray, (width, height))  # widthとheightは適切なサイズに置き換える
-# img2_gray = cv2.resize(img2_gray, (width, height))
 
 # 画像の差分を計算
 diff = cv2.absdiff(img1_gray, img2_gray)
