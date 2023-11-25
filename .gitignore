@@ -2,3 +2,5 @@
 *.pytest_cache
 *svg_img/
 MSMINCHO.TTC
+*img/
+*high_png/
