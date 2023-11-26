@@ -1,6 +1,26 @@
-# 成功作
-# 連番の色枠付き画像を生成＆対応する赤枠と緑枠を出力＆赤枠と緑枠の座標と幅と高さを出力＆配置の差異判定
-# 参考サイト：https://sosotata.com/spot7differences/
+"""
+本プログラムの機能
+    2つの入力画像の差分を検出し、差分を色枠で囲んだ画像を2つ出力する。
+
+入力画像は、以下を想定。
+    ・WebアプリやWebページをスクリーンショットした画面画像
+    ・背景が白地
+    ・画面要素の「追加・削除・移動・変更・拡縮」の基本的な変更のみ
+を想定
+
+主な処理は、画像処理により以下を生成
+    ・削除された部分が白、その他の部分が黒の画像A
+    ・追加された部分が白、その他の部分が黒の画像B
+その後、上記の画像の白を囲む矩形領域の座標を取得し、
+    ・変更前画像に画像Aの矩形領域を赤枠
+    ・変更後画像に画像Bの矩形領域を緑枠
+で描画した2つの画像を出力
+    
+
+参考サイト
+    https://sosotata.com/spot7differences/
+
+"""
 import cv2
 import os
 import numpy as np
@@ -194,6 +214,56 @@ def detect_pos_diff(match_list, tolerance=5):
     return count
 
 
+def detect_add_or_del(red_rectangles, green_rectangles, tolerance=5):
+    """
+    「追加」と「削除」を検出する関数
+
+    Parameters:
+    - match_list (list): マッチング結果が格納されたリスト
+    - tolerance (int): 幅と高さの差の許容誤差
+
+    Returns:
+    - count (int): 配置の差異が検出された箇所の数
+    """
+    match_list = []  # マッチング結果を格納するリスト
+    used_rect_indices = set()  # すでに対応付けされた緑枠のインデックスを格納する集合
+
+    for i, (x1, y1, w1, h1) in enumerate(red_rectangles, start=1):
+
+        for j, (x2, y2, w2, h2) in enumerate(green_rectangles, start=1):
+            # 赤枠と緑枠の中心座標を計算
+            if (x1, y1, w1, h1) == (x2, y2, w2, h2):
+                # 無理そう
+
+            # 中心座標間の距離を計算
+            distance = np.sqrt((center_x1 - center_x2)**2 + (center_y1 - center_y2)**2)
+
+            if distance < distance_threshold and distance < min_distance:
+                min_distance = distance
+                closest_green_rect_index = j-1
+
+        if closest_green_rect_index is not None:
+            match_list.append((i, closest_green_rect_index+1, red_rectangles[i-1], green_rectangles[closest_green_rect_index]))
+            used_green_rect_indices.add(closest_green_rect_index)  # 対応付けされた緑枠のインデックスを集合に追加する
+
+    print("\n【 対応する枠ペア情報 】")
+    print(f"・枠ペアの数: {int(len(match_list))}")
+    for match in match_list:
+        red_index, green_index, red_rect, green_rect = match
+        print(f"・{str_red('赤枠')}{red_index:2} と{str_green('緑枠')}{green_index:2} は対応します")
+        
+        # 赤枠の座標情報
+        red_x, red_y, red_w, red_h = red_rect
+        print(f"    赤枠: 左上({red_x}, {red_y}), 幅{red_w}, 高さ{red_h}")
+        
+        # 緑枠の座標情報
+        green_x, green_y, green_w, green_h = green_rect
+        print(f"    緑枠: 左上({green_x}, {green_y}), 幅{green_w}, 高さ{green_h}")
+    print("")
+
+    return match_list
+
+
 def main():
     """ 
 
@@ -206,8 +276,8 @@ def main():
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     # ファイル名を生成
-    output_file_name_A = 'before.png'
-    output_file_name_B = 'after.png'
+    output_file_name_A = 'base3.png'
+    output_file_name_B = 'chg_noDisp.png'
     # ファイルパスを作成
     output_file_path_A = os.path.join(output_dir, output_file_name_A)
     output_file_path_B = os.path.join(output_dir, output_file_name_B)
