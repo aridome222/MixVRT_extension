@@ -20,6 +20,18 @@ services:
     tty: true
     networks:
       - zenn_network
+    depends_on:
+      - server  # 新しく追加したサーバーコンテナに依存する
+
+  server:
+    build: ./python/server  # 新しいサーバーコンテナのビルドパス
+    volumes:
+      - ./python/server:/app  # サーバーコードが存在するパスに変更
+    ports:
+      - "5000:5000"  # Flaskがデフォルトで使うポート
+    networks:
+      - zenn_network
+
 networks:
   zenn_network:
     external: true
@@ -29,6 +41,9 @@ networks:
 #   chrome:
 #     image: selenium/standalone-chrome:latest
 #     shm_size: 2gb
+#     volumes:
+#     - "/etc/timezone:/etc/timezone:ro"
+#     - "/etc/localtime:/etc/localtime:ro"
 #     ports:
 #       - "4444:4444"
 #       - "7900:7900"
@@ -38,16 +53,11 @@ networks:
 #     build: ./python
 #     volumes:
 #       - ./python:/python
+#       - "/etc/timezone:/etc/timezone:ro"
+#       - "/etc/localtime:/etc/localtime:ro"
 #     tty: true
 #     networks:
 #       - zenn_network
-#     # 追加: pillowのインストールコマンド
-#     command: >
-#       bash -c "
-#         python -m pip install Pillow &&
-#         pytest /python/TestScript/screenShoot.py
-#       "
 # networks:
 #   zenn_network:
 #     external: true
-
