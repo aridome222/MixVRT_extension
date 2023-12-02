@@ -1,0 +1,4 @@
+# server/requirements.txt
+Flask==2.0.1
+# 他の依存パッケージも追加
+Werkzeug==2.0.1
