@@ -12,39 +12,47 @@ SECRET = "aridome_codeless"  # GitHub Webhookの設定に合わせて設定
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
-    # リクエストがJSONであることを確認
-    if request.headers['Content-Type'] != 'application/json':
-        abort(400, 'Invalid content type')
-
-    payload = request.get_data()
-    signature = request.headers.get('X-Hub-Signature')
-
-    # シグネチャがない場合はエラー
-    if signature is None:
-        abort(400, 'X-Hub-Signature header is missing')
-
-    # シグネチャを検証
-    if not verify_signature(payload, signature):
-        abort(403, 'Invalid signature')
-
     data = request.json
+
     if 'push' in data.get('event', ''):
         # プッシュイベントが発生した場合の処理
-        handle_push_event(data)
+        handle_push_event()
 
     return '', 200
+# def webhook():
+#     # リクエストがJSONであることを確認
+#     if request.headers['Content-Type'] != 'application/json':
+#         abort(400, 'Invalid content type')
 
-def verify_signature(payload, signature):
-    # Webhookリクエストの署名を検証
-    sha_name, signature = signature.split('=')
-    if sha_name != 'sha1':
-        return False
+#     payload = request.get_data()
+#     signature = request.headers.get('X-Hub-Signature')
 
-    # GitHubのWebhookシークレットを使ってHMACを計算
-    mac = hmac.new(SECRET.encode('utf-8'), msg=payload, digestmod=hashlib.sha1)
+#     # シグネチャがない場合はエラー
+#     if signature is None:
+#         abort(400, 'X-Hub-Signature header is missing')
 
-    # 計算された署名と送られてきた署名を比較
-    return hmac.compare_digest(mac.hexdigest(), signature)
+#     # シグネチャを検証
+#     if not verify_signature(payload, signature):
+#         abort(403, 'Invalid signature')
+
+#     data = request.json
+#     if 'push' in data.get('event', ''):
+#         # プッシュイベントが発生した場合の処理
+#         handle_push_event(data)
+
+#     return '', 200
+
+# def verify_signature(payload, signature):
+#     # Webhookリクエストの署名を検証
+#     sha_name, signature = signature.split('=')
+#     if sha_name != 'sha1':
+#         return False
+
+#     # GitHubのWebhookシークレットを使ってHMACを計算
+#     mac = hmac.new(SECRET.encode('utf-8'), msg=payload, digestmod=hashlib.sha1)
+
+#     # 計算された署名と送られてきた署名を比較
+#     return hmac.compare_digest(mac.hexdigest(), signature)
 
 def handle_push_event(data):
     # スクリプトが実行されているディレクトリのパス
