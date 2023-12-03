@@ -85,4 +85,4 @@ def handle_push_event(data):
 
 
 if __name__ == '__main__':
-    app.run(host='172.24.66.152', port=5000)
+    app.run(host='172.24.74.101', port=5000)
