@@ -14,7 +14,7 @@ def clone_or_pull_repo(repo_url, clone_dir):
 
 @app.route('/')
 def hello():
-    repo_url = "https://github.com/aridome222/web_diff.git"
+    repo_url = "git@github.com:aridome222/web_diff.git"
 
     # スクリプトが実行されているディレクトリのパス
     current_directory = os.path.dirname(os.path.abspath(__file__))
@@ -25,5 +25,4 @@ def hello():
     return "Clone or pull Successful!!!"
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    app.run(host='0.0.0.0', port=5000, debug=True)
