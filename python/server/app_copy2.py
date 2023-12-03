@@ -27,15 +27,11 @@ def clone_or_pull_repo(repo_url, clone_dir):
     else:
         os.chdir(clone_dir)
         old_content = read_file(html_file_path)
-        try:
-            repo = Repo(clone_dir)
-            origin = repo.remote('origin')
-            origin.fetch()
-            print("fetchしました")
-            origin.pull()
-            print("pullしました")
-        except Exception as e:
-            print(f"Gitエラー: {e}")
+        # Pullの場合の処理
+        repo = Repo(clone_dir)
+        origin = repo.remote('origin')
+        origin.pull()
+        print("pullしました")
 
         # タイムスタンプのデバッグログ
         current_time = int(time.mktime(time.localtime()))
@@ -107,4 +103,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=False)

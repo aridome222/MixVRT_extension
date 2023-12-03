@@ -8,6 +8,9 @@ WORKDIR /app
 COPY requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
+# Pythonコード内でGitの機能を直接呼び出す
+RUN pip install GitPython
+
 COPY . /app
 
 CMD ["python", "app.py"]
