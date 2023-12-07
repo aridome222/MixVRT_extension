@@ -1,56 +1,80 @@
 from flask import Flask, render_template
 from threading import Thread
-import subprocess
 import os
+import time
 
-import difflib
-
+from difflib import unified_diff
+from git import Repo
 
 # カスタムテンプレートフォルダと静的フォルダを設定
 template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cloned_repo', 'templates')
 static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cloned_repo', 'static')
 app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
+# app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 def clone_or_pull_repo(repo_url, clone_dir):
-    clone_thread = None  # 初期化
+    repo = None
+    html_file_path = os.path.join(clone_dir, "templates/index.html")
+    css_file_path = os.path.join(clone_dir, "static/css/styles.css")
+    js_file_path = os.path.join(clone_dir, "static/js/script.js")
+
     if not os.path.exists(clone_dir):
-        # Cloneの場合の処理
-        clone_thread = Thread(target=subprocess.run, args=(["git", "clone", repo_url, clone_dir],), kwargs={"text": True})  # bufsizeを指定する
-        clone_thread.start()
-        clone_thread.join()  # Cloneが終了するのを待つ
+        # リポジトリが無い場合、Cloneを行う
+        Repo.clone_from(repo_url, clone_dir)
         print("cloneしました")
+        repo = Repo(clone_dir)
         return os.path.join(clone_dir, "templates/index.html")
     else:
+        # リポジトリがある場合、Pullを行う
         os.chdir(clone_dir)
-        # Pullの場合の処理
-        pull_thread = Thread(target=subprocess.run, args=(["git", "pull"],), kwargs={"text": True})
-        pull_thread.start()
-        pull_thread.join()  # Cloneが終了するのを待つ
-        print("pullしました")
-        # pullの場合のHTMLファイルおよびCSS、JSファイルに変更があるか確認
-        html_file_path = os.path.join(clone_dir, "templates/index.html")
-        css_file_path = os.path.join(clone_dir, "static/css/styles.css")
-        js_file_path = os.path.join(clone_dir, "static/js/script.js")
-        
-        html_last_modified_time = get_file_timestamp(html_file_path)
-        css_last_modified_time = get_file_timestamp(css_file_path)
-        js_last_modified_time = get_file_timestamp(js_file_path)
-        
+        old_content = read_file(html_file_path)
+        try:
+            repo = Repo(clone_dir)
+            origin = repo.remote('origin')
+            origin.fetch()
+            print("fetchしました")
+            origin.pull()
+            print("pullしました")
+        except Exception as e:
+            print(f"Gitエラー: {e}")
+
+        # タイムスタンプのデバッグログ
+        current_time = int(time.mktime(time.localtime()))
+        html_last_modified_time = int(get_file_timestamp(html_file_path))
+        css_last_modified_time = int(get_file_timestamp(css_file_path))
+        js_last_modified_time = int(get_file_timestamp(js_file_path))
+
+        print(f"Pullした時の時間: {current_time}")
+        print(f"HTMLが最近修正された時間: {html_last_modified_time}")
+        print(f"CSSが最近修正された時間: {css_last_modified_time}")
+        print(f"JSが最近修正された時間: {js_last_modified_time}")
+
         if has_file_changed(html_file_path, html_last_modified_time) or \
            has_file_changed(css_file_path, css_last_modified_time) or \
            has_file_changed(js_file_path, js_last_modified_time):
             print("変更があったため、ファイルを取得します。")
             # 変更がある場合の処理をここに追加
+            new_content = read_file(html_file_path)
+            print("変更前HTMLコード:")
+            print(old_content)
+            
+            print("変更後HTMLコード:")
+            print(new_content)
+            save_diff_info(old_content, new_content)
+            
             return html_file_path
         else:
             print("変更がありません。")
             return os.path.join(clone_dir, "templates/index.html")
 
-# 差分情報を取得する関数
-def get_diff(old_content, new_content):
-    differ = difflib.Differ()
-    diff = list(differ.compare(old_content.splitlines(), new_content.splitlines()))
-    return '\n'.join(diff)
+def read_file(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        return file.read()
+
+def save_diff_info(old_content, new_content):
+    diff_info = list(unified_diff(old_content.splitlines(), new_content.splitlines()))
+    with open('diff_info.txt', 'w', encoding='utf-8') as file:
+        file.write('\n'.join(diff_info))
 
 def has_file_changed(file_path, last_modified_time):
     current_time = os.path.getmtime(file_path)

@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, render_template
 from threading import Thread
 import subprocess
 import os
@@ -78,32 +78,11 @@ def index():
     html_file = clone_or_pull_repo(repo_url, clone_dir)
 
     if html_file is not None:
-        return render_template("index.html")
+        # HTMLファイルのパスをproxy.phpを経由して取得
+        proxy_url = f"proxy.php?url={html_file}"
+        return render_template("index.html", proxy_url=proxy_url)
     else:
         return "HTML-file is Already up to date."
-
-
-@app.route('/diff', methods=['POST'])
-def diff():
-    data = request.get_json()
-    url1 = data.get('url1')
-    url2 = data.get('url2')
-
-    # 差分検出プログラムを実行して差分画像のパスを取得
-    diff_image_path = run_diff_program(url1, url2)
-
-    return jsonify({'diff_image_url': diff_image_path})
-    
-
-def run_diff_program(url1, url2):
-    # ここで差分検出プログラムを実行
-    # 例: subprocess.run(['python', 'path/to/your_diff_program.py', url1, url2], check=True)
-    # 実際のプログラムのパスと引数は適切に設定してください
-    # 生成された差分画像のパスを返す
-
-    subprocess.run(['python', './src/python/main.py', url1, url2], check=True)
-
-    return 'path/to/diff_image.png'
 
 
 if __name__ == '__main__':
