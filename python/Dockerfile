@@ -46,3 +46,6 @@ RUN pip install azure-ai-formrecognizer
 # フォントをコピーしてパスを設定
 COPY ./MSMINCHO.TTC /usr/share/fonts/MSMINCHO.TTC
 ENV FONT_PATH=/usr/share/fonts/MSMINCHO.TTC
+
+# CORS (Cross-Origin Resource Sharing)を許可する設定を追加する
+RUN pip install flask_cors

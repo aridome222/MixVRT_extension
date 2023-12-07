@@ -214,57 +214,57 @@ def detect_pos_diff(match_list, tolerance=5):
     return count
 
 
-def detect_add_or_del(red_rectangles, green_rectangles, tolerance=5):
-    """
-    「追加」と「削除」を検出する関数
+# def detect_add_or_del(red_rectangles, green_rectangles, tolerance=5):
+#     """
+#     「追加」と「削除」を検出する関数
 
-    Parameters:
-    - match_list (list): マッチング結果が格納されたリスト
-    - tolerance (int): 幅と高さの差の許容誤差
+#     Parameters:
+#     - match_list (list): マッチング結果が格納されたリスト
+#     - tolerance (int): 幅と高さの差の許容誤差
 
-    Returns:
-    - count (int): 配置の差異が検出された箇所の数
-    """
-    match_list = []  # マッチング結果を格納するリスト
-    used_rect_indices = set()  # すでに対応付けされた緑枠のインデックスを格納する集合
+#     Returns:
+#     - count (int): 配置の差異が検出された箇所の数
+#     """
+#     match_list = []  # マッチング結果を格納するリスト
+#     used_rect_indices = set()  # すでに対応付けされた緑枠のインデックスを格納する集合
 
-    for i, (x1, y1, w1, h1) in enumerate(red_rectangles, start=1):
+#     for i, (x1, y1, w1, h1) in enumerate(red_rectangles, start=1):
 
-        for j, (x2, y2, w2, h2) in enumerate(green_rectangles, start=1):
-            # 赤枠と緑枠の中心座標を計算
-            if (x1, y1, w1, h1) == (x2, y2, w2, h2):
-                # 無理そう
+#         for j, (x2, y2, w2, h2) in enumerate(green_rectangles, start=1):
+#             # 赤枠と緑枠の中心座標を計算
+#             if (x1, y1, w1, h1) == (x2, y2, w2, h2):
+#                 # 無理そう
 
-            # 中心座標間の距離を計算
-            distance = np.sqrt((center_x1 - center_x2)**2 + (center_y1 - center_y2)**2)
+#             # 中心座標間の距離を計算
+#             distance = np.sqrt((center_x1 - center_x2)**2 + (center_y1 - center_y2)**2)
 
-            if distance < distance_threshold and distance < min_distance:
-                min_distance = distance
-                closest_green_rect_index = j-1
+#             if distance < distance_threshold and distance < min_distance:
+#                 min_distance = distance
+#                 closest_green_rect_index = j-1
 
-        if closest_green_rect_index is not None:
-            match_list.append((i, closest_green_rect_index+1, red_rectangles[i-1], green_rectangles[closest_green_rect_index]))
-            used_green_rect_indices.add(closest_green_rect_index)  # 対応付けされた緑枠のインデックスを集合に追加する
+#         if closest_green_rect_index is not None:
+#             match_list.append((i, closest_green_rect_index+1, red_rectangles[i-1], green_rectangles[closest_green_rect_index]))
+#             used_green_rect_indices.add(closest_green_rect_index)  # 対応付けされた緑枠のインデックスを集合に追加する
 
-    print("\n【 対応する枠ペア情報 】")
-    print(f"・枠ペアの数: {int(len(match_list))}")
-    for match in match_list:
-        red_index, green_index, red_rect, green_rect = match
-        print(f"・{str_red('赤枠')}{red_index:2} と{str_green('緑枠')}{green_index:2} は対応します")
+#     print("\n【 対応する枠ペア情報 】")
+#     print(f"・枠ペアの数: {int(len(match_list))}")
+#     for match in match_list:
+#         red_index, green_index, red_rect, green_rect = match
+#         print(f"・{str_red('赤枠')}{red_index:2} と{str_green('緑枠')}{green_index:2} は対応します")
         
-        # 赤枠の座標情報
-        red_x, red_y, red_w, red_h = red_rect
-        print(f"    赤枠: 左上({red_x}, {red_y}), 幅{red_w}, 高さ{red_h}")
+#         # 赤枠の座標情報
+#         red_x, red_y, red_w, red_h = red_rect
+#         print(f"    赤枠: 左上({red_x}, {red_y}), 幅{red_w}, 高さ{red_h}")
         
-        # 緑枠の座標情報
-        green_x, green_y, green_w, green_h = green_rect
-        print(f"    緑枠: 左上({green_x}, {green_y}), 幅{green_w}, 高さ{green_h}")
-    print("")
+#         # 緑枠の座標情報
+#         green_x, green_y, green_w, green_h = green_rect
+#         print(f"    緑枠: 左上({green_x}, {green_y}), 幅{green_w}, 高さ{green_h}")
+#     print("")
 
-    return match_list
+#     return match_list
 
 
-def main():
+def main(img1_path, img2_path):
     """ 
 
         前処理（画像の読み込み＆画像処理）
@@ -276,8 +276,8 @@ def main():
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     # ファイル名を生成
-    output_file_name_A = 'base3.png'
-    output_file_name_B = 'chg_noDisp.png'
+    output_file_name_A = img1_path
+    output_file_name_B = img2_path
     # ファイルパスを作成
     output_file_path_A = os.path.join(output_dir, output_file_name_A)
     output_file_path_B = os.path.join(output_dir, output_file_name_B)
@@ -457,22 +457,36 @@ def main():
         subprocess.call(command, shell=True)
 
     # ファイルパスを作成
-    output_file_path = os.path.join(output_dir2, output_file_name1)
+    output_file_path1 = os.path.join(output_dir2, output_file_name1)
 
     # 画像を保存する
-    cv2.imwrite(output_file_path, before_img)
+    cv2.imwrite(output_file_path1, before_img)
 
     # ファイルパスを作成
-    output_file_path = os.path.join(output_dir2, output_file_name2)
+    output_file_path2 = os.path.join(output_dir2, output_file_name2)
 
     # 画像を保存する
-    cv2.imwrite(output_file_path, after_img)
+    cv2.imwrite(output_file_path2, after_img)
 
     print("------------------------------------------------------------------\n")
 
     print(f"2つの画像の差異部分に枠をつけた画像を{output_dir2}に保存しました")
 
+    return output_file_path1, output_file_path2
 
 # __name__ が "__main__" の場合のみ実行
 if __name__ == "__main__":
-    main()
+    # ここでコマンドライン引数から img1 と img2 を取得して main() に渡す例
+    import sys
+
+    # コマンドライン引数が足りない場合のエラーハンドリング
+    if len(sys.argv) < 3:
+        print("Usage: python hoge.py <img1> <img2>")
+        sys.exit(1)
+
+    # コマンドライン引数から img1 と img2 を取得
+    img1 = sys.argv[1]
+    img2 = sys.argv[2]
+
+    # main() に引数を渡して実行
+    main(img1, img2)

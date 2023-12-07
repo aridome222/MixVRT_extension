@@ -26,7 +26,7 @@ services:
   server:
     build: ./python/server  # 新しいサーバーコンテナのビルドパス
     volumes:
-      - ./python/server:/app  # サーバーコードが存在するパスに変更
+      - ./python:/app  # サーバーコードが存在するパスに変更
     ports:
       - "5000:5000"  # Flaskがデフォルトで使うポート
     networks:

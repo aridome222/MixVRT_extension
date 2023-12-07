@@ -3,13 +3,27 @@ from threading import Thread
 import subprocess
 import os
 
+import sys
+sys.path.append('/app/src/module')
+# print(sys.path)
+
 import difflib
+
+from flask_cors import CORS
+
+from main import main
+from src.module import detect_rec_divide
+from src.module import test_slt_addShot
+import pytest
+import shlex
 
 
 # カスタムテンプレートフォルダと静的フォルダを設定
 template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cloned_repo', 'templates')
 static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cloned_repo', 'static')
 app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
+CORS(app)
+
 
 def clone_or_pull_repo(repo_url, clone_dir):
     clone_thread = None  # 初期化
@@ -90,20 +104,99 @@ def diff():
     url2 = data.get('url2')
 
     # 差分検出プログラムを実行して差分画像のパスを取得
-    diff_image_path = run_diff_program(url1, url2)
+    diff_img1, diff_img2 = run_diff_program(url1, url2)
 
-    return jsonify({'diff_image_url': diff_image_path})
+    return jsonify({'diff_image_url1': diff_img1, 'diff_image_url2': diff_img2})
     
 
 def run_diff_program(url1, url2):
-    # ここで差分検出プログラムを実行
-    # 例: subprocess.run(['python', 'path/to/your_diff_program.py', url1, url2], check=True)
-    # 実際のプログラムのパスと引数は適切に設定してください
-    # 生成された差分画像のパスを返す
+    # URLのエスケープ確認
+    print(f"url1: {url1}")
+    print(f"url2: {url2}")
 
-    subprocess.run(['python', './src/python/main.py', url1, url2], check=True)
+    # まず、テストを呼び出すためにsys.argvを準備
+    sys.argv = [
+        "pytest",
+        "-s",
+        "-v",
+        "--cache-clear",
+        "/python/src/module/test_slt_addShot.py",
+        "-k",
+        "test_singlelinetext",
+        "--",
+        url1,  # ここでテストメソッドに渡す引数を指定
+    ]
 
-    return 'path/to/diff_image.png'
+    # テストの実行
+    with pytest.warns(None) as record:  # Noneを渡すことで全ての警告を無視
+        pytest.main()
+
+    # デバッグのためにrecordを出力
+    print("-------------------------")
+    print(record)
+    print("-------------------------")
+
+    # recordが空の場合に対処
+    if record:
+        # ここで差分検出プログラムを実行
+        # 例: subprocess.run(['python', 'path/to/your_diff_program.py', img1_path, img2_path], check=True)
+        # 実際のプログラムのパスと引数は適切に設定してください
+
+        # 引数を適切にエスケープ
+        url1_escaped = shlex.quote(url1)
+
+        # コマンドの実行
+        cmd1 = f"docker exec -it zenn_selenium-python-1 python -m pytest -s --cache-clear /python/src/test_slt_addShot.py {url1_escaped}"
+        print(f"cmd1: {cmd1}")
+        result1 = subprocess.run(cmd1, text=True, shell=True)
+        print(f"stdout1: {result1.stdout}")
+        print(f"stderr1: {result1.stderr}")
+        img1_path = result1.stdout.strip()
+
+        # 同じことをurl2に対して繰り返します
+        sys.argv[-1] = url2
+
+        # 引数を適切にエスケープ
+        url2_escaped = shlex.quote(url2)
+
+        # コマンドの実行
+        cmd2 = f"docker exec -it zenn_selenium-python-1 python -m pytest -s --cache-clear /python/src/test_slt_addShot.py {url2_escaped}"
+        print(f"cmd2: {cmd2}")
+        result2 = subprocess.run(cmd2, text=True, shell=True)
+        print(f"stdout2: {result2.stdout}")
+        print(f"stderr2: {result2.stderr}")
+        img2_path = result2.stdout.strip()
+
+        # デバッグのためにrecordを出力
+        print("-------------------------")
+        print(record)
+        print("-------------------------")
+
+        diff_img1, diff_img2 = detect_rec_divide.main(img1_path, img2_path)
+        return diff_img1, diff_img2
+    else:
+        # recordが空の場合、エラー処理またはデフォルトの値を返すなど、適切な対処を行う
+        return None, None
+
+
+# def run_diff_program(url1, url2):
+#     # ここで差分検出プログラムを実行
+#     # 例: subprocess.run(['python', 'path/to/your_diff_program.py', url1, url2], check=True)
+#     # 実際のプログラムのパスと引数は適切に設定してください
+#     # 生成された差分画像のパスを返す
+
+#     # test_slt_addShot.py を直接呼び出して、生成された差分画像のファイルパスを取得
+#     cmd1 = "docker exec -it zenn_selenium-python-1 python -m pytest -s --cache-clear /python/src/test_slt_addShot.py " + url1
+#     result1 = subprocess.run(cmd1, text=True, capture_output=True, shell=True)
+#     img1_path = result1.stdout.strip()
+
+#     cmd2 = "docker exec -it zenn_selenium-python-1 python -m pytest -s --cache-clear /python/src/test_slt_addShot.py " + url2
+#     result2 = subprocess.run(cmd2, text=True, capture_output=True, shell=True)
+#     img2_path = result2.stdout.strip()
+
+#     diff_img1, diff_img2 = detect_rec_divide.main(img1_path, img2_path)
+    
+#     return diff_img1, diff_img2
 
 
 if __name__ == '__main__':
