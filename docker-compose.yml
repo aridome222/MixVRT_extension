@@ -32,6 +32,14 @@ services:
     networks:
       - zenn_network
 
+  # ffmpeg:
+  #   image: jrottenberg/ffmpeg  # 例としてjrottenberg/ffmpegイメージを使用
+  #   environment:
+  #     - DISPLAY=${DISPLAY}
+  #   volumes:
+  #     - /tmp/.X11-unix:/tmp/.X11-unix:rw
+
+
 networks:
   zenn_network:
     external: true

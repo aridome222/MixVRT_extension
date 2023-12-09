@@ -49,3 +49,7 @@ ENV FONT_PATH=/usr/share/fonts/MSMINCHO.TTC
 
 # CORS (Cross-Origin Resource Sharing)を許可する設定を追加する
 RUN pip install flask_cors
+
+# # Seleniumによる自動操作されているWeb画面の録画に必要
+# RUN sudo apt-get update && \
+#     sudo apt-get install -y ffmpeg
