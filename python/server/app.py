@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, redirect, url_for
+
 from threading import Thread
 import subprocess
 import os
@@ -80,8 +81,8 @@ def get_html_file(directory):
                 return os.path.join(root, file)
     return None
 
-@app.route('/index')
-def index():
+@app.route('/')
+def input_url():
     repo_url = "https://github.com/aridome222/web_diff.git"
 
     # スクリプトが実行されているディレクトリのパス
@@ -92,9 +93,40 @@ def index():
     html_file = clone_or_pull_repo(repo_url, clone_dir)
 
     if html_file is not None:
-        return render_template("index.html")
+        return render_template("input-url.html")
     else:
         return "HTML-file is Already up to date."
+
+
+@app.route('/index', methods=['POST', 'GET'])
+def index():
+    if request.method == 'POST':
+        # POSTリクエストの処理
+        page_url = request.form.get('pageUrl')
+
+        # index.htmlにリダイレクト
+        return redirect(url_for('render_index', page_url=page_url))
+        
+    else:
+        repo_url = "https://github.com/aridome222/web_diff.git"
+
+        # スクリプトが実行されているディレクトリのパス
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        clone_dir = os.path.join(current_directory, "cloned_repo")
+
+        # クローンまたはプル後にファイルのタイムスタンプを取得
+        html_file = clone_or_pull_repo(repo_url, clone_dir)
+
+        if html_file is not None:
+            # URLを渡してindex.htmlをレンダリング
+            return render_template("index.html")
+        else:
+            return "HTML-file is Already up to date."
+        
+
+@app.route('/render_index/<path:page_url>')
+def render_index(page_url):
+    return render_template("index.html", page_url=page_url)
 
 
 @app.route('/piza-form')
