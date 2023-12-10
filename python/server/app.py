@@ -97,6 +97,23 @@ def index():
         return "HTML-file is Already up to date."
 
 
+@app.route('/piza-form')
+def piza_form():
+    repo_url = "https://github.com/aridome222/web_diff.git"
+
+    # スクリプトが実行されているディレクトリのパス
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+    clone_dir = os.path.join(current_directory, "cloned_repo")
+
+    # クローンまたはプル後にファイルのタイムスタンプを取得
+    html_file = clone_or_pull_repo(repo_url, clone_dir)
+
+    if html_file is not None:
+        return render_template("piza-form.html")
+    else:
+        return "HTML-file is Already up to date."
+
+
 @app.route('/diff', methods=['POST'])
 @cross_origin()
 def diff():
