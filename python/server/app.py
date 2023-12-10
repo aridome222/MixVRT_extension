@@ -9,7 +9,7 @@ sys.path.append('/app/src/module')
 
 import difflib
 
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 from main import main
 from src.module import detect_rec_divide
@@ -98,6 +98,7 @@ def index():
 
 
 @app.route('/diff', methods=['POST'])
+@cross_origin()
 def diff():
     data = request.get_json()
     url1 = data.get('url1')
@@ -107,7 +108,23 @@ def diff():
     diff_img1, diff_img2 = run_diff_program(url1, url2)
 
     return jsonify({'diff_image_url1': diff_img1, 'diff_image_url2': diff_img2})
-    
+
+
+@app.route('/confirmation', methods=['POST'])
+def confirmation():
+    # フォームからデータを取得
+    name = request.form.get('name')
+    phone = request.form.get('phone')
+    email = request.form.get('email')
+    pizza_type = request.form.get('pizza-type')
+    pizza_size = request.form.get('pizza-size')
+    pizza_quantity = request.form.get('pizza-quantity')
+    delivery_time = request.form.get('delivery-time')
+    comments = request.form.get('comments')
+
+    # テンプレートにデータを渡して確認ページをレンダリング
+    return render_template('confirmation.html', name=name, phone=phone, email=email, pizza_type=pizza_type, pizza_size=pizza_size, pizza_quantity=pizza_quantity, delivery_time=delivery_time, comments=comments)
+
 
 def run_diff_program(url1, url2):
     # URLのエスケープ確認
