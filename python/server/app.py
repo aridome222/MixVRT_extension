@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify, render_template, redirect, url_for
+from flask import Flask, Response, request, jsonify, render_template, redirect, url_for
+import json
 
 from threading import Thread
 import subprocess
@@ -17,13 +18,18 @@ from src.module import detect_rec_divide
 from src.module import test_slt_addShot
 import pytest
 import shlex
+import logging
 
+
+# ロギングの設定
+logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s %(levelname)s:%(message)s')
 
 # カスタムテンプレートフォルダと静的フォルダを設定
 template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cloned_repo', 'templates')
 static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cloned_repo', 'static')
 app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 CORS(app)
+# CORS(app, origins=["http://127.0.0.1:5000"], methods=["GET", "POST"])
 
 
 def clone_or_pull_repo(repo_url, clone_dir):
@@ -97,8 +103,8 @@ def input_url():
     else:
         return "HTML-file is Already up to date."
 
-
 @app.route('/index', methods=['POST', 'GET'])
+@cross_origin()
 def index():
     if request.method == 'POST':
         # POSTリクエストの処理
@@ -125,6 +131,7 @@ def index():
         
 
 @app.route('/render_index/<path:page_url>')
+@cross_origin()
 def render_index(page_url):
     return render_template("index.html", page_url=page_url)
 
@@ -144,6 +151,28 @@ def piza_form():
         return render_template("piza-form.html")
     else:
         return "HTML-file is Already up to date."
+    
+
+@app.route('/log', methods=['POST'])
+@cross_origin()
+def log_event():
+    data = request.get_json()
+    logging.info(f"Log data: {data}")  # ログデータをファイルに書き込む
+
+    return jsonify({"status": "success"}), 200
+
+
+@app.route('/console', methods=['POST'])
+def log():
+    log_data = request.json
+    print(log_data)  # コンソールに出力
+    # 必要に応じてファイルやデータベースにログを保存
+    # 例: ファイルに保存
+    with open('log.txt', 'a') as f:
+        json.dump(log_data, f)
+        f.write('\n')
+
+    return jsonify({'status': 'success'})
 
 
 @app.route('/diff', methods=['POST'])

@@ -1,0 +1,1477 @@
+2023-12-12 09:02:32,630 WARNING: * Debugger is active!
+2023-12-12 09:02:32,633 INFO: * Debugger PIN: 280-152-610
+2023-12-12 09:02:45,767 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 09:02:46,101 WARNING: * Debugger is active!
+2023-12-12 09:02:46,104 INFO: * Debugger PIN: 280-152-610
+2023-12-12 09:03:21,441 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 09:03:21,794 WARNING: * Debugger is active!
+2023-12-12 09:03:21,795 INFO: * Debugger PIN: 280-152-610
+2023-12-12 09:03:38,968 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 09:03:39,313 WARNING: * Debugger is active!
+2023-12-12 09:03:39,313 INFO: * Debugger PIN: 280-152-610
+2023-12-12 09:04:32,615 INFO:172.26.0.1 - - [12/Dec/2023 09:04:32] "GET / HTTP/1.1" 200 -
+2023-12-12 09:04:37,266 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-12T09:04:37.259Z'}
+2023-12-12 09:04:37,266 INFO:172.26.0.1 - - [12/Dec/2023 09:04:37] "POST /log HTTP/1.1" 200 -
+2023-12-12 09:04:44,435 INFO:172.26.0.1 - - [12/Dec/2023 09:04:44] "[31m[1mGET /log HTTP/1.1[0m" 405 -
+2023-12-12 09:04:47,274 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-12T09:04:47.268Z'}
+2023-12-12 09:04:47,274 INFO:172.26.0.1 - - [12/Dec/2023 09:04:47] "POST /log HTTP/1.1" 200 -
+2023-12-12 09:04:47,619 INFO:Log data: {'eventType': 'click', 'element': 'H1', 'xpath': '/html[1]/body[1]/h1[1]', 'timestamp': '2023-12-12T09:04:47.612Z'}
+2023-12-12 09:04:47,620 INFO:172.26.0.1 - - [12/Dec/2023 09:04:47] "POST /log HTTP/1.1" 200 -
+2023-12-12 09:04:49,427 INFO:172.26.0.1 - - [12/Dec/2023 09:04:49] "[31m[1mGET /log HTTP/1.1[0m" 405 -
+2023-12-12 09:07:38,869 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-12T09:07:38.859Z'}
+2023-12-12 09:07:38,870 INFO:172.26.0.1 - - [12/Dec/2023 09:07:38] "POST /log HTTP/1.1" 200 -
+2023-12-12 09:07:38,872 INFO:172.26.0.1 - - [12/Dec/2023 09:07:38] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-12 09:07:38,879 INFO:172.26.0.1 - - [12/Dec/2023 09:07:38] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-12 09:07:39,307 INFO:172.26.0.1 - - [12/Dec/2023 09:07:39] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 09:07:39,662 INFO:172.26.0.1 - - [12/Dec/2023 09:07:39] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 09:07:52,493 INFO:172.26.0.1 - - [12/Dec/2023 09:07:52] "[31m[1mGET /log HTTP/1.1[0m" 405 -
+2023-12-12 09:07:55,881 INFO:172.26.0.1 - - [12/Dec/2023 09:07:55] "[31m[1mGET /log HTTP/1.1[0m" 405 -
+2023-12-12 09:09:00,056 INFO:172.26.0.1 - - [12/Dec/2023 09:09:00] "GET / HTTP/1.1" 200 -
+2023-12-12 09:09:17,668 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 09:09:18,119 WARNING: * Debugger is active!
+2023-12-12 09:09:18,119 INFO: * Debugger PIN: 280-152-610
+2023-12-12 09:09:26,947 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-12T09:09:26.939Z'}
+2023-12-12 09:09:26,947 INFO:172.26.0.1 - - [12/Dec/2023 09:09:26] "POST /log HTTP/1.1" 200 -
+2023-12-12 09:09:27,367 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-12T09:09:27.363Z'}
+2023-12-12 09:09:27,367 INFO:172.26.0.1 - - [12/Dec/2023 09:09:27] "POST /log HTTP/1.1" 200 -
+2023-12-12 09:09:31,385 INFO:172.26.0.1 - - [12/Dec/2023 09:09:31] "[31m[1mGET /log HTTP/1.1[0m" 405 -
+2023-12-12 09:09:38,191 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-12T09:09:38.187Z'}
+2023-12-12 09:09:38,191 INFO:172.26.0.1 - - [12/Dec/2023 09:09:38] "POST /log HTTP/1.1" 200 -
+2023-12-12 09:09:38,196 INFO:172.26.0.1 - - [12/Dec/2023 09:09:38] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-12 09:09:38,204 INFO:172.26.0.1 - - [12/Dec/2023 09:09:38] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-12 09:09:38,788 INFO:172.26.0.1 - - [12/Dec/2023 09:09:38] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 09:09:39,194 INFO:172.26.0.1 - - [12/Dec/2023 09:09:39] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 09:09:41,324 INFO:172.26.0.1 - - [12/Dec/2023 09:09:41] "[31m[1mGET /log HTTP/1.1[0m" 405 -
+2023-12-12 10:52:20,160 INFO:172.26.0.1 - - [12/Dec/2023 10:52:20] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 10:52:20,532 INFO:172.26.0.1 - - [12/Dec/2023 10:52:20] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 11:38:11,460 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 11:38:12,276 WARNING: * Debugger is active!
+2023-12-12 11:38:12,277 INFO: * Debugger PIN: 280-152-610
+2023-12-12 11:38:52,907 INFO:172.26.0.1 - - [12/Dec/2023 11:38:52] "GET / HTTP/1.1" 200 -
+2023-12-12 11:39:02,094 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-12T11:39:02.088Z'}
+2023-12-12 11:39:02,095 INFO:172.26.0.1 - - [12/Dec/2023 11:39:02] "POST /log HTTP/1.1" 200 -
+2023-12-12 11:39:52,680 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-12T11:39:52.672Z'}
+2023-12-12 11:39:52,681 INFO:172.26.0.1 - - [12/Dec/2023 11:39:52] "POST /log HTTP/1.1" 200 -
+2023-12-12 11:39:52,684 INFO:172.26.0.1 - - [12/Dec/2023 11:39:52] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-12 11:39:52,691 INFO:172.26.0.1 - - [12/Dec/2023 11:39:52] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-12 11:39:53,081 INFO:172.26.0.1 - - [12/Dec/2023 11:39:53] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 11:39:53,444 INFO:172.26.0.1 - - [12/Dec/2023 11:39:53] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 11:40:37,601 INFO:172.26.0.1 - - [12/Dec/2023 11:40:37] "GET / HTTP/1.1" 200 -
+2023-12-12 11:41:32,608 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-12T11:41:32.600Z'}
+2023-12-12 11:41:32,609 INFO:172.26.0.1 - - [12/Dec/2023 11:41:32] "POST /log HTTP/1.1" 200 -
+2023-12-12 11:41:40,479 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-12T11:41:40.472Z'}
+2023-12-12 11:41:40,479 INFO:172.26.0.1 - - [12/Dec/2023 11:41:40] "POST /log HTTP/1.1" 200 -
+2023-12-12 11:41:40,484 INFO:172.26.0.1 - - [12/Dec/2023 11:41:40] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-12 11:41:40,491 INFO:172.26.0.1 - - [12/Dec/2023 11:41:40] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-12 11:41:41,169 INFO:172.26.0.1 - - [12/Dec/2023 11:41:41] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 11:41:41,542 INFO:172.26.0.1 - - [12/Dec/2023 11:41:41] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 11:42:00,989 INFO:172.26.0.1 - - [12/Dec/2023 11:42:00] "POST /diff HTTP/1.1" 200 -
+2023-12-12 11:42:27,661 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 11:42:28,063 WARNING: * Debugger is active!
+2023-12-12 11:42:28,063 INFO: * Debugger PIN: 280-152-610
+2023-12-12 11:43:18,424 INFO:172.26.0.1 - - [12/Dec/2023 11:43:18] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-12 11:43:18,818 INFO:172.26.0.1 - - [12/Dec/2023 11:43:18] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 11:43:19,181 INFO:172.26.0.1 - - [12/Dec/2023 11:43:19] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 11:44:36,539 INFO:172.26.0.1 - - [12/Dec/2023 11:44:36] "POST /confirmation HTTP/1.1" 200 -
+2023-12-12 11:44:40,059 INFO:172.26.0.1 - - [12/Dec/2023 11:44:40] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 11:50:25,086 INFO:172.26.0.1 - - [12/Dec/2023 11:50:25] "GET / HTTP/1.1" 200 -
+2023-12-12 11:52:01,300 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-12T11:52:01.288Z'}
+2023-12-12 11:52:01,301 INFO:172.26.0.1 - - [12/Dec/2023 11:52:01] "POST /log HTTP/1.1" 200 -
+2023-12-12 11:52:03,969 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-12T11:52:03.960Z'}
+2023-12-12 11:52:03,970 INFO:172.26.0.1 - - [12/Dec/2023 11:52:03] "POST /log HTTP/1.1" 200 -
+2023-12-12 11:52:03,974 INFO:172.26.0.1 - - [12/Dec/2023 11:52:03] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-12 11:52:03,982 INFO:172.26.0.1 - - [12/Dec/2023 11:52:03] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-12 11:52:04,393 INFO:172.26.0.1 - - [12/Dec/2023 11:52:04] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 11:52:04,765 INFO:172.26.0.1 - - [12/Dec/2023 11:52:04] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 11:54:01,952 INFO:172.26.0.1 - - [12/Dec/2023 11:54:01] "GET / HTTP/1.1" 200 -
+2023-12-12 11:54:03,099 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-12T11:54:03.095Z'}
+2023-12-12 11:54:03,099 INFO:172.26.0.1 - - [12/Dec/2023 11:54:03] "POST /log HTTP/1.1" 200 -
+2023-12-12 11:54:03,332 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-12T11:54:03.327Z'}
+2023-12-12 11:54:03,333 INFO:172.26.0.1 - - [12/Dec/2023 11:54:03] "POST /log HTTP/1.1" 200 -
+2023-12-12 11:54:10,500 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-12T11:54:10.495Z'}
+2023-12-12 11:54:10,500 INFO:172.26.0.1 - - [12/Dec/2023 11:54:10] "POST /log HTTP/1.1" 200 -
+2023-12-12 11:54:10,505 INFO:172.26.0.1 - - [12/Dec/2023 11:54:10] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-12 11:54:10,511 INFO:172.26.0.1 - - [12/Dec/2023 11:54:10] "GET /render_index/https://experienceleague.adobe.com/docs/experience-manager-65/authoring/siteandpage/page-diff.html%3Flang%3Dja HTTP/1.1" 200 -
+2023-12-12 12:12:06,926 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 12:12:07,746 WARNING: * Debugger is active!
+2023-12-12 12:12:07,749 INFO: * Debugger PIN: 280-152-610
+2023-12-12 12:12:19,877 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 12:12:20,257 WARNING: * Debugger is active!
+2023-12-12 12:12:20,260 INFO: * Debugger PIN: 280-152-610
+2023-12-12 12:12:25,602 INFO:172.26.0.1 - - [12/Dec/2023 12:12:25] "GET / HTTP/1.1" 200 -
+2023-12-12 12:12:25,673 INFO:172.26.0.1 - - [12/Dec/2023 12:12:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-12-12 12:15:02,827 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 12:15:03,186 WARNING: * Debugger is active!
+2023-12-12 12:15:03,189 INFO: * Debugger PIN: 280-152-610
+2023-12-12 12:15:50,759 INFO:172.26.0.1 - - [12/Dec/2023 12:15:50] "GET /cors HTTP/1.1" 200 -
+2023-12-12 12:24:15,059 INFO:172.26.0.1 - - [12/Dec/2023 12:24:15] "GET / HTTP/1.1" 200 -
+2023-12-12 12:27:24,733 INFO:172.26.0.1 - - [12/Dec/2023 12:27:24] "GET /cors HTTP/1.1" 200 -
+2023-12-12 12:29:59,596 INFO:172.26.0.1 - - [12/Dec/2023 12:29:59] "[31m[1mPOST /cors HTTP/1.1[0m" 405 -
+2023-12-12 12:31:56,833 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 12:31:57,367 WARNING: * Debugger is active!
+2023-12-12 12:31:57,370 INFO: * Debugger PIN: 280-152-610
+2023-12-12 12:32:03,164 INFO:172.26.0.1 - - [12/Dec/2023 12:32:03] "POST /cors HTTP/1.1" 200 -
+2023-12-12 12:32:25,010 INFO:172.26.0.1 - - [12/Dec/2023 12:32:25] "OPTIONS /log HTTP/1.1" 200 -
+2023-12-12 12:32:25,014 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-12T12:32:24.999Z'}
+2023-12-12 12:32:25,014 INFO:172.26.0.1 - - [12/Dec/2023 12:32:25] "POST /log HTTP/1.1" 200 -
+2023-12-12 12:32:37,878 INFO:172.26.0.1 - - [12/Dec/2023 12:32:37] "OPTIONS /log HTTP/1.1" 200 -
+2023-12-12 12:32:37,888 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-12T12:32:37.871Z'}
+2023-12-12 12:32:37,888 INFO:172.26.0.1 - - [12/Dec/2023 12:32:37] "POST /log HTTP/1.1" 200 -
+2023-12-12 12:32:37,889 INFO:172.26.0.1 - - [12/Dec/2023 12:32:37] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-12 12:32:37,900 INFO:172.26.0.1 - - [12/Dec/2023 12:32:37] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-12 12:32:38,300 INFO:172.26.0.1 - - [12/Dec/2023 12:32:38] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 12:32:38,683 INFO:172.26.0.1 - - [12/Dec/2023 12:32:38] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 12:33:10,674 INFO:172.26.0.1 - - [12/Dec/2023 12:33:10] "[31m[1mPOST /piza-form HTTP/1.1[0m" 405 -
+2023-12-12 12:34:29,505 INFO:172.26.0.1 - - [12/Dec/2023 12:34:29] "OPTIONS /piza-form HTTP/1.1" 200 -
+2023-12-12 12:34:29,511 INFO:172.26.0.1 - - [12/Dec/2023 12:34:29] "[31m[1mPOST /piza-form HTTP/1.1[0m" 405 -
+2023-12-12 12:35:32,507 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 12:35:32,881 WARNING: * Debugger is active!
+2023-12-12 12:35:32,881 INFO: * Debugger PIN: 280-152-610
+2023-12-12 12:45:34,287 INFO:172.26.0.1 - - [12/Dec/2023 12:45:34] "POST /cors HTTP/1.1" 200 -
+2023-12-12 12:45:47,888 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 12:45:48,246 WARNING: * Debugger is active!
+2023-12-12 12:45:48,249 INFO: * Debugger PIN: 280-152-610
+2023-12-12 12:45:52,277 INFO:172.26.0.1 - - [12/Dec/2023 12:45:52] "POST /cors HTTP/1.1" 200 -
+2023-12-12 12:46:06,429 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 12:46:06,777 WARNING: * Debugger is active!
+2023-12-12 12:46:06,780 INFO: * Debugger PIN: 280-152-610
+2023-12-12 12:46:12,699 INFO:172.26.0.1 - - [12/Dec/2023 12:46:12] "POST /cors HTTP/1.1" 200 -
+2023-12-12 12:46:38,009 INFO:172.26.0.1 - - [12/Dec/2023 12:46:38] "[31m[1mPOST /piza-form HTTP/1.1[0m" 405 -
+2023-12-12 12:46:53,218 INFO:172.26.0.1 - - [12/Dec/2023 12:46:53] "OPTIONS /piza-form HTTP/1.1" 200 -
+2023-12-12 12:48:33,849 INFO:172.26.0.1 - - [12/Dec/2023 12:48:33] "OPTIONS /index HTTP/1.1" 200 -
+2023-12-12 12:48:44,491 INFO:172.26.0.1 - - [12/Dec/2023 12:48:44] "POST /cors HTTP/1.1" 200 -
+2023-12-12 12:48:50,699 INFO:172.26.0.1 - - [12/Dec/2023 12:48:50] "[31m[1mPOST /piza-form HTTP/1.1[0m" 405 -
+2023-12-12 12:48:58,248 INFO:172.26.0.1 - - [12/Dec/2023 12:48:58] "[35m[1mPOST /index HTTP/1.1[0m" 500 -
+2023-12-12 12:51:16,355 INFO:172.26.0.1 - - [12/Dec/2023 12:51:16] "OPTIONS /index HTTP/1.1" 200 -
+2023-12-12 12:53:42,668 INFO:172.26.0.1 - - [12/Dec/2023 12:53:42] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 12:54:06,288 INFO:172.26.0.1 - - [12/Dec/2023 12:54:06] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 12:54:10,882 INFO:172.26.0.1 - - [12/Dec/2023 12:54:10] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 12:54:13,119 INFO:172.26.0.1 - - [12/Dec/2023 12:54:13] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 12:54:14,934 INFO:172.26.0.1 - - [12/Dec/2023 12:54:14] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 12:54:39,402 INFO:172.26.0.1 - - [12/Dec/2023 12:54:39] "OPTIONS /index HTTP/1.1" 200 -
+2023-12-12 12:54:45,386 INFO:172.26.0.1 - - [12/Dec/2023 12:54:45] "[35m[1mPOST /index HTTP/1.1[0m" 500 -
+2023-12-12 12:55:16,627 INFO:172.26.0.1 - - [12/Dec/2023 12:55:16] "OPTIONS /index HTTP/1.1" 200 -
+2023-12-12 12:55:26,733 INFO:172.26.0.1 - - [12/Dec/2023 12:55:26] "OPTIONS /index HTTP/1.1" 200 -
+2023-12-12 12:57:14,105 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 12:57:14,471 WARNING: * Debugger is active!
+2023-12-12 12:57:14,472 INFO: * Debugger PIN: 280-152-610
+2023-12-12 12:57:33,767 INFO:172.26.0.1 - - [12/Dec/2023 12:57:33] "OPTIONS /index HTTP/1.1" 200 -
+2023-12-12 12:57:33,788 INFO:172.26.0.1 - - [12/Dec/2023 12:57:33] "[35m[1mPOST /index HTTP/1.1[0m" 500 -
+2023-12-12 12:57:51,838 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 12:57:52,203 WARNING: * Debugger is active!
+2023-12-12 12:57:52,204 INFO: * Debugger PIN: 280-152-610
+2023-12-12 12:58:07,715 INFO:172.26.0.1 - - [12/Dec/2023 12:58:07] "OPTIONS /index HTTP/1.1" 200 -
+2023-12-12 12:58:32,593 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 13:00:23,596 WARNING: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2023-12-12 13:00:23,596 INFO: * Running on http://172.26.0.2:5000/ (Press CTRL+C to quit)
+2023-12-12 13:00:23,598 INFO: * Restarting with stat
+2023-12-12 13:00:23,931 WARNING: * Debugger is active!
+2023-12-12 13:00:23,936 INFO: * Debugger PIN: 280-152-610
+2023-12-12 13:01:11,365 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 13:01:11,412 INFO: * Restarting with stat
+2023-12-12 13:01:11,761 WARNING: * Debugger is active!
+2023-12-12 13:01:11,762 INFO: * Debugger PIN: 280-152-610
+2023-12-12 13:01:16,386 INFO:172.26.0.1 - - [12/Dec/2023 13:01:16] "OPTIONS /index HTTP/1.1" 200 -
+2023-12-12 13:01:24,897 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 13:01:24,929 INFO: * Restarting with stat
+2023-12-12 13:01:25,231 WARNING: * Debugger is active!
+2023-12-12 13:01:25,231 INFO: * Debugger PIN: 280-152-610
+2023-12-12 13:01:27,364 INFO:172.26.0.1 - - [12/Dec/2023 13:01:27] "OPTIONS /index HTTP/1.1" 200 -
+2023-12-12 13:01:27,378 INFO:172.26.0.1 - - [12/Dec/2023 13:01:27] "[35m[1mPOST /index HTTP/1.1[0m" 500 -
+2023-12-12 13:01:37,351 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 13:01:37,397 INFO: * Restarting with stat
+2023-12-12 13:01:37,747 WARNING: * Debugger is active!
+2023-12-12 13:01:37,748 INFO: * Debugger PIN: 280-152-610
+2023-12-12 13:01:41,316 INFO:172.26.0.1 - - [12/Dec/2023 13:01:41] "OPTIONS /index HTTP/1.1" 200 -
+2023-12-12 13:01:50,900 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 13:01:50,934 INFO: * Restarting with stat
+2023-12-12 13:01:51,239 WARNING: * Debugger is active!
+2023-12-12 13:01:51,239 INFO: * Debugger PIN: 280-152-610
+2023-12-12 13:01:53,080 INFO:172.26.0.1 - - [12/Dec/2023 13:01:53] "OPTIONS /index HTTP/1.1" 200 -
+2023-12-12 13:01:53,093 INFO:172.26.0.1 - - [12/Dec/2023 13:01:53] "[35m[1mPOST /index HTTP/1.1[0m" 500 -
+2023-12-12 13:02:05,369 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 13:02:05,406 INFO: * Restarting with stat
+2023-12-12 13:02:05,714 WARNING: * Debugger is active!
+2023-12-12 13:02:05,714 INFO: * Debugger PIN: 280-152-610
+2023-12-12 13:02:08,012 INFO:172.26.0.1 - - [12/Dec/2023 13:02:08] "OPTIONS /index HTTP/1.1" 200 -
+2023-12-12 13:09:44,154 INFO:172.26.0.1 - - [12/Dec/2023 13:09:44] "GET / HTTP/1.1" 200 -
+2023-12-12 13:09:45,230 INFO:172.26.0.1 - - [12/Dec/2023 13:09:45] "OPTIONS /log HTTP/1.1" 200 -
+2023-12-12 13:09:45,234 INFO:Log data: {'eventType': 'click', 'element': 'BODY', 'xpath': '/html[1]/body[1]', 'timestamp': '2023-12-12T13:09:45.223Z'}
+2023-12-12 13:09:45,235 INFO:172.26.0.1 - - [12/Dec/2023 13:09:45] "POST /log HTTP/1.1" 200 -
+2023-12-12 13:09:45,562 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-12T13:09:45.559Z'}
+2023-12-12 13:09:45,563 INFO:172.26.0.1 - - [12/Dec/2023 13:09:45] "POST /log HTTP/1.1" 200 -
+2023-12-12 13:09:52,411 INFO:172.26.0.1 - - [12/Dec/2023 13:09:52] "OPTIONS /log HTTP/1.1" 200 -
+2023-12-12 13:09:52,413 INFO:172.26.0.1 - - [12/Dec/2023 13:09:52] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-12 13:09:52,417 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-12T13:09:52.399Z'}
+2023-12-12 13:09:52,417 INFO:172.26.0.1 - - [12/Dec/2023 13:09:52] "POST /log HTTP/1.1" 200 -
+2023-12-12 13:09:52,420 INFO:172.26.0.1 - - [12/Dec/2023 13:09:52] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-12 13:09:52,802 INFO:172.26.0.1 - - [12/Dec/2023 13:09:52] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 13:09:53,169 INFO:172.26.0.1 - - [12/Dec/2023 13:09:53] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 13:10:09,369 INFO:172.26.0.1 - - [12/Dec/2023 13:10:09] "OPTIONS /diff HTTP/1.1" 200 -
+2023-12-12 13:10:09,430 INFO:172.26.0.1 - - [12/Dec/2023 13:10:09] "POST /diff HTTP/1.1" 200 -
+2023-12-12 13:12:05,140 INFO:172.26.0.1 - - [12/Dec/2023 13:12:05] "[35m[1mPOST /index HTTP/1.1[0m" 500 -
+2023-12-12 13:12:27,387 INFO:172.26.0.1 - - [12/Dec/2023 13:12:27] "OPTIONS /piza-form HTTP/1.1" 200 -
+2023-12-12 13:12:51,656 INFO:172.26.0.1 - - [12/Dec/2023 13:12:51] "GET /index HTTP/1.1" 200 -
+2023-12-12 13:13:14,682 INFO:172.26.0.1 - - [12/Dec/2023 13:13:14] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 13:13:26,560 INFO:172.26.0.1 - - [12/Dec/2023 13:13:26] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-12 13:13:26,936 INFO:172.26.0.1 - - [12/Dec/2023 13:13:26] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 13:13:27,296 INFO:172.26.0.1 - - [12/Dec/2023 13:13:27] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 13:15:02,111 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-12 13:15:02,156 INFO: * Restarting with stat
+2023-12-12 13:15:02,460 WARNING: * Debugger is active!
+2023-12-12 13:15:02,460 INFO: * Debugger PIN: 280-152-610
+2023-12-12 13:15:17,265 INFO:172.26.0.1 - - [12/Dec/2023 13:15:17] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 13:15:20,682 INFO:172.26.0.1 - - [12/Dec/2023 13:15:20] "OPTIONS /piza-form HTTP/1.1" 200 -
+2023-12-12 13:15:44,634 INFO:172.26.0.1 - - [12/Dec/2023 13:15:44] "OPTIONS /index HTTP/1.1" 200 -
+2023-12-12 13:23:31,733 INFO:172.26.0.1 - - [12/Dec/2023 13:23:31] "GET / HTTP/1.1" 200 -
+2023-12-12 13:23:33,037 INFO:172.26.0.1 - - [12/Dec/2023 13:23:33] "OPTIONS /log HTTP/1.1" 200 -
+2023-12-12 13:23:33,043 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-12T13:23:33.031Z'}
+2023-12-12 13:23:33,044 INFO:172.26.0.1 - - [12/Dec/2023 13:23:33] "POST /log HTTP/1.1" 200 -
+2023-12-12 13:23:34,414 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-12T13:23:34.407Z'}
+2023-12-12 13:23:34,414 INFO:172.26.0.1 - - [12/Dec/2023 13:23:34] "POST /log HTTP/1.1" 200 -
+2023-12-12 13:23:34,419 INFO:172.26.0.1 - - [12/Dec/2023 13:23:34] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-12 13:23:34,426 INFO:172.26.0.1 - - [12/Dec/2023 13:23:34] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-12 13:23:34,806 INFO:172.26.0.1 - - [12/Dec/2023 13:23:34] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 13:23:35,169 INFO:172.26.0.1 - - [12/Dec/2023 13:23:35] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 13:24:58,622 INFO:172.26.0.1 - - [12/Dec/2023 13:24:58] "GET / HTTP/1.1" 200 -
+2023-12-12 13:25:00,355 INFO:172.26.0.1 - - [12/Dec/2023 13:25:00] "OPTIONS /log HTTP/1.1" 200 -
+2023-12-12 13:25:00,359 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-12T13:25:00.351Z'}
+2023-12-12 13:25:00,359 INFO:172.26.0.1 - - [12/Dec/2023 13:25:00] "POST /log HTTP/1.1" 200 -
+2023-12-12 13:25:12,783 INFO:172.26.0.1 - - [12/Dec/2023 13:25:12] "OPTIONS /log HTTP/1.1" 200 -
+2023-12-12 13:25:12,786 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-12T13:25:12.776Z'}
+2023-12-12 13:25:12,787 INFO:172.26.0.1 - - [12/Dec/2023 13:25:12] "POST /log HTTP/1.1" 200 -
+2023-12-12 13:25:16,726 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-12T13:25:16.720Z'}
+2023-12-12 13:25:16,727 INFO:172.26.0.1 - - [12/Dec/2023 13:25:16] "POST /log HTTP/1.1" 200 -
+2023-12-12 13:25:16,734 INFO:172.26.0.1 - - [12/Dec/2023 13:25:16] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-12 13:25:16,739 INFO:172.26.0.1 - - [12/Dec/2023 13:25:16] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-12 13:25:17,129 INFO:172.26.0.1 - - [12/Dec/2023 13:25:17] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 13:25:17,497 INFO:172.26.0.1 - - [12/Dec/2023 13:25:17] "GET /piza-form HTTP/1.1" 200 -
+2023-12-12 13:25:26,823 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("name")', 'timestamp': '2023-12-12T13:25:26.816Z'}
+2023-12-12 13:25:26,823 INFO:172.26.0.1 - - [12/Dec/2023 13:25:26] "POST /log HTTP/1.1" 200 -
+2023-12-12 13:26:06,288 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pizza-quantity")', 'timestamp': '2023-12-12T13:26:06.279Z'}
+2023-12-12 13:26:06,289 INFO:172.26.0.1 - - [12/Dec/2023 13:26:06] "POST /log HTTP/1.1" 200 -
+2023-12-12 13:26:10,014 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("medium")', 'timestamp': '2023-12-12T13:26:10.007Z'}
+2023-12-12 13:26:10,014 INFO:172.26.0.1 - - [12/Dec/2023 13:26:10] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:06:01,847 WARNING: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2023-12-13 04:06:01,848 INFO: * Running on http://172.26.0.2:5000/ (Press CTRL+C to quit)
+2023-12-13 04:06:01,849 INFO: * Restarting with stat
+2023-12-13 04:06:02,219 WARNING: * Debugger is active!
+2023-12-13 04:06:02,227 INFO: * Debugger PIN: 557-695-260
+2023-12-13 04:06:09,866 INFO:172.26.0.1 - - [13/Dec/2023 04:06:09] "GET / HTTP/1.1" 200 -
+2023-12-13 04:06:09,966 INFO:172.26.0.1 - - [13/Dec/2023 04:06:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-12-13 04:06:11,389 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T04:06:11.379Z'}
+2023-12-13 04:06:11,390 INFO:172.26.0.1 - - [13/Dec/2023 04:06:11] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:06:13,979 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T04:06:13.947Z'}
+2023-12-13 04:06:13,980 INFO:172.26.0.1 - - [13/Dec/2023 04:06:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:06:13,982 INFO:172.26.0.1 - - [13/Dec/2023 04:06:13] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 04:06:13,988 INFO:172.26.0.1 - - [13/Dec/2023 04:06:13] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 04:06:14,395 INFO:172.26.0.1 - - [13/Dec/2023 04:06:14] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 04:06:14,763 INFO:172.26.0.1 - - [13/Dec/2023 04:06:14] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 04:06:23,842 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("name")', 'timestamp': '2023-12-13T04:06:23.835Z'}
+2023-12-13 04:06:23,843 INFO:172.26.0.1 - - [13/Dec/2023 04:06:23] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:06:24,867 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:06:24.859Z'}
+2023-12-13 04:06:24,867 INFO:172.26.0.1 - - [13/Dec/2023 04:06:24] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:06:25,772 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:06:25.762Z'}
+2023-12-13 04:06:25,773 INFO:172.26.0.1 - - [13/Dec/2023 04:06:25] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:02,843 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("name")', 'timestamp': '2023-12-13T04:07:02.835Z'}
+2023-12-13 04:07:02,844 INFO:172.26.0.1 - - [13/Dec/2023 04:07:02] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:05,014 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:07:05.002Z'}
+2023-12-13 04:07:05,014 INFO:172.26.0.1 - - [13/Dec/2023 04:07:05] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:06,025 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:07:06.012Z'}
+2023-12-13 04:07:06,025 INFO:172.26.0.1 - - [13/Dec/2023 04:07:06] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:07,470 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:07:07.459Z'}
+2023-12-13 04:07:07,471 INFO:172.26.0.1 - - [13/Dec/2023 04:07:07] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:08,910 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:07:08.899Z'}
+2023-12-13 04:07:08,910 INFO:172.26.0.1 - - [13/Dec/2023 04:07:08] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:13,668 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("phone")', 'timestamp': '2023-12-13T04:07:13.662Z'}
+2023-12-13 04:07:13,669 INFO:172.26.0.1 - - [13/Dec/2023 04:07:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:15,498 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:07:15.487Z'}
+2023-12-13 04:07:15,498 INFO:172.26.0.1 - - [13/Dec/2023 04:07:15] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:17,342 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:07:17.335Z'}
+2023-12-13 04:07:17,343 INFO:172.26.0.1 - - [13/Dec/2023 04:07:17] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:18,470 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:07:18.464Z'}
+2023-12-13 04:07:18,470 INFO:172.26.0.1 - - [13/Dec/2023 04:07:18] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:21,949 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:07:21.942Z'}
+2023-12-13 04:07:21,949 INFO:172.26.0.1 - - [13/Dec/2023 04:07:21] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:23,240 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:07:23.231Z'}
+2023-12-13 04:07:23,241 INFO:172.26.0.1 - - [13/Dec/2023 04:07:23] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:24,800 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:07:24.791Z'}
+2023-12-13 04:07:24,801 INFO:172.26.0.1 - - [13/Dec/2023 04:07:24] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:27,302 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("email")', 'timestamp': '2023-12-13T04:07:27.295Z'}
+2023-12-13 04:07:27,303 INFO:172.26.0.1 - - [13/Dec/2023 04:07:27] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:28,051 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("phone")', 'timestamp': '2023-12-13T04:07:28.046Z'}
+2023-12-13 04:07:28,052 INFO:172.26.0.1 - - [13/Dec/2023 04:07:28] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:07:29,093 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:07:29.079Z'}
+2023-12-13 04:07:29,093 INFO:172.26.0.1 - - [13/Dec/2023 04:07:29] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:20,178 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("email")', 'timestamp': '2023-12-13T04:08:20.143Z'}
+2023-12-13 04:08:20,182 INFO:172.26.0.1 - - [13/Dec/2023 04:08:20] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:23,806 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:08:23.798Z'}
+2023-12-13 04:08:23,807 INFO:172.26.0.1 - - [13/Dec/2023 04:08:23] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:25,551 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:08:25.541Z'}
+2023-12-13 04:08:25,552 INFO:172.26.0.1 - - [13/Dec/2023 04:08:25] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:26,189 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:08:26.173Z'}
+2023-12-13 04:08:26,189 INFO:172.26.0.1 - - [13/Dec/2023 04:08:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:32,028 INFO:172.26.0.1 - - [13/Dec/2023 04:08:32] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 04:08:33,692 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:08:33.686Z'}
+2023-12-13 04:08:33,692 INFO:172.26.0.1 - - [13/Dec/2023 04:08:33] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:33,946 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("name")', 'timestamp': '2023-12-13T04:08:33.942Z'}
+2023-12-13 04:08:33,947 INFO:172.26.0.1 - - [13/Dec/2023 04:08:33] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:34,843 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("phone")', 'timestamp': '2023-12-13T04:08:34.837Z'}
+2023-12-13 04:08:34,843 INFO:172.26.0.1 - - [13/Dec/2023 04:08:34] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:35,787 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:08:35.782Z'}
+2023-12-13 04:08:35,788 INFO:172.26.0.1 - - [13/Dec/2023 04:08:35] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:37,187 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("phone")', 'timestamp': '2023-12-13T04:08:37.181Z'}
+2023-12-13 04:08:37,187 INFO:172.26.0.1 - - [13/Dec/2023 04:08:37] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:39,227 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:08:39.206Z'}
+2023-12-13 04:08:39,227 INFO:172.26.0.1 - - [13/Dec/2023 04:08:39] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:39,819 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:08:39.814Z'}
+2023-12-13 04:08:39,820 INFO:172.26.0.1 - - [13/Dec/2023 04:08:39] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:40,122 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("phone")', 'timestamp': '2023-12-13T04:08:40.117Z'}
+2023-12-13 04:08:40,122 INFO:172.26.0.1 - - [13/Dec/2023 04:08:40] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:41,244 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("email")', 'timestamp': '2023-12-13T04:08:41.238Z'}
+2023-12-13 04:08:41,245 INFO:172.26.0.1 - - [13/Dec/2023 04:08:41] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:43,551 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:08:43.542Z'}
+2023-12-13 04:08:43,552 INFO:172.26.0.1 - - [13/Dec/2023 04:08:43] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:45,850 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:08:45.845Z'}
+2023-12-13 04:08:45,850 INFO:172.26.0.1 - - [13/Dec/2023 04:08:45] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:08:47,699 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:08:47.694Z'}
+2023-12-13 04:08:47,699 INFO:172.26.0.1 - - [13/Dec/2023 04:08:47] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:09:50,206 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pizza-quantity")', 'timestamp': '2023-12-13T04:09:50.174Z'}
+2023-12-13 04:09:50,207 INFO:172.26.0.1 - - [13/Dec/2023 04:09:50] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:09:50,427 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pizza-quantity")', 'timestamp': '2023-12-13T04:09:50.406Z'}
+2023-12-13 04:09:50,427 INFO:172.26.0.1 - - [13/Dec/2023 04:09:50] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:09:50,625 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pizza-quantity")', 'timestamp': '2023-12-13T04:09:50.614Z'}
+2023-12-13 04:09:50,626 INFO:172.26.0.1 - - [13/Dec/2023 04:09:50] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:09:50,794 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pizza-quantity")', 'timestamp': '2023-12-13T04:09:50.782Z'}
+2023-12-13 04:09:50,794 INFO:172.26.0.1 - - [13/Dec/2023 04:09:50] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:10:03,331 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pizza-quantity")', 'timestamp': '2023-12-13T04:10:03.303Z'}
+2023-12-13 04:10:03,332 INFO:172.26.0.1 - - [13/Dec/2023 04:10:03] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:10:07,693 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:10:07.679Z'}
+2023-12-13 04:10:07,693 INFO:172.26.0.1 - - [13/Dec/2023 04:10:07] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:10:08,355 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pizza-quantity")', 'timestamp': '2023-12-13T04:10:08.334Z'}
+2023-12-13 04:10:08,355 INFO:172.26.0.1 - - [13/Dec/2023 04:10:08] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:13,115 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("name")', 'timestamp': '2023-12-13T04:14:13.103Z'}
+2023-12-13 04:14:13,115 INFO:172.26.0.1 - - [13/Dec/2023 04:14:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:13,678 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("email")', 'timestamp': '2023-12-13T04:14:13.671Z'}
+2023-12-13 04:14:13,679 INFO:172.26.0.1 - - [13/Dec/2023 04:14:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:15,002 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:14:14.991Z'}
+2023-12-13 04:14:15,002 INFO:172.26.0.1 - - [13/Dec/2023 04:14:15] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:18,888 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:14:18.878Z'}
+2023-12-13 04:14:18,889 INFO:172.26.0.1 - - [13/Dec/2023 04:14:18] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:23,053 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:14:23.046Z'}
+2023-12-13 04:14:23,053 INFO:172.26.0.1 - - [13/Dec/2023 04:14:23] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:26,933 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:14:26.927Z'}
+2023-12-13 04:14:26,933 INFO:172.26.0.1 - - [13/Dec/2023 04:14:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:28,237 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': 'id("pizza-type")', 'timestamp': '2023-12-13T04:14:28.231Z'}
+2023-12-13 04:14:28,238 INFO:172.26.0.1 - - [13/Dec/2023 04:14:28] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:28,643 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': 'id("pizza-type")', 'timestamp': '2023-12-13T04:14:28.631Z'}
+2023-12-13 04:14:28,643 INFO:172.26.0.1 - - [13/Dec/2023 04:14:28] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:29,449 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:14:29.439Z'}
+2023-12-13 04:14:29,450 INFO:172.26.0.1 - - [13/Dec/2023 04:14:29] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:30,709 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("email")', 'timestamp': '2023-12-13T04:14:30.703Z'}
+2023-12-13 04:14:30,709 INFO:172.26.0.1 - - [13/Dec/2023 04:14:30] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:32,733 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:14:32.727Z'}
+2023-12-13 04:14:32,734 INFO:172.26.0.1 - - [13/Dec/2023 04:14:32] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:33,765 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("small")', 'timestamp': '2023-12-13T04:14:33.759Z'}
+2023-12-13 04:14:33,765 INFO:172.26.0.1 - - [13/Dec/2023 04:14:33] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:34,497 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:14:34.487Z'}
+2023-12-13 04:14:34,498 INFO:172.26.0.1 - - [13/Dec/2023 04:14:34] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:35,477 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pizza-quantity")', 'timestamp': '2023-12-13T04:14:35.471Z'}
+2023-12-13 04:14:35,477 INFO:172.26.0.1 - - [13/Dec/2023 04:14:35] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:36,435 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pizza-quantity")', 'timestamp': '2023-12-13T04:14:36.431Z'}
+2023-12-13 04:14:36,435 INFO:172.26.0.1 - - [13/Dec/2023 04:14:36] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:37,384 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:14:37.375Z'}
+2023-12-13 04:14:37,384 INFO:172.26.0.1 - - [13/Dec/2023 04:14:37] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:39,342 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("delivery-time")', 'timestamp': '2023-12-13T04:14:39.335Z'}
+2023-12-13 04:14:39,342 INFO:172.26.0.1 - - [13/Dec/2023 04:14:39] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:41,621 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:14:41.607Z'}
+2023-12-13 04:14:41,622 INFO:172.26.0.1 - - [13/Dec/2023 04:14:41] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:41,637 INFO:172.26.0.1 - - [13/Dec/2023 04:14:41] "POST /confirmation HTTP/1.1" 200 -
+2023-12-13 04:14:47,309 INFO:Log data: {'eventType': 'click', 'element': 'TEXTAREA', 'xpath': 'id("comments")', 'timestamp': '2023-12-13T04:14:47.303Z'}
+2023-12-13 04:14:47,310 INFO:172.26.0.1 - - [13/Dec/2023 04:14:47] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:47,967 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:14:47.959Z'}
+2023-12-13 04:14:47,967 INFO:172.26.0.1 - - [13/Dec/2023 04:14:47] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:48,269 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("phone")', 'timestamp': '2023-12-13T04:14:48.263Z'}
+2023-12-13 04:14:48,270 INFO:172.26.0.1 - - [13/Dec/2023 04:14:48] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:49,469 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("email")', 'timestamp': '2023-12-13T04:14:49.463Z'}
+2023-12-13 04:14:49,470 INFO:172.26.0.1 - - [13/Dec/2023 04:14:49] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:50,844 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:14:50.838Z'}
+2023-12-13 04:14:50,845 INFO:172.26.0.1 - - [13/Dec/2023 04:14:50] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:51,197 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': 'id("pizza-type")', 'timestamp': '2023-12-13T04:14:51.191Z'}
+2023-12-13 04:14:51,198 INFO:172.26.0.1 - - [13/Dec/2023 04:14:51] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:51,754 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': 'id("pizza-type")', 'timestamp': '2023-12-13T04:14:51.743Z'}
+2023-12-13 04:14:51,754 INFO:172.26.0.1 - - [13/Dec/2023 04:14:51] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:52,533 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:14:52.527Z'}
+2023-12-13 04:14:52,535 INFO:172.26.0.1 - - [13/Dec/2023 04:14:52] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:52,891 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("medium")', 'timestamp': '2023-12-13T04:14:52.887Z'}
+2023-12-13 04:14:52,892 INFO:172.26.0.1 - - [13/Dec/2023 04:14:52] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:53,317 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pizza-quantity")', 'timestamp': '2023-12-13T04:14:53.311Z'}
+2023-12-13 04:14:53,317 INFO:172.26.0.1 - - [13/Dec/2023 04:14:53] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:54,205 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pizza-quantity")', 'timestamp': '2023-12-13T04:14:54.199Z'}
+2023-12-13 04:14:54,206 INFO:172.26.0.1 - - [13/Dec/2023 04:14:54] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:54,735 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("delivery-time")', 'timestamp': '2023-12-13T04:14:54.727Z'}
+2023-12-13 04:14:54,735 INFO:172.26.0.1 - - [13/Dec/2023 04:14:54] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:55,645 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("delivery-time")', 'timestamp': '2023-12-13T04:14:55.639Z'}
+2023-12-13 04:14:55,646 INFO:172.26.0.1 - - [13/Dec/2023 04:14:55] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:55,949 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("delivery-time")', 'timestamp': '2023-12-13T04:14:55.943Z'}
+2023-12-13 04:14:55,949 INFO:172.26.0.1 - - [13/Dec/2023 04:14:55] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:56,321 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("delivery-time")', 'timestamp': '2023-12-13T04:14:56.303Z'}
+2023-12-13 04:14:56,321 INFO:172.26.0.1 - - [13/Dec/2023 04:14:56] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:57,708 INFO:Log data: {'eventType': 'click', 'element': 'TEXTAREA', 'xpath': 'id("comments")', 'timestamp': '2023-12-13T04:14:57.702Z'}
+2023-12-13 04:14:57,709 INFO:172.26.0.1 - - [13/Dec/2023 04:14:57] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:58,294 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:14:58.287Z'}
+2023-12-13 04:14:58,295 INFO:172.26.0.1 - - [13/Dec/2023 04:14:58] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:14:58,297 INFO:172.26.0.1 - - [13/Dec/2023 04:14:58] "POST /confirmation HTTP/1.1" 200 -
+2023-12-13 04:15:07,483 INFO:172.26.0.1 - - [13/Dec/2023 04:15:07] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 04:15:08,535 INFO:172.26.0.1 - - [13/Dec/2023 04:15:08] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 04:15:14,949 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("name")', 'timestamp': '2023-12-13T04:15:14.942Z'}
+2023-12-13 04:15:14,950 INFO:172.26.0.1 - - [13/Dec/2023 04:15:14] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:15:15,330 INFO:Log data: {'eventType': 'click', 'element': 'BODY', 'xpath': '/html[1]/body[1]', 'timestamp': '2023-12-13T04:15:15.326Z'}
+2023-12-13 04:15:15,330 INFO:172.26.0.1 - - [13/Dec/2023 04:15:15] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:15:28,004 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("name")', 'timestamp': '2023-12-13T04:15:27.998Z'}
+2023-12-13 04:15:28,005 INFO:172.26.0.1 - - [13/Dec/2023 04:15:28] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:15:30,310 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("name")', 'timestamp': '2023-12-13T04:15:30.303Z'}
+2023-12-13 04:15:30,310 INFO:172.26.0.1 - - [13/Dec/2023 04:15:30] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:15:32,010 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:15:31.999Z'}
+2023-12-13 04:15:32,010 INFO:172.26.0.1 - - [13/Dec/2023 04:15:32] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:15:34,489 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:15:34.479Z'}
+2023-12-13 04:15:34,490 INFO:172.26.0.1 - - [13/Dec/2023 04:15:34] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:15:36,074 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:15:36.063Z'}
+2023-12-13 04:15:36,074 INFO:172.26.0.1 - - [13/Dec/2023 04:15:36] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:15:37,018 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:15:37.014Z'}
+2023-12-13 04:15:37,018 INFO:172.26.0.1 - - [13/Dec/2023 04:15:37] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:15:37,425 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:15:37.415Z'}
+2023-12-13 04:15:37,426 INFO:172.26.0.1 - - [13/Dec/2023 04:15:37] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:15:39,153 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:15:39.143Z'}
+2023-12-13 04:15:39,154 INFO:172.26.0.1 - - [13/Dec/2023 04:15:39] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:15:40,096 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:15:40.086Z'}
+2023-12-13 04:15:40,096 INFO:172.26.0.1 - - [13/Dec/2023 04:15:40] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:15:41,126 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:15:41.119Z'}
+2023-12-13 04:15:41,127 INFO:172.26.0.1 - - [13/Dec/2023 04:15:41] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:15:43,793 INFO:172.26.0.1 - - [13/Dec/2023 04:15:43] "POST /diff HTTP/1.1" 200 -
+2023-12-13 04:24:56,578 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-13 04:24:56,724 INFO: * Restarting with stat
+2023-12-13 04:24:57,155 WARNING: * Debugger is active!
+2023-12-13 04:24:57,157 INFO: * Debugger PIN: 557-695-260
+2023-12-13 04:25:22,982 INFO:172.26.0.1 - - [13/Dec/2023 04:25:22] "GET / HTTP/1.1" 200 -
+2023-12-13 04:25:25,940 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T04:25:25.934Z'}
+2023-12-13 04:25:25,941 INFO:172.26.0.1 - - [13/Dec/2023 04:25:25] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:25:35,421 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T04:25:35.414Z'}
+2023-12-13 04:25:35,421 INFO:172.26.0.1 - - [13/Dec/2023 04:25:35] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:25:35,427 INFO:172.26.0.1 - - [13/Dec/2023 04:25:35] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 04:25:35,436 INFO:172.26.0.1 - - [13/Dec/2023 04:25:35] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 04:25:35,809 INFO:172.26.0.1 - - [13/Dec/2023 04:25:35] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 04:25:36,165 INFO:172.26.0.1 - - [13/Dec/2023 04:25:36] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 04:25:42,221 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T04:25:42.215Z'}
+2023-12-13 04:25:42,222 INFO:172.26.0.1 - - [13/Dec/2023 04:25:42] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:25:50,965 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T04:25:50.959Z'}
+2023-12-13 04:25:50,966 INFO:172.26.0.1 - - [13/Dec/2023 04:25:50] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:25:58,277 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:25:58.270Z'}
+2023-12-13 04:25:58,277 INFO:172.26.0.1 - - [13/Dec/2023 04:25:58] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:25:58,685 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:25:58.678Z'}
+2023-12-13 04:25:58,685 INFO:172.26.0.1 - - [13/Dec/2023 04:25:58] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:26:58,693 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T04:26:58.687Z'}
+2023-12-13 04:26:58,694 INFO:172.26.0.1 - - [13/Dec/2023 04:26:58] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:27:04,030 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:27:04.017Z'}
+2023-12-13 04:27:04,030 INFO:172.26.0.1 - - [13/Dec/2023 04:27:04] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:44:59,909 INFO:172.26.0.1 - - [13/Dec/2023 04:44:59] "GET / HTTP/1.1" 200 -
+2023-12-13 04:45:57,623 INFO:172.26.0.1 - - [13/Dec/2023 04:45:57] "GET / HTTP/1.1" 200 -
+2023-12-13 04:46:03,002 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T04:46:02.998Z'}
+2023-12-13 04:46:03,003 INFO:172.26.0.1 - - [13/Dec/2023 04:46:03] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:46:04,660 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T04:46:04.654Z'}
+2023-12-13 04:46:04,661 INFO:172.26.0.1 - - [13/Dec/2023 04:46:04] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:46:04,669 INFO:172.26.0.1 - - [13/Dec/2023 04:46:04] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 04:46:04,676 INFO:172.26.0.1 - - [13/Dec/2023 04:46:04] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 04:46:05,058 INFO:172.26.0.1 - - [13/Dec/2023 04:46:05] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 04:46:05,425 INFO:172.26.0.1 - - [13/Dec/2023 04:46:05] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 04:46:07,864 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T04:46:07.856Z'}
+2023-12-13 04:46:07,865 INFO:172.26.0.1 - - [13/Dec/2023 04:46:07] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:46:11,246 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'a', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T04:46:11.230Z'}
+2023-12-13 04:46:11,246 INFO:172.26.0.1 - - [13/Dec/2023 04:46:11] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:46:11,959 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'ar', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T04:46:11.953Z'}
+2023-12-13 04:46:11,960 INFO:172.26.0.1 - - [13/Dec/2023 04:46:11] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:46:12,583 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'ari', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T04:46:12.572Z'}
+2023-12-13 04:46:12,584 INFO:172.26.0.1 - - [13/Dec/2023 04:46:12] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:46:13,123 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'arid', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T04:46:13.115Z'}
+2023-12-13 04:46:13,124 INFO:172.26.0.1 - - [13/Dec/2023 04:46:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:46:13,622 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'arido', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T04:46:13.614Z'}
+2023-12-13 04:46:13,622 INFO:172.26.0.1 - - [13/Dec/2023 04:46:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:46:13,926 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'aridom', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T04:46:13.916Z'}
+2023-12-13 04:46:13,926 INFO:172.26.0.1 - - [13/Dec/2023 04:46:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:46:14,071 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'aridome', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T04:46:14.060Z'}
+2023-12-13 04:46:14,072 INFO:172.26.0.1 - - [13/Dec/2023 04:46:14] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:46:18,965 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:46:18.954Z'}
+2023-12-13 04:46:18,965 INFO:172.26.0.1 - - [13/Dec/2023 04:46:18] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:46:33,326 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T04:46:33.319Z'}
+2023-12-13 04:46:33,327 INFO:172.26.0.1 - - [13/Dec/2023 04:46:33] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:46:44,565 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:46:44.553Z'}
+2023-12-13 04:46:44,566 INFO:172.26.0.1 - - [13/Dec/2023 04:46:44] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:46:49,183 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T04:46:49.175Z'}
+2023-12-13 04:46:49,184 INFO:172.26.0.1 - - [13/Dec/2023 04:46:49] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:46:53,934 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:46:53.927Z'}
+2023-12-13 04:46:53,935 INFO:172.26.0.1 - - [13/Dec/2023 04:46:53] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:47:03,620 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:47:03.600Z'}
+2023-12-13 04:47:03,620 INFO:172.26.0.1 - - [13/Dec/2023 04:47:03] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:47:06,645 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T04:47:06.624Z'}
+2023-12-13 04:47:06,645 INFO:172.26.0.1 - - [13/Dec/2023 04:47:06] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:47:38,940 INFO:172.26.0.1 - - [13/Dec/2023 04:47:38] "GET / HTTP/1.1" 200 -
+2023-12-13 04:51:58,081 INFO:172.26.0.1 - - [13/Dec/2023 04:51:58] "GET / HTTP/1.1" 200 -
+2023-12-13 04:51:59,989 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T04:51:59.983Z'}
+2023-12-13 04:51:59,989 INFO:172.26.0.1 - - [13/Dec/2023 04:51:59] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:02,067 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T04:52:02.062Z'}
+2023-12-13 04:52:02,068 INFO:172.26.0.1 - - [13/Dec/2023 04:52:02] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:02,071 INFO:172.26.0.1 - - [13/Dec/2023 04:52:02] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 04:52:02,078 INFO:172.26.0.1 - - [13/Dec/2023 04:52:02] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 04:52:02,467 INFO:172.26.0.1 - - [13/Dec/2023 04:52:02] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 04:52:02,861 INFO:172.26.0.1 - - [13/Dec/2023 04:52:02] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 04:52:08,984 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 6, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:08.970Z'}
+2023-12-13 04:52:08,984 INFO:172.26.0.1 - - [13/Dec/2023 04:52:08] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:08,986 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 11, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:08.979Z'}
+2023-12-13 04:52:08,987 INFO:172.26.0.1 - - [13/Dec/2023 04:52:08] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,000 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 16, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:08.996Z'}
+2023-12-13 04:52:09,001 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,017 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 28, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.012Z'}
+2023-12-13 04:52:09,017 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,034 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 34, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.029Z'}
+2023-12-13 04:52:09,034 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,051 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 39, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.045Z'}
+2023-12-13 04:52:09,052 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,067 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 50, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.062Z'}
+2023-12-13 04:52:09,067 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,084 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 56, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.079Z'}
+2023-12-13 04:52:09,084 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,101 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 61, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.096Z'}
+2023-12-13 04:52:09,101 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,117 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 67, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.112Z'}
+2023-12-13 04:52:09,118 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,134 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 72, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.129Z'}
+2023-12-13 04:52:09,134 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,151 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 78, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.146Z'}
+2023-12-13 04:52:09,152 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,167 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 84, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.162Z'}
+2023-12-13 04:52:09,168 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,183 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 95, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.179Z'}
+2023-12-13 04:52:09,184 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,218 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 100, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.212Z'}
+2023-12-13 04:52:09,218 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,250 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 106, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.246Z'}
+2023-12-13 04:52:09,250 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,266 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 111, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.262Z'}
+2023-12-13 04:52:09,267 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,283 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 117, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.279Z'}
+2023-12-13 04:52:09,284 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:09,300 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 123, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:09.296Z'}
+2023-12-13 04:52:09,300 INFO:172.26.0.1 - - [13/Dec/2023 04:52:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:12,922 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 124, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:12.913Z'}
+2023-12-13 04:52:12,922 INFO:172.26.0.1 - - [13/Dec/2023 04:52:12] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:12,923 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 129, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:12.916Z'}
+2023-12-13 04:52:12,924 INFO:172.26.0.1 - - [13/Dec/2023 04:52:12] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:12,936 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 136, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:12.932Z'}
+2023-12-13 04:52:12,936 INFO:172.26.0.1 - - [13/Dec/2023 04:52:12] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:12,952 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 147, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:12.949Z'}
+2023-12-13 04:52:12,953 INFO:172.26.0.1 - - [13/Dec/2023 04:52:12] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:12,969 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 160, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:12.965Z'}
+2023-12-13 04:52:12,969 INFO:172.26.0.1 - - [13/Dec/2023 04:52:12] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:12,987 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 174, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:12.982Z'}
+2023-12-13 04:52:12,987 INFO:172.26.0.1 - - [13/Dec/2023 04:52:12] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,004 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 188, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:12.999Z'}
+2023-12-13 04:52:13,004 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,020 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 203, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.015Z'}
+2023-12-13 04:52:13,020 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,036 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 218, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.032Z'}
+2023-12-13 04:52:13,036 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,054 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 235, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.049Z'}
+2023-12-13 04:52:13,054 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,073 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 252, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.065Z'}
+2023-12-13 04:52:13,074 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,087 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 268, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.082Z'}
+2023-12-13 04:52:13,088 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,103 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 285, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.099Z'}
+2023-12-13 04:52:13,104 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,120 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 302, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.116Z'}
+2023-12-13 04:52:13,121 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,137 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 321, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.132Z'}
+2023-12-13 04:52:13,138 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,156 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 340, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.149Z'}
+2023-12-13 04:52:13,157 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,170 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 359, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.166Z'}
+2023-12-13 04:52:13,171 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,188 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 377, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.182Z'}
+2023-12-13 04:52:13,188 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,204 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 393, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.199Z'}
+2023-12-13 04:52:13,204 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,220 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 405, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.216Z'}
+2023-12-13 04:52:13,221 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,239 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 414, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.232Z'}
+2023-12-13 04:52:13,239 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,253 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 420, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.249Z'}
+2023-12-13 04:52:13,253 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,270 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 422, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.266Z'}
+2023-12-13 04:52:13,270 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,287 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 423, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.282Z'}
+2023-12-13 04:52:13,287 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,777 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 424, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.769Z'}
+2023-12-13 04:52:13,777 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,788 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 427, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.783Z'}
+2023-12-13 04:52:13,788 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,805 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 433, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.799Z'}
+2023-12-13 04:52:13,805 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,821 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 440, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.816Z'}
+2023-12-13 04:52:13,822 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,838 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 450, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.833Z'}
+2023-12-13 04:52:13,838 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,855 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 460, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.849Z'}
+2023-12-13 04:52:13,855 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,872 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 470, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.866Z'}
+2023-12-13 04:52:13,872 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,888 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 480, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.883Z'}
+2023-12-13 04:52:13,889 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,905 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 487, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.900Z'}
+2023-12-13 04:52:13,905 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,921 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 492, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.916Z'}
+2023-12-13 04:52:13,922 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,938 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 495, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.933Z'}
+2023-12-13 04:52:13,938 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:13,954 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 496, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:13.950Z'}
+2023-12-13 04:52:13,955 INFO:172.26.0.1 - - [13/Dec/2023 04:52:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,088 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 495, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.080Z'}
+2023-12-13 04:52:26,088 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,099 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 490, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.093Z'}
+2023-12-13 04:52:26,100 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,115 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 483, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.110Z'}
+2023-12-13 04:52:26,115 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,131 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 472, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.126Z'}
+2023-12-13 04:52:26,132 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,148 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 459, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.143Z'}
+2023-12-13 04:52:26,148 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,165 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 445, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.160Z'}
+2023-12-13 04:52:26,165 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,181 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 430, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.176Z'}
+2023-12-13 04:52:26,182 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,197 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 413, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.193Z'}
+2023-12-13 04:52:26,198 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,216 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 394, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.210Z'}
+2023-12-13 04:52:26,216 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,232 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 375, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.226Z'}
+2023-12-13 04:52:26,232 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,248 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 356, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.243Z'}
+2023-12-13 04:52:26,249 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,265 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 339, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.260Z'}
+2023-12-13 04:52:26,265 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,281 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 323, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.276Z'}
+2023-12-13 04:52:26,282 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,299 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 312, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.293Z'}
+2023-12-13 04:52:26,299 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,314 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 303, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.310Z'}
+2023-12-13 04:52:26,314 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,332 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 298, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.327Z'}
+2023-12-13 04:52:26,332 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,347 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 296, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.343Z'}
+2023-12-13 04:52:26,348 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,653 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 295, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.647Z'}
+2023-12-13 04:52:26,653 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,664 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 290, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.660Z'}
+2023-12-13 04:52:26,665 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,682 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 283, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.677Z'}
+2023-12-13 04:52:26,682 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,697 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 272, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.693Z'}
+2023-12-13 04:52:26,698 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,714 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 256, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.710Z'}
+2023-12-13 04:52:26,715 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,731 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 235, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.727Z'}
+2023-12-13 04:52:26,731 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,747 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 207, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.743Z'}
+2023-12-13 04:52:26,748 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,765 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 173, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.760Z'}
+2023-12-13 04:52:26,765 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,781 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 134, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.777Z'}
+2023-12-13 04:52:26,782 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,798 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 94, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.794Z'}
+2023-12-13 04:52:26,799 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,814 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 58, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.810Z'}
+2023-12-13 04:52:26,814 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,831 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 30, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.827Z'}
+2023-12-13 04:52:26,832 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,848 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 11, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.844Z'}
+2023-12-13 04:52:26,849 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,865 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 2, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.860Z'}
+2023-12-13 04:52:26,865 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 04:52:26,881 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T04:52:26.877Z'}
+2023-12-13 04:52:26,882 INFO:172.26.0.1 - - [13/Dec/2023 04:52:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:02:41,844 INFO:172.26.0.1 - - [13/Dec/2023 05:02:41] "GET / HTTP/1.1" 200 -
+2023-12-13 05:02:42,930 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T05:02:42.926Z'}
+2023-12-13 05:02:42,930 INFO:172.26.0.1 - - [13/Dec/2023 05:02:42] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:02:44,363 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:02:44.359Z'}
+2023-12-13 05:02:44,363 INFO:172.26.0.1 - - [13/Dec/2023 05:02:44] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:02:44,368 INFO:172.26.0.1 - - [13/Dec/2023 05:02:44] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 05:02:44,375 INFO:172.26.0.1 - - [13/Dec/2023 05:02:44] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 05:02:44,771 INFO:172.26.0.1 - - [13/Dec/2023 05:02:44] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:02:45,128 INFO:172.26.0.1 - - [13/Dec/2023 05:02:45] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:02:46,692 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:02:46.687Z'}
+2023-12-13 05:02:46,693 INFO:172.26.0.1 - - [13/Dec/2023 05:02:46] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:02:48,825 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'a', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:02:48.813Z'}
+2023-12-13 05:02:48,826 INFO:172.26.0.1 - - [13/Dec/2023 05:02:48] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:02:49,055 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'ar', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:02:49.049Z'}
+2023-12-13 05:02:49,055 INFO:172.26.0.1 - - [13/Dec/2023 05:02:49] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:02:49,160 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'ari', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:02:49.153Z'}
+2023-12-13 05:02:49,160 INFO:172.26.0.1 - - [13/Dec/2023 05:02:49] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:02:49,298 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'arid', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:02:49.290Z'}
+2023-12-13 05:02:49,298 INFO:172.26.0.1 - - [13/Dec/2023 05:02:49] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:02:49,373 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'arido', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:02:49.366Z'}
+2023-12-13 05:02:49,373 INFO:172.26.0.1 - - [13/Dec/2023 05:02:49] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:02:49,647 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'aridoe', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:02:49.638Z'}
+2023-12-13 05:02:49,647 INFO:172.26.0.1 - - [13/Dec/2023 05:02:49] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:03:11,861 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:03:11.855Z'}
+2023-12-13 05:03:11,862 INFO:172.26.0.1 - - [13/Dec/2023 05:03:11] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:04:23,240 INFO:172.26.0.1 - - [13/Dec/2023 05:04:23] "GET / HTTP/1.1" 200 -
+2023-12-13 05:04:23,987 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T05:04:23.982Z'}
+2023-12-13 05:04:23,988 INFO:172.26.0.1 - - [13/Dec/2023 05:04:23] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:04:24,893 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:04:24.886Z'}
+2023-12-13 05:04:24,893 INFO:172.26.0.1 - - [13/Dec/2023 05:04:24] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:04:24,899 INFO:172.26.0.1 - - [13/Dec/2023 05:04:24] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 05:04:24,906 INFO:172.26.0.1 - - [13/Dec/2023 05:04:24] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 05:04:25,284 INFO:172.26.0.1 - - [13/Dec/2023 05:04:25] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:04:25,638 INFO:172.26.0.1 - - [13/Dec/2023 05:04:25] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:04:40,811 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:04:40.798Z'}
+2023-12-13 05:04:40,811 INFO:172.26.0.1 - - [13/Dec/2023 05:04:40] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:06:06,133 INFO:172.26.0.1 - - [13/Dec/2023 05:06:06] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 05:06:06,748 INFO:172.26.0.1 - - [13/Dec/2023 05:06:06] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:06:07,114 INFO:172.26.0.1 - - [13/Dec/2023 05:06:07] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:06:13,693 INFO:172.26.0.1 - - [13/Dec/2023 05:06:13] "GET / HTTP/1.1" 200 -
+2023-12-13 05:06:14,715 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T05:06:14.710Z'}
+2023-12-13 05:06:14,715 INFO:172.26.0.1 - - [13/Dec/2023 05:06:14] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:06:15,477 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:06:15.463Z'}
+2023-12-13 05:06:15,477 INFO:172.26.0.1 - - [13/Dec/2023 05:06:15] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:06:16,292 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T05:06:16.287Z'}
+2023-12-13 05:06:16,293 INFO:172.26.0.1 - - [13/Dec/2023 05:06:16] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:06:17,173 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:06:17.167Z'}
+2023-12-13 05:06:17,174 INFO:172.26.0.1 - - [13/Dec/2023 05:06:17] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:06:17,178 INFO:172.26.0.1 - - [13/Dec/2023 05:06:17] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 05:06:17,185 INFO:172.26.0.1 - - [13/Dec/2023 05:06:17] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 05:06:17,577 INFO:172.26.0.1 - - [13/Dec/2023 05:06:17] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:06:17,928 INFO:172.26.0.1 - - [13/Dec/2023 05:06:17] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:06:28,170 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:06:28.166Z'}
+2023-12-13 05:06:28,171 INFO:172.26.0.1 - - [13/Dec/2023 05:06:28] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:00,248 INFO:172.26.0.1 - - [13/Dec/2023 05:07:00] "GET / HTTP/1.1" 200 -
+2023-12-13 05:07:01,244 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T05:07:01.240Z'}
+2023-12-13 05:07:01,244 INFO:172.26.0.1 - - [13/Dec/2023 05:07:01] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:02,093 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:07:02.087Z'}
+2023-12-13 05:07:02,094 INFO:172.26.0.1 - - [13/Dec/2023 05:07:02] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:02,099 INFO:172.26.0.1 - - [13/Dec/2023 05:07:02] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 05:07:02,106 INFO:172.26.0.1 - - [13/Dec/2023 05:07:02] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 05:07:02,485 INFO:172.26.0.1 - - [13/Dec/2023 05:07:02] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:07:02,843 INFO:172.26.0.1 - - [13/Dec/2023 05:07:02] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:07:17,171 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 2, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:17.162Z'}
+2023-12-13 05:07:17,171 INFO:172.26.0.1 - - [13/Dec/2023 05:07:17] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:18,176 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:18.167Z'}
+2023-12-13 05:07:18,177 INFO:172.26.0.1 - - [13/Dec/2023 05:07:18] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:19,608 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 42, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:19.600Z'}
+2023-12-13 05:07:19,608 INFO:172.26.0.1 - - [13/Dec/2023 05:07:19] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:20,613 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:20.604Z'}
+2023-12-13 05:07:20,613 INFO:172.26.0.1 - - [13/Dec/2023 05:07:20] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:24,931 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 2, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:24.924Z'}
+2023-12-13 05:07:24,932 INFO:172.26.0.1 - - [13/Dec/2023 05:07:24] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:25,933 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:25.925Z'}
+2023-12-13 05:07:25,934 INFO:172.26.0.1 - - [13/Dec/2023 05:07:25] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:28,028 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 44, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:28.010Z'}
+2023-12-13 05:07:28,028 INFO:172.26.0.1 - - [13/Dec/2023 05:07:28] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:29,016 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:29.011Z'}
+2023-12-13 05:07:29,016 INFO:172.26.0.1 - - [13/Dec/2023 05:07:29] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:31,244 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:31.234Z'}
+2023-12-13 05:07:31,245 INFO:172.26.0.1 - - [13/Dec/2023 05:07:31] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:32,256 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:32.240Z'}
+2023-12-13 05:07:32,256 INFO:172.26.0.1 - - [13/Dec/2023 05:07:32] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:35,153 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 44, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:35.145Z'}
+2023-12-13 05:07:35,153 INFO:172.26.0.1 - - [13/Dec/2023 05:07:35] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:36,158 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:36.151Z'}
+2023-12-13 05:07:36,159 INFO:172.26.0.1 - - [13/Dec/2023 05:07:36] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:39,040 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:39.033Z'}
+2023-12-13 05:07:39,041 INFO:172.26.0.1 - - [13/Dec/2023 05:07:39] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:40,045 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:40.037Z'}
+2023-12-13 05:07:40,046 INFO:172.26.0.1 - - [13/Dec/2023 05:07:40] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:42,946 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 44, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:42.936Z'}
+2023-12-13 05:07:42,947 INFO:172.26.0.1 - - [13/Dec/2023 05:07:42] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:43,951 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:43.942Z'}
+2023-12-13 05:07:43,951 INFO:172.26.0.1 - - [13/Dec/2023 05:07:43] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:50,972 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:50.963Z'}
+2023-12-13 05:07:50,972 INFO:172.26.0.1 - - [13/Dec/2023 05:07:50] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:51,975 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:51.964Z'}
+2023-12-13 05:07:51,976 INFO:172.26.0.1 - - [13/Dec/2023 05:07:51] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:52,974 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:52.966Z'}
+2023-12-13 05:07:52,975 INFO:172.26.0.1 - - [13/Dec/2023 05:07:52] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:53,991 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:53.982Z'}
+2023-12-13 05:07:53,992 INFO:172.26.0.1 - - [13/Dec/2023 05:07:53] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:54,991 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 36, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:54.984Z'}
+2023-12-13 05:07:54,992 INFO:172.26.0.1 - - [13/Dec/2023 05:07:54] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:56,009 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:56.000Z'}
+2023-12-13 05:07:56,010 INFO:172.26.0.1 - - [13/Dec/2023 05:07:56] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:58,745 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:58.737Z'}
+2023-12-13 05:07:58,746 INFO:172.26.0.1 - - [13/Dec/2023 05:07:58] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:07:59,762 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:07:59.753Z'}
+2023-12-13 05:07:59,762 INFO:172.26.0.1 - - [13/Dec/2023 05:07:59] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:00,776 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:00.770Z'}
+2023-12-13 05:08:00,776 INFO:172.26.0.1 - - [13/Dec/2023 05:08:00] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:06,676 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:06.671Z'}
+2023-12-13 05:08:06,677 INFO:172.26.0.1 - - [13/Dec/2023 05:08:06] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:07,685 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:07.678Z'}
+2023-12-13 05:08:07,685 INFO:172.26.0.1 - - [13/Dec/2023 05:08:07] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:08,688 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:08.679Z'}
+2023-12-13 05:08:08,688 INFO:172.26.0.1 - - [13/Dec/2023 05:08:08] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:09,705 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:09.695Z'}
+2023-12-13 05:08:09,706 INFO:172.26.0.1 - - [13/Dec/2023 05:08:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:10,979 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 45, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:10.975Z'}
+2023-12-13 05:08:10,979 INFO:172.26.0.1 - - [13/Dec/2023 05:08:10] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:11,987 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:11.982Z'}
+2023-12-13 05:08:11,988 INFO:172.26.0.1 - - [13/Dec/2023 05:08:11] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:12,990 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 36, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:12.983Z'}
+2023-12-13 05:08:12,990 INFO:172.26.0.1 - - [13/Dec/2023 05:08:12] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:14,006 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:13.998Z'}
+2023-12-13 05:08:14,007 INFO:172.26.0.1 - - [13/Dec/2023 05:08:14] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:15,454 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 45, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:15.448Z'}
+2023-12-13 05:08:15,454 INFO:172.26.0.1 - - [13/Dec/2023 05:08:15] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:16,460 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:16.451Z'}
+2023-12-13 05:08:16,460 INFO:172.26.0.1 - - [13/Dec/2023 05:08:16] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:17,610 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:17.601Z'}
+2023-12-13 05:08:17,611 INFO:172.26.0.1 - - [13/Dec/2023 05:08:17] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:18,611 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:18.604Z'}
+2023-12-13 05:08:18,611 INFO:172.26.0.1 - - [13/Dec/2023 05:08:18] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:19,866 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 45, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:19.858Z'}
+2023-12-13 05:08:19,866 INFO:172.26.0.1 - - [13/Dec/2023 05:08:19] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:20,880 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:20.871Z'}
+2023-12-13 05:08:20,881 INFO:172.26.0.1 - - [13/Dec/2023 05:08:20] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:21,897 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:21.888Z'}
+2023-12-13 05:08:21,898 INFO:172.26.0.1 - - [13/Dec/2023 05:08:21] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:22,898 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:22.891Z'}
+2023-12-13 05:08:22,898 INFO:172.26.0.1 - - [13/Dec/2023 05:08:22] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:23,898 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:23.892Z'}
+2023-12-13 05:08:23,899 INFO:172.26.0.1 - - [13/Dec/2023 05:08:23] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:24,910 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:08:24.902Z'}
+2023-12-13 05:08:24,910 INFO:172.26.0.1 - - [13/Dec/2023 05:08:24] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:33,166 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[4]', 'timestamp': '2023-12-13T05:08:33.160Z'}
+2023-12-13 05:08:33,167 INFO:172.26.0.1 - - [13/Dec/2023 05:08:33] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:33,177 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'S', 'xpath': '/html[1]/body[1]/form[1]/input[4]', 'timestamp': '2023-12-13T05:08:33.160Z'}
+2023-12-13 05:08:33,177 INFO:172.26.0.1 - - [13/Dec/2023 05:08:33] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:35,242 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': '/html[1]/body[1]/form[1]/select[1]', 'timestamp': '2023-12-13T05:08:35.238Z'}
+2023-12-13 05:08:35,242 INFO:172.26.0.1 - - [13/Dec/2023 05:08:35] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:36,244 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': '/html[1]/body[1]/form[1]/select[1]', 'timestamp': '2023-12-13T05:08:36.239Z'}
+2023-12-13 05:08:36,245 INFO:172.26.0.1 - - [13/Dec/2023 05:08:36] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:42,628 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': '/html[1]/body[1]/form[1]/select[1]', 'timestamp': '2023-12-13T05:08:42.623Z'}
+2023-12-13 05:08:42,629 INFO:172.26.0.1 - - [13/Dec/2023 05:08:42] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:43,887 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': '/html[1]/body[1]/form[1]/select[1]', 'timestamp': '2023-12-13T05:08:43.879Z'}
+2023-12-13 05:08:43,887 INFO:172.26.0.1 - - [13/Dec/2023 05:08:43] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:50,467 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T05:08:50.462Z'}
+2023-12-13 05:08:50,468 INFO:172.26.0.1 - - [13/Dec/2023 05:08:50] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:08:52,527 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'aridome@piza.jp', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T05:08:52.519Z'}
+2023-12-13 05:08:52,527 INFO:172.26.0.1 - - [13/Dec/2023 05:08:52] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:09:00,829 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:09:00.823Z'}
+2023-12-13 05:09:00,830 INFO:172.26.0.1 - - [13/Dec/2023 05:09:00] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:09:01,462 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:09:01.455Z'}
+2023-12-13 05:09:01,462 INFO:172.26.0.1 - - [13/Dec/2023 05:09:01] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:09:03,916 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留a', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:09:03.908Z'}
+2023-12-13 05:09:03,917 INFO:172.26.0.1 - - [13/Dec/2023 05:09:03] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:09:04,182 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留ar', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:09:04.172Z'}
+2023-12-13 05:09:04,183 INFO:172.26.0.1 - - [13/Dec/2023 05:09:04] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:09:04,284 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留ari', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:09:04.276Z'}
+2023-12-13 05:09:04,285 INFO:172.26.0.1 - - [13/Dec/2023 05:09:04] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:09:04,413 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留arid', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:09:04.408Z'}
+2023-12-13 05:09:04,414 INFO:172.26.0.1 - - [13/Dec/2023 05:09:04] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:09:04,510 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留arido', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:09:04.504Z'}
+2023-12-13 05:09:04,510 INFO:172.26.0.1 - - [13/Dec/2023 05:09:04] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:09:04,654 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留aridom', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:09:04.648Z'}
+2023-12-13 05:09:04,655 INFO:172.26.0.1 - - [13/Dec/2023 05:09:04] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:09:04,685 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留aridome', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:09:04.679Z'}
+2023-12-13 05:09:04,686 INFO:172.26.0.1 - - [13/Dec/2023 05:09:04] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:17:50,476 INFO:172.26.0.1 - - [13/Dec/2023 05:17:50] "GET / HTTP/1.1" 200 -
+2023-12-13 05:17:51,403 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T05:17:51.398Z'}
+2023-12-13 05:17:51,404 INFO:172.26.0.1 - - [13/Dec/2023 05:17:51] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:17:52,399 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:17:52.392Z'}
+2023-12-13 05:17:52,399 INFO:172.26.0.1 - - [13/Dec/2023 05:17:52] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:17:52,404 INFO:172.26.0.1 - - [13/Dec/2023 05:17:52] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 05:17:52,411 INFO:172.26.0.1 - - [13/Dec/2023 05:17:52] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 05:17:52,794 INFO:172.26.0.1 - - [13/Dec/2023 05:17:52] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:17:53,154 INFO:172.26.0.1 - - [13/Dec/2023 05:17:53] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:17:59,907 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:17:59.895Z'}
+2023-12-13 05:17:59,907 INFO:172.26.0.1 - - [13/Dec/2023 05:17:59] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:18:05,427 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:18:05.415Z'}
+2023-12-13 05:18:05,427 INFO:172.26.0.1 - - [13/Dec/2023 05:18:05] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:18:08,242 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:18:08.238Z'}
+2023-12-13 05:18:08,243 INFO:172.26.0.1 - - [13/Dec/2023 05:18:08] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:18:17,024 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T05:18:17.017Z'}
+2023-12-13 05:18:17,025 INFO:172.26.0.1 - - [13/Dec/2023 05:18:17] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:18:17,143 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '070-23341313', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:18:17.133Z'}
+2023-12-13 05:18:17,144 INFO:172.26.0.1 - - [13/Dec/2023 05:18:17] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:18:25,594 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '07023341313', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:18:25.581Z'}
+2023-12-13 05:18:25,595 INFO:172.26.0.1 - - [13/Dec/2023 05:18:25] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:18:28,431 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T05:18:28.422Z'}
+2023-12-13 05:18:28,431 INFO:172.26.0.1 - - [13/Dec/2023 05:18:28] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:18:43,835 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'aaa@aaa,c', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T05:18:43.827Z'}
+2023-12-13 05:18:43,835 INFO:172.26.0.1 - - [13/Dec/2023 05:18:43] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:18:45,439 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'aaa@aaa,com', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T05:18:45.432Z'}
+2023-12-13 05:18:45,440 INFO:172.26.0.1 - - [13/Dec/2023 05:18:45] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:18:59,414 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T05:18:59.407Z'}
+2023-12-13 05:18:59,414 INFO:172.26.0.1 - - [13/Dec/2023 05:18:59] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:02,077 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'aaa@aaacom', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T05:19:02.069Z'}
+2023-12-13 05:19:02,077 INFO:172.26.0.1 - - [13/Dec/2023 05:19:02] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:05,038 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'aaa@aaa.com', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T05:19:05.031Z'}
+2023-12-13 05:19:05,039 INFO:172.26.0.1 - - [13/Dec/2023 05:19:05] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:06,478 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:19:06.471Z'}
+2023-12-13 05:19:06,479 INFO:172.26.0.1 - - [13/Dec/2023 05:19:06] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:06,813 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': '/html[1]/body[1]/form[1]/select[1]', 'timestamp': '2023-12-13T05:19:06.807Z'}
+2023-12-13 05:19:06,813 INFO:172.26.0.1 - - [13/Dec/2023 05:19:06] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:07,616 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': '/html[1]/body[1]/form[1]/select[1]', 'timestamp': '2023-12-13T05:19:07.607Z'}
+2023-12-13 05:19:07,616 INFO:172.26.0.1 - - [13/Dec/2023 05:19:07] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:11,372 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[5]', 'timestamp': '2023-12-13T05:19:11.367Z'}
+2023-12-13 05:19:11,372 INFO:172.26.0.1 - - [13/Dec/2023 05:19:11] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:12,376 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'M', 'xpath': '/html[1]/body[1]/form[1]/input[5]', 'timestamp': '2023-12-13T05:19:12.368Z'}
+2023-12-13 05:19:12,377 INFO:172.26.0.1 - - [13/Dec/2023 05:19:12] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:12,973 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'timestamp': '2023-12-13T05:19:12.967Z'}
+2023-12-13 05:19:12,974 INFO:172.26.0.1 - - [13/Dec/2023 05:19:12] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:13,205 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'timestamp': '2023-12-13T05:19:13.200Z'}
+2023-12-13 05:19:13,206 INFO:172.26.0.1 - - [13/Dec/2023 05:19:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:14,127 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '2', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'timestamp': '2023-12-13T05:19:14.120Z'}
+2023-12-13 05:19:14,128 INFO:172.26.0.1 - - [13/Dec/2023 05:19:14] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:16,021 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'timestamp': '2023-12-13T05:19:16.015Z'}
+2023-12-13 05:19:16,021 INFO:172.26.0.1 - - [13/Dec/2023 05:19:16] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:18,598 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '4', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'timestamp': '2023-12-13T05:19:18.591Z'}
+2023-12-13 05:19:18,598 INFO:172.26.0.1 - - [13/Dec/2023 05:19:18] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:25,709 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[8]', 'timestamp': '2023-12-13T05:19:25.703Z'}
+2023-12-13 05:19:25,709 INFO:172.26.0.1 - - [13/Dec/2023 05:19:25] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:28,792 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '2023-12-21T14:19', 'xpath': '/html[1]/body[1]/form[1]/input[8]', 'timestamp': '2023-12-13T05:19:28.783Z'}
+2023-12-13 05:19:28,793 INFO:172.26.0.1 - - [13/Dec/2023 05:19:28] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:31,779 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '2023-12-13T14:19', 'xpath': '/html[1]/body[1]/form[1]/input[8]', 'timestamp': '2023-12-13T05:19:31.770Z'}
+2023-12-13 05:19:31,779 INFO:172.26.0.1 - - [13/Dec/2023 05:19:31] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:33,010 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '2023-12-29T14:19', 'xpath': '/html[1]/body[1]/form[1]/input[8]', 'timestamp': '2023-12-13T05:19:33.001Z'}
+2023-12-13 05:19:33,010 INFO:172.26.0.1 - - [13/Dec/2023 05:19:33] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:33,337 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:19:33.327Z'}
+2023-12-13 05:19:33,337 INFO:172.26.0.1 - - [13/Dec/2023 05:19:33] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:39,117 INFO:Log data: {'eventType': 'click', 'element': 'TEXTAREA', 'xpath': '/html[1]/body[1]/form[1]/textarea[1]', 'timestamp': '2023-12-13T05:19:39.112Z'}
+2023-12-13 05:19:39,118 INFO:172.26.0.1 - - [13/Dec/2023 05:19:39] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:41,829 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:19:41.823Z'}
+2023-12-13 05:19:41,830 INFO:172.26.0.1 - - [13/Dec/2023 05:19:41] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:41,836 INFO:Log data: {'eventType': 'input', 'element': 'TEXTAREA', 'value': 'adfdfad', 'xpath': '/html[1]/body[1]/form[1]/textarea[1]', 'timestamp': '2023-12-13T05:19:41.832Z'}
+2023-12-13 05:19:41,836 INFO:172.26.0.1 - - [13/Dec/2023 05:19:41] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:46,195 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:19:46.191Z'}
+2023-12-13 05:19:46,195 INFO:172.26.0.1 - - [13/Dec/2023 05:19:46] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:50,008 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:19:49.996Z'}
+2023-12-13 05:19:50,008 INFO:172.26.0.1 - - [13/Dec/2023 05:19:50] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:51,014 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:19:51.002Z'}
+2023-12-13 05:19:51,015 INFO:172.26.0.1 - - [13/Dec/2023 05:19:51] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:51,802 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T05:19:51.786Z'}
+2023-12-13 05:19:51,803 INFO:172.26.0.1 - - [13/Dec/2023 05:19:51] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:54,286 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 45, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:19:54.276Z'}
+2023-12-13 05:19:54,286 INFO:172.26.0.1 - - [13/Dec/2023 05:19:54] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:55,289 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:19:55.278Z'}
+2023-12-13 05:19:55,289 INFO:172.26.0.1 - - [13/Dec/2023 05:19:55] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:55,340 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:19:55.330Z'}
+2023-12-13 05:19:55,341 INFO:172.26.0.1 - - [13/Dec/2023 05:19:55] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:19:56,861 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:19:56.851Z'}
+2023-12-13 05:19:56,861 INFO:172.26.0.1 - - [13/Dec/2023 05:19:56] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:00,478 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:20:00.466Z'}
+2023-12-13 05:20:00,479 INFO:172.26.0.1 - - [13/Dec/2023 05:20:00] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:01,131 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T05:20:01.114Z'}
+2023-12-13 05:20:01,131 INFO:172.26.0.1 - - [13/Dec/2023 05:20:01] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:01,485 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:20:01.475Z'}
+2023-12-13 05:20:01,485 INFO:172.26.0.1 - - [13/Dec/2023 05:20:01] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:02,494 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:20:02.482Z'}
+2023-12-13 05:20:02,494 INFO:172.26.0.1 - - [13/Dec/2023 05:20:02] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:06,772 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:20:06.764Z'}
+2023-12-13 05:20:06,773 INFO:172.26.0.1 - - [13/Dec/2023 05:20:06] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:06,980 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:20:06.970Z'}
+2023-12-13 05:20:06,981 INFO:172.26.0.1 - - [13/Dec/2023 05:20:06] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:08,331 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:20:08.317Z'}
+2023-12-13 05:20:08,331 INFO:172.26.0.1 - - [13/Dec/2023 05:20:08] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:08,714 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '0901234555', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:20:08.701Z'}
+2023-12-13 05:20:08,715 INFO:172.26.0.1 - - [13/Dec/2023 05:20:08] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:09,335 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T05:20:09.323Z'}
+2023-12-13 05:20:09,336 INFO:172.26.0.1 - - [13/Dec/2023 05:20:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:09,792 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T05:20:09.779Z'}
+2023-12-13 05:20:09,793 INFO:172.26.0.1 - - [13/Dec/2023 05:20:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:09,796 INFO:172.26.0.1 - - [13/Dec/2023 05:20:09] "POST /confirmation HTTP/1.1" 200 -
+2023-12-13 05:20:14,253 INFO:Log data: {'eventType': 'click', 'element': 'LI', 'xpath': '/html[1]/body[1]/ul[1]/li[2]', 'timestamp': '2023-12-13T05:20:14.242Z'}
+2023-12-13 05:20:14,254 INFO:172.26.0.1 - - [13/Dec/2023 05:20:14] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:15,021 INFO:Log data: {'eventType': 'click', 'element': 'BODY', 'xpath': '/html[1]/body[1]', 'timestamp': '2023-12-13T05:20:15.010Z'}
+2023-12-13 05:20:15,021 INFO:172.26.0.1 - - [13/Dec/2023 05:20:15] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:21,045 INFO:Log data: {'eventType': 'click', 'element': 'P', 'xpath': '/html[1]/body[1]/p[2]', 'timestamp': '2023-12-13T05:20:21.035Z'}
+2023-12-13 05:20:21,045 INFO:172.26.0.1 - - [13/Dec/2023 05:20:21] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:23,237 INFO:Log data: {'eventType': 'click', 'element': 'STRONG', 'xpath': '/html[1]/body[1]/ul[1]/li[8]/strong[1]', 'timestamp': '2023-12-13T05:20:23.227Z'}
+2023-12-13 05:20:23,237 INFO:172.26.0.1 - - [13/Dec/2023 05:20:23] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:25,797 INFO:Log data: {'eventType': 'click', 'element': 'LI', 'xpath': '/html[1]/body[1]/ul[1]/li[8]', 'timestamp': '2023-12-13T05:20:25.787Z'}
+2023-12-13 05:20:25,798 INFO:172.26.0.1 - - [13/Dec/2023 05:20:25] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:29,477 INFO:Log data: {'eventType': 'click', 'element': 'BODY', 'xpath': '/html[1]/body[1]', 'timestamp': '2023-12-13T05:20:29.467Z'}
+2023-12-13 05:20:29,478 INFO:172.26.0.1 - - [13/Dec/2023 05:20:29] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:33,101 INFO:Log data: {'eventType': 'click', 'element': 'LI', 'xpath': '/html[1]/body[1]/ul[1]/li[6]', 'timestamp': '2023-12-13T05:20:33.091Z'}
+2023-12-13 05:20:33,102 INFO:172.26.0.1 - - [13/Dec/2023 05:20:33] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:35,150 INFO:Log data: {'eventType': 'click', 'element': 'A', 'xpath': '/html[1]/body[1]/a[1]', 'timestamp': '2023-12-13T05:20:35.139Z'}
+2023-12-13 05:20:35,151 INFO:172.26.0.1 - - [13/Dec/2023 05:20:35] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:20:35,521 INFO:172.26.0.1 - - [13/Dec/2023 05:20:35] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:41:51,360 INFO:172.26.0.1 - - [13/Dec/2023 05:41:51] "GET / HTTP/1.1" 200 -
+2023-12-13 05:41:52,706 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T05:41:52.702Z'}
+2023-12-13 05:41:52,707 INFO:172.26.0.1 - - [13/Dec/2023 05:41:52] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:41:53,893 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:41:53.886Z'}
+2023-12-13 05:41:53,893 INFO:172.26.0.1 - - [13/Dec/2023 05:41:53] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:41:53,899 INFO:172.26.0.1 - - [13/Dec/2023 05:41:53] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 05:41:53,906 INFO:172.26.0.1 - - [13/Dec/2023 05:41:53] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 05:41:54,271 INFO:172.26.0.1 - - [13/Dec/2023 05:41:54] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:41:54,642 INFO:172.26.0.1 - - [13/Dec/2023 05:41:54] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:42:01,083 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:42:01.078Z'}
+2023-12-13 05:42:01,083 INFO:172.26.0.1 - - [13/Dec/2023 05:42:01] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:42:03,548 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T05:42:03.543Z'}
+2023-12-13 05:42:03,549 INFO:172.26.0.1 - - [13/Dec/2023 05:42:03] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:42:16,592 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T05:42:16.585Z'}
+2023-12-13 05:42:16,592 INFO:172.26.0.1 - - [13/Dec/2023 05:42:16] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:42:19,117 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:42:19.111Z'}
+2023-12-13 05:42:19,118 INFO:172.26.0.1 - - [13/Dec/2023 05:42:19] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:42:19,846 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T05:42:19.839Z'}
+2023-12-13 05:42:19,846 INFO:172.26.0.1 - - [13/Dec/2023 05:42:19] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:42:21,341 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:42:21.334Z'}
+2023-12-13 05:42:21,341 INFO:172.26.0.1 - - [13/Dec/2023 05:42:21] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:42:21,988 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': '/html[1]/body[1]/form[1]/select[1]', 'timestamp': '2023-12-13T05:42:21.982Z'}
+2023-12-13 05:42:21,989 INFO:172.26.0.1 - - [13/Dec/2023 05:42:21] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:42:22,408 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': '/html[1]/body[1]/form[1]/select[1]', 'timestamp': '2023-12-13T05:42:22.399Z'}
+2023-12-13 05:42:22,409 INFO:172.26.0.1 - - [13/Dec/2023 05:42:22] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:42:23,348 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[5]', 'timestamp': '2023-12-13T05:42:23.342Z'}
+2023-12-13 05:42:23,349 INFO:172.26.0.1 - - [13/Dec/2023 05:42:23] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:43:00,679 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:43:00.671Z'}
+2023-12-13 05:43:00,680 INFO:172.26.0.1 - - [13/Dec/2023 05:43:00] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:43:01,229 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:43:01.223Z'}
+2023-12-13 05:43:01,230 INFO:172.26.0.1 - - [13/Dec/2023 05:43:01] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:43:01,597 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:43:01.591Z'}
+2023-12-13 05:43:01,597 INFO:172.26.0.1 - - [13/Dec/2023 05:43:01] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:52:43,250 INFO:172.26.0.1 - - [13/Dec/2023 05:52:43] "GET / HTTP/1.1" 200 -
+2023-12-13 05:52:44,865 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T05:52:44.862Z'}
+2023-12-13 05:52:44,866 INFO:172.26.0.1 - - [13/Dec/2023 05:52:44] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:52:46,157 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:52:46.151Z'}
+2023-12-13 05:52:46,158 INFO:172.26.0.1 - - [13/Dec/2023 05:52:46] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:52:46,162 INFO:172.26.0.1 - - [13/Dec/2023 05:52:46] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 05:52:46,169 INFO:172.26.0.1 - - [13/Dec/2023 05:52:46] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 05:52:46,546 INFO:172.26.0.1 - - [13/Dec/2023 05:52:46] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:52:46,929 INFO:172.26.0.1 - - [13/Dec/2023 05:52:46] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:57:53,516 INFO:172.26.0.1 - - [13/Dec/2023 05:57:53] "GET / HTTP/1.1" 200 -
+2023-12-13 05:57:54,692 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T05:57:54.686Z'}
+2023-12-13 05:57:54,692 INFO:172.26.0.1 - - [13/Dec/2023 05:57:54] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:57:55,845 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:57:55.839Z'}
+2023-12-13 05:57:55,846 INFO:172.26.0.1 - - [13/Dec/2023 05:57:55] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:57:55,850 INFO:172.26.0.1 - - [13/Dec/2023 05:57:55] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 05:57:55,857 INFO:172.26.0.1 - - [13/Dec/2023 05:57:55] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 05:57:56,234 INFO:172.26.0.1 - - [13/Dec/2023 05:57:56] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:57:56,600 INFO:172.26.0.1 - - [13/Dec/2023 05:57:56] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 05:58:01,894 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:58:01.887Z'}
+2023-12-13 05:58:01,894 INFO:172.26.0.1 - - [13/Dec/2023 05:58:01] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:58:04,937 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T05:58:04.927Z'}
+2023-12-13 05:58:04,938 INFO:172.26.0.1 - - [13/Dec/2023 05:58:04] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:58:05,285 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:58:05.279Z'}
+2023-12-13 05:58:05,286 INFO:172.26.0.1 - - [13/Dec/2023 05:58:05] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:58:12,117 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:58:12.111Z'}
+2023-12-13 05:58:12,118 INFO:172.26.0.1 - - [13/Dec/2023 05:58:12] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:58:17,029 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T05:58:17.023Z'}
+2023-12-13 05:58:17,030 INFO:172.26.0.1 - - [13/Dec/2023 05:58:17] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:58:41,899 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:58:41.887Z'}
+2023-12-13 05:58:41,899 INFO:172.26.0.1 - - [13/Dec/2023 05:58:41] "POST /log HTTP/1.1" 200 -
+2023-12-13 05:58:43,823 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '0704000400', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T05:58:43.816Z'}
+2023-12-13 05:58:43,823 INFO:172.26.0.1 - - [13/Dec/2023 05:58:43] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:04:05,783 INFO:172.26.0.1 - - [13/Dec/2023 06:04:05] "GET / HTTP/1.1" 200 -
+2023-12-13 06:04:10,579 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T06:04:10.574Z'}
+2023-12-13 06:04:10,579 INFO:172.26.0.1 - - [13/Dec/2023 06:04:10] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:04:11,614 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T06:04:11.607Z'}
+2023-12-13 06:04:11,614 INFO:172.26.0.1 - - [13/Dec/2023 06:04:11] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:04:11,620 INFO:172.26.0.1 - - [13/Dec/2023 06:04:11] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 06:04:11,631 INFO:172.26.0.1 - - [13/Dec/2023 06:04:11] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 06:04:12,010 INFO:172.26.0.1 - - [13/Dec/2023 06:04:12] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 06:04:12,385 INFO:172.26.0.1 - - [13/Dec/2023 06:04:12] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 06:04:14,582 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T06:04:14.575Z'}
+2023-12-13 06:04:14,583 INFO:172.26.0.1 - - [13/Dec/2023 06:04:14] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:04:16,410 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T06:04:16.400Z'}
+2023-12-13 06:04:16,411 INFO:172.26.0.1 - - [13/Dec/2023 06:04:16] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:04:18,605 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T06:04:18.599Z'}
+2023-12-13 06:04:18,606 INFO:172.26.0.1 - - [13/Dec/2023 06:04:18] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:04:20,570 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:04:20.561Z'}
+2023-12-13 06:04:20,571 INFO:172.26.0.1 - - [13/Dec/2023 06:04:20] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:04:21,569 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:04:21.564Z'}
+2023-12-13 06:04:21,569 INFO:172.26.0.1 - - [13/Dec/2023 06:04:21] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:04:22,573 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:04:22.565Z'}
+2023-12-13 06:04:22,573 INFO:172.26.0.1 - - [13/Dec/2023 06:04:22] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:04:23,577 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:04:23.573Z'}
+2023-12-13 06:04:23,577 INFO:172.26.0.1 - - [13/Dec/2023 06:04:23] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:04:24,107 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[5]', 'timestamp': '2023-12-13T06:04:24.102Z'}
+2023-12-13 06:04:24,107 INFO:172.26.0.1 - - [13/Dec/2023 06:04:24] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:04:25,112 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'M', 'xpath': '/html[1]/body[1]/form[1]/input[5]', 'timestamp': '2023-12-13T06:04:25.105Z'}
+2023-12-13 06:04:25,113 INFO:172.26.0.1 - - [13/Dec/2023 06:04:25] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:04:25,708 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T06:04:25.702Z'}
+2023-12-13 06:04:25,708 INFO:172.26.0.1 - - [13/Dec/2023 06:04:25] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:04:34,256 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:04:34.248Z'}
+2023-12-13 06:04:34,256 INFO:172.26.0.1 - - [13/Dec/2023 06:04:34] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:04:35,272 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:04:35.263Z'}
+2023-12-13 06:04:35,273 INFO:172.26.0.1 - - [13/Dec/2023 06:04:35] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:10:19,220 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 2, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:10:19.212Z'}
+2023-12-13 06:10:19,221 INFO:172.26.0.1 - - [13/Dec/2023 06:10:19] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:10:20,218 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 40, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:10:20.214Z'}
+2023-12-13 06:10:20,219 INFO:172.26.0.1 - - [13/Dec/2023 06:10:20] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:10:21,222 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:10:21.216Z'}
+2023-12-13 06:10:21,222 INFO:172.26.0.1 - - [13/Dec/2023 06:10:21] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:10:22,222 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:10:22.217Z'}
+2023-12-13 06:10:22,222 INFO:172.26.0.1 - - [13/Dec/2023 06:10:22] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:15:35,014 INFO:172.26.0.1 - - [13/Dec/2023 06:15:35] "GET / HTTP/1.1" 200 -
+2023-12-13 06:15:36,081 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T06:15:36.078Z'}
+2023-12-13 06:15:36,082 INFO:172.26.0.1 - - [13/Dec/2023 06:15:36] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:15:37,901 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T06:15:37.895Z'}
+2023-12-13 06:15:37,902 INFO:172.26.0.1 - - [13/Dec/2023 06:15:37] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:15:37,907 INFO:172.26.0.1 - - [13/Dec/2023 06:15:37] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 06:15:37,914 INFO:172.26.0.1 - - [13/Dec/2023 06:15:37] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 06:15:38,273 INFO:172.26.0.1 - - [13/Dec/2023 06:15:38] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 06:15:38,656 INFO:172.26.0.1 - - [13/Dec/2023 06:15:38] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 06:16:02,982 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'x': 160, 'y': 107, 'timestamp': '2023-12-13T06:16:02.975Z'}
+2023-12-13 06:16:02,983 INFO:172.26.0.1 - - [13/Dec/2023 06:16:02] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:05,018 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'x': 77.4375, 'y': 93.375, 'timestamp': '2023-12-13T06:16:05.011Z'}
+2023-12-13 06:16:05,018 INFO:172.26.0.1 - - [13/Dec/2023 06:16:05] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:06,659 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'x': 370, 'y': 134, 'timestamp': '2023-12-13T06:16:06.654Z'}
+2023-12-13 06:16:06,660 INFO:172.26.0.1 - - [13/Dec/2023 06:16:06] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:09,506 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:16:09.502Z'}
+2023-12-13 06:16:09,506 INFO:172.26.0.1 - - [13/Dec/2023 06:16:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:10,512 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:16:10.505Z'}
+2023-12-13 06:16:10,512 INFO:172.26.0.1 - - [13/Dec/2023 06:16:10] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:10,949 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'x': 442, 'y': 224, 'timestamp': '2023-12-13T06:16:10.943Z'}
+2023-12-13 06:16:10,949 INFO:172.26.0.1 - - [13/Dec/2023 06:16:10] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:11,860 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'x': 215, 'y': 149, 'timestamp': '2023-12-13T06:16:11.854Z'}
+2023-12-13 06:16:11,861 INFO:172.26.0.1 - - [13/Dec/2023 06:16:11] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:13,013 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'x': 332, 'y': 197, 'timestamp': '2023-12-13T06:16:13.006Z'}
+2023-12-13 06:16:13,013 INFO:172.26.0.1 - - [13/Dec/2023 06:16:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:13,469 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '0901234555', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'x': 93.4375, 'y': 140.875, 'timestamp': '2023-12-13T06:16:13.461Z'}
+2023-12-13 06:16:13,469 INFO:172.26.0.1 - - [13/Dec/2023 06:16:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:13,596 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'x': 279, 'y': 202, 'timestamp': '2023-12-13T06:16:13.590Z'}
+2023-12-13 06:16:13,596 INFO:172.26.0.1 - - [13/Dec/2023 06:16:13] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:15,529 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'adfd', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'x': 141.4375, 'y': 188.875, 'timestamp': '2023-12-13T06:16:15.519Z'}
+2023-12-13 06:16:15,529 INFO:172.26.0.1 - - [13/Dec/2023 06:16:15] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:19,648 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'adfd@ad', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'x': 141.4375, 'y': 188.875, 'timestamp': '2023-12-13T06:16:19.644Z'}
+2023-12-13 06:16:19,649 INFO:172.26.0.1 - - [13/Dec/2023 06:16:19] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:19,724 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'x': 435, 'y': 220, 'timestamp': '2023-12-13T06:16:19.719Z'}
+2023-12-13 06:16:19,725 INFO:172.26.0.1 - - [13/Dec/2023 06:16:19] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:20,453 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': '/html[1]/body[1]/form[1]/select[1]', 'x': 200, 'y': 250, 'timestamp': '2023-12-13T06:16:20.447Z'}
+2023-12-13 06:16:20,454 INFO:172.26.0.1 - - [13/Dec/2023 06:16:20] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:21,016 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': '/html[1]/body[1]/form[1]/select[1]', 'x': 99, 'y': 227, 'timestamp': '2023-12-13T06:16:21.007Z'}
+2023-12-13 06:16:21,016 INFO:172.26.0.1 - - [13/Dec/2023 06:16:21] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:21,803 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'x': 25, 'y': 342, 'timestamp': '2023-12-13T06:16:21.799Z'}
+2023-12-13 06:16:21,803 INFO:172.26.0.1 - - [13/Dec/2023 06:16:21] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:22,294 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[5]', 'x': 19, 'y': 345, 'timestamp': '2023-12-13T06:16:22.288Z'}
+2023-12-13 06:16:22,295 INFO:172.26.0.1 - - [13/Dec/2023 06:16:22] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:22,685 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[6]', 'x': 19, 'y': 360, 'timestamp': '2023-12-13T06:16:22.679Z'}
+2023-12-13 06:16:22,686 INFO:172.26.0.1 - - [13/Dec/2023 06:16:22] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:23,701 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'L', 'xpath': '/html[1]/body[1]/form[1]/input[6]', 'x': 13, 'y': 358.875, 'timestamp': '2023-12-13T06:16:23.692Z'}
+2023-12-13 06:16:23,701 INFO:172.26.0.1 - - [13/Dec/2023 06:16:23] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:26,144 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 2, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:16:26.136Z'}
+2023-12-13 06:16:26,145 INFO:172.26.0.1 - - [13/Dec/2023 06:16:26] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:27,161 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:16:27.151Z'}
+2023-12-13 06:16:27,162 INFO:172.26.0.1 - - [13/Dec/2023 06:16:27] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:27,244 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'x': 498, 'y': 344, 'timestamp': '2023-12-13T06:16:27.238Z'}
+2023-12-13 06:16:27,245 INFO:172.26.0.1 - - [13/Dec/2023 06:16:27] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:28,163 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:16:28.154Z'}
+2023-12-13 06:16:28,164 INFO:172.26.0.1 - - [13/Dec/2023 06:16:28] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:32,926 INFO:Log data: {'eventType': 'click', 'element': 'TEXTAREA', 'xpath': '/html[1]/body[1]/form[1]/textarea[1]', 'x': 106, 'y': 506, 'timestamp': '2023-12-13T06:16:32.919Z'}
+2023-12-13 06:16:32,927 INFO:172.26.0.1 - - [13/Dec/2023 06:16:32] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:33,942 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 45, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:16:33.936Z'}
+2023-12-13 06:16:33,943 INFO:172.26.0.1 - - [13/Dec/2023 06:16:33] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:34,478 INFO:Log data: {'eventType': 'input', 'element': 'TEXTAREA', 'value': 'adf', 'xpath': '/html[1]/body[1]/form[1]/textarea[1]', 'x': 8, 'y': 522.875, 'timestamp': '2023-12-13T06:16:34.471Z'}
+2023-12-13 06:16:34,478 INFO:172.26.0.1 - - [13/Dec/2023 06:16:34] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:34,829 INFO:Log data: {'eventType': 'click', 'element': 'TEXTAREA', 'xpath': '/html[1]/body[1]/form[1]/textarea[1]', 'x': 266, 'y': 575, 'timestamp': '2023-12-13T06:16:34.823Z'}
+2023-12-13 06:16:34,830 INFO:172.26.0.1 - - [13/Dec/2023 06:16:34] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:34,949 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:16:34.939Z'}
+2023-12-13 06:16:34,950 INFO:172.26.0.1 - - [13/Dec/2023 06:16:34] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:35,781 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'x': 187, 'y': 419, 'timestamp': '2023-12-13T06:16:35.775Z'}
+2023-12-13 06:16:35,782 INFO:172.26.0.1 - - [13/Dec/2023 06:16:35] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:36,460 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'x': 283, 'y': 412, 'timestamp': '2023-12-13T06:16:36.454Z'}
+2023-12-13 06:16:36,460 INFO:172.26.0.1 - - [13/Dec/2023 06:16:36] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:36,813 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'x': 274, 'y': 408, 'timestamp': '2023-12-13T06:16:36.807Z'}
+2023-12-13 06:16:36,814 INFO:172.26.0.1 - - [13/Dec/2023 06:16:36] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:37,117 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'x': 274, 'y': 408, 'timestamp': '2023-12-13T06:16:37.111Z'}
+2023-12-13 06:16:37,118 INFO:172.26.0.1 - - [13/Dec/2023 06:16:37] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:37,413 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'x': 362, 'y': 400, 'timestamp': '2023-12-13T06:16:37.407Z'}
+2023-12-13 06:16:37,414 INFO:172.26.0.1 - - [13/Dec/2023 06:16:37] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:38,022 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '2', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'x': 109.4375, 'y': 404.875, 'timestamp': '2023-12-13T06:16:38.012Z'}
+2023-12-13 06:16:38,023 INFO:172.26.0.1 - - [13/Dec/2023 06:16:38] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:16:49,894 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'x': 159, 'y': 112, 'timestamp': '2023-12-13T06:16:49.887Z'}
+2023-12-13 06:16:49,895 INFO:172.26.0.1 - - [13/Dec/2023 06:16:49] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:17:35,828 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'x': 456, 'y': 264, 'timestamp': '2023-12-13T06:17:35.822Z'}
+2023-12-13 06:17:35,829 INFO:172.26.0.1 - - [13/Dec/2023 06:17:35] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:17:36,556 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'x': 227, 'y': 151, 'timestamp': '2023-12-13T06:17:36.550Z'}
+2023-12-13 06:17:36,556 INFO:172.26.0.1 - - [13/Dec/2023 06:17:36] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:17:37,829 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'x': 220, 'y': 152, 'timestamp': '2023-12-13T06:17:37.823Z'}
+2023-12-13 06:17:37,830 INFO:172.26.0.1 - - [13/Dec/2023 06:17:37] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:17:38,429 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'x': 232, 'y': 203, 'timestamp': '2023-12-13T06:17:38.422Z'}
+2023-12-13 06:17:38,429 INFO:172.26.0.1 - - [13/Dec/2023 06:17:38] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:17:39,220 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'x': 221, 'y': 154, 'timestamp': '2023-12-13T06:17:39.214Z'}
+2023-12-13 06:17:39,221 INFO:172.26.0.1 - - [13/Dec/2023 06:17:39] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:18:05,610 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'x': 215, 'y': 122, 'timestamp': '2023-12-13T06:18:05.606Z'}
+2023-12-13 06:18:05,610 INFO:172.26.0.1 - - [13/Dec/2023 06:18:05] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:18:05,893 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'x': 210, 'y': 107, 'timestamp': '2023-12-13T06:18:05.887Z'}
+2023-12-13 06:18:05,893 INFO:172.26.0.1 - - [13/Dec/2023 06:18:05] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:18:07,924 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'x': 0, 'y': 0, 'timestamp': '2023-12-13T06:18:07.919Z'}
+2023-12-13 06:18:07,925 INFO:172.26.0.1 - - [13/Dec/2023 06:18:07] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:18:08,780 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留fdsfda', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'x': 77.4375, 'y': 93.375, 'timestamp': '2023-12-13T06:18:08.770Z'}
+2023-12-13 06:18:08,780 INFO:172.26.0.1 - - [13/Dec/2023 06:18:08] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:18:09,964 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'x': 553, 'y': 168, 'timestamp': '2023-12-13T06:18:09.958Z'}
+2023-12-13 06:18:09,964 INFO:172.26.0.1 - - [13/Dec/2023 06:18:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:21:22,162 INFO:172.26.0.1 - - [13/Dec/2023 06:21:22] "GET / HTTP/1.1" 200 -
+2023-12-13 06:21:23,005 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T06:21:22.999Z'}
+2023-12-13 06:21:23,005 INFO:172.26.0.1 - - [13/Dec/2023 06:21:23] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:21:24,590 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T06:21:24.582Z'}
+2023-12-13 06:21:24,591 INFO:172.26.0.1 - - [13/Dec/2023 06:21:24] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:21:24,592 INFO:172.26.0.1 - - [13/Dec/2023 06:21:24] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 06:21:24,600 INFO:172.26.0.1 - - [13/Dec/2023 06:21:24] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 06:21:24,977 INFO:172.26.0.1 - - [13/Dec/2023 06:21:24] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 06:21:25,329 INFO:172.26.0.1 - - [13/Dec/2023 06:21:25] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 06:21:25,964 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T06:21:25.959Z'}
+2023-12-13 06:21:25,965 INFO:172.26.0.1 - - [13/Dec/2023 06:21:25] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:21:27,501 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T06:21:27.495Z'}
+2023-12-13 06:21:27,502 INFO:172.26.0.1 - - [13/Dec/2023 06:21:27] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:21:27,656 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T06:21:27.632Z'}
+2023-12-13 06:21:27,657 INFO:172.26.0.1 - - [13/Dec/2023 06:21:27] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:21:27,861 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:21:27.856Z'}
+2023-12-13 06:21:27,861 INFO:172.26.0.1 - - [13/Dec/2023 06:21:27] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:21:28,877 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T06:21:28.868Z'}
+2023-12-13 06:21:28,877 INFO:172.26.0.1 - - [13/Dec/2023 06:21:28] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:21:30,130 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': '/html[1]/body[1]/form[1]/select[1]', 'timestamp': '2023-12-13T06:21:30.126Z'}
+2023-12-13 06:21:30,130 INFO:172.26.0.1 - - [13/Dec/2023 06:21:30] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:21:30,864 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': '/html[1]/body[1]/form[1]/select[1]', 'timestamp': '2023-12-13T06:21:30.855Z'}
+2023-12-13 06:21:30,864 INFO:172.26.0.1 - - [13/Dec/2023 06:21:30] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:21:32,356 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[5]', 'timestamp': '2023-12-13T06:21:32.350Z'}
+2023-12-13 06:21:32,357 INFO:172.26.0.1 - - [13/Dec/2023 06:21:32] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:21:33,361 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'M', 'xpath': '/html[1]/body[1]/form[1]/input[5]', 'timestamp': '2023-12-13T06:21:33.356Z'}
+2023-12-13 06:21:33,361 INFO:172.26.0.1 - - [13/Dec/2023 06:21:33] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:21:57,407 INFO:172.26.0.1 - - [13/Dec/2023 06:21:57] "GET / HTTP/1.1" 200 -
+2023-12-13 06:22:00,395 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T06:22:00.390Z'}
+2023-12-13 06:22:00,395 INFO:172.26.0.1 - - [13/Dec/2023 06:22:00] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:22:02,929 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T06:22:02.919Z'}
+2023-12-13 06:22:02,931 INFO:172.26.0.1 - - [13/Dec/2023 06:22:02] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 06:22:02,931 INFO:172.26.0.1 - - [13/Dec/2023 06:22:02] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:22:02,939 INFO:172.26.0.1 - - [13/Dec/2023 06:22:02] "GET /render_index/https://experienceleague.adobe.com/docs/experience-manager-65/authoring/siteandpage/page-diff.html%3Flang%3Dja HTTP/1.1" 200 -
+2023-12-13 06:24:11,177 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-13 06:24:11,361 INFO: * Restarting with stat
+2023-12-13 06:24:11,845 WARNING: * Debugger is active!
+2023-12-13 06:24:11,848 INFO: * Debugger PIN: 557-695-260
+2023-12-13 06:24:15,640 INFO:172.26.0.1 - - [13/Dec/2023 06:24:15] "GET / HTTP/1.1" 200 -
+2023-12-13 06:24:16,569 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T06:24:16.565Z'}
+2023-12-13 06:24:16,570 INFO:172.26.0.1 - - [13/Dec/2023 06:24:16] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:24:19,717 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T06:24:19.709Z'}
+2023-12-13 06:24:19,717 INFO:172.26.0.1 - - [13/Dec/2023 06:24:19] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:24:19,723 INFO:172.26.0.1 - - [13/Dec/2023 06:24:19] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 06:24:19,729 INFO:172.26.0.1 - - [13/Dec/2023 06:24:19] "GET /render_index/https://experienceleague.adobe.com/docs/experience-manager-65/authoring/siteandpage/page-diff.html%3Flang%3Dja HTTP/1.1" 200 -
+2023-12-13 06:25:12,371 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-13 06:25:12,410 INFO: * Restarting with stat
+2023-12-13 06:25:12,735 WARNING: * Debugger is active!
+2023-12-13 06:25:12,736 INFO: * Debugger PIN: 557-695-260
+2023-12-13 06:25:32,206 INFO:172.26.0.1 - - [13/Dec/2023 06:25:32] "GET / HTTP/1.1" 200 -
+2023-12-13 06:25:33,812 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T06:25:33.806Z'}
+2023-12-13 06:25:33,813 INFO:172.26.0.1 - - [13/Dec/2023 06:25:33] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:25:35,911 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T06:25:35.902Z'}
+2023-12-13 06:25:35,911 INFO:172.26.0.1 - - [13/Dec/2023 06:25:35] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:25:35,914 INFO:172.26.0.1 - - [13/Dec/2023 06:25:35] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 06:25:35,920 INFO:172.26.0.1 - - [13/Dec/2023 06:25:35] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 06:25:36,292 INFO:172.26.0.1 - - [13/Dec/2023 06:25:36] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 06:25:36,658 INFO:172.26.0.1 - - [13/Dec/2023 06:25:36] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 06:25:39,572 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T06:25:39.566Z'}
+2023-12-13 06:25:39,572 INFO:172.26.0.1 - - [13/Dec/2023 06:25:39] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:25:40,235 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T06:25:40.230Z'}
+2023-12-13 06:25:40,235 INFO:172.26.0.1 - - [13/Dec/2023 06:25:40] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:25:43,625 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T06:25:43.621Z'}
+2023-12-13 06:25:43,625 INFO:172.26.0.1 - - [13/Dec/2023 06:25:43] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:25:48,151 INFO:172.26.0.1 - - [13/Dec/2023 06:25:48] "GET / HTTP/1.1" 200 -
+2023-12-13 06:25:49,387 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T06:25:49.382Z'}
+2023-12-13 06:25:49,388 INFO:172.26.0.1 - - [13/Dec/2023 06:25:49] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:25:51,449 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T06:25:51.438Z'}
+2023-12-13 06:25:51,450 INFO:172.26.0.1 - - [13/Dec/2023 06:25:51] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:25:51,452 INFO:172.26.0.1 - - [13/Dec/2023 06:25:51] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 06:25:51,457 INFO:172.26.0.1 - - [13/Dec/2023 06:25:51] "GET /render_index/https://experienceleague.adobe.com/docs/experience-manager-65/authoring/siteandpage/page-diff.html%3Flang%3Dja HTTP/1.1" 200 -
+2023-12-13 06:26:21,342 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-13 06:26:21,395 INFO: * Restarting with stat
+2023-12-13 06:26:21,722 WARNING: * Debugger is active!
+2023-12-13 06:26:21,723 INFO: * Debugger PIN: 557-695-260
+2023-12-13 06:26:43,931 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-13 06:26:43,963 INFO: * Restarting with stat
+2023-12-13 06:26:44,263 WARNING: * Debugger is active!
+2023-12-13 06:26:44,264 INFO: * Debugger PIN: 557-695-260
+2023-12-13 06:26:50,127 INFO:172.26.0.1 - - [13/Dec/2023 06:26:50] "GET / HTTP/1.1" 200 -
+2023-12-13 06:26:51,020 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T06:26:51.009Z'}
+2023-12-13 06:26:51,021 INFO:172.26.0.1 - - [13/Dec/2023 06:26:51] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:26:52,374 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T06:26:52.362Z'}
+2023-12-13 06:26:52,374 INFO:172.26.0.1 - - [13/Dec/2023 06:26:52] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:26:53,549 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T06:26:53.538Z'}
+2023-12-13 06:26:53,549 INFO:172.26.0.1 - - [13/Dec/2023 06:26:53] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:26:53,554 INFO:172.26.0.1 - - [13/Dec/2023 06:26:53] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 06:26:53,561 INFO:172.26.0.1 - - [13/Dec/2023 06:26:53] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 06:26:53,930 INFO:172.26.0.1 - - [13/Dec/2023 06:26:53] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 06:26:54,288 INFO:172.26.0.1 - - [13/Dec/2023 06:26:54] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 06:26:57,277 INFO:172.26.0.1 - - [13/Dec/2023 06:26:57] "GET / HTTP/1.1" 200 -
+2023-12-13 06:26:57,987 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T06:26:57.977Z'}
+2023-12-13 06:26:57,988 INFO:172.26.0.1 - - [13/Dec/2023 06:26:57] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:26:58,868 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T06:26:58.858Z'}
+2023-12-13 06:26:58,869 INFO:172.26.0.1 - - [13/Dec/2023 06:26:58] "POST /log HTTP/1.1" 200 -
+2023-12-13 06:26:58,874 INFO:172.26.0.1 - - [13/Dec/2023 06:26:58] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 06:26:58,880 INFO:172.26.0.1 - - [13/Dec/2023 06:26:58] "GET /render_index/https://experienceleague.adobe.com/docs/experience-manager-65/authoring/siteandpage/page-diff.html%3Flang%3Dja HTTP/1.1" 200 -
+2023-12-13 08:38:44,044 INFO:172.26.0.1 - - [13/Dec/2023 08:38:44] "[33mGET /r HTTP/1.1[0m" 404 -
+2023-12-13 08:38:47,564 INFO:172.26.0.1 - - [13/Dec/2023 08:38:47] "GET / HTTP/1.1" 200 -
+2023-12-13 08:38:49,351 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T08:38:49.346Z'}
+2023-12-13 08:38:49,352 INFO:172.26.0.1 - - [13/Dec/2023 08:38:49] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:38:50,841 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T08:38:50.834Z'}
+2023-12-13 08:38:50,842 INFO:172.26.0.1 - - [13/Dec/2023 08:38:50] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:38:50,848 INFO:172.26.0.1 - - [13/Dec/2023 08:38:50] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 08:38:50,856 INFO:172.26.0.1 - - [13/Dec/2023 08:38:50] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 08:38:51,251 INFO:172.26.0.1 - - [13/Dec/2023 08:38:51] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 08:38:51,647 INFO:172.26.0.1 - - [13/Dec/2023 08:38:51] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 08:38:53,456 INFO:Log data: {'eventType': 'click', 'element': 'BODY', 'xpath': '/html[1]/body[1]', 'timestamp': '2023-12-13T08:38:53.450Z'}
+2023-12-13 08:38:53,457 INFO:172.26.0.1 - - [13/Dec/2023 08:38:53] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:38:53,774 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T08:38:53.770Z'}
+2023-12-13 08:38:53,775 INFO:172.26.0.1 - - [13/Dec/2023 08:38:53] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:38:54,873 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T08:38:54.866Z'}
+2023-12-13 08:38:54,873 INFO:172.26.0.1 - - [13/Dec/2023 08:38:54] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:38:55,273 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T08:38:55.263Z'}
+2023-12-13 08:38:55,273 INFO:172.26.0.1 - - [13/Dec/2023 08:38:55] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:38:56,312 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T08:38:56.306Z'}
+2023-12-13 08:38:56,312 INFO:172.26.0.1 - - [13/Dec/2023 08:38:56] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:38:56,922 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T08:38:56.915Z'}
+2023-12-13 08:38:56,922 INFO:172.26.0.1 - - [13/Dec/2023 08:38:56] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:38:57,587 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T08:38:57.578Z'}
+2023-12-13 08:38:57,588 INFO:172.26.0.1 - - [13/Dec/2023 08:38:57] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:38:57,926 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 46, 'scrollLeft': 0, 'timestamp': '2023-12-13T08:38:57.921Z'}
+2023-12-13 08:38:57,926 INFO:172.26.0.1 - - [13/Dec/2023 08:38:57] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:02,152 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T08:39:02.146Z'}
+2023-12-13 08:39:02,152 INFO:172.26.0.1 - - [13/Dec/2023 08:39:02] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:02,808 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T08:39:02.802Z'}
+2023-12-13 08:39:02,808 INFO:172.26.0.1 - - [13/Dec/2023 08:39:02] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:04,160 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T08:39:04.154Z'}
+2023-12-13 08:39:04,161 INFO:172.26.0.1 - - [13/Dec/2023 08:39:04] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:04,645 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '0901234555', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T08:39:04.636Z'}
+2023-12-13 08:39:04,645 INFO:172.26.0.1 - - [13/Dec/2023 08:39:04] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:06,112 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'timestamp': '2023-12-13T08:39:06.106Z'}
+2023-12-13 08:39:06,112 INFO:172.26.0.1 - - [13/Dec/2023 08:39:06] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:06,394 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'hm20002@student.miyazaki-u.ac.jp', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T08:39:06.384Z'}
+2023-12-13 08:39:06,395 INFO:172.26.0.1 - - [13/Dec/2023 08:39:06] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:06,607 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'timestamp': '2023-12-13T08:39:06.601Z'}
+2023-12-13 08:39:06,608 INFO:172.26.0.1 - - [13/Dec/2023 08:39:06] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:06,776 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'timestamp': '2023-12-13T08:39:06.770Z'}
+2023-12-13 08:39:06,776 INFO:172.26.0.1 - - [13/Dec/2023 08:39:06] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:07,135 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T08:39:07.129Z'}
+2023-12-13 08:39:07,136 INFO:172.26.0.1 - - [13/Dec/2023 08:39:07] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:07,416 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[8]', 'timestamp': '2023-12-13T08:39:07.410Z'}
+2023-12-13 08:39:07,417 INFO:172.26.0.1 - - [13/Dec/2023 08:39:07] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:07,700 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '2', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'timestamp': '2023-12-13T08:39:07.691Z'}
+2023-12-13 08:39:07,701 INFO:172.26.0.1 - - [13/Dec/2023 08:39:07] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:08,592 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T08:39:08.586Z'}
+2023-12-13 08:39:08,593 INFO:172.26.0.1 - - [13/Dec/2023 08:39:08] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:08,896 INFO:Log data: {'eventType': 'click', 'element': 'TEXTAREA', 'xpath': '/html[1]/body[1]/form[1]/textarea[1]', 'timestamp': '2023-12-13T08:39:08.890Z'}
+2023-12-13 08:39:08,897 INFO:172.26.0.1 - - [13/Dec/2023 08:39:08] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:09,133 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '2023-12-01T17:39', 'xpath': '/html[1]/body[1]/form[1]/input[8]', 'timestamp': '2023-12-13T08:39:09.120Z'}
+2023-12-13 08:39:09,134 INFO:172.26.0.1 - - [13/Dec/2023 08:39:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:10,286 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[5]', 'timestamp': '2023-12-13T08:39:10.281Z'}
+2023-12-13 08:39:10,286 INFO:172.26.0.1 - - [13/Dec/2023 08:39:10] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:10,881 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T08:39:10.874Z'}
+2023-12-13 08:39:10,882 INFO:172.26.0.1 - - [13/Dec/2023 08:39:10] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:10,891 INFO:172.26.0.1 - - [13/Dec/2023 08:39:10] "POST /confirmation HTTP/1.1" 200 -
+2023-12-13 08:39:11,290 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'M', 'xpath': '/html[1]/body[1]/form[1]/input[5]', 'timestamp': '2023-12-13T08:39:11.284Z'}
+2023-12-13 08:39:11,290 INFO:172.26.0.1 - - [13/Dec/2023 08:39:11] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:12,955 INFO:Log data: {'eventType': 'click', 'element': 'A', 'xpath': '/html[1]/body[1]/a[1]', 'timestamp': '2023-12-13T08:39:12.946Z'}
+2023-12-13 08:39:12,956 INFO:172.26.0.1 - - [13/Dec/2023 08:39:12] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:39:13,328 INFO:172.26.0.1 - - [13/Dec/2023 08:39:13] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 08:56:49,007 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-13 08:56:49,173 INFO: * Restarting with stat
+2023-12-13 08:56:49,682 WARNING: * Debugger is active!
+2023-12-13 08:56:49,684 INFO: * Debugger PIN: 557-695-260
+2023-12-13 08:57:55,975 INFO:172.26.0.1 - - [13/Dec/2023 08:57:55] "GET / HTTP/1.1" 200 -
+2023-12-13 08:57:56,709 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T08:57:56.706Z'}
+2023-12-13 08:57:56,710 INFO:172.26.0.1 - - [13/Dec/2023 08:57:56] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:57:56,998 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T08:57:56.994Z'}
+2023-12-13 08:57:56,999 INFO:172.26.0.1 - - [13/Dec/2023 08:57:56] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:57:57,928 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T08:57:57.922Z'}
+2023-12-13 08:57:57,928 INFO:172.26.0.1 - - [13/Dec/2023 08:57:57] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:57:57,935 INFO:172.26.0.1 - - [13/Dec/2023 08:57:57] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 08:57:57,944 INFO:172.26.0.1 - - [13/Dec/2023 08:57:57] "GET /render_index/http://localhost:5000/piza-form HTTP/1.1" 200 -
+2023-12-13 08:57:58,352 INFO:172.26.0.1 - - [13/Dec/2023 08:57:58] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 08:57:58,722 INFO:172.26.0.1 - - [13/Dec/2023 08:57:58] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 08:58:06,006 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T08:58:06.002Z'}
+2023-12-13 08:58:06,007 INFO:172.26.0.1 - - [13/Dec/2023 08:58:06] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:06,927 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T08:58:06.922Z'}
+2023-12-13 08:58:06,928 INFO:172.26.0.1 - - [13/Dec/2023 08:58:06] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:07,458 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '有留', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T08:58:07.450Z'}
+2023-12-13 08:58:07,459 INFO:172.26.0.1 - - [13/Dec/2023 08:58:07] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:07,991 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T08:58:07.986Z'}
+2023-12-13 08:58:07,992 INFO:172.26.0.1 - - [13/Dec/2023 08:58:07] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:08,628 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '0901234555', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T08:58:08.619Z'}
+2023-12-13 08:58:08,629 INFO:172.26.0.1 - - [13/Dec/2023 08:58:08] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:10,744 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'n.aridome@dopponica.jp', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T08:58:10.738Z'}
+2023-12-13 08:58:10,744 INFO:172.26.0.1 - - [13/Dec/2023 08:58:10] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:11,104 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': '/html[1]/body[1]/form[1]/select[1]', 'timestamp': '2023-12-13T08:58:11.098Z'}
+2023-12-13 08:58:11,104 INFO:172.26.0.1 - - [13/Dec/2023 08:58:11] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:11,603 INFO:Log data: {'eventType': 'click', 'element': 'SELECT', 'xpath': '/html[1]/body[1]/form[1]/select[1]', 'timestamp': '2023-12-13T08:58:11.594Z'}
+2023-12-13 08:58:11,603 INFO:172.26.0.1 - - [13/Dec/2023 08:58:11] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:14,156 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T08:58:14.149Z'}
+2023-12-13 08:58:14,157 INFO:172.26.0.1 - - [13/Dec/2023 08:58:14] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:14,303 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T08:58:14.298Z'}
+2023-12-13 08:58:14,304 INFO:172.26.0.1 - - [13/Dec/2023 08:58:14] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:15,841 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'naokibasketball1005@gmail.com', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T08:58:15.833Z'}
+2023-12-13 08:58:15,841 INFO:172.26.0.1 - - [13/Dec/2023 08:58:15] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:16,863 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T08:58:16.858Z'}
+2023-12-13 08:58:16,864 INFO:172.26.0.1 - - [13/Dec/2023 08:58:16] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:18,749 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T08:58:18.746Z'}
+2023-12-13 08:58:18,750 INFO:172.26.0.1 - - [13/Dec/2023 08:58:18] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:19,134 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T08:58:19.129Z'}
+2023-12-13 08:58:19,134 INFO:172.26.0.1 - - [13/Dec/2023 08:58:19] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:20,469 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'timestamp': '2023-12-13T08:58:20.465Z'}
+2023-12-13 08:58:20,470 INFO:172.26.0.1 - - [13/Dec/2023 08:58:20] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:20,741 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'aridome@piza.jp', 'xpath': '/html[1]/body[1]/form[1]/input[3]', 'timestamp': '2023-12-13T08:58:20.730Z'}
+2023-12-13 08:58:20,741 INFO:172.26.0.1 - - [13/Dec/2023 08:58:20] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:20,968 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T08:58:20.962Z'}
+2023-12-13 08:58:20,969 INFO:172.26.0.1 - - [13/Dec/2023 08:58:20] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:21,296 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T08:58:21.291Z'}
+2023-12-13 08:58:21,296 INFO:172.26.0.1 - - [13/Dec/2023 08:58:21] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:21,536 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[6]', 'timestamp': '2023-12-13T08:58:21.530Z'}
+2023-12-13 08:58:21,537 INFO:172.26.0.1 - - [13/Dec/2023 08:58:21] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:21,904 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'timestamp': '2023-12-13T08:58:21.898Z'}
+2023-12-13 08:58:21,905 INFO:172.26.0.1 - - [13/Dec/2023 08:58:21] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:22,546 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': 'L', 'xpath': '/html[1]/body[1]/form[1]/input[6]', 'timestamp': '2023-12-13T08:58:22.534Z'}
+2023-12-13 08:58:22,547 INFO:172.26.0.1 - - [13/Dec/2023 08:58:22] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:22,632 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'timestamp': '2023-12-13T08:58:22.626Z'}
+2023-12-13 08:58:22,632 INFO:172.26.0.1 - - [13/Dec/2023 08:58:22] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:23,263 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[8]', 'timestamp': '2023-12-13T08:58:23.258Z'}
+2023-12-13 08:58:23,264 INFO:172.26.0.1 - - [13/Dec/2023 08:58:23] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:23,548 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '1', 'xpath': '/html[1]/body[1]/form[1]/input[7]', 'timestamp': '2023-12-13T08:58:23.540Z'}
+2023-12-13 08:58:23,548 INFO:172.26.0.1 - - [13/Dec/2023 08:58:23] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:25,782 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '2024-01-04T17:58', 'xpath': '/html[1]/body[1]/form[1]/input[8]', 'timestamp': '2023-12-13T08:58:25.773Z'}
+2023-12-13 08:58:25,783 INFO:172.26.0.1 - - [13/Dec/2023 08:58:25] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:28,809 INFO:Log data: {'eventType': 'input', 'element': 'INPUT', 'value': '2023-12-06T17:58', 'xpath': '/html[1]/body[1]/form[1]/input[8]', 'timestamp': '2023-12-13T08:58:28.799Z'}
+2023-12-13 08:58:28,809 INFO:172.26.0.1 - - [13/Dec/2023 08:58:28] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:29,000 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T08:58:28.994Z'}
+2023-12-13 08:58:29,001 INFO:172.26.0.1 - - [13/Dec/2023 08:58:29] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:29,497 INFO:Log data: {'eventType': 'click', 'element': 'TEXTAREA', 'xpath': '/html[1]/body[1]/form[1]/textarea[1]', 'timestamp': '2023-12-13T08:58:29.491Z'}
+2023-12-13 08:58:29,498 INFO:172.26.0.1 - - [13/Dec/2023 08:58:29] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:30,284 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 1, 'scrollLeft': 0, 'timestamp': '2023-12-13T08:58:30.276Z'}
+2023-12-13 08:58:30,285 INFO:172.26.0.1 - - [13/Dec/2023 08:58:30] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:30,923 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[9]', 'timestamp': '2023-12-13T08:58:30.914Z'}
+2023-12-13 08:58:30,924 INFO:172.26.0.1 - - [13/Dec/2023 08:58:30] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:30,927 INFO:172.26.0.1 - - [13/Dec/2023 08:58:30] "POST /confirmation HTTP/1.1" 200 -
+2023-12-13 08:58:31,299 INFO:Log data: {'eventType': 'scroll', 'scrollTop': 0, 'scrollLeft': 0, 'timestamp': '2023-12-13T08:58:31.289Z'}
+2023-12-13 08:58:31,300 INFO:172.26.0.1 - - [13/Dec/2023 08:58:31] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:38,032 INFO:Log data: {'eventType': 'click', 'element': 'A', 'xpath': '/html[1]/body[1]/a[1]', 'timestamp': '2023-12-13T08:58:38.026Z'}
+2023-12-13 08:58:38,033 INFO:172.26.0.1 - - [13/Dec/2023 08:58:38] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:38,399 INFO:172.26.0.1 - - [13/Dec/2023 08:58:38] "GET /piza-form HTTP/1.1" 200 -
+2023-12-13 08:58:45,036 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T08:58:45.027Z'}
+2023-12-13 08:58:45,036 INFO:172.26.0.1 - - [13/Dec/2023 08:58:45] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:58:46,536 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[1]', 'timestamp': '2023-12-13T08:58:46.530Z'}
+2023-12-13 08:58:46,537 INFO:172.26.0.1 - - [13/Dec/2023 08:58:46] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:59:08,092 INFO:172.26.0.1 - - [13/Dec/2023 08:59:08] "GET / HTTP/1.1" 200 -
+2023-12-13 08:59:08,966 INFO:Log data: {'eventType': 'click', 'element': 'FORM', 'xpath': '/html[1]/body[1]/form[1]', 'timestamp': '2023-12-13T08:59:08.962Z'}
+2023-12-13 08:59:08,966 INFO:172.26.0.1 - - [13/Dec/2023 08:59:08] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:59:09,319 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': 'id("pageUrl")', 'timestamp': '2023-12-13T08:59:09.314Z'}
+2023-12-13 08:59:09,320 INFO:172.26.0.1 - - [13/Dec/2023 08:59:09] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:59:10,654 INFO:Log data: {'eventType': 'click', 'element': 'INPUT', 'xpath': '/html[1]/body[1]/form[1]/input[2]', 'timestamp': '2023-12-13T08:59:10.650Z'}
+2023-12-13 08:59:10,655 INFO:172.26.0.1 - - [13/Dec/2023 08:59:10] "POST /log HTTP/1.1" 200 -
+2023-12-13 08:59:10,660 INFO:172.26.0.1 - - [13/Dec/2023 08:59:10] "[32mPOST /index HTTP/1.1[0m" 302 -
+2023-12-13 08:59:10,666 INFO:172.26.0.1 - - [13/Dec/2023 08:59:10] "GET /render_index/https://experienceleague.adobe.com/docs/experience-manager-65/authoring/siteandpage/page-diff.html%3Flang%3Dja HTTP/1.1" 200 -
+2023-12-13 08:59:37,215 INFO:172.26.0.1 - - [13/Dec/2023 08:59:37] "GET / HTTP/1.1" 200 -
+2023-12-13 08:59:44,270 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-13 08:59:44,314 INFO: * Restarting with stat
+2023-12-13 08:59:44,628 WARNING: * Debugger is active!
+2023-12-13 08:59:44,629 INFO: * Debugger PIN: 557-695-260
+2023-12-13 13:46:13,971 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-13 13:46:14,239 INFO: * Restarting with stat
+2023-12-13 13:46:14,869 WARNING: * Debugger is active!
+2023-12-13 13:46:14,871 INFO: * Debugger PIN: 557-695-260
