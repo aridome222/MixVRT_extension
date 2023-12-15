@@ -31,7 +31,7 @@ class Test_label_snapShot():
   def teardown_method(self, method):
     self.driver.quit()
   
-  def test_singlelinetext(self):
+  def test_Photolizeにログインする(self):
     # photolizeにログインする
     self.driver.get("https://saruya:saruya@staging-user.photolize.jp/login/basic_auth")
     self.driver.get("https://staging-user.photolize.jp/login")
@@ -42,20 +42,35 @@ class Test_label_snapShot():
     self.driver.find_element(By.ID, "input-11").send_keys("aridome")
     self.driver.find_element(By.ID, "input-14").send_keys("aridome")
     self.driver.find_element(By.CSS_SELECTOR, ".btn > .v-btn__content").click()
+
+    # ページのタイトルを取得
+    title = self.driver.title
+    # ページのタイトルが期待したものであることを確認
+    assert title == "世界一簡単にフォームをつくろうphotolize", "Title does not match"
+
+    # # 電話番号が表示されている要素を取得（ここでは仮の要素IDを使用）
+    # phone_number = self.driver.find_element(By.ID, "phone-number").text
+
+    # # 電話番号の形式をチェックする正規表現パターン
+    # pattern = r"^\d{3}-\d{3}-\d{4}$"
+
+    # # 電話番号が期待する形式に一致するか確認
+    # assert re.match(pattern, phone_number), "Phone number format is incorrect"
+
     # # 有留アプリテストを選択
     # self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div/div[2]/main/div/div[2]/div[2]/div/div[15]/a/div/div/div[2]/div").click()
     # 直接飛ぶ
-    self.driver.get("https://staging-user.photolize.jp/appli/index?app_id=151")
-    # time.sleep(100)
-    # 最新の編集画面を選択
-    self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div/div[2]/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[3]/div[2]/div/div/div[1]/div[1]/div/a/span/i").click()
-    time.sleep(3)
-    save_screenShot(self)
-    # # ログアウトする
-    # self.driver.find_element(By.CSS_SELECTOR, ".v-avatar > img").click()
-    # self.driver.find_element(By.CSS_SELECTOR, ".v-btn--text > .v-btn__content").click()
-    # 画面を閉じる
-    self.driver.close()
+    # self.driver.get("https://staging-user.photolize.jp/appli/index?app_id=151")
+    # # time.sleep(100)
+    # # 最新の編集画面を選択
+    # self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div/div[2]/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[3]/div[2]/div/div/div[1]/div[1]/div/a/span/i").click()
+    # time.sleep(3)
+    # save_screenShot(self)
+    # # # ログアウトする
+    # # self.driver.find_element(By.CSS_SELECTOR, ".v-avatar > img").click()
+    # # self.driver.find_element(By.CSS_SELECTOR, ".v-btn--text > .v-btn__content").click()
+    # # 画面を閉じる
+    # self.driver.close()
 
 def save_screenShot(self):
   # 保存先ディレクトリを指定
@@ -80,5 +95,5 @@ def save_screenShot(self):
   # 追加: ここでフルページのスクリーンショットを取る
   self.driver.save_screenshot(output_file_path)
 
-  print("")
-  print(f"単一行テキストの配置画像を{output_file_path}に保存しました")
+  # print("")
+  # print(f"単一行テキストの配置画像を{output_file_path}に保存しました")
