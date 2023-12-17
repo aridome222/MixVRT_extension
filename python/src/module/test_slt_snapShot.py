@@ -45,8 +45,6 @@ class TestSingleLineText_snapShot():
     self.driver.get("https://staging-user.photolize.jp/appli/index?app_id=151")
     # 最新のビューを選択
     self.driver.find_element(By.CSS_SELECTOR, ".ag-row-even:nth-child(1) .mr-1:nth-child(2) .v-icon").click()
-    # スクリーンショットをとる
-    save_screenShot(self)
     # time.sleep(3) # 目視確認
     # ログアウトする
     self.driver.find_element(By.CSS_SELECTOR, ".v-avatar > img").click()

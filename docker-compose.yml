@@ -15,8 +15,11 @@ services:
     build: ./python
     volumes:
       - ./python:/python
+      - /tmp/.X11-unix:/tmp/.X11-unix  # Xサーバーソケットのマウント
       - "/etc/timezone:/etc/timezone:ro"
       - "/etc/localtime:/etc/localtime:ro"
+    environment:
+      - DISPLAY=unix${DISPLAY}  # DISPLAY変数の設定
     tty: true
     networks:
       - zenn_network
@@ -27,10 +30,29 @@ services:
     build: ./python/server  # 新しいサーバーコンテナのビルドパス
     volumes:
       - ./python:/app  # サーバーコードが存在するパスに変更
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
     ports:
       - "5000:5000"  # Flaskがデフォルトで使うポート
     networks:
       - zenn_network
+
+  chrome_video:
+    image: selenium/video:ffmpeg-6.1-20231212
+    volumes:
+      - ./python/src/module/video:/video  # ローカルのvideoディレクトリをコンテナ内の/videosにマウント
+      - /tmp/.X11-unix:/tmp/.X11-unix  # Xサーバーソケットのマウント
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+    depends_on:
+      - chrome
+    environment:
+      - DISPLAY_CONTAINER_NAME=chrome
+      - FILE_NAME=chrome_video.mp4
+
+networks:
+  zenn_network:
+    external: true
 
   # ffmpeg:
   #   image: jrottenberg/ffmpeg  # 例としてjrottenberg/ffmpegイメージを使用
@@ -38,11 +60,6 @@ services:
   #     - DISPLAY=${DISPLAY}
   #   volumes:
   #     - /tmp/.X11-unix:/tmp/.X11-unix:rw
-
-
-networks:
-  zenn_network:
-    external: true
 
 # version: "3"
 # services:
