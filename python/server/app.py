@@ -14,7 +14,7 @@ import difflib
 from flask_cors import CORS, cross_origin
 
 from main import main
-from python.src.module import detect_rec_divide_url
+from src.module import detect_rec_divide_url
 from src.module import test_slt_addShot
 import pytest
 import shlex
@@ -138,6 +138,16 @@ def before_web():
 @cross_origin()
 def after_web():
     return render_template("after.html")
+
+@app.route('/before_modified', methods=['POST', 'GET'])
+@cross_origin()
+def before_modified_web():
+    return render_template("before_modified.html")
+
+@app.route('/after_modified', methods=['POST', 'GET'])
+@cross_origin()
+def after_modified_web():
+    return render_template("after_modified.html")
 
 @app.route('/render_index/<path:page_url>')
 @cross_origin()

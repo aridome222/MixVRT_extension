@@ -2106,3 +2106,707 @@
 2023-12-23 00:36:06,080 INFO: * Debugger PIN: 682-893-445
 2023-12-23 00:37:23,774 INFO: * Detected change in '/app/server/app.py', reloading
 2023-12-23 00:37:23,826 INFO: * Restarting with stat
+2023-12-23 12:27:37,430 WARNING: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2023-12-23 12:27:37,431 INFO: * Running on http://172.26.0.2:5000/ (Press CTRL+C to quit)
+2023-12-23 12:27:37,432 INFO: * Restarting with stat
+2023-12-23 12:27:37,898 WARNING: * Debugger is active!
+2023-12-23 12:27:37,905 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:33:43,688 INFO:172.26.0.1 - - [23/Dec/2023 12:33:43] "GET /after HTTP/1.1" 200 -
+2023-12-23 12:33:43,827 INFO:172.26.0.1 - - [23/Dec/2023 12:33:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-12-23 12:33:43,966 INFO:172.26.0.1 - - [23/Dec/2023 12:33:43] "GET /after HTTP/1.1" 200 -
+2023-12-23 12:35:26,387 INFO: * Detected change in '/app/TestScript/photolize/scraping/test_get_html.py', reloading
+2023-12-23 12:35:26,423 INFO: * Restarting with stat
+2023-12-23 12:35:26,752 WARNING: * Debugger is active!
+2023-12-23 12:35:26,752 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:35:34,598 INFO:172.26.0.1 - - [23/Dec/2023 12:35:34] "GET /after HTTP/1.1" 200 -
+2023-12-23 12:35:34,657 INFO:172.26.0.1 - - [23/Dec/2023 12:35:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-12-23 12:35:34,787 INFO:172.26.0.1 - - [23/Dec/2023 12:35:34] "GET /after HTTP/1.1" 200 -
+2023-12-23 12:36:31,032 INFO:172.26.0.1 - - [23/Dec/2023 12:36:31] "GET / HTTP/1.1" 200 -
+2023-12-23 12:36:31,115 INFO:172.26.0.1 - - [23/Dec/2023 12:36:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-12-23 12:36:37,908 INFO:172.26.0.1 - - [23/Dec/2023 12:36:37] "GET /after HTTP/1.1" 200 -
+2023-12-23 12:36:37,968 INFO:172.26.0.1 - - [23/Dec/2023 12:36:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-12-23 12:36:38,095 INFO:172.26.0.1 - - [23/Dec/2023 12:36:38] "GET /after HTTP/1.1" 200 -
+2023-12-23 12:37:45,041 INFO: * Detected change in '/app/TestScript/photolize/scraping/test_get_html.py', reloading
+2023-12-23 12:37:45,084 INFO: * Restarting with stat
+2023-12-23 12:37:45,393 WARNING: * Debugger is active!
+2023-12-23 12:37:45,394 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:38:25,755 INFO: * Detected change in '/app/TestScript/photolize/scraping/test_get_after_html.py', reloading
+2023-12-23 12:38:25,791 INFO: * Restarting with stat
+2023-12-23 12:38:26,155 WARNING: * Debugger is active!
+2023-12-23 12:38:26,156 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:38:39,175 INFO:172.26.0.1 - - [23/Dec/2023 12:38:39] "GET /before HTTP/1.1" 200 -
+2023-12-23 12:38:39,232 INFO:172.26.0.1 - - [23/Dec/2023 12:38:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-12-23 12:38:39,359 INFO:172.26.0.1 - - [23/Dec/2023 12:38:39] "GET /before HTTP/1.1" 200 -
+2023-12-23 12:41:07,717 INFO: * Detected change in '/app/TestScript/photolize/scraping/test_get_before_html.py', reloading
+2023-12-23 12:41:07,753 INFO: * Restarting with stat
+2023-12-23 12:41:08,097 WARNING: * Debugger is active!
+2023-12-23 12:41:08,097 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:41:45,463 INFO: * Detected change in '/app/TestScript/photolize/scraping/test_get_after_html.py', reloading
+2023-12-23 12:41:45,500 INFO: * Restarting with stat
+2023-12-23 12:41:45,822 WARNING: * Debugger is active!
+2023-12-23 12:41:45,822 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:42:08,030 INFO: * Detected change in '/app/TestScript/photolize/scraping/test_get_before_html.py', reloading
+2023-12-23 12:42:08,068 INFO: * Restarting with stat
+2023-12-23 12:42:08,394 WARNING: * Debugger is active!
+2023-12-23 12:42:08,395 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:42:14,566 INFO:172.26.0.1 - - [23/Dec/2023 12:42:14] "GET /before HTTP/1.1" 200 -
+2023-12-23 12:42:14,622 INFO:172.26.0.1 - - [23/Dec/2023 12:42:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-12-23 12:42:14,748 INFO:172.26.0.1 - - [23/Dec/2023 12:42:14] "GET /before HTTP/1.1" 200 -
+2023-12-23 12:42:20,053 INFO:172.26.0.1 - - [23/Dec/2023 12:42:20] "GET /after HTTP/1.1" 200 -
+2023-12-23 12:42:20,105 INFO:172.26.0.1 - - [23/Dec/2023 12:42:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-12-23 12:42:20,230 INFO:172.26.0.1 - - [23/Dec/2023 12:42:20] "GET /after HTTP/1.1" 200 -
+2023-12-23 12:50:30,416 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 12:50:30,456 INFO: * Restarting with stat
+2023-12-23 12:50:30,770 WARNING: * Debugger is active!
+2023-12-23 12:50:30,771 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:51:10,186 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 12:51:10,223 INFO: * Restarting with stat
+2023-12-23 12:51:10,529 WARNING: * Debugger is active!
+2023-12-23 12:51:10,529 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:51:28,715 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 12:51:28,751 INFO: * Restarting with stat
+2023-12-23 12:51:29,079 WARNING: * Debugger is active!
+2023-12-23 12:51:29,080 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:53:09,061 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 12:53:09,099 INFO: * Restarting with stat
+2023-12-23 12:53:09,425 WARNING: * Debugger is active!
+2023-12-23 12:53:09,425 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:53:16,505 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 12:53:16,541 INFO: * Restarting with stat
+2023-12-23 12:53:16,852 WARNING: * Debugger is active!
+2023-12-23 12:53:16,852 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:54:01,301 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 12:54:01,339 INFO: * Restarting with stat
+2023-12-23 12:54:01,656 WARNING: * Debugger is active!
+2023-12-23 12:54:01,657 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:54:08,729 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 12:54:08,764 INFO: * Restarting with stat
+2023-12-23 12:54:09,068 WARNING: * Debugger is active!
+2023-12-23 12:54:09,068 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:58:00,199 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 12:58:00,241 INFO: * Restarting with stat
+2023-12-23 12:58:00,578 WARNING: * Debugger is active!
+2023-12-23 12:58:00,579 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:58:30,923 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 12:58:30,958 INFO: * Restarting with stat
+2023-12-23 12:58:31,262 WARNING: * Debugger is active!
+2023-12-23 12:58:31,262 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:58:40,338 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 12:58:40,382 INFO: * Restarting with stat
+2023-12-23 12:58:40,724 WARNING: * Debugger is active!
+2023-12-23 12:58:40,724 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:58:49,804 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 12:58:49,842 INFO: * Restarting with stat
+2023-12-23 12:58:50,148 WARNING: * Debugger is active!
+2023-12-23 12:58:50,149 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:58:52,180 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 12:58:52,217 INFO: * Restarting with stat
+2023-12-23 12:58:52,532 WARNING: * Debugger is active!
+2023-12-23 12:58:52,533 INFO: * Debugger PIN: 433-856-588
+2023-12-23 12:59:17,794 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 12:59:17,831 INFO: * Restarting with stat
+2023-12-23 12:59:18,130 WARNING: * Debugger is active!
+2023-12-23 12:59:18,130 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:00:29,847 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 13:00:29,886 INFO: * Restarting with stat
+2023-12-23 13:00:30,197 WARNING: * Debugger is active!
+2023-12-23 13:00:30,198 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:00:32,227 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 13:00:32,261 INFO: * Restarting with stat
+2023-12-23 13:00:32,585 WARNING: * Debugger is active!
+2023-12-23 13:00:32,586 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:01:45,273 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 13:01:45,321 INFO: * Restarting with stat
+2023-12-23 13:01:45,660 WARNING: * Debugger is active!
+2023-12-23 13:01:45,660 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:02:12,916 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 13:02:12,951 INFO: * Restarting with stat
+2023-12-23 13:02:13,256 WARNING: * Debugger is active!
+2023-12-23 13:02:13,257 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:02:25,388 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 13:02:25,430 INFO: * Restarting with stat
+2023-12-23 13:02:25,738 WARNING: * Debugger is active!
+2023-12-23 13:02:25,738 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:04:55,120 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 13:04:55,157 INFO: * Restarting with stat
+2023-12-23 13:04:55,480 WARNING: * Debugger is active!
+2023-12-23 13:04:55,481 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:19:44,209 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 13:19:44,250 INFO: * Restarting with stat
+2023-12-23 13:19:44,577 WARNING: * Debugger is active!
+2023-12-23 13:19:44,578 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:19:46,603 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 13:19:46,639 INFO: * Restarting with stat
+2023-12-23 13:19:46,963 WARNING: * Debugger is active!
+2023-12-23 13:19:46,963 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:20:18,286 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 13:20:18,320 INFO: * Restarting with stat
+2023-12-23 13:20:18,664 WARNING: * Debugger is active!
+2023-12-23 13:20:18,665 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:21:46,511 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 13:21:46,549 INFO: * Restarting with stat
+2023-12-23 13:21:46,889 WARNING: * Debugger is active!
+2023-12-23 13:21:46,890 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:25:22,026 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 13:25:22,069 INFO: * Restarting with stat
+2023-12-23 13:25:22,390 WARNING: * Debugger is active!
+2023-12-23 13:25:22,391 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:32:35,695 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 13:32:35,733 INFO: * Restarting with stat
+2023-12-23 13:32:36,059 WARNING: * Debugger is active!
+2023-12-23 13:32:36,060 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:33:18,481 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 13:33:18,518 INFO: * Restarting with stat
+2023-12-23 13:33:18,826 WARNING: * Debugger is active!
+2023-12-23 13:33:18,827 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:33:32,976 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 13:33:33,046 INFO: * Restarting with stat
+2023-12-23 13:33:33,366 WARNING: * Debugger is active!
+2023-12-23 13:33:33,367 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:39:54,118 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-23 13:39:54,163 INFO: * Restarting with stat
+2023-12-23 13:39:54,495 WARNING: * Debugger is active!
+2023-12-23 13:39:54,495 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:40:01,576 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-23 13:40:01,612 INFO: * Restarting with stat
+2023-12-23 13:40:01,930 WARNING: * Debugger is active!
+2023-12-23 13:40:01,930 INFO: * Debugger PIN: 433-856-588
+2023-12-23 13:41:03,684 INFO:172.26.0.1 - - [23/Dec/2023 13:41:03] "GET / HTTP/1.1" 200 -
+2023-12-23 13:41:18,924 INFO:172.26.0.1 - - [23/Dec/2023 13:41:18] "GET /after_modified HTTP/1.1" 200 -
+2023-12-23 13:41:33,524 INFO:172.26.0.1 - - [23/Dec/2023 13:41:33] "GET / HTTP/1.1" 200 -
+2023-12-23 13:41:42,600 INFO:172.26.0.1 - - [23/Dec/2023 13:41:42] "GET /before_modified HTTP/1.1" 200 -
+2023-12-23 14:12:42,259 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 14:12:42,309 INFO: * Restarting with stat
+2023-12-23 14:12:42,668 WARNING: * Debugger is active!
+2023-12-23 14:12:42,668 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:05:53,131 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 15:05:53,176 INFO: * Restarting with stat
+2023-12-23 15:05:53,521 WARNING: * Debugger is active!
+2023-12-23 15:05:53,522 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:06:25,833 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 15:06:25,873 INFO: * Restarting with stat
+2023-12-23 15:06:26,186 WARNING: * Debugger is active!
+2023-12-23 15:06:26,186 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:07:44,668 INFO:172.26.0.1 - - [23/Dec/2023 15:07:44] "GET / HTTP/1.1" 200 -
+2023-12-23 15:07:47,687 INFO:172.26.0.1 - - [23/Dec/2023 15:07:47] "GET /before_modified HTTP/1.1" 200 -
+2023-12-23 15:07:55,932 INFO:172.26.0.1 - - [23/Dec/2023 15:07:55] "GET /after_modified HTTP/1.1" 200 -
+2023-12-23 15:08:20,013 INFO:172.26.0.1 - - [23/Dec/2023 15:08:20] "GET / HTTP/1.1" 200 -
+2023-12-23 15:08:22,477 INFO:172.26.0.1 - - [23/Dec/2023 15:08:22] "GET /before_modified HTTP/1.1" 200 -
+2023-12-23 15:08:24,622 INFO:172.26.0.1 - - [23/Dec/2023 15:08:24] "GET /after_modified HTTP/1.1" 200 -
+2023-12-23 15:10:43,385 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 15:10:43,425 INFO: * Restarting with stat
+2023-12-23 15:10:43,732 WARNING: * Debugger is active!
+2023-12-23 15:10:43,732 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:10:58,874 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 15:10:58,909 INFO: * Restarting with stat
+2023-12-23 15:10:59,220 WARNING: * Debugger is active!
+2023-12-23 15:10:59,220 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:11:43,596 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 15:11:43,633 INFO: * Restarting with stat
+2023-12-23 15:11:43,951 WARNING: * Debugger is active!
+2023-12-23 15:11:43,952 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:13:23,815 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 15:13:23,858 INFO: * Restarting with stat
+2023-12-23 15:13:24,184 WARNING: * Debugger is active!
+2023-12-23 15:13:24,185 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:13:34,272 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 15:13:34,327 INFO: * Restarting with stat
+2023-12-23 15:13:34,654 WARNING: * Debugger is active!
+2023-12-23 15:13:34,655 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:15:11,511 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_h1_div.py', reloading
+2023-12-23 15:15:11,549 INFO: * Restarting with stat
+2023-12-23 15:15:11,883 WARNING: * Debugger is active!
+2023-12-23 15:15:11,883 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:16:37,715 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 15:16:37,752 INFO: * Restarting with stat
+2023-12-23 15:16:38,111 WARNING: * Debugger is active!
+2023-12-23 15:16:38,111 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:18:38,146 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 15:18:38,192 INFO: * Restarting with stat
+2023-12-23 15:18:38,528 WARNING: * Debugger is active!
+2023-12-23 15:18:38,529 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:20:14,407 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 15:20:14,448 INFO: * Restarting with stat
+2023-12-23 15:20:14,778 WARNING: * Debugger is active!
+2023-12-23 15:20:14,779 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:48:52,734 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 15:48:52,782 INFO: * Restarting with stat
+2023-12-23 15:48:53,194 WARNING: * Debugger is active!
+2023-12-23 15:48:53,194 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:51:45,648 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 15:51:45,690 INFO: * Restarting with stat
+2023-12-23 15:51:46,001 WARNING: * Debugger is active!
+2023-12-23 15:51:46,001 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:57:09,938 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 15:57:09,993 INFO: * Restarting with stat
+2023-12-23 15:57:10,361 WARNING: * Debugger is active!
+2023-12-23 15:57:10,362 INFO: * Debugger PIN: 433-856-588
+2023-12-23 15:57:50,714 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 15:57:50,755 INFO: * Restarting with stat
+2023-12-23 15:57:51,075 WARNING: * Debugger is active!
+2023-12-23 15:57:51,076 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:05:44,256 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:05:44,296 INFO: * Restarting with stat
+2023-12-23 16:05:44,604 WARNING: * Debugger is active!
+2023-12-23 16:05:44,604 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:07:09,353 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:07:09,430 INFO: * Restarting with stat
+2023-12-23 16:07:09,732 WARNING: * Debugger is active!
+2023-12-23 16:07:09,733 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:07:28,908 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:07:28,946 INFO: * Restarting with stat
+2023-12-23 16:07:29,258 WARNING: * Debugger is active!
+2023-12-23 16:07:29,259 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:08:31,789 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:08:31,827 INFO: * Restarting with stat
+2023-12-23 16:08:32,139 WARNING: * Debugger is active!
+2023-12-23 16:08:32,139 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:08:59,381 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:08:59,423 INFO: * Restarting with stat
+2023-12-23 16:08:59,731 WARNING: * Debugger is active!
+2023-12-23 16:08:59,732 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:14:29,735 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:14:29,774 INFO: * Restarting with stat
+2023-12-23 16:14:30,111 WARNING: * Debugger is active!
+2023-12-23 16:14:30,112 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:15:15,511 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:15:15,548 INFO: * Restarting with stat
+2023-12-23 16:15:15,851 WARNING: * Debugger is active!
+2023-12-23 16:15:15,852 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:15:36,043 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:15:36,079 INFO: * Restarting with stat
+2023-12-23 16:15:36,387 WARNING: * Debugger is active!
+2023-12-23 16:15:36,387 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:30:58,243 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:30:58,288 INFO: * Restarting with stat
+2023-12-23 16:30:58,604 WARNING: * Debugger is active!
+2023-12-23 16:30:58,605 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:31:37,971 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:31:38,012 INFO: * Restarting with stat
+2023-12-23 16:31:38,342 WARNING: * Debugger is active!
+2023-12-23 16:31:38,342 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:33:08,247 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:33:08,285 INFO: * Restarting with stat
+2023-12-23 16:33:08,585 WARNING: * Debugger is active!
+2023-12-23 16:33:08,586 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:33:57,038 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:33:57,075 INFO: * Restarting with stat
+2023-12-23 16:33:57,375 WARNING: * Debugger is active!
+2023-12-23 16:33:57,376 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:33:59,411 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:33:59,448 INFO: * Restarting with stat
+2023-12-23 16:33:59,750 WARNING: * Debugger is active!
+2023-12-23 16:33:59,751 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:34:58,362 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:34:58,402 INFO: * Restarting with stat
+2023-12-23 16:34:58,705 WARNING: * Debugger is active!
+2023-12-23 16:34:58,706 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:35:39,142 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:35:39,178 INFO: * Restarting with stat
+2023-12-23 16:35:39,500 WARNING: * Debugger is active!
+2023-12-23 16:35:39,500 INFO: * Debugger PIN: 433-856-588
+2023-12-23 16:36:04,765 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 16:36:04,804 INFO: * Restarting with stat
+2023-12-23 16:36:05,122 WARNING: * Debugger is active!
+2023-12-23 16:36:05,123 INFO: * Debugger PIN: 433-856-588
+2023-12-23 17:19:15,402 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 17:19:15,537 INFO: * Restarting with stat
+2023-12-23 17:19:15,973 WARNING: * Debugger is active!
+2023-12-23 17:19:15,975 INFO: * Debugger PIN: 433-856-588
+2023-12-23 17:20:27,700 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 17:20:27,746 INFO: * Restarting with stat
+2023-12-23 17:20:28,071 WARNING: * Debugger is active!
+2023-12-23 17:20:28,072 INFO: * Debugger PIN: 433-856-588
+2023-12-23 17:20:37,164 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 17:20:37,198 INFO: * Restarting with stat
+2023-12-23 17:20:37,512 WARNING: * Debugger is active!
+2023-12-23 17:20:37,513 INFO: * Debugger PIN: 433-856-588
+2023-12-23 17:21:13,855 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 17:21:13,891 INFO: * Restarting with stat
+2023-12-23 17:21:14,200 WARNING: * Debugger is active!
+2023-12-23 17:21:14,200 INFO: * Debugger PIN: 433-856-588
+2023-12-23 17:21:32,367 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 17:21:32,407 INFO: * Restarting with stat
+2023-12-23 17:21:32,710 WARNING: * Debugger is active!
+2023-12-23 17:21:32,710 INFO: * Debugger PIN: 433-856-588
+2023-12-23 17:22:34,294 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 17:22:34,331 INFO: * Restarting with stat
+2023-12-23 17:22:34,655 WARNING: * Debugger is active!
+2023-12-23 17:22:34,655 INFO: * Debugger PIN: 433-856-588
+2023-12-23 17:23:52,373 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 17:23:52,413 INFO: * Restarting with stat
+2023-12-23 17:23:52,719 WARNING: * Debugger is active!
+2023-12-23 17:23:52,720 INFO: * Debugger PIN: 433-856-588
+2023-12-23 17:24:03,827 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 17:24:03,864 INFO: * Restarting with stat
+2023-12-23 17:24:04,163 WARNING: * Debugger is active!
+2023-12-23 17:24:04,164 INFO: * Debugger PIN: 433-856-588
+2023-12-23 17:24:08,213 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 17:24:08,248 INFO: * Restarting with stat
+2023-12-23 17:24:08,552 WARNING: * Debugger is active!
+2023-12-23 17:24:08,552 INFO: * Debugger PIN: 433-856-588
+2023-12-23 17:24:45,892 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 17:24:45,927 INFO: * Restarting with stat
+2023-12-23 17:24:46,243 WARNING: * Debugger is active!
+2023-12-23 17:24:46,244 INFO: * Debugger PIN: 433-856-588
+2023-12-23 17:50:32,132 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 17:50:32,174 INFO: * Restarting with stat
+2023-12-23 17:50:32,489 WARNING: * Debugger is active!
+2023-12-23 17:50:32,490 INFO: * Debugger PIN: 433-856-588
+2023-12-23 17:55:25,447 INFO: * Detected change in '/app/TestScript/photolize/scraping/class_list.py', reloading
+2023-12-23 17:55:25,500 INFO: * Restarting with stat
+2023-12-23 17:55:25,822 WARNING: * Debugger is active!
+2023-12-23 17:55:25,822 INFO: * Debugger PIN: 433-856-588
+2023-12-23 17:59:34,272 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 17:59:34,319 INFO: * Restarting with stat
+2023-12-23 17:59:34,661 WARNING: * Debugger is active!
+2023-12-23 17:59:34,661 INFO: * Debugger PIN: 433-856-588
+2023-12-23 17:59:38,713 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 17:59:38,747 INFO: * Restarting with stat
+2023-12-23 17:59:39,044 WARNING: * Debugger is active!
+2023-12-23 17:59:39,045 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:00:44,668 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:00:44,707 INFO: * Restarting with stat
+2023-12-23 18:00:45,026 WARNING: * Debugger is active!
+2023-12-23 18:00:45,026 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:00:55,141 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:00:55,178 INFO: * Restarting with stat
+2023-12-23 18:00:55,521 WARNING: * Debugger is active!
+2023-12-23 18:00:55,521 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:01:32,924 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:01:32,961 INFO: * Restarting with stat
+2023-12-23 18:01:33,290 WARNING: * Debugger is active!
+2023-12-23 18:01:33,290 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:02:36,921 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-23 18:02:36,958 INFO: * Restarting with stat
+2023-12-23 18:02:37,269 WARNING: * Debugger is active!
+2023-12-23 18:02:37,270 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:02:42,331 INFO: * Detected change in '/app/server/app.py', reloading
+2023-12-23 18:02:42,369 INFO: * Restarting with stat
+2023-12-23 18:02:42,665 WARNING: * Debugger is active!
+2023-12-23 18:02:42,666 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:02:52,767 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:02:52,801 INFO: * Restarting with stat
+2023-12-23 18:02:53,111 WARNING: * Debugger is active!
+2023-12-23 18:02:53,111 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:04:53,247 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:04:53,287 INFO: * Restarting with stat
+2023-12-23 18:04:53,631 WARNING: * Debugger is active!
+2023-12-23 18:04:53,632 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:06:12,465 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:06:12,501 INFO: * Restarting with stat
+2023-12-23 18:06:12,816 WARNING: * Debugger is active!
+2023-12-23 18:06:12,816 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:06:50,187 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:06:50,233 INFO: * Restarting with stat
+2023-12-23 18:06:50,548 WARNING: * Debugger is active!
+2023-12-23 18:06:50,549 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:07:06,717 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:07:06,759 INFO: * Restarting with stat
+2023-12-23 18:07:07,074 WARNING: * Debugger is active!
+2023-12-23 18:07:07,074 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:07:30,310 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:07:30,345 INFO: * Restarting with stat
+2023-12-23 18:07:30,679 WARNING: * Debugger is active!
+2023-12-23 18:07:30,680 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:09:46,036 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:09:46,079 INFO: * Restarting with stat
+2023-12-23 18:09:46,387 WARNING: * Debugger is active!
+2023-12-23 18:09:46,388 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:10:37,882 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:10:37,920 INFO: * Restarting with stat
+2023-12-23 18:10:38,257 WARNING: * Debugger is active!
+2023-12-23 18:10:38,258 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:12:19,220 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:12:19,262 INFO: * Restarting with stat
+2023-12-23 18:12:19,603 WARNING: * Debugger is active!
+2023-12-23 18:12:19,603 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:15:08,179 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:15:08,229 INFO: * Restarting with stat
+2023-12-23 18:15:08,596 WARNING: * Debugger is active!
+2023-12-23 18:15:08,596 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:20:01,483 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:20:01,528 INFO: * Restarting with stat
+2023-12-23 18:20:01,838 WARNING: * Debugger is active!
+2023-12-23 18:20:01,838 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:21:41,810 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:21:41,849 INFO: * Restarting with stat
+2023-12-23 18:21:42,160 WARNING: * Debugger is active!
+2023-12-23 18:21:42,160 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:21:56,305 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:21:56,341 INFO: * Restarting with stat
+2023-12-23 18:21:56,659 WARNING: * Debugger is active!
+2023-12-23 18:21:56,659 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:23:31,580 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:23:31,617 INFO: * Restarting with stat
+2023-12-23 18:23:31,918 WARNING: * Debugger is active!
+2023-12-23 18:23:31,919 INFO: * Debugger PIN: 433-856-588
+2023-12-23 18:23:36,977 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 18:23:37,010 INFO: * Restarting with stat
+2023-12-23 18:23:37,322 WARNING: * Debugger is active!
+2023-12-23 18:23:37,322 INFO: * Debugger PIN: 433-856-588
+2023-12-23 21:08:31,940 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 21:08:32,106 INFO: * Restarting with stat
+2023-12-23 21:08:32,581 WARNING: * Debugger is active!
+2023-12-23 21:08:32,582 INFO: * Debugger PIN: 433-856-588
+2023-12-23 21:09:34,193 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 21:09:34,226 INFO: * Restarting with stat
+2023-12-23 21:09:34,538 WARNING: * Debugger is active!
+2023-12-23 21:09:34,539 INFO: * Debugger PIN: 433-856-588
+2023-12-23 21:10:49,284 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 21:10:49,328 INFO: * Restarting with stat
+2023-12-23 21:10:49,677 WARNING: * Debugger is active!
+2023-12-23 21:10:49,677 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:13:49,775 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:13:49,956 INFO: * Restarting with stat
+2023-12-23 23:13:50,454 WARNING: * Debugger is active!
+2023-12-23 23:13:50,456 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:13:58,556 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:13:58,591 INFO: * Restarting with stat
+2023-12-23 23:13:58,896 WARNING: * Debugger is active!
+2023-12-23 23:13:58,896 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:19:13,951 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:19:14,002 INFO: * Restarting with stat
+2023-12-23 23:19:14,328 WARNING: * Debugger is active!
+2023-12-23 23:19:14,329 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:20:48,248 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:20:48,292 INFO: * Restarting with stat
+2023-12-23 23:20:48,619 WARNING: * Debugger is active!
+2023-12-23 23:20:48,619 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:31:43,269 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:31:43,318 INFO: * Restarting with stat
+2023-12-23 23:31:43,640 WARNING: * Debugger is active!
+2023-12-23 23:31:43,641 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:31:45,671 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:31:45,708 INFO: * Restarting with stat
+2023-12-23 23:31:46,012 WARNING: * Debugger is active!
+2023-12-23 23:31:46,013 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:32:16,303 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:32:16,340 INFO: * Restarting with stat
+2023-12-23 23:32:16,679 WARNING: * Debugger is active!
+2023-12-23 23:32:16,680 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:38:25,204 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:38:25,255 INFO: * Restarting with stat
+2023-12-23 23:38:25,648 WARNING: * Debugger is active!
+2023-12-23 23:38:25,649 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:38:28,677 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:38:28,717 INFO: * Restarting with stat
+2023-12-23 23:38:29,044 WARNING: * Debugger is active!
+2023-12-23 23:38:29,044 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:45:31,879 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:45:31,918 INFO: * Restarting with stat
+2023-12-23 23:45:32,252 WARNING: * Debugger is active!
+2023-12-23 23:45:32,252 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:45:51,424 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:45:51,458 INFO: * Restarting with stat
+2023-12-23 23:45:51,759 WARNING: * Debugger is active!
+2023-12-23 23:45:51,759 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:45:53,790 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:45:53,826 INFO: * Restarting with stat
+2023-12-23 23:45:54,118 WARNING: * Debugger is active!
+2023-12-23 23:45:54,119 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:46:58,751 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:46:58,786 INFO: * Restarting with stat
+2023-12-23 23:46:59,095 WARNING: * Debugger is active!
+2023-12-23 23:46:59,095 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:47:05,165 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:47:05,200 INFO: * Restarting with stat
+2023-12-23 23:47:05,523 WARNING: * Debugger is active!
+2023-12-23 23:47:05,523 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:47:19,654 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:47:19,696 INFO: * Restarting with stat
+2023-12-23 23:47:19,993 WARNING: * Debugger is active!
+2023-12-23 23:47:19,994 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:47:31,114 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:47:31,152 INFO: * Restarting with stat
+2023-12-23 23:47:31,450 WARNING: * Debugger is active!
+2023-12-23 23:47:31,450 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:54:09,177 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:54:09,214 INFO: * Restarting with stat
+2023-12-23 23:54:09,549 WARNING: * Debugger is active!
+2023-12-23 23:54:09,549 INFO: * Debugger PIN: 433-856-588
+2023-12-23 23:54:52,829 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-23 23:54:52,865 INFO: * Restarting with stat
+2023-12-23 23:54:53,196 WARNING: * Debugger is active!
+2023-12-23 23:54:53,196 INFO: * Debugger PIN: 433-856-588
+2023-12-24 05:11:47,565 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 05:11:47,619 INFO: * Restarting with stat
+2023-12-24 05:11:47,974 WARNING: * Debugger is active!
+2023-12-24 05:11:47,975 INFO: * Debugger PIN: 433-856-588
+2023-12-24 05:14:15,369 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 05:14:15,406 INFO: * Restarting with stat
+2023-12-24 05:14:15,727 WARNING: * Debugger is active!
+2023-12-24 05:14:15,728 INFO: * Debugger PIN: 433-856-588
+2023-12-24 05:54:19,408 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 05:54:19,565 INFO: * Restarting with stat
+2023-12-24 05:54:20,021 WARNING: * Debugger is active!
+2023-12-24 05:54:20,022 INFO: * Debugger PIN: 433-856-588
+2023-12-24 05:54:34,150 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 05:54:34,185 INFO: * Restarting with stat
+2023-12-24 05:54:34,487 WARNING: * Debugger is active!
+2023-12-24 05:54:34,487 INFO: * Debugger PIN: 433-856-588
+2023-12-24 05:55:29,029 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 05:55:29,068 INFO: * Restarting with stat
+2023-12-24 05:55:29,395 WARNING: * Debugger is active!
+2023-12-24 05:55:29,395 INFO: * Debugger PIN: 433-856-588
+2023-12-24 05:56:51,218 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 05:56:51,257 INFO: * Restarting with stat
+2023-12-24 05:56:51,558 WARNING: * Debugger is active!
+2023-12-24 05:56:51,558 INFO: * Debugger PIN: 433-856-588
+2023-12-24 05:57:06,701 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 05:57:06,736 INFO: * Restarting with stat
+2023-12-24 05:57:07,043 WARNING: * Debugger is active!
+2023-12-24 05:57:07,044 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:02:14,991 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 06:02:15,031 INFO: * Restarting with stat
+2023-12-24 06:02:15,373 WARNING: * Debugger is active!
+2023-12-24 06:02:15,373 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:05:55,443 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 06:05:55,478 INFO: * Restarting with stat
+2023-12-24 06:05:55,781 WARNING: * Debugger is active!
+2023-12-24 06:05:55,781 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:05:57,809 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 06:05:57,844 INFO: * Restarting with stat
+2023-12-24 06:05:58,134 WARNING: * Debugger is active!
+2023-12-24 06:05:58,134 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:07:59,265 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 06:07:59,300 INFO: * Restarting with stat
+2023-12-24 06:07:59,607 WARNING: * Debugger is active!
+2023-12-24 06:07:59,608 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:09:15,233 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 06:09:15,269 INFO: * Restarting with stat
+2023-12-24 06:09:15,609 WARNING: * Debugger is active!
+2023-12-24 06:09:15,610 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:10:35,349 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 06:10:35,390 INFO: * Restarting with stat
+2023-12-24 06:10:35,694 WARNING: * Debugger is active!
+2023-12-24 06:10:35,694 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:40:55,080 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:40:55,123 INFO: * Restarting with stat
+2023-12-24 06:40:55,483 WARNING: * Debugger is active!
+2023-12-24 06:40:55,483 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:40:58,520 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:40:58,557 INFO: * Restarting with stat
+2023-12-24 06:40:58,859 WARNING: * Debugger is active!
+2023-12-24 06:40:58,859 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:42:19,435 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 06:42:19,472 INFO: * Restarting with stat
+2023-12-24 06:42:19,775 WARNING: * Debugger is active!
+2023-12-24 06:42:19,775 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:43:31,342 INFO: * Detected change in '/app/TestScript/photolize/scraping/process.py', reloading
+2023-12-24 06:43:31,383 INFO: * Restarting with stat
+2023-12-24 06:43:31,681 WARNING: * Debugger is active!
+2023-12-24 06:43:31,682 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:43:51,883 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:43:51,917 INFO: * Restarting with stat
+2023-12-24 06:43:52,207 WARNING: * Debugger is active!
+2023-12-24 06:43:52,207 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:44:21,490 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:44:21,529 INFO: * Restarting with stat
+2023-12-24 06:44:21,839 WARNING: * Debugger is active!
+2023-12-24 06:44:21,839 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:44:33,970 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:44:34,029 INFO: * Restarting with stat
+2023-12-24 06:44:34,338 WARNING: * Debugger is active!
+2023-12-24 06:44:34,339 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:44:49,483 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:44:49,529 INFO: * Restarting with stat
+2023-12-24 06:44:49,853 WARNING: * Debugger is active!
+2023-12-24 06:44:49,854 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:44:58,944 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:44:58,986 INFO: * Restarting with stat
+2023-12-24 06:44:59,293 WARNING: * Debugger is active!
+2023-12-24 06:44:59,294 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:45:40,701 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:45:40,740 INFO: * Restarting with stat
+2023-12-24 06:45:41,046 WARNING: * Debugger is active!
+2023-12-24 06:45:41,046 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:51:46,741 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:51:46,784 INFO: * Restarting with stat
+2023-12-24 06:51:47,107 WARNING: * Debugger is active!
+2023-12-24 06:51:47,107 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:52:57,803 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:52:57,843 INFO: * Restarting with stat
+2023-12-24 06:52:58,174 WARNING: * Debugger is active!
+2023-12-24 06:52:58,174 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:53:11,293 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:53:11,329 INFO: * Restarting with stat
+2023-12-24 06:53:11,626 WARNING: * Debugger is active!
+2023-12-24 06:53:11,627 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:53:38,888 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:53:38,935 INFO: * Restarting with stat
+2023-12-24 06:53:39,242 WARNING: * Debugger is active!
+2023-12-24 06:53:39,243 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:54:12,564 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:54:12,607 INFO: * Restarting with stat
+2023-12-24 06:54:12,934 WARNING: * Debugger is active!
+2023-12-24 06:54:12,935 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:54:15,966 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:54:16,004 INFO: * Restarting with stat
+2023-12-24 06:54:16,315 WARNING: * Debugger is active!
+2023-12-24 06:54:16,315 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:57:12,940 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:57:12,984 INFO: * Restarting with stat
+2023-12-24 06:57:13,318 WARNING: * Debugger is active!
+2023-12-24 06:57:13,318 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:58:46,221 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:58:46,264 INFO: * Restarting with stat
+2023-12-24 06:58:46,584 WARNING: * Debugger is active!
+2023-12-24 06:58:46,584 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:58:50,631 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:58:50,678 INFO: * Restarting with stat
+2023-12-24 06:58:50,986 WARNING: * Debugger is active!
+2023-12-24 06:58:50,986 INFO: * Debugger PIN: 433-856-588
+2023-12-24 06:59:23,314 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 06:59:23,355 INFO: * Restarting with stat
+2023-12-24 06:59:23,660 WARNING: * Debugger is active!
+2023-12-24 06:59:23,660 INFO: * Debugger PIN: 433-856-588
+2023-12-24 07:00:41,394 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 07:00:41,437 INFO: * Restarting with stat
+2023-12-24 07:00:41,739 WARNING: * Debugger is active!
+2023-12-24 07:00:41,739 INFO: * Debugger PIN: 433-856-588
+2023-12-24 07:01:53,407 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 07:01:53,449 INFO: * Restarting with stat
+2023-12-24 07:01:53,784 WARNING: * Debugger is active!
+2023-12-24 07:01:53,785 INFO: * Debugger PIN: 433-856-588
+2023-12-24 07:02:53,357 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 07:02:53,396 INFO: * Restarting with stat
+2023-12-24 07:02:53,720 WARNING: * Debugger is active!
+2023-12-24 07:02:53,720 INFO: * Debugger PIN: 433-856-588
+2023-12-24 07:03:44,235 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 07:03:44,275 INFO: * Restarting with stat
+2023-12-24 07:03:44,586 WARNING: * Debugger is active!
+2023-12-24 07:03:44,586 INFO: * Debugger PIN: 433-856-588
+2023-12-24 07:03:52,676 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 07:03:52,715 INFO: * Restarting with stat
+2023-12-24 07:03:53,025 WARNING: * Debugger is active!
+2023-12-24 07:03:53,026 INFO: * Debugger PIN: 433-856-588
+2023-12-24 07:04:27,347 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 07:04:27,386 INFO: * Restarting with stat
+2023-12-24 07:04:27,720 WARNING: * Debugger is active!
+2023-12-24 07:04:27,721 INFO: * Debugger PIN: 433-856-588
+2023-12-24 07:04:29,748 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 07:04:29,788 INFO: * Restarting with stat
+2023-12-24 07:04:30,101 WARNING: * Debugger is active!
+2023-12-24 07:04:30,101 INFO: * Debugger PIN: 433-856-588
+2023-12-24 07:04:43,240 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 07:04:43,275 INFO: * Restarting with stat
+2023-12-24 07:04:43,597 WARNING: * Debugger is active!
+2023-12-24 07:04:43,597 INFO: * Debugger PIN: 433-856-588
+2023-12-24 07:06:25,606 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 07:06:25,648 INFO: * Restarting with stat
+2023-12-24 07:06:25,961 WARNING: * Debugger is active!
+2023-12-24 07:06:25,961 INFO: * Debugger PIN: 433-856-588
+2023-12-24 07:09:28,689 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 07:09:28,728 INFO: * Restarting with stat
+2023-12-24 07:09:29,042 WARNING: * Debugger is active!
+2023-12-24 07:09:29,043 INFO: * Debugger PIN: 433-856-588
+2023-12-24 07:09:56,298 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 07:09:56,335 INFO: * Restarting with stat
+2023-12-24 07:09:56,648 WARNING: * Debugger is active!
+2023-12-24 07:09:56,648 INFO: * Debugger PIN: 433-856-588
+2023-12-24 07:10:54,213 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2023-12-24 07:10:54,260 INFO: * Restarting with stat
+2023-12-24 07:10:54,597 WARNING: * Debugger is active!
+2023-12-24 07:10:54,598 INFO: * Debugger PIN: 433-856-588
