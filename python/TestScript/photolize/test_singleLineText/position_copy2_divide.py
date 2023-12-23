@@ -19,8 +19,8 @@ if not os.path.exists(output_dir):
     subprocess.call(command, shell=True)
 
 # ファイル名を生成
-output_file_name_A = 'base3.png'
-output_file_name_B = 'chg_noDisp.png'
+output_file_name_A = 'web_before.png'
+output_file_name_B = 'web_after.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)

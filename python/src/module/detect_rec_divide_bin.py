@@ -37,8 +37,8 @@ def main():
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     # ファイル名を生成
-    output_file_name_A = 'base.png'
-    output_file_name_B = 'chg_initValue.png'
+    output_file_name_A = 'web_bf.png'
+    output_file_name_B = 'web_af.png'
     # ファイルパスを作成
     output_file_path_A = os.path.join(output_dir, output_file_name_A)
     output_file_path_B = os.path.join(output_dir, output_file_name_B)
@@ -243,7 +243,7 @@ def main():
         if closest_green_rect_index is not None:
             match_list.append((i, closest_green_rect_index+1, red_rectangles[i-1], green_rectangles[closest_green_rect_index]))
             used_green_rect_indices.add(closest_green_rect_index)  # 対応付けされた緑枠のインデックスを集合に追加する
-            print(f"赤枠{i:2} と緑枠{closest_green_rect_index+1:2} は対応します")
+            # print(f"赤枠{i:2} と緑枠{closest_green_rect_index+1:2} は対応します")
             
 
     # # 対応する赤枠と緑枠を表示
@@ -274,12 +274,12 @@ def main():
     # 赤枠に番号を割り振りながら座標を出力
     for i, (x, y, w, h) in enumerate(red_rectangles, start=1):
         cv2.putText(before, str(i), (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
-        print(f"赤枠{i:2}: x座標 ={x:5}, y座標 ={y:5}, 幅 ={w:4}, 高さ ={h:3}")
+        # print(f"赤枠{i:2}: x座標 ={x:5}, y座標 ={y:5}, 幅 ={w:4}, 高さ ={h:3}")
 
     # 緑枠に番号を割り振りながら座標を出力
     for i, (x, y, w, h) in enumerate(green_rectangles, start=1):
         cv2.putText(after, str(i), (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3)
-        print(f"緑枠{i:2}: x座標 ={x:5}, y座標 ={y:5}, 幅 ={w:4}, 高さ ={h:3}")
+        # print(f"緑枠{i:2}: x座標 ={x:5}, y座標 ={y:5}, 幅 ={w:4}, 高さ ={h:3}")
 
 
 
@@ -313,7 +313,7 @@ def main():
                 count += 1 # いくつ差異箇所があったかをカウント
             
             # 差を表示
-            print(f"(赤枠{red_point}, 緑枠{green_point}): x座標差={abs(x_diff):5}, y座標差={abs(y_diff):5}, 幅差={abs(w_diff):2}, 高低差={abs(h_diff):2}")
+            # print(f"(赤枠{red_point}, 緑枠{green_point}): x座標差={abs(x_diff):5}, y座標差={abs(y_diff):5}, 幅差={abs(w_diff):2}, 高低差={abs(h_diff):2}")
 
     if count > 0:
         print(f"{red_text_start}配置の差異を {count} 箇所検出しました{red_text_end}")

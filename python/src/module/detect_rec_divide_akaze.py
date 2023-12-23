@@ -94,7 +94,7 @@ def update_text_positions(contour, text_positions, threshold_distance=150):
         text_positions.append([center_x, center_y, x, y, x + w, y + h])
 
 
-def filter_contours_by_area(contours, threshold_area=150):
+def filter_contours_by_area(contours, threshold_area=700):
     """
     一定の面積以下の輪郭を除外する関数
 
@@ -158,19 +158,19 @@ def match_red_and_green_rectangles(red_rectangles, green_rectangles, distance_th
             match_list.append((i, closest_green_rect_index+1, red_rectangles[i-1], green_rectangles[closest_green_rect_index]))
             used_green_rect_indices.add(closest_green_rect_index)  # 対応付けされた緑枠のインデックスを集合に追加する
 
-    print("\n【 対応する枠ペア情報 】")
-    print(f"・枠ペアの数: {int(len(match_list))}")
+    # print("\n【 対応する枠ペア情報 】")
+    # print(f"・枠ペアの数: {int(len(match_list))}")
     for match in match_list:
         red_index, green_index, red_rect, green_rect = match
-        print(f"・{str_red('赤枠')}{red_index:2} と{str_green('緑枠')}{green_index:2} は対応します")
+        # print(f"・{str_red('赤枠')}{red_index:2} と{str_green('緑枠')}{green_index:2} は対応します")
         
         # 赤枠の座標情報
         red_x, red_y, red_w, red_h = red_rect
-        print(f"    赤枠: 左上({red_x}, {red_y}), 幅{red_w}, 高さ{red_h}")
+        # print(f"    赤枠: 左上({red_x}, {red_y}), 幅{red_w}, 高さ{red_h}")
         
         # 緑枠の座標情報
         green_x, green_y, green_w, green_h = green_rect
-        print(f"    緑枠: 左上({green_x}, {green_y}), 幅{green_w}, 高さ{green_h}")
+        # print(f"    緑枠: 左上({green_x}, {green_y}), 幅{green_w}, 高さ{green_h}")
     print("")
 
     return match_list
@@ -228,8 +228,8 @@ def main():
         subprocess.call(command, shell=True)
 
     # ファイル名を生成
-    output_file_name_A = 'base2.png'
-    output_file_name_B = 'chg_noDisp.png'
+    output_file_name_A = 'web_bf.png'
+    output_file_name_B = 'web_af.png'
     # ファイルパスを作成
     output_file_path_A = os.path.join(output_dir, output_file_name_A)
     output_file_path_B = os.path.join(output_dir, output_file_name_B)

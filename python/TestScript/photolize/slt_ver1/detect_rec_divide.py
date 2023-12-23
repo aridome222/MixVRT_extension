@@ -42,7 +42,7 @@ def str_green(text):
     return f"{GREEN_TEXT_START}{text}{GREEN_TEXT_END}"
 
 
-def update_text_positions(contour, text_positions, threshold_distance=100):
+def update_text_positions(contour, text_positions, threshold_distance=0):
     """
     検出した枠において、近い枠同士を結合する関数
 
@@ -76,7 +76,7 @@ def update_text_positions(contour, text_positions, threshold_distance=100):
         text_positions.append([center_x, center_y, x, y, x + w, y + h])
 
 
-def filter_contours_by_area(contours, threshold_area=150):
+def filter_contours_by_area(contours, threshold_area=0):
     """
     一定の面積以下の輪郭を除外する関数
 
@@ -205,8 +205,8 @@ output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 # ファイル名を生成
-output_file_name_A = 'before.png'
-output_file_name_B = 'after.png'
+output_file_name_A = 'web_before.png'
+output_file_name_B = 'web_after.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)

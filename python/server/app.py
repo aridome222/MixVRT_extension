@@ -14,7 +14,7 @@ import difflib
 from flask_cors import CORS, cross_origin
 
 from main import main
-from src.module import detect_rec_divide
+from python.src.module import detect_rec_divide_url
 from src.module import test_slt_addShot
 import pytest
 import shlex
@@ -129,6 +129,15 @@ def index():
         else:
             return "HTML-file is Already up to date."
         
+@app.route('/before', methods=['POST', 'GET'])
+@cross_origin()
+def before_web():
+    return render_template("before.html")
+
+@app.route('/after', methods=['POST', 'GET'])
+@cross_origin()
+def after_web():
+    return render_template("after.html")
 
 @app.route('/render_index/<path:page_url>')
 @cross_origin()
@@ -267,7 +276,7 @@ def run_diff_program(url1, url2):
         print(record)
         print("-------------------------")
 
-        diff_img1, diff_img2 = detect_rec_divide.main(img1_path, img2_path)
+        diff_img1, diff_img2 = detect_rec_divide_url.main(img1_path, img2_path)
         return diff_img1, diff_img2
     else:
         # recordが空の場合、エラー処理またはデフォルトの値を返すなど、適切な対処を行う

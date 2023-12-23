@@ -1,6 +1,11 @@
 # server/Dockerfile
 FROM python:3.9-buster
 
+ENV GIT_USER_NAME "aridome222"
+ENV GIT_USER_EMAIL "hm20002@student.miyazaki-u.ac.jp"
+RUN git config --global user.name $GIT_USER_NAME
+RUN git config --global user.email $GIT_USER_EMAIL
+
 # sudoとtzdataをインストール
 RUN apt-get update && apt-get install -y sudo tzdata
 
