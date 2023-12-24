@@ -37,18 +37,18 @@ services:
     networks:
       - zenn_network
 
-  chrome_video:
-    image: selenium/video:ffmpeg-6.1-20231212
-    volumes:
-      - ./python/src/module/video:/video  # ローカルのvideoディレクトリをコンテナ内の/videosにマウント
-      - /tmp/.X11-unix:/tmp/.X11-unix  # Xサーバーソケットのマウント
-      - "/etc/timezone:/etc/timezone:ro"
-      - "/etc/localtime:/etc/localtime:ro"
-    depends_on:
-      - chrome
-    environment:
-      - DISPLAY_CONTAINER_NAME=chrome
-      - FILE_NAME=chrome_video.mp4
+  # chrome_video:
+  #   image: selenium/video:ffmpeg-6.1-20231212
+  #   volumes:
+  #     - ./python/src/module/video:/video  # ローカルのvideoディレクトリをコンテナ内の/videosにマウント
+  #     - /tmp/.X11-unix:/tmp/.X11-unix  # Xサーバーソケットのマウント
+  #     - "/etc/timezone:/etc/timezone:ro"
+  #     - "/etc/localtime:/etc/localtime:ro"
+  #   depends_on:
+  #     - chrome
+  #   environment:
+  #     - DISPLAY_CONTAINER_NAME=chrome
+  #     - FILE_NAME=chrome_video.mp4
 
 networks:
   zenn_network:

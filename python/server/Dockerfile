@@ -49,9 +49,9 @@ RUN pip install azure-cognitiveservices-vision-computervision
 # Azure-OCRに必要
 RUN pip install azure-ai-formrecognizer
 
-# Seleniumによる自動操作されているWeb画面の録画に必要
-RUN sudo apt-get update && \
-    sudo apt-get install -y ffmpeg
+# # Seleniumによる自動操作されているWeb画面の録画に必要
+# RUN sudo apt-get update && \
+#     sudo apt-get install -y ffmpeg
 
 ###################################
 

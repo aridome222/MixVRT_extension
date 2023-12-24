@@ -43,15 +43,15 @@ RUN pip install azure-cognitiveservices-vision-computervision
 # Azure-OCRに必要
 RUN pip install azure-ai-formrecognizer
 
-# フォントをコピーしてパスを設定
-COPY ./MSMINCHO.TTC /usr/share/fonts/MSMINCHO.TTC
-ENV FONT_PATH=/usr/share/fonts/MSMINCHO.TTC
+# # フォントをコピーしてパスを設定
+# COPY ./MSMINCHO.TTC /usr/share/fonts/MSMINCHO.TTC
+# ENV FONT_PATH=/usr/share/fonts/MSMINCHO.TTC
 
 # CORS (Cross-Origin Resource Sharing)を許可する設定を追加する
 RUN pip install flask_cors
 
-# Seleniumによる自動操作されているWeb画面の録画に必要
-RUN sudo apt-get update && \
-    sudo apt-get install -y ffmpeg
+# # Seleniumによる自動操作されているWeb画面の録画に必要
+# RUN sudo apt-get update && \
+#     sudo apt-get install -y ffmpeg
 
 
