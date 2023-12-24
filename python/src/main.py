@@ -4,7 +4,6 @@ from module import detect_rec_divide
 from module import detect_rec_divide_url
 from module import detect_rec_divide_bin
 from module import detect_rec_divide_akaze
-from module import test_slt_addShot
 import sys
 
 
