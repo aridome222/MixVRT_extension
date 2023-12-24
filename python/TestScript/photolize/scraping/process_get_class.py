@@ -34,33 +34,33 @@ def save_diff_html_data(html_data_file, html_data_file_2):
 
     print(f"2つのHTMLデータの差異を{output_file_path}に保存しました")
 
-# def apply_style_to_changes(diff_file_path):
-#     # テキストファイルからスタイル情報を読み込む
-#     with open(diff_file_path, 'r') as file:
-#         css_text = file.read()
+def apply_style_to_changes(diff_file_path):
+    # テキストファイルからスタイル情報を読み込む
+    with open(diff_file_path, 'r') as file:
+        css_text = file.read()
 
-#     # スタイル情報を格納するリスト
-#     style_list = []
+    # スタイル情報を格納するリスト
+    style_list = []
 
-#     # スタイル情報をセレクタ単位で分割
-#     css_rules = css_text.split('}')
+    # スタイル情報をセレクタ単位で分割
+    css_rules = css_text.split('}')
 
-#     # 各行を処理してセレクタとスタイル情報を抽出
-#     for rule in css_rules:
-#         # 行頭の+記号を探す
-#         if '+' in rule:
-#             rule = rule.strip()  # 空白を削除
-#             rule = rule.lstrip('+').strip()  # +記号を取り除く
-#             parts = rule.split('{', 1)
-#             if len(parts) == 2:
-#                 selector = parts[0].strip()
-#                 styles = parts[1].strip('}')
-#                 style_list.append({'selector': selector, 'style': styles})
+    # 各行を処理してセレクタとスタイル情報を抽出
+    for rule in css_rules:
+        # 行頭の+記号を探す
+        if '+' in rule:
+            rule = rule.strip()  # 空白を削除
+            rule = rule.lstrip('+').strip()  # +記号を取り除く
+            parts = rule.split('{', 1)
+            if len(parts) == 2:
+                selector = parts[0].strip()
+                styles = parts[1].strip('}')
+                style_list.append({'selector': selector, 'style': styles})
 
-#         # 結果の表示
-#         for item in style_list:
-#             print(f'セレクタ: {item["selector"]}')
-#             print(f'スタイル情報: {item["style"]}')
+        # 結果の表示
+        for item in style_list:
+            print(f'セレクタ: {item["selector"]}')
+            print(f'スタイル情報: {item["style"]}')
             print('---')
 
 # def apply_style_to_changes(diff_file_path):
