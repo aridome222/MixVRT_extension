@@ -15,7 +15,6 @@ from flask_cors import CORS, cross_origin
 
 from main import main
 from src.module import detect_rec_divide_url
-from src.module import test_slt_addShot
 import pytest
 import shlex
 import logging

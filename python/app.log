@@ -2810,3 +2810,9 @@
 2023-12-24 07:10:54,260 INFO: * Restarting with stat
 2023-12-24 07:10:54,597 WARNING: * Debugger is active!
 2023-12-24 07:10:54,598 INFO: * Debugger PIN: 433-856-588
+2023-12-24 16:07:12,897 WARNING: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2023-12-24 16:07:12,898 INFO: * Running on http://172.26.0.2:5000/ (Press CTRL+C to quit)
+2023-12-24 16:07:12,899 INFO: * Restarting with stat
+2023-12-24 16:07:13,124 WARNING: * Debugger is active!
+2023-12-24 16:07:13,141 INFO: * Debugger PIN: 430-793-617
