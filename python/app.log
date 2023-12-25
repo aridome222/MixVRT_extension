@@ -3076,3 +3076,71 @@
 2023-12-25 00:25:16,697 INFO:172.26.0.1 - - [25/Dec/2023 00:25:16] "GET /after_modified HTTP/1.1" 200 -
 2023-12-25 00:25:36,202 INFO:172.26.0.1 - - [25/Dec/2023 00:25:36] "GET /after_modified HTTP/1.1" 200 -
 2023-12-25 00:25:36,266 INFO:172.26.0.1 - - [25/Dec/2023 00:25:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-12-25 15:13:00,197 WARNING: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2023-12-25 15:13:00,198 INFO: * Running on http://172.26.0.2:5000/ (Press CTRL+C to quit)
+2023-12-25 15:13:00,199 INFO: * Restarting with stat
+2023-12-25 15:13:00,469 WARNING: * Debugger is active!
+2023-12-25 15:13:00,474 INFO: * Debugger PIN: 130-529-219
+2023-12-25 15:13:03,356 INFO:172.26.0.1 - - [25/Dec/2023 15:13:03] "GET / HTTP/1.1" 200 -
+2023-12-25 15:13:03,428 INFO:172.26.0.1 - - [25/Dec/2023 15:13:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-12-25 15:45:59,396 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2023-12-25 15:45:59,626 INFO: * Restarting with stat
+2023-12-25 15:46:00,015 WARNING: * Debugger is active!
+2023-12-25 15:46:00,015 INFO: * Debugger PIN: 130-529-219
+2023-12-25 15:52:13,421 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2023-12-25 15:52:13,450 INFO: * Restarting with stat
+2023-12-25 15:52:13,709 WARNING: * Debugger is active!
+2023-12-25 15:52:13,710 INFO: * Debugger PIN: 130-529-219
+2023-12-25 15:52:20,767 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2023-12-25 15:52:20,794 INFO: * Restarting with stat
+2023-12-25 15:52:21,014 WARNING: * Debugger is active!
+2023-12-25 15:52:21,015 INFO: * Debugger PIN: 130-529-219
+2023-12-25 15:53:23,635 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2023-12-25 15:53:23,681 INFO: * Restarting with stat
+2023-12-25 15:53:23,907 WARNING: * Debugger is active!
+2023-12-25 15:53:23,907 INFO: * Debugger PIN: 130-529-219
+2023-12-25 15:57:17,917 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2023-12-25 15:57:17,945 INFO: * Restarting with stat
+2023-12-25 15:57:18,172 WARNING: * Debugger is active!
+2023-12-25 15:57:18,173 INFO: * Debugger PIN: 130-529-219
+2023-12-25 16:04:12,962 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2023-12-25 16:04:12,990 INFO: * Restarting with stat
+2023-12-25 16:04:13,223 WARNING: * Debugger is active!
+2023-12-25 16:04:13,223 INFO: * Debugger PIN: 130-529-219
+2023-12-25 16:06:20,352 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2023-12-25 16:06:20,383 INFO: * Restarting with stat
+2023-12-25 16:06:20,621 WARNING: * Debugger is active!
+2023-12-25 16:06:20,622 INFO: * Debugger PIN: 130-529-219
+2023-12-25 16:09:10,235 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2023-12-25 16:09:10,266 INFO: * Restarting with stat
+2023-12-25 16:09:10,505 WARNING: * Debugger is active!
+2023-12-25 16:09:10,506 INFO: * Debugger PIN: 130-529-219
+2023-12-25 16:10:40,345 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2023-12-25 16:10:40,372 INFO: * Restarting with stat
+2023-12-25 16:10:40,595 WARNING: * Debugger is active!
+2023-12-25 16:10:40,596 INFO: * Debugger PIN: 130-529-219
+2023-12-25 16:17:30,444 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2023-12-25 16:17:30,473 INFO: * Restarting with stat
+2023-12-25 16:17:30,730 WARNING: * Debugger is active!
+2023-12-25 16:17:30,730 INFO: * Debugger PIN: 130-529-219
+2023-12-25 16:21:24,994 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2023-12-25 16:21:25,022 INFO: * Restarting with stat
+2023-12-25 16:21:25,253 WARNING: * Debugger is active!
+2023-12-25 16:21:25,253 INFO: * Debugger PIN: 130-529-219
+2023-12-25 16:46:21,976 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2023-12-25 16:46:22,010 INFO: * Restarting with stat
+2023-12-25 16:46:22,261 WARNING: * Debugger is active!
+2023-12-25 16:46:22,261 INFO: * Debugger PIN: 130-529-219
+2023-12-25 17:39:50,884 INFO: * Detected change in '/app/TestScript/photolize/scraping/phase.py', reloading
+2023-12-25 17:39:50,995 INFO: * Restarting with stat
+2023-12-25 17:39:51,367 WARNING: * Debugger is active!
+2023-12-25 17:39:51,368 INFO: * Debugger PIN: 130-529-219
+2023-12-25 18:57:20,477 INFO: * Detected change in '/app/TestScript/photolize/scraping/phase.py', reloading
+2023-12-25 18:57:20,585 INFO: * Restarting with stat
+2023-12-25 18:57:20,932 WARNING: * Debugger is active!
+2023-12-25 18:57:20,933 INFO: * Debugger PIN: 130-529-219
+2023-12-25 18:57:30,014 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2023-12-25 18:57:30,040 INFO: * Restarting with stat
+2023-12-25 18:57:30,267 WARNING: * Debugger is active!
+2023-12-25 18:57:30,268 INFO: * Debugger PIN: 130-529-219
