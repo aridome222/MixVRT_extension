@@ -4,51 +4,59 @@ import os
 import subprocess
 from datetime import datetime
 import re
+import process_get_class
 
 
-# def generate_modified_before_html(diff_file_path):
-#     start_tag = '<body>'
-#     end_tag = '</body>'
+def create_html_with_css_selectors(selectors):
+    """
+    Creates HTML code with specified CSS selectors.
 
-#     modified_lines = []
+    :param selectors: List of CSS selectors.
+    :return: HTML code as a string.
+    """
+    # Joining the selectors with a comma for grouped CSS rules
+    grouped_selectors = ', '.join(selectors)
 
-#     with open(diff_file_path, 'r') as file:
-#         lines = file.readlines()
+    # Creating CSS rules
+    css = f"""
+        {grouped_selectors} {{
+            position: relative;
+        }}
 
-#     inside_body_tag = False  # <body> タグ内かどうかを追跡するフラグ
-#     for line in lines:
-#         # <body> タグを検出
-#         if start_tag in line:
-#             inside_body_tag = True
+        {', '.join(f'{selector}::before' for selector in selectors)} {{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 3px solid red;
+            z-index: 1;
+        }}
 
-#         # <body> タグ内の場合のみ処理を適用
-#         if inside_body_tag:
-#             if line.startswith('+'):
-#                 continue
-#             elif line.startswith('-'):
-#                 line = line[1:]  # '-'を取り除く
+        {', '.join(f'{selector}::after' for selector in selectors)} {{
+            content: '変更箇所です。';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            color: red;
+            font-size: 12px;
+            z-index: 1;
+        }}
+    """
 
-#                 if '<' in line and '>' in line:
-#                     if "class=" in line:
-#                         class_index = line.find('class=')
-#                         class_end_index = line.find('"', class_index + 7)
-#                         line = line[:class_end_index] + " uniqueClass" + line[class_end_index:]
-#                     else:
-#                         tag_end_index = line.find('>')
-#                         line = line[:tag_end_index] + ' class="uniqueClass"' + line[tag_end_index:]
+    return css
 
-#         modified_lines.append(line)
-
-#         # </body> タグを検出
-#         if end_tag in line:
-#             inside_body_tag = False
-
-
+# できてはいるが、他の影響を考慮していないやつ
 def generate_modified_before_html(diff_file_path):
+    # 変更されたセレクタを格納するリスト
+    changed_selectors = []
+
+    changed_selectors = process_get_class.apply_style_to_changes(diff_file_path)
+
     # <body> タグ内のスタイル情報を抽出
-    start_body_tag = '<body>'
-    end_body_tag = '</body>'
-    inside_body_tag = False  # <body> タグ内かどうかを追跡するフラグ
+    start_tag = '<body>'
+    end_tag = '</body>'
 
     # 削除されたコードと変更されていないコードを格納するリスト
     modified_lines = []
@@ -60,22 +68,6 @@ def generate_modified_before_html(diff_file_path):
     # ファイルの各行に対して、削除コードには事前定義したclassを追加し、
     # 削除コード＋未変更コードを含むリストを生成
     for line in lines:
-        if body開始タグであれば:
-            body_flag = True
-            pass
-
-        if style開始タグであれば:
-
-        if body_flag == True:
-            # body内における処理
-            pass
-        else style_flag == True:
-
-
-
-
-
-
         # '+'で始まる行をスキップ
         if line.startswith('+'):
             continue
@@ -97,77 +89,59 @@ def generate_modified_before_html(diff_file_path):
 
         # 加工した削除コード or 未変更のコードをリストに追加
         modified_lines.append(line)
-
-
-# できてはいるが、他の影響を考慮していないやつ
-# def generate_modified_before_html(diff_file_path):
-#     # <body> タグ内のスタイル情報を抽出
-#     start_tag = '<body>'
-#     end_tag = '</body>'
-
-#     # 削除されたコードと変更されていないコードを格納するリスト
-#     modified_lines = []
-
-#     # テキストファイル読み込み
-#     with open(diff_file_path, 'r') as file:
-#         lines = file.readlines()
-
-#     # ファイルの各行に対して、削除コードには事前定義したclassを追加し、
-#     # 削除コード＋未変更コードを含むリストを生成
-#     for line in lines:
-#         # '+'で始まる行をスキップ
-#         if line.startswith('+'):
-#             continue
-#         # '-'で始まる行に処理を適用
-#         elif line.startswith('-'):
-#             line = line[1:]  # '-'を取り除く
-
-#             # 行中にタグが存在する場合
-#             if '<' in line and '>' in line:
-#                 # タグ内にclass属性が既にあれば、class=""の中の末尾に事前定義classを挿入
-#                 if "class=" in line:
-#                     class_index = line.find('class=')
-#                     class_end_index = line.find('"', class_index + 7)
-#                     line = line[:class_end_index] + " uniqueClass" + line[class_end_index:]
-#                 # タグ内にclass属性が無ければ、終了タグ直前に事前定義classを挿入
-#                 else:
-#                     tag_end_index = line.find('>')
-#                     line = line[:tag_end_index] + ' class="uniqueClass"' + line[tag_end_index:]
-
-#         # 加工した削除コード or 未変更のコードをリストに追加
-#         modified_lines.append(line)
-
             
-# .uniqueClass {
-#             position: relative;
-#             /* 親要素のその他のスタイリング */
-#         }
+    css = """
+        .uniqueClass {
+            position: relative;
+            /* 親要素のその他のスタイリング */
+        }
 
-#         .uniqueClass::before {
-#             content: '';
-#             /* 枠のための内容は空 */
-#             position: absolute;
-#             top: 0;
-#             left: 0;
-#             right: 0;
-#             bottom: 0;
-#             border: 3px solid red;
-#             /* 枠線のスタイル */
-#             z-index: 1;
-#             /* 必要に応じて調整 */
-#         }
+        .uniqueClass::before {
+            content: '';
+            /* 枠のための内容は空 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 3px solid red;
+            /* 枠線のスタイル */
+            z-index: 1;
+            /* 必要に応じて調整 */
+        }
 
-#         .uniqueClass::after {
-#             content: '変更箇所です。';
-#             position: absolute;
-#             top: 5px;
-#             /* 上からの距離を微調整 */
-#             left: 5px;
-#             /* 左からの距離を微調整 */
-#             color: red;
-#             font-size: 12px;
-#             z-index: 1;
-#         }
+        .uniqueClass::after {
+            content: '変更箇所です。';
+            position: absolute;
+            top: 5px;
+            /* 上からの距離を微調整 */
+            left: 5px;
+            /* 左からの距離を微調整 */
+            color: red;
+            font-size: 12px;
+            z-index: 1;
+        }
+    """
+
+    updated_bf_lines = []
+    for line in modified_lines:
+        # Find the position of the </style> tag
+        style_tag_index = line.find('</style>')
+        if style_tag_index != -1:
+            # Insert the CSS before the </style> tag
+            line = line[:style_tag_index] + css + line[style_tag_index:]
+        updated_bf_lines.append(line)
+
+    final_bf_lines = []
+    css_selector = create_html_with_css_selectors(changed_selectors)
+    for line in updated_bf_lines:
+        # Find the position of the </style> tag
+        style_tag_index = line.find('</style>')
+        if style_tag_index != -1:
+            # Insert the CSS before the </style> tag
+            line = line[:style_tag_index] + css_selector + line[style_tag_index:]
+        final_bf_lines.append(line)
+
 
     # 保存先ディレクトリを指定
     output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "html_data/")
@@ -182,54 +156,13 @@ def generate_modified_before_html(diff_file_path):
     modified_file_path = os.path.join(output_dir, "before_modified.html")
 
     with open(modified_file_path, 'w') as file:
-        file.writelines(modified_lines)
+        file.writelines(updated_bf_lines)
+        subprocess.run(['sudo', 'chown', 'aridome:aridome', modified_file_path])
 
 
-# def apply_style_to_changes(diff_file_path):
-#     # テキストファイルからスタイル情報を読み込む
-#     with open(diff_file_path, 'r') as file:
-#         css_text = file.read()
-
-#     # スタイル情報をクラス単位で分割
-#     css_lines = css_text.split('}')
-
-#     # スタイル情報を格納するリスト
-#     style_list = []
-
-#     # 各行を処理してクラス情報を抽出
-#     for line in css_lines:
-#         line = line.strip()  # 空白を削除
-#         if line.startswith('.'):
-#             class_name = line.split('{')[0].strip()
-#             style_rules = line.split('{')[1].strip('}')
-#             style_list.append({'class': class_name, 'style': style_rules})
-
-#     # 結果の表示
-#     for item in style_list:
-#         print(f'クラス名: {item["class"]}')
-#         print(f'スタイル情報: {item["style"]}')
-#         print('---')
-
-    # content_list = []
-    # flag_del = False
-
-    # # 変更されたタグを特定し、スタイルを適用
-    # for line in diff_text:
-    #     if line.startswith('- '):
-    #         content = line[2:].strip()
-    #         if content[0] == ".":
-    #             content_list = content
-    #             # flag_del = True
-    #             continue
-    #         for elem in before_soup.find_all(True, string=lambda text: text and content in text):
-    #             elem['style'] = 'border: 2px solid red;'  # 削除された部分に赤枠を適用
-    #     elif line.startswith('+ '):
-    #         content = line[2:].strip()
-    #         for elem in after_soup.find_all(True, string=lambda text: text and content in text):
-    #             elem['style'] = 'border: 2px solid green;'  # 追加された部分に緑枠を適用
-
-    # return str(before_soup), str(after_soup)
-
+"""
+main処理
+"""
 # 保存先ディレクトリを指定
 input_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "html_diff/")
 
@@ -241,6 +174,10 @@ if not os.path.exists(input_dir):
     subprocess.call(command, shell=True)
 
 diff_file_path = os.path.join(input_dir, "diff_html.txt")
+# 余分な // を 1 つの / に変更する処理
+if diff_file_path.startswith('//'):
+    diff_file_path = '/' + diff_file_path.lstrip('/')
+
 generate_modified_before_html(diff_file_path)
 
 

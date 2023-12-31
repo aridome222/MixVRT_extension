@@ -9,40 +9,46 @@ import re
 def apply_style_to_changes(diff_file_path):
     # テキストファイルからスタイル情報を読み込む
     with open(diff_file_path, 'r') as file:
-        diff_text = file.read()
-
-    # <style> タグ内のスタイル情報を抽出
-    start_tag = '<style>'
-    end_tag = '</style>'
-
-    # スタイル情報を格納するリスト
-    style_list = []
+        diff_lines = file.readlines()
 
     # 変更されたセレクタを格納するリスト
-    changed_selectors = []
+    added_selectors = []
+    deleted_selectors = []
 
-    # <style> タグ内のスタイル情報を抽出
-    start_idx = diff_text.find(start_tag)
-    end_idx = diff_text.find(end_tag)
-    if start_idx != -1 and end_idx != -1:
-        style_text = diff_text[start_idx + len(start_tag):end_idx].strip()
+    # <style> タグ内のスタイル情報を行単位で処理
+    inside_style_tag = False
+    current_selector = None
+    for line in diff_lines:
+        if '<style>' in line:
+            inside_style_tag = True
+            continue
+        elif '</style>' in line:
+            inside_style_tag = False
+            current_selector = None  # Reset current selector
+            continue
 
-        # スタイル情報をセレクタ単位で分割
-        style_rules = style_text.split('}')
-        # 各行を処理してセレクタとスタイル情報を抽出
-        for rule in style_rules:
-            # 行頭の+記号を探す
-            if '+' in rule:
-                rule = rule.strip()  # 空白を削除
-                rule = rule.lstrip('+').strip()  # +記号を取り除く
-                parts = rule.split('{', 1)
-                if len(parts) == 2:
-                    selector = parts[0].lstrip('+').strip()
-                    styles = parts[1].strip('}').replace('+', '')
-                    style_list.append({'selector': selector, 'style': styles})
-                    changed_selectors.append(selector)
+        if inside_style_tag:
+            if '{' in line:
+                # 新しいセレクタを取得
+                current_selector = line.split('{')[0].strip().lstrip('+').lstrip('-').strip()
+                continue  # Skip to the next line
 
-    return changed_selectors
+            if current_selector:
+                if line.startswith('+'):
+                    # 追加されたセレクタを処理
+                    if current_selector not in added_selectors:
+                        added_selectors.append(current_selector)
+                elif line.startswith('-'):
+                    # 削除されたセレクタを処理
+                    if current_selector not in deleted_selectors:
+                        deleted_selectors.append(current_selector)
+
+                # Reset current selector if the CSS block ends
+                if '}' in line:
+                    current_selector = None
+
+    return added_selectors, deleted_selectors
+
 
 
 # 保存先ディレクトリを指定
@@ -83,8 +89,9 @@ diff_file_path = os.path.join(input_dir, "diff_html.txt")
 # if diff_file_path.startswith('//'):
 #     diff_file_path = '/' + diff_file_path.lstrip('/')
 
-selectors = apply_style_to_changes(diff_file_path)
-print(selectors)
+added_selectors, deleted_selectors = apply_style_to_changes(diff_file_path)
+print(f"added_selectors:\n {added_selectors}")
+print(f"deleted_selectors:\n {deleted_selectors}")
 
 # before_modified_html, after_modified_html = apply_style_to_changes(before_html, after_html)
 

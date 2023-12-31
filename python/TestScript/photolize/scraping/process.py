@@ -4,10 +4,13 @@ import os
 import subprocess
 from datetime import datetime
 import re
+import os
+import stat
+
 
 def save_diff_html_data(html_data_file, html_data_file_2):
     ### ２つのHTMLデータの差分をtxtファイルに出力する ###
-
+    
     # 保存先ディレクトリを指定
     output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "html_diff/")
     # フォルダが存在しない場合は作成
@@ -29,8 +32,10 @@ def save_diff_html_data(html_data_file, html_data_file_2):
     diff = differ.compare(html_data_file.splitlines(), html_data_file_2.splitlines())
 
     output_file_path = os.path.join(output_dir, output_file_name)
+
     with open(output_file_path, "w", encoding="utf-8") as f:
         f.write("\n".join(diff))
+        subprocess.run(['sudo', 'chown', 'aridome:aridome', output_file_path])
 
     print(f"2つのHTMLデータの差異を{output_file_path}に保存しました")
 
@@ -75,14 +80,17 @@ def split_code_into_files(input_file_path):
     # 変更されていないコードを保存
     with open(unchanged_file_path, 'w', encoding='utf-8') as file:
         file.writelines(unchanged_code)
+        subprocess.run(['sudo', 'chown', 'aridome:aridome', unchanged_file_path])
 
     # 削除されたコードを保存
     with open(del_file_path, 'w', encoding='utf-8') as file:
         file.writelines(deleted_code)
+        subprocess.run(['sudo', 'chown', 'aridome:aridome', del_file_path])
 
     # 追加されたコードを保存
     with open(add_file_path, 'w', encoding='utf-8') as file:
         file.writelines(added_code)
+        subprocess.run(['sudo', 'chown', 'aridome:aridome', add_file_path])
 
 
 # 保存先ディレクトリを指定
