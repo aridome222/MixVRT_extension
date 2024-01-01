@@ -3956,3 +3956,84 @@
 2023-12-31 20:32:05,133 INFO: * Restarting with stat
 2023-12-31 20:32:06,209 WARNING: * Debugger is active!
 2023-12-31 20:32:06,212 INFO: * Debugger PIN: 814-164-504
+2024-01-01 13:09:23,492 WARNING: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-01-01 13:09:23,494 INFO: * Running on http://172.22.0.3:5000/ (Press CTRL+C to quit)
+2024-01-01 13:09:23,521 INFO: * Restarting with stat
+2024-01-01 13:09:24,735 WARNING: * Debugger is active!
+2024-01-01 13:09:24,756 INFO: * Debugger PIN: 116-501-795
+2024-01-01 13:30:44,681 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2024-01-01 13:30:45,116 INFO: * Restarting with stat
+2024-01-01 13:30:46,617 WARNING: * Debugger is active!
+2024-01-01 13:30:46,621 INFO: * Debugger PIN: 116-501-795
+2024-01-01 13:30:52,825 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2024-01-01 13:30:52,931 INFO: * Restarting with stat
+2024-01-01 13:30:54,013 WARNING: * Debugger is active!
+2024-01-01 13:30:54,015 INFO: * Debugger PIN: 116-501-795
+2024-01-01 13:31:29,009 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2024-01-01 13:31:29,267 INFO: * Restarting with stat
+2024-01-01 13:31:30,402 WARNING: * Debugger is active!
+2024-01-01 13:31:30,403 INFO: * Debugger PIN: 116-501-795
+2024-01-01 13:35:30,383 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2024-01-01 13:35:30,709 INFO: * Restarting with stat
+2024-01-01 13:35:31,740 WARNING: * Debugger is active!
+2024-01-01 13:35:31,742 INFO: * Debugger PIN: 116-501-795
+2024-01-01 13:37:47,329 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2024-01-01 13:37:47,527 INFO: * Restarting with stat
+2024-01-01 13:37:48,494 WARNING: * Debugger is active!
+2024-01-01 13:37:48,496 INFO: * Debugger PIN: 116-501-795
+2024-01-01 13:38:06,001 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2024-01-01 13:38:06,212 INFO: * Restarting with stat
+2024-01-01 13:38:07,072 WARNING: * Debugger is active!
+2024-01-01 13:38:07,073 INFO: * Debugger PIN: 116-501-795
+2024-01-01 13:38:47,301 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_af_html.py', reloading
+2024-01-01 13:38:47,413 INFO: * Restarting with stat
+2024-01-01 13:38:48,479 WARNING: * Debugger is active!
+2024-01-01 13:38:48,480 INFO: * Debugger PIN: 116-501-795
+2024-01-01 13:39:02,915 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_af_html.py', reloading
+2024-01-01 13:39:03,094 INFO: * Restarting with stat
+2024-01-01 13:39:04,000 WARNING: * Debugger is active!
+2024-01-01 13:39:04,002 INFO: * Debugger PIN: 116-501-795
+2024-01-01 13:40:34,453 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_af_html.py', reloading
+2024-01-01 13:40:34,618 INFO: * Restarting with stat
+2024-01-01 13:40:35,474 WARNING: * Debugger is active!
+2024-01-01 13:40:35,476 INFO: * Debugger PIN: 116-501-795
+2024-01-01 13:43:30,652 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_af_html.py', reloading
+2024-01-01 13:43:30,907 INFO: * Restarting with stat
+2024-01-01 13:43:31,789 WARNING: * Debugger is active!
+2024-01-01 13:43:31,790 INFO: * Debugger PIN: 116-501-795
+2024-01-01 18:01:50,848 WARNING: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-01-01 18:01:50,849 INFO: * Running on http://172.22.0.2:5000/ (Press CTRL+C to quit)
+2024-01-01 18:01:50,850 INFO: * Restarting with stat
+2024-01-01 18:01:51,654 WARNING: * Debugger is active!
+2024-01-01 18:01:51,666 INFO: * Debugger PIN: 500-599-248
+2024-01-01 18:04:17,534 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_af_html.py', reloading
+2024-01-01 18:04:17,627 INFO: * Restarting with stat
+2024-01-01 18:04:18,591 WARNING: * Debugger is active!
+2024-01-01 18:04:18,593 INFO: * Debugger PIN: 500-599-248
+2024-01-01 18:22:02,409 INFO:172.22.0.1 - - [01/Jan/2024 18:22:02] "GET /before_modified HTTP/1.1" 200 -
+2024-01-01 18:22:03,277 INFO:172.22.0.1 - - [01/Jan/2024 18:22:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-01 18:22:17,157 INFO:172.22.0.1 - - [01/Jan/2024 18:22:17] "GET /after_modified HTTP/1.1" 200 -
+2024-01-01 18:22:17,408 INFO:172.22.0.1 - - [01/Jan/2024 18:22:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-01 18:37:42,407 INFO:172.22.0.1 - - [01/Jan/2024 18:37:42] "GET /before_modified HTTP/1.1" 200 -
+2024-01-01 18:37:42,605 INFO:172.22.0.1 - - [01/Jan/2024 18:37:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-01 18:39:18,672 INFO:172.22.0.1 - - [01/Jan/2024 18:39:18] "GET /after_modified HTTP/1.1" 200 -
+2024-01-01 18:39:18,914 INFO:172.22.0.1 - - [01/Jan/2024 18:39:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-01 18:39:38,409 INFO:172.22.0.1 - - [01/Jan/2024 18:39:38] "GET /after_modified HTTP/1.1" 200 -
+2024-01-01 18:39:38,645 INFO:172.22.0.1 - - [01/Jan/2024 18:39:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-01 18:40:22,450 INFO:172.22.0.1 - - [01/Jan/2024 18:40:22] "GET / HTTP/1.1" 200 -
+2024-01-01 18:40:23,085 INFO:172.22.0.1 - - [01/Jan/2024 18:40:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-01 18:40:29,766 INFO:172.22.0.1 - - [01/Jan/2024 18:40:29] "GET /before_modified HTTP/1.1" 200 -
+2024-01-01 18:40:40,795 INFO:172.22.0.1 - - [01/Jan/2024 18:40:40] "GET /after_modified HTTP/1.1" 200 -
+2024-01-01 18:47:16,411 INFO:172.22.0.1 - - [01/Jan/2024 18:47:16] "GET /before_modified HTTP/1.1" 200 -
+2024-01-01 18:49:44,078 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_af_html.py', reloading
+2024-01-01 18:49:45,504 INFO: * Restarting with stat
+2024-01-01 18:49:48,575 WARNING: * Debugger is active!
+2024-01-01 18:49:48,582 INFO: * Debugger PIN: 500-599-248
+2024-01-01 18:49:52,790 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_af_html.py', reloading
+2024-01-01 18:49:52,953 INFO: * Restarting with stat
+2024-01-01 18:49:54,128 WARNING: * Debugger is active!
+2024-01-01 18:49:54,130 INFO: * Debugger PIN: 500-599-248
+2024-01-01 18:51:45,148 INFO:172.22.0.1 - - [01/Jan/2024 18:51:45] "GET / HTTP/1.1" 200 -
+2024-01-01 18:51:48,203 INFO:172.22.0.1 - - [01/Jan/2024 18:51:48] "GET /after_modified HTTP/1.1" 200 -

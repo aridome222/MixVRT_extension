@@ -18,7 +18,7 @@ def create_html_with_css_selectors(selectors):
     grouped_selectors = ', '.join(selectors)
 
     # Creating CSS rules
-    css = f"""
+    css_selector = f"""
         {grouped_selectors} {{
             position: relative;
         }}
@@ -45,7 +45,7 @@ def create_html_with_css_selectors(selectors):
         }}
     """
 
-    return css
+    return css_selector
 
 # できてはいるが、他の影響を考慮していないやつ
 def generate_modified_before_html(diff_file_path):
@@ -156,7 +156,7 @@ def generate_modified_before_html(diff_file_path):
     modified_file_path = os.path.join(output_dir, "before_modified.html")
 
     with open(modified_file_path, 'w') as file:
-        file.writelines(updated_bf_lines)
+        file.writelines(final_bf_lines)
         subprocess.run(['sudo', 'chown', 'aridome:aridome', modified_file_path])
 
 
