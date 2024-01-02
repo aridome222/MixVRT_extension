@@ -4037,3 +4037,359 @@
 2024-01-01 18:49:54,130 INFO: * Debugger PIN: 500-599-248
 2024-01-01 18:51:45,148 INFO:172.22.0.1 - - [01/Jan/2024 18:51:45] "GET / HTTP/1.1" 200 -
 2024-01-01 18:51:48,203 INFO:172.22.0.1 - - [01/Jan/2024 18:51:48] "GET /after_modified HTTP/1.1" 200 -
+2024-01-02 06:35:33,086 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_af_html.py', reloading
+2024-01-02 06:35:33,499 INFO: * Restarting with stat
+2024-01-02 06:35:34,953 WARNING: * Debugger is active!
+2024-01-02 06:35:34,957 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:35:40,184 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2024-01-02 06:35:40,435 INFO: * Restarting with stat
+2024-01-02 06:35:41,806 WARNING: * Debugger is active!
+2024-01-02 06:35:41,809 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:37:13,027 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2024-01-02 06:37:13,313 INFO: * Restarting with stat
+2024-01-02 06:37:14,330 WARNING: * Debugger is active!
+2024-01-02 06:37:14,331 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:37:44,399 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2024-01-02 06:37:44,593 INFO: * Restarting with stat
+2024-01-02 06:37:45,339 WARNING: * Debugger is active!
+2024-01-02 06:37:45,340 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:38:42,297 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:38:42,502 INFO: * Restarting with stat
+2024-01-02 06:38:43,632 WARNING: * Debugger is active!
+2024-01-02 06:38:43,633 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:38:54,046 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_bf_html.py', reloading
+2024-01-02 06:38:54,162 INFO: * Restarting with stat
+2024-01-02 06:38:54,957 WARNING: * Debugger is active!
+2024-01-02 06:38:54,961 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:40:18,975 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:40:19,163 INFO: * Restarting with stat
+2024-01-02 06:40:20,032 WARNING: * Debugger is active!
+2024-01-02 06:40:20,034 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:40:24,199 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:40:24,381 INFO: * Restarting with stat
+2024-01-02 06:40:25,072 WARNING: * Debugger is active!
+2024-01-02 06:40:25,074 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:44:08,810 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:44:08,989 INFO: * Restarting with stat
+2024-01-02 06:44:10,349 WARNING: * Debugger is active!
+2024-01-02 06:44:10,351 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:44:45,307 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:44:45,470 INFO: * Restarting with stat
+2024-01-02 06:44:46,303 WARNING: * Debugger is active!
+2024-01-02 06:44:46,304 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:45:24,484 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:45:24,692 INFO: * Restarting with stat
+2024-01-02 06:45:25,681 WARNING: * Debugger is active!
+2024-01-02 06:45:25,682 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:47:31,531 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:47:31,683 INFO: * Restarting with stat
+2024-01-02 06:47:32,506 WARNING: * Debugger is active!
+2024-01-02 06:47:32,507 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:47:45,995 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:47:46,113 INFO: * Restarting with stat
+2024-01-02 06:47:47,068 WARNING: * Debugger is active!
+2024-01-02 06:47:47,070 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:47:55,395 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:47:55,609 INFO: * Restarting with stat
+2024-01-02 06:47:56,603 WARNING: * Debugger is active!
+2024-01-02 06:47:56,604 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:48:15,175 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:48:15,308 INFO: * Restarting with stat
+2024-01-02 06:48:15,916 WARNING: * Debugger is active!
+2024-01-02 06:48:15,917 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:48:50,913 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:48:51,054 INFO: * Restarting with stat
+2024-01-02 06:48:51,857 WARNING: * Debugger is active!
+2024-01-02 06:48:51,858 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:49:25,864 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:49:25,989 INFO: * Restarting with stat
+2024-01-02 06:49:26,839 WARNING: * Debugger is active!
+2024-01-02 06:49:26,840 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:49:54,753 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:49:54,938 INFO: * Restarting with stat
+2024-01-02 06:49:55,772 WARNING: * Debugger is active!
+2024-01-02 06:49:55,773 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:50:42,218 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:50:42,337 INFO: * Restarting with stat
+2024-01-02 06:50:43,288 WARNING: * Debugger is active!
+2024-01-02 06:50:43,290 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:51:11,145 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:51:11,364 INFO: * Restarting with stat
+2024-01-02 06:51:12,260 WARNING: * Debugger is active!
+2024-01-02 06:51:12,262 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:51:21,571 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:51:21,826 INFO: * Restarting with stat
+2024-01-02 06:51:22,747 WARNING: * Debugger is active!
+2024-01-02 06:51:22,748 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:51:44,385 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:51:44,604 INFO: * Restarting with stat
+2024-01-02 06:51:45,682 WARNING: * Debugger is active!
+2024-01-02 06:51:45,683 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:52:15,493 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:52:15,760 INFO: * Restarting with stat
+2024-01-02 06:52:16,786 WARNING: * Debugger is active!
+2024-01-02 06:52:16,788 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:53:34,144 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:53:34,335 INFO: * Restarting with stat
+2024-01-02 06:53:35,443 WARNING: * Debugger is active!
+2024-01-02 06:53:35,444 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:55:12,409 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:55:12,617 INFO: * Restarting with stat
+2024-01-02 06:55:13,626 WARNING: * Debugger is active!
+2024-01-02 06:55:13,631 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:55:53,945 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:55:54,113 INFO: * Restarting with stat
+2024-01-02 06:55:54,898 WARNING: * Debugger is active!
+2024-01-02 06:55:54,899 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:56:19,681 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:56:19,911 INFO: * Restarting with stat
+2024-01-02 06:56:20,670 WARNING: * Debugger is active!
+2024-01-02 06:56:20,671 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:56:51,597 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:56:51,829 INFO: * Restarting with stat
+2024-01-02 06:56:52,805 WARNING: * Debugger is active!
+2024-01-02 06:56:52,805 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:58:06,806 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:58:06,960 INFO: * Restarting with stat
+2024-01-02 06:58:07,608 WARNING: * Debugger is active!
+2024-01-02 06:58:07,610 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:59:22,619 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:59:22,747 INFO: * Restarting with stat
+2024-01-02 06:59:23,422 WARNING: * Debugger is active!
+2024-01-02 06:59:23,423 INFO: * Debugger PIN: 500-599-248
+2024-01-02 06:59:37,847 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 06:59:38,005 INFO: * Restarting with stat
+2024-01-02 06:59:38,802 WARNING: * Debugger is active!
+2024-01-02 06:59:38,803 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:00:09,703 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:00:09,840 INFO: * Restarting with stat
+2024-01-02 07:00:10,524 WARNING: * Debugger is active!
+2024-01-02 07:00:10,525 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:00:49,664 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:00:49,829 INFO: * Restarting with stat
+2024-01-02 07:00:50,585 WARNING: * Debugger is active!
+2024-01-02 07:00:50,587 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:02:16,897 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:02:17,023 INFO: * Restarting with stat
+2024-01-02 07:02:17,661 WARNING: * Debugger is active!
+2024-01-02 07:02:17,662 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:03:07,087 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:03:07,217 INFO: * Restarting with stat
+2024-01-02 07:03:08,066 WARNING: * Debugger is active!
+2024-01-02 07:03:08,068 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:03:23,531 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:03:23,659 INFO: * Restarting with stat
+2024-01-02 07:03:24,762 WARNING: * Debugger is active!
+2024-01-02 07:03:24,766 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:03:36,186 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:03:36,391 INFO: * Restarting with stat
+2024-01-02 07:03:36,957 WARNING: * Debugger is active!
+2024-01-02 07:03:36,958 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:03:50,373 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:03:50,478 INFO: * Restarting with stat
+2024-01-02 07:03:51,294 WARNING: * Debugger is active!
+2024-01-02 07:03:51,295 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:08:09,168 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:08:09,313 INFO: * Restarting with stat
+2024-01-02 07:08:10,038 WARNING: * Debugger is active!
+2024-01-02 07:08:10,039 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:10:48,349 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:10:48,471 INFO: * Restarting with stat
+2024-01-02 07:10:49,295 WARNING: * Debugger is active!
+2024-01-02 07:10:49,297 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:11:01,679 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:11:01,850 INFO: * Restarting with stat
+2024-01-02 07:11:02,598 WARNING: * Debugger is active!
+2024-01-02 07:11:02,599 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:15:25,654 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:15:25,776 INFO: * Restarting with stat
+2024-01-02 07:15:26,630 WARNING: * Debugger is active!
+2024-01-02 07:15:26,631 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:15:37,999 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:15:38,142 INFO: * Restarting with stat
+2024-01-02 07:15:38,991 WARNING: * Debugger is active!
+2024-01-02 07:15:39,001 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:15:47,266 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:15:47,426 INFO: * Restarting with stat
+2024-01-02 07:15:48,235 WARNING: * Debugger is active!
+2024-01-02 07:15:48,236 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:17:16,772 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:17:16,893 INFO: * Restarting with stat
+2024-01-02 07:17:17,862 WARNING: * Debugger is active!
+2024-01-02 07:17:17,865 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:17:42,650 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:17:42,777 INFO: * Restarting with stat
+2024-01-02 07:17:43,707 WARNING: * Debugger is active!
+2024-01-02 07:17:43,708 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:18:19,725 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:18:20,026 INFO: * Restarting with stat
+2024-01-02 07:18:21,118 WARNING: * Debugger is active!
+2024-01-02 07:18:21,119 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:18:51,022 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:18:51,184 INFO: * Restarting with stat
+2024-01-02 07:18:52,027 WARNING: * Debugger is active!
+2024-01-02 07:18:52,028 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:20:04,001 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:20:04,175 INFO: * Restarting with stat
+2024-01-02 07:20:05,012 WARNING: * Debugger is active!
+2024-01-02 07:20:05,013 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:20:32,841 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:20:32,955 INFO: * Restarting with stat
+2024-01-02 07:20:33,726 WARNING: * Debugger is active!
+2024-01-02 07:20:33,727 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:20:37,859 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:20:37,995 INFO: * Restarting with stat
+2024-01-02 07:20:38,880 WARNING: * Debugger is active!
+2024-01-02 07:20:38,882 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:22:25,650 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:22:25,800 INFO: * Restarting with stat
+2024-01-02 07:22:26,657 WARNING: * Debugger is active!
+2024-01-02 07:22:26,668 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:24:08,366 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:24:08,519 INFO: * Restarting with stat
+2024-01-02 07:24:09,332 WARNING: * Debugger is active!
+2024-01-02 07:24:09,333 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:26:50,727 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:26:50,827 INFO: * Restarting with stat
+2024-01-02 07:26:51,656 WARNING: * Debugger is active!
+2024-01-02 07:26:51,657 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:27:09,187 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:27:09,472 INFO: * Restarting with stat
+2024-01-02 07:27:10,508 WARNING: * Debugger is active!
+2024-01-02 07:27:10,509 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:27:58,926 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:27:59,099 INFO: * Restarting with stat
+2024-01-02 07:27:59,962 WARNING: * Debugger is active!
+2024-01-02 07:27:59,964 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:28:46,273 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:28:46,409 INFO: * Restarting with stat
+2024-01-02 07:28:47,312 WARNING: * Debugger is active!
+2024-01-02 07:28:47,313 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:29:50,121 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:29:50,373 INFO: * Restarting with stat
+2024-01-02 07:29:51,417 WARNING: * Debugger is active!
+2024-01-02 07:29:51,419 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:30:19,265 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:30:19,466 INFO: * Restarting with stat
+2024-01-02 07:30:20,225 WARNING: * Debugger is active!
+2024-01-02 07:30:20,225 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:31:52,109 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:31:52,243 INFO: * Restarting with stat
+2024-01-02 07:31:53,183 WARNING: * Debugger is active!
+2024-01-02 07:31:53,184 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:33:03,291 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:33:03,451 INFO: * Restarting with stat
+2024-01-02 07:33:04,327 WARNING: * Debugger is active!
+2024-01-02 07:33:04,328 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:33:18,811 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:33:19,046 INFO: * Restarting with stat
+2024-01-02 07:33:20,518 WARNING: * Debugger is active!
+2024-01-02 07:33:20,519 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:33:59,680 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:33:59,830 INFO: * Restarting with stat
+2024-01-02 07:34:00,640 WARNING: * Debugger is active!
+2024-01-02 07:34:00,641 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:34:46,872 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:34:47,017 INFO: * Restarting with stat
+2024-01-02 07:34:47,892 WARNING: * Debugger is active!
+2024-01-02 07:34:47,894 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:35:12,630 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:35:12,826 INFO: * Restarting with stat
+2024-01-02 07:35:13,821 WARNING: * Debugger is active!
+2024-01-02 07:35:13,822 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:36:01,157 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:36:01,313 INFO: * Restarting with stat
+2024-01-02 07:36:02,170 WARNING: * Debugger is active!
+2024-01-02 07:36:02,171 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:36:51,649 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:36:51,792 INFO: * Restarting with stat
+2024-01-02 07:36:52,631 WARNING: * Debugger is active!
+2024-01-02 07:36:52,632 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:39:29,529 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:39:29,729 INFO: * Restarting with stat
+2024-01-02 07:39:30,627 WARNING: * Debugger is active!
+2024-01-02 07:39:30,628 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:41:31,025 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:41:31,302 INFO: * Restarting with stat
+2024-01-02 07:41:32,327 WARNING: * Debugger is active!
+2024-01-02 07:41:32,329 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:41:50,894 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:41:51,054 INFO: * Restarting with stat
+2024-01-02 07:41:51,968 WARNING: * Debugger is active!
+2024-01-02 07:41:51,970 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:42:14,604 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:42:14,747 INFO: * Restarting with stat
+2024-01-02 07:42:15,424 WARNING: * Debugger is active!
+2024-01-02 07:42:15,425 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:42:27,809 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:42:28,002 INFO: * Restarting with stat
+2024-01-02 07:42:29,316 WARNING: * Debugger is active!
+2024-01-02 07:42:29,317 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:43:17,742 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:43:17,943 INFO: * Restarting with stat
+2024-01-02 07:43:18,937 WARNING: * Debugger is active!
+2024-01-02 07:43:18,938 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:43:25,144 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:43:25,342 INFO: * Restarting with stat
+2024-01-02 07:43:26,286 WARNING: * Debugger is active!
+2024-01-02 07:43:26,288 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:43:31,473 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:43:31,703 INFO: * Restarting with stat
+2024-01-02 07:43:32,513 WARNING: * Debugger is active!
+2024-01-02 07:43:32,515 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:43:33,589 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:43:33,814 INFO: * Restarting with stat
+2024-01-02 07:43:34,748 WARNING: * Debugger is active!
+2024-01-02 07:43:34,749 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:44:16,967 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:44:17,206 INFO: * Restarting with stat
+2024-01-02 07:44:17,965 WARNING: * Debugger is active!
+2024-01-02 07:44:17,976 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:45:06,491 INFO: * Detected change in '/app/TestScript/photolize/scraping/gen_modify_html.py', reloading
+2024-01-02 07:45:06,688 INFO: * Restarting with stat
+2024-01-02 07:45:07,524 WARNING: * Debugger is active!
+2024-01-02 07:45:07,525 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:47:50,657 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2024-01-02 07:47:50,810 INFO: * Restarting with stat
+2024-01-02 07:47:51,551 WARNING: * Debugger is active!
+2024-01-02 07:47:51,552 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:49:14,799 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2024-01-02 07:49:14,984 INFO: * Restarting with stat
+2024-01-02 07:49:15,966 WARNING: * Debugger is active!
+2024-01-02 07:49:15,967 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:49:23,234 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2024-01-02 07:49:23,406 INFO: * Restarting with stat
+2024-01-02 07:49:24,312 WARNING: * Debugger is active!
+2024-01-02 07:49:24,313 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:49:29,524 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2024-01-02 07:49:29,746 INFO: * Restarting with stat
+2024-01-02 07:49:30,798 WARNING: * Debugger is active!
+2024-01-02 07:49:30,800 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:49:59,706 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2024-01-02 07:49:59,823 INFO: * Restarting with stat
+2024-01-02 07:50:00,659 WARNING: * Debugger is active!
+2024-01-02 07:50:00,661 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:50:15,132 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2024-01-02 07:50:15,337 INFO: * Restarting with stat
+2024-01-02 07:50:16,155 WARNING: * Debugger is active!
+2024-01-02 07:50:16,156 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:50:18,252 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2024-01-02 07:50:18,491 INFO: * Restarting with stat
+2024-01-02 07:50:19,456 WARNING: * Debugger is active!
+2024-01-02 07:50:19,457 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:50:22,591 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class.py', reloading
+2024-01-02 07:50:22,818 INFO: * Restarting with stat
+2024-01-02 07:50:23,621 WARNING: * Debugger is active!
+2024-01-02 07:50:23,622 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:52:16,673 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class_add_del.py', reloading
+2024-01-02 07:52:16,784 INFO: * Restarting with stat
+2024-01-02 07:52:17,768 WARNING: * Debugger is active!
+2024-01-02 07:52:17,770 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:52:32,346 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class_add_del.py', reloading
+2024-01-02 07:52:32,490 INFO: * Restarting with stat
+2024-01-02 07:52:33,259 WARNING: * Debugger is active!
+2024-01-02 07:52:33,260 INFO: * Debugger PIN: 500-599-248
+2024-01-02 07:52:41,561 INFO: * Detected change in '/app/TestScript/photolize/scraping/process_get_class_add_del.py', reloading
+2024-01-02 07:52:41,790 INFO: * Restarting with stat
+2024-01-02 07:52:42,795 WARNING: * Debugger is active!
+2024-01-02 07:52:42,796 INFO: * Debugger PIN: 500-599-248

@@ -180,25 +180,3 @@ if diff_file_path.startswith('//'):
     diff_file_path = '/' + diff_file_path.lstrip('/')
 
 generate_modified_after_html(diff_file_path)
-
-
-# # 余分な // を 1 つの / に変更する処理
-# if diff_file_path.startswith('//'):
-#     diff_file_path = '/' + diff_file_path.lstrip('/')
-
-# apply_style_to_changes(diff_file_path)
-
-
-# after_modified_html, after_modified_html = apply_style_to_changes(after_html, after_html)
-
-# after_modified_file_path = os.path.join(output_dir, 'after_modified.html')
-# after_modified_file_path = os.path.join(output_dir, 'after_modified.html')
-
-# # print(after_modified_html)
-
-# # 変更されたHTMLをファイルに書き出す
-# with open(after_modified_file_path, 'w') as file:
-#     file.write(after_modified_html)
-
-# with open(after_modified_file_path, 'w') as file:
-#     file.write(after_modified_html)

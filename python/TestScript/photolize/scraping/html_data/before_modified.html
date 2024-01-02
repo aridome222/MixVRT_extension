@@ -53,62 +53,62 @@
               /* ホバー時の色 */
           }
       
-        .uniqueClass {
-            position: relative;
-            /* 親要素のその他のスタイリング */
-        }
+            .uniqueClass {
+                position: relative;
+                /* 親要素のその他のスタイリング */
+            }
 
-        .uniqueClass::before {
-            content: '';
-            /* 枠のための内容は空 */
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 3px solid red;
-            /* 枠線のスタイル */
-            z-index: 1;
-            /* 必要に応じて調整 */
-        }
+            .uniqueClass::before {
+                content: '';
+                /* 枠のための内容は空 */
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border: 3px solid red;
+                /* 枠線のスタイル */
+                z-index: 1;
+                /* 必要に応じて調整 */
+            }
 
-        .uniqueClass::after {
-            content: '変更箇所です。';
-            position: absolute;
-            top: 5px;
-            /* 上からの距離を微調整 */
-            left: 5px;
-            /* 左からの距離を微調整 */
-            color: red;
-            font-size: 12px;
-            z-index: 1;
-        }
-    
-        .image-container, .image-container img, .css-image {
-            position: relative;
-        }
+            .uniqueClass::after {
+                content: '変更箇所です。';
+                position: absolute;
+                top: 5px;
+                /* 上からの距離を微調整 */
+                left: 5px;
+                /* 左からの距離を微調整 */
+                color: red;
+                font-size: 12px;
+                z-index: 1;
+            }
+        
+            .image-container, .image-container img, .css-image {
+                position: relative;
+            }
 
-        .image-container::before, .image-container img::before, .css-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 3px solid red;
-            z-index: 1;
-        }
+            .image-container::before, .image-container img::before, .css-image::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border: 3px solid red;
+                z-index: 1;
+            }
 
-        .image-container::after, .image-container img::after, .css-image::after {
-            content: '変更箇所です。';
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            color: red;
-            font-size: 12px;
-            z-index: 1;
-        }
-    </style>
+            .image-container::after, .image-container img::after, .css-image::after {
+                content: '変更箇所です。';
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                color: red;
+                font-size: 12px;
+                z-index: 1;
+            }
+        </style>
   </head>
   
   <body>

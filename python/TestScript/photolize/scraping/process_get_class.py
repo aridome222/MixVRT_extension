@@ -45,28 +45,7 @@ def apply_style_to_changes(diff_file_path):
     return changed_selectors
 
 
-# 保存先ディレクトリを指定
-output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "html_data/")
-# フォルダが存在しない場合は作成
-if not os.path.exists(output_dir):
-    os.makedirs(output_dir)
-    command = f"sudo chown -R aridome:aridome {output_dir}"
-    # コマンドを実行
-    subprocess.call(command, shell=True)
-
-before_file_name = "before.html"
-after_file_name = "after.html"
-
-before_file_path = os.path.join(output_dir, before_file_name)
-after_file_path = os.path.join(output_dir, after_file_name)
-
-# HTMLファイルを読み込む
-with open(before_file_path, 'r') as file:
-    before_html = file.read()
-
-with open(after_file_path, 'r') as file:
-    after_html = file.read()
-
+""" main処理 """
 # 保存先ディレクトリを指定
 input_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "html_diff/")
 
@@ -79,40 +58,7 @@ if not os.path.exists(input_dir):
 
 diff_file_path = os.path.join(input_dir, "diff_html.txt")
 
-# # 余分な // を 1 つの / に変更する処理
-# if diff_file_path.startswith('//'):
-#     diff_file_path = '/' + diff_file_path.lstrip('/')
-
 selectors = apply_style_to_changes(diff_file_path)
+
+### 検証用のprint文 ###
 print(selectors)
-
-# before_modified_html, after_modified_html = apply_style_to_changes(before_html, after_html)
-
-# before_modified_file_path = os.path.join(output_dir, 'before_modified.html')
-# after_modified_file_path = os.path.join(output_dir, 'after_modified.html')
-
-# # print(after_modified_html)
-
-# # 変更されたHTMLをファイルに書き出す
-# with open(before_modified_file_path, 'w') as file:
-#     file.write(before_modified_html)
-
-# with open(after_modified_file_path, 'w') as file:
-#     file.write(after_modified_html)
-
-def add_style_changed_class(html_file_path, changed_selectors):
-    # HTMLファイルを読み込む
-    with open(html_file_path, 'r', encoding='utf-8') as file:
-        html_content = file.read()
-
-    # BeautifulSoupでHTMLを解析
-    soup = BeautifulSoup(html_content, 'html.parser')
-
-    # 変更されたセレクタに対応する要素を見つけてクラスを追加
-    for selector in changed_selectors:
-        for element in soup.select(selector):
-            element['class'] = element.get('class', []) + ['style-changed']
-
-    # 変更されたHTMLコンテンツをファイルに書き戻す
-    with open(html_file_path, 'w', encoding='utf-8') as file:
-        file.write(str(soup))
