@@ -1,12 +1,8 @@
 # main.pyファイル
 
-from module import detect_rec_divide
-from module import detect_rec_divide_url
-from module import detect_rec_divide_bin
-from module import detect_rec_divide_bin_2
-from module import detect_rec_divide_akaze
-from module import test_before
-from module import test_after
+from module import detect_rec_bf_af
+# from module import test_before
+# from module import test_after
 
 import sys
 
@@ -45,7 +41,7 @@ def main():
     # detect_rec_divide_bin.main()
 
     # detect_rec_divide_bin2のmain関数を呼び出す
-    detect_rec_divide_bin_2.main()
+    detect_rec_bf_af.main()
 
     # # detect_rec_divide_akazeのmain関数を呼び出す
     # detect_rec_divide_akaze.main()

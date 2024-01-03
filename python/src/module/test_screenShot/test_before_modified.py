@@ -17,7 +17,7 @@ import difflib
 import subprocess
 
 
-class Test_screenShot_bf_html():
+class Test_screenShot_modified_bf_html():
   def setup_method(self, method):
     options = Options()
     # options.add_argument('--headless')  # ヘッドレスモードでブラウザを起動
@@ -30,9 +30,9 @@ class Test_screenShot_bf_html():
   def teardown_method(self, method):
     self.driver.quit()
   
-  def test_screenShot_bf_html(self):
+  def test_screenShot_modified_bf_html(self):
     # photolizeにログインする
-    self.driver.get("http://host.docker.internal:5000/before")
+    self.driver.get("http://host.docker.internal:5000/before_modified")
     self.driver.set_window_size(1463, 1032)
     time.sleep(1)
     save_screenShot(self)
@@ -41,7 +41,7 @@ class Test_screenShot_bf_html():
 
 def save_screenShot(self):
   # 保存先ディレクトリを指定
-  output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
+  output_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "img/")
   # フォルダが存在しない場合は作成
   if not os.path.exists(output_dir):
       os.makedirs(output_dir)

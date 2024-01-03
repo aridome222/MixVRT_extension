@@ -41,7 +41,7 @@ class Test_screenShot_modified_af_html():
 
 def save_screenShot(self):
   # 保存先ディレクトリを指定
-  output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
+  output_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "img/")
   # フォルダが存在しない場合は作成
   if not os.path.exists(output_dir):
       os.makedirs(output_dir)

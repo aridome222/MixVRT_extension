@@ -94,51 +94,54 @@ def main():
     diff_before = cv2.subtract(img1_bin_reverse, img2_bin_reverse)
     diff_after = cv2.subtract(img2_bin_reverse, img1_bin_reverse)
 
-    # 形態学的な操作
-    kernel = np.ones((3,3), np.uint8)
-    diff_before = cv2.morphologyEx(diff_before, cv2.MORPH_OPEN, kernel)
-    diff_after = cv2.morphologyEx(diff_after, cv2.MORPH_OPEN, kernel)
+    # # 形態学的な操作
+    # kernel = np.ones((3,3), np.uint8)
+    # diff_before = cv2.morphologyEx(diff_before, cv2.MORPH_OPEN, kernel)
+    # diff_after = cv2.morphologyEx(diff_after, cv2.MORPH_OPEN, kernel)
 
-    # 膨張処理のためのカーネルを定義
+    # 収縮・膨張処理のためのカーネルを定義
     kernel = np.ones((5,5),np.uint8)
 
     # 差分画像に膨張処理を適用
-    diff_expanded_before = cv2.dilate(diff_before, kernel, iterations = 5)
-    diff_expanded_after = cv2.dilate(diff_after, kernel, iterations = 5)
+    diff_expanded_before = cv2.dilate(diff_before, kernel, iterations = 6)
+    diff_expanded_after = cv2.dilate(diff_after, kernel, iterations = 6)
 
-    # 修正した差分画像を表示用にカラー変換
-    expanded_before_colored = cv2.cvtColor(diff_expanded_before, cv2.COLOR_GRAY2BGR)
-    expanded_after_colored = cv2.cvtColor(diff_expanded_after, cv2.COLOR_GRAY2BGR)
+    # # 修正した差分画像を表示用にカラー変換
+    # expanded_before_colored = cv2.cvtColor(diff_expanded_before, cv2.COLOR_GRAY2BGR)
+    # expanded_after_colored = cv2.cvtColor(diff_expanded_after, cv2.COLOR_GRAY2BGR)
 
     """輪郭描画"""
     # 差分画像から輪郭抽出
     contours1, _ = cv2.findContours(diff_expanded_before, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     contours2, _ = cv2.findContours(diff_expanded_after, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-
-    # # 元の画像に輪郭を描画する
-    # for contour in contours1:
-    #     # 輪郭に囲まれた領域のバウンディングボックスを取得
-    #     x, y, w, h = cv2.boundingRect(contour)
-    #     # 元の画像に矩形を描画
-    #     cv2.rectangle(img1, (x, y), (x + w, y + h), (0, 255, 0), 2)
-
-    # for contour in contours2:
-    #     x, y, w, h = cv2.boundingRect(contour)
-    #     cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 255, 0), 2)
+    contours1 = filter_contours_by_area(contours1)
+    contours2 = filter_contours_by_area(contours2)
 
 
-    # 二値画像に直接枠を描画
+    # 元の画像に輪郭を描画する
     for contour in contours1:
+        # 輪郭に囲まれた領域のバウンディングボックスを取得
         x, y, w, h = cv2.boundingRect(contour)
-        # 枠を白色（255）で描画
-        cv2.rectangle(diff_expanded_before, (x, y), (x + w, y + h), (255), 2)
+        # 元の画像に矩形を描画
+        cv2.rectangle(img1, (x, y), (x + w, y + h), (0, 0, 255), 2)
 
-    # 二値画像に直接枠を描画
     for contour in contours2:
         x, y, w, h = cv2.boundingRect(contour)
-        # 枠を白色（255）で描画
-        cv2.rectangle(diff_expanded_after, (x, y), (x + w, y + h), (255), 2)
+        cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+
+    # # 二値画像に直接枠を描画
+    # for contour in contours1:
+    #     x, y, w, h = cv2.boundingRect(contour)
+    #     # 枠を白色（255）で描画
+    #     cv2.rectangle(diff_expanded_before, (x, y), (x + w, y + h), (255), 2)
+
+    # # 二値画像に直接枠を描画
+    # for contour in contours2:
+    #     x, y, w, h = cv2.boundingRect(contour)
+    #     # 枠を白色（255）で描画
+    #     cv2.rectangle(diff_expanded_after, (x, y), (x + w, y + h), (255), 2)
 
 
     # 差分画像の保存
@@ -152,20 +155,44 @@ def main():
     # ファイルパスを作成
     output_file_path = os.path.join(output_dir2, output_file_name1)
 
-    # # 画像を保存する
-    # cv2.imwrite(output_file_path, img1)
     # 画像を保存する
-    cv2.imwrite(output_file_path, diff_expanded_before)
+    cv2.imwrite(output_file_path, img1)
+    # # 画像を保存する
+    # cv2.imwrite(output_file_path, expanded_before_colored)
 
     # ファイルパスを作成
     output_file_path = os.path.join(output_dir2, output_file_name2)
 
-    # # 画像を保存する
-    # cv2.imwrite(output_file_path, img2)
     # 画像を保存する
-    cv2.imwrite(output_file_path, diff_expanded_after)
+    cv2.imwrite(output_file_path, img2)
+    # # 画像を保存する
+    # cv2.imwrite(output_file_path, expanded_after_colored)
 
     print(f"2つの画像の差異部分に枠をつけたカラー画像をに保存しました")
+
+
+def filter_contours_by_area(contours, threshold_area=3000):
+    """
+    一定の面積以下の輪郭を除外する関数
+
+    Parameters:
+    - contours (list): 輪郭情報が格納されたリスト
+    - threshold_area (int): 一定の面積の閾値（適宜調整する）
+
+    Returns:
+    - filtered_contours (list): 面積が閾値以上の輪郭のみを格納したリスト
+    """
+
+    filtered_contours = []
+    
+    for contour in contours:
+        area = cv2.contourArea(contour)
+        
+        if area > threshold_area:
+            filtered_contours.append(contour)
+    
+    return filtered_contours
+
 
 
 # __name__ が "__main__" の場合のみ実行

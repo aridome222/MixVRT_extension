@@ -14,7 +14,7 @@ import difflib
 from flask_cors import CORS, cross_origin
 
 from main import main
-from src.module import detect_rec_divide_url
+from src.module import detect_rec_bf_af
 import pytest
 import shlex
 import logging
@@ -222,74 +222,74 @@ def confirmation():
     return render_template('confirmation.html', name=name, phone=phone, email=email, pizza_type=pizza_type, pizza_size=pizza_size, pizza_quantity=pizza_quantity, delivery_time=delivery_time, comments=comments)
 
 
-def run_diff_program(url1, url2):
-    # URLのエスケープ確認
-    print(f"url1: {url1}")
-    print(f"url2: {url2}")
+# def run_diff_program(url1, url2):
+#     # URLのエスケープ確認
+#     print(f"url1: {url1}")
+#     print(f"url2: {url2}")
 
-    # まず、テストを呼び出すためにsys.argvを準備
-    sys.argv = [
-        "pytest",
-        "-s",
-        "-v",
-        "--cache-clear",
-        "/python/src/module/test_slt_addShot.py",
-        "-k",
-        "test_singlelinetext",
-        "--",
-        url1,  # ここでテストメソッドに渡す引数を指定
-    ]
+#     # まず、テストを呼び出すためにsys.argvを準備
+#     sys.argv = [
+#         "pytest",
+#         "-s",
+#         "-v",
+#         "--cache-clear",
+#         "/python/src/module/test_slt_addShot.py",
+#         "-k",
+#         "test_singlelinetext",
+#         "--",
+#         url1,  # ここでテストメソッドに渡す引数を指定
+#     ]
 
-    # テストの実行
-    with pytest.warns(None) as record:  # Noneを渡すことで全ての警告を無視
-        pytest.main()
+#     # テストの実行
+#     with pytest.warns(None) as record:  # Noneを渡すことで全ての警告を無視
+#         pytest.main()
 
-    # デバッグのためにrecordを出力
-    print("-------------------------")
-    print(record)
-    print("-------------------------")
+#     # デバッグのためにrecordを出力
+#     print("-------------------------")
+#     print(record)
+#     print("-------------------------")
 
-    # recordが空の場合に対処
-    if record:
-        # ここで差分検出プログラムを実行
-        # 例: subprocess.run(['python', 'path/to/your_diff_program.py', img1_path, img2_path], check=True)
-        # 実際のプログラムのパスと引数は適切に設定してください
+#     # recordが空の場合に対処
+#     if record:
+#         # ここで差分検出プログラムを実行
+#         # 例: subprocess.run(['python', 'path/to/your_diff_program.py', img1_path, img2_path], check=True)
+#         # 実際のプログラムのパスと引数は適切に設定してください
 
-        # 引数を適切にエスケープ
-        url1_escaped = shlex.quote(url1)
+#         # 引数を適切にエスケープ
+#         url1_escaped = shlex.quote(url1)
 
-        # コマンドの実行
-        cmd1 = f"docker exec -it zenn_selenium-python-1 python -m pytest -s --cache-clear /python/src/test_slt_addShot.py {url1_escaped}"
-        print(f"cmd1: {cmd1}")
-        result1 = subprocess.run(cmd1, text=True, shell=True)
-        print(f"stdout1: {result1.stdout}")
-        print(f"stderr1: {result1.stderr}")
-        img1_path = result1.stdout.strip()
+#         # コマンドの実行
+#         cmd1 = f"docker exec -it zenn_selenium-python-1 python -m pytest -s --cache-clear /python/src/test_slt_addShot.py {url1_escaped}"
+#         print(f"cmd1: {cmd1}")
+#         result1 = subprocess.run(cmd1, text=True, shell=True)
+#         print(f"stdout1: {result1.stdout}")
+#         print(f"stderr1: {result1.stderr}")
+#         img1_path = result1.stdout.strip()
 
-        # 同じことをurl2に対して繰り返します
-        sys.argv[-1] = url2
+#         # 同じことをurl2に対して繰り返します
+#         sys.argv[-1] = url2
 
-        # 引数を適切にエスケープ
-        url2_escaped = shlex.quote(url2)
+#         # 引数を適切にエスケープ
+#         url2_escaped = shlex.quote(url2)
 
-        # コマンドの実行
-        cmd2 = f"docker exec -it zenn_selenium-python-1 python -m pytest -s --cache-clear /python/src/test_slt_addShot.py {url2_escaped}"
-        print(f"cmd2: {cmd2}")
-        result2 = subprocess.run(cmd2, text=True, shell=True)
-        print(f"stdout2: {result2.stdout}")
-        print(f"stderr2: {result2.stderr}")
-        img2_path = result2.stdout.strip()
+#         # コマンドの実行
+#         cmd2 = f"docker exec -it zenn_selenium-python-1 python -m pytest -s --cache-clear /python/src/test_slt_addShot.py {url2_escaped}"
+#         print(f"cmd2: {cmd2}")
+#         result2 = subprocess.run(cmd2, text=True, shell=True)
+#         print(f"stdout2: {result2.stdout}")
+#         print(f"stderr2: {result2.stderr}")
+#         img2_path = result2.stdout.strip()
 
-        # デバッグのためにrecordを出力
-        print("-------------------------")
-        print(record)
-        print("-------------------------")
+#         # デバッグのためにrecordを出力
+#         print("-------------------------")
+#         print(record)
+#         print("-------------------------")
 
-        diff_img1, diff_img2 = detect_rec_divide_url.main(img1_path, img2_path)
-        return diff_img1, diff_img2
-    else:
-        # recordが空の場合、エラー処理またはデフォルトの値を返すなど、適切な対処を行う
-        return None, None
+#         diff_img1, diff_img2 = detect_rec_divide_url.main(img1_path, img2_path)
+#         return diff_img1, diff_img2
+#     else:
+#         # recordが空の場合、エラー処理またはデフォルトの値を返すなど、適切な対処を行う
+#         return None, None
 
 
 # def run_diff_program(url1, url2):
