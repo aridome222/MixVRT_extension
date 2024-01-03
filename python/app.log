@@ -4393,3 +4393,401 @@
 2024-01-02 07:52:41,790 INFO: * Restarting with stat
 2024-01-02 07:52:42,795 WARNING: * Debugger is active!
 2024-01-02 07:52:42,796 INFO: * Debugger PIN: 500-599-248
+2024-01-02 15:33:06,692 INFO:172.22.0.1 - - [02/Jan/2024 15:33:06] "GET /before_modified HTTP/1.1" 200 -
+2024-01-02 15:33:07,329 INFO:172.22.0.1 - - [02/Jan/2024 15:33:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-02 15:33:38,134 INFO:172.22.0.1 - - [02/Jan/2024 15:33:38] "GET /after_modified HTTP/1.1" 200 -
+2024-01-02 15:33:38,352 INFO:172.22.0.1 - - [02/Jan/2024 15:33:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-02 15:54:18,922 INFO: * Detected change in '/app/src/main.py', reloading
+2024-01-02 15:54:20,155 INFO: * Restarting with stat
+2024-01-02 15:54:22,492 WARNING: * Debugger is active!
+2024-01-02 15:54:22,496 INFO: * Debugger PIN: 500-599-248
+2024-01-02 15:54:51,706 INFO:172.22.0.1 - - [02/Jan/2024 15:54:51] "GET /before HTTP/1.1" 200 -
+2024-01-02 15:54:56,203 INFO:172.22.0.1 - - [02/Jan/2024 15:54:56] "GET /after HTTP/1.1" 200 -
+2024-01-02 15:56:17,718 INFO: * Detected change in '/app/src/main.py', reloading
+2024-01-02 15:56:17,880 INFO: * Restarting with stat
+2024-01-02 15:56:19,588 WARNING: * Debugger is active!
+2024-01-02 15:56:19,589 INFO: * Debugger PIN: 500-599-248
+2024-01-02 15:56:33,087 INFO: * Detected change in '/app/src/main.py', reloading
+2024-01-02 15:56:33,244 INFO: * Restarting with stat
+2024-01-02 15:56:34,296 WARNING: * Debugger is active!
+2024-01-02 15:56:34,298 INFO: * Debugger PIN: 500-599-248
+2024-01-02 15:57:09,697 INFO: * Detected change in '/app/src/module/test_before.py', reloading
+2024-01-02 15:57:09,896 INFO: * Restarting with stat
+2024-01-02 15:57:11,049 WARNING: * Debugger is active!
+2024-01-02 15:57:11,050 INFO: * Debugger PIN: 500-599-248
+2024-01-02 15:57:21,462 INFO: * Detected change in '/app/src/module/test_before.py', reloading
+2024-01-02 15:57:21,673 INFO: * Restarting with stat
+2024-01-02 15:57:23,062 WARNING: * Debugger is active!
+2024-01-02 15:57:23,064 INFO: * Debugger PIN: 500-599-248
+2024-01-02 15:57:28,293 INFO: * Detected change in '/app/src/module/test_before.py', reloading
+2024-01-02 15:57:28,557 INFO: * Restarting with stat
+2024-01-02 15:57:29,613 WARNING: * Debugger is active!
+2024-01-02 15:57:29,613 INFO: * Debugger PIN: 500-599-248
+2024-01-02 15:57:36,939 INFO: * Detected change in '/app/src/module/test_before.py', reloading
+2024-01-02 15:57:37,126 INFO: * Restarting with stat
+2024-01-02 15:57:38,245 WARNING: * Debugger is active!
+2024-01-02 15:57:38,247 INFO: * Debugger PIN: 500-599-248
+2024-01-02 15:57:42,428 INFO: * Detected change in '/app/src/module/test_before.py', reloading
+2024-01-02 15:57:42,633 INFO: * Restarting with stat
+2024-01-02 15:57:44,002 WARNING: * Debugger is active!
+2024-01-02 15:57:44,003 INFO: * Debugger PIN: 500-599-248
+2024-01-02 15:57:54,439 INFO: * Detected change in '/app/src/module/test_after.py', reloading
+2024-01-02 15:57:54,633 INFO: * Restarting with stat
+2024-01-02 15:57:55,924 WARNING: * Debugger is active!
+2024-01-02 15:57:55,925 INFO: * Debugger PIN: 500-599-248
+2024-01-02 15:58:15,688 INFO: * Detected change in '/app/src/module/test_before_modified.py', reloading
+2024-01-02 15:58:16,006 INFO: * Restarting with stat
+2024-01-02 15:58:17,816 WARNING: * Debugger is active!
+2024-01-02 15:58:17,818 INFO: * Debugger PIN: 500-599-248
+2024-01-02 15:58:34,396 INFO: * Detected change in '/app/src/module/test_after_modified.py', reloading
+2024-01-02 15:58:34,556 INFO: * Restarting with stat
+2024-01-02 15:58:35,904 WARNING: * Debugger is active!
+2024-01-02 15:58:35,906 INFO: * Debugger PIN: 500-599-248
+2024-01-02 15:58:53,545 INFO: * Detected change in '/app/src/module/test_after_modified.py', reloading
+2024-01-02 15:58:53,875 INFO: * Restarting with stat
+2024-01-02 15:58:55,220 WARNING: * Debugger is active!
+2024-01-02 15:58:55,221 INFO: * Debugger PIN: 500-599-248
+2024-01-02 15:58:56,625 INFO:172.22.0.1 - - [02/Jan/2024 15:58:56] "GET /after_modified HTTP/1.1" 200 -
+2024-01-02 15:58:56,858 INFO:172.22.0.1 - - [02/Jan/2024 15:58:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-02 15:59:02,508 INFO: * Detected change in '/app/src/module/test_after_modified.py', reloading
+2024-01-02 15:59:02,826 INFO: * Restarting with stat
+2024-01-02 15:59:04,444 WARNING: * Debugger is active!
+2024-01-02 15:59:04,445 INFO: * Debugger PIN: 500-599-248
+2024-01-02 15:59:07,564 INFO: * Detected change in '/app/src/module/test_after_modified.py', reloading
+2024-01-02 15:59:07,743 INFO: * Restarting with stat
+2024-01-02 15:59:08,944 WARNING: * Debugger is active!
+2024-01-02 15:59:08,945 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:00:16,142 INFO: * Detected change in '/app/src/module/test_after_modified.py', reloading
+2024-01-02 16:00:16,381 INFO: * Restarting with stat
+2024-01-02 16:00:17,431 WARNING: * Debugger is active!
+2024-01-02 16:00:17,432 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:00:32,053 INFO: * Detected change in '/app/src/module/test_before_modified.py', reloading
+2024-01-02 16:00:32,365 INFO: * Restarting with stat
+2024-01-02 16:00:33,616 WARNING: * Debugger is active!
+2024-01-02 16:00:33,617 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:00:48,179 INFO: * Detected change in '/app/src/module/test_before_modified.py', reloading
+2024-01-02 16:00:48,544 INFO: * Restarting with stat
+2024-01-02 16:00:50,084 WARNING: * Debugger is active!
+2024-01-02 16:00:50,085 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:00:54,289 INFO: * Detected change in '/app/src/module/test_after.py', reloading
+2024-01-02 16:00:54,508 INFO: * Restarting with stat
+2024-01-02 16:00:55,619 WARNING: * Debugger is active!
+2024-01-02 16:00:55,620 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:01:21,497 INFO: * Detected change in '/app/src/module/test_after.py', reloading
+2024-01-02 16:01:21,730 INFO: * Restarting with stat
+2024-01-02 16:01:23,091 WARNING: * Debugger is active!
+2024-01-02 16:01:23,092 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:01:35,580 INFO: * Detected change in '/app/src/module/test_before.py', reloading
+2024-01-02 16:01:35,832 INFO: * Restarting with stat
+2024-01-02 16:01:36,759 WARNING: * Debugger is active!
+2024-01-02 16:01:36,760 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:01:46,079 INFO: * Detected change in '/app/src/module/test_before.py', reloading
+2024-01-02 16:01:46,252 INFO: * Restarting with stat
+2024-01-02 16:01:47,389 WARNING: * Debugger is active!
+2024-01-02 16:01:47,391 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:03:00,852 INFO:172.22.0.1 - - [02/Jan/2024 16:03:00] "GET /after_modified HTTP/1.1" 200 -
+2024-01-02 16:03:01,065 INFO:172.22.0.1 - - [02/Jan/2024 16:03:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-02 16:03:29,118 INFO: * Detected change in '/app/src/main.py', reloading
+2024-01-02 16:03:29,346 INFO: * Restarting with stat
+2024-01-02 16:03:30,518 WARNING: * Debugger is active!
+2024-01-02 16:03:30,520 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:03:34,711 INFO: * Detected change in '/app/src/main.py', reloading
+2024-01-02 16:03:34,972 INFO: * Restarting with stat
+2024-01-02 16:03:36,714 WARNING: * Debugger is active!
+2024-01-02 16:03:36,716 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:06:47,788 INFO: * Detected change in '/app/src/main.py', reloading
+2024-01-02 16:06:48,056 INFO: * Restarting with stat
+2024-01-02 16:06:49,380 WARNING: * Debugger is active!
+2024-01-02 16:06:49,381 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:07:52,809 INFO:172.22.0.1 - - [02/Jan/2024 16:07:52] "GET /after HTTP/1.1" 200 -
+2024-01-02 16:07:53,087 INFO:172.22.0.1 - - [02/Jan/2024 16:07:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-02 16:08:03,306 INFO:172.22.0.1 - - [02/Jan/2024 16:08:03] "GET /before HTTP/1.1" 200 -
+2024-01-02 16:08:03,483 INFO:172.22.0.1 - - [02/Jan/2024 16:08:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-02 16:08:48,438 INFO: * Detected change in '/app/src/module/png_to_high_png.py', reloading
+2024-01-02 16:08:48,788 INFO: * Restarting with stat
+2024-01-02 16:08:50,009 WARNING: * Debugger is active!
+2024-01-02 16:08:50,009 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:09:33,477 INFO: * Detected change in '/app/src/module/png_to_high_png.py', reloading
+2024-01-02 16:09:33,732 INFO: * Restarting with stat
+2024-01-02 16:09:37,301 WARNING: * Debugger is active!
+2024-01-02 16:09:37,303 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:10:36,246 INFO: * Detected change in '/app/src/module/detect_rec_divide_akaze.py', reloading
+2024-01-02 16:10:36,389 INFO: * Restarting with stat
+2024-01-02 16:10:37,872 WARNING: * Debugger is active!
+2024-01-02 16:10:37,874 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:21:31,313 INFO: * Detected change in '/app/src/main.py', reloading
+2024-01-02 16:21:32,529 INFO: * Restarting with stat
+2024-01-02 16:21:35,019 WARNING: * Debugger is active!
+2024-01-02 16:21:35,062 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:21:39,304 INFO: * Detected change in '/app/src/main.py', reloading
+2024-01-02 16:21:39,636 INFO: * Restarting with stat
+2024-01-02 16:21:41,169 WARNING: * Debugger is active!
+2024-01-02 16:21:41,170 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:22:03,022 INFO: * Detected change in '/app/src/module/detect_rec_divide.py', reloading
+2024-01-02 16:22:03,353 INFO: * Restarting with stat
+2024-01-02 16:22:04,558 WARNING: * Debugger is active!
+2024-01-02 16:22:04,569 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:27:58,420 INFO: * Detected change in '/app/src/module/detect_rec_divide.py', reloading
+2024-01-02 16:27:58,679 INFO: * Restarting with stat
+2024-01-02 16:28:00,362 WARNING: * Debugger is active!
+2024-01-02 16:28:00,363 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:28:23,161 INFO: * Detected change in '/app/src/module/detect_rec_divide.py', reloading
+2024-01-02 16:28:23,464 INFO: * Restarting with stat
+2024-01-02 16:28:25,004 WARNING: * Debugger is active!
+2024-01-02 16:28:25,005 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:28:34,462 INFO: * Detected change in '/app/src/module/detect_rec_divide.py', reloading
+2024-01-02 16:28:34,835 INFO: * Restarting with stat
+2024-01-02 16:28:36,540 WARNING: * Debugger is active!
+2024-01-02 16:28:36,542 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:28:55,323 INFO: * Detected change in '/app/src/module/detect_rec_divide.py', reloading
+2024-01-02 16:28:55,627 INFO: * Restarting with stat
+2024-01-02 16:28:56,890 WARNING: * Debugger is active!
+2024-01-02 16:28:56,892 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:29:13,650 INFO: * Detected change in '/app/src/module/detect_rec_divide.py', reloading
+2024-01-02 16:29:13,986 INFO: * Restarting with stat
+2024-01-02 16:29:15,674 WARNING: * Debugger is active!
+2024-01-02 16:29:15,678 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:29:40,661 INFO: * Detected change in '/app/src/main.py', reloading
+2024-01-02 16:29:41,026 INFO: * Restarting with stat
+2024-01-02 16:29:42,726 WARNING: * Debugger is active!
+2024-01-02 16:29:42,728 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:29:44,935 INFO: * Detected change in '/app/src/main.py', reloading
+2024-01-02 16:29:45,287 INFO: * Restarting with stat
+2024-01-02 16:29:46,660 WARNING: * Debugger is active!
+2024-01-02 16:29:46,661 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:29:50,850 INFO: * Detected change in '/app/src/main.py', reloading
+2024-01-02 16:29:51,143 INFO: * Restarting with stat
+2024-01-02 16:29:52,642 WARNING: * Debugger is active!
+2024-01-02 16:29:52,643 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:30:16,724 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin.py', reloading
+2024-01-02 16:30:17,025 INFO: * Restarting with stat
+2024-01-02 16:30:18,488 WARNING: * Debugger is active!
+2024-01-02 16:30:18,491 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:44:20,657 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-02 16:44:20,937 INFO: * Restarting with stat
+2024-01-02 16:44:22,637 WARNING: * Debugger is active!
+2024-01-02 16:44:22,639 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:46:01,294 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-02 16:46:01,465 INFO: * Restarting with stat
+2024-01-02 16:46:02,601 WARNING: * Debugger is active!
+2024-01-02 16:46:02,602 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:54:42,291 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-02 16:54:42,513 INFO: * Restarting with stat
+2024-01-02 16:54:44,026 WARNING: * Debugger is active!
+2024-01-02 16:54:44,027 INFO: * Debugger PIN: 500-599-248
+2024-01-02 16:56:49,420 INFO: * Detected change in '/app/src/main.py', reloading
+2024-01-02 16:56:49,620 INFO: * Restarting with stat
+2024-01-03 10:09:56,098 WARNING: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-01-03 10:09:56,099 INFO: * Running on http://172.22.0.2:5000/ (Press CTRL+C to quit)
+2024-01-03 10:09:56,101 INFO: * Restarting with stat
+2024-01-03 10:09:57,583 WARNING: * Debugger is active!
+2024-01-03 10:09:57,594 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:20:15,754 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:20:17,013 INFO: * Restarting with stat
+2024-01-03 10:20:19,948 WARNING: * Debugger is active!
+2024-01-03 10:20:19,957 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:21:59,978 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:22:00,208 INFO: * Restarting with stat
+2024-01-03 10:22:01,479 WARNING: * Debugger is active!
+2024-01-03 10:22:01,480 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:22:59,515 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:22:59,646 INFO: * Restarting with stat
+2024-01-03 10:23:00,989 WARNING: * Debugger is active!
+2024-01-03 10:23:00,990 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:23:35,284 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:23:35,470 INFO: * Restarting with stat
+2024-01-03 10:23:36,679 WARNING: * Debugger is active!
+2024-01-03 10:23:36,680 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:25:26,754 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:25:26,974 INFO: * Restarting with stat
+2024-01-03 10:25:28,431 WARNING: * Debugger is active!
+2024-01-03 10:25:28,433 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:29:06,521 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:29:06,693 INFO: * Restarting with stat
+2024-01-03 10:29:08,176 WARNING: * Debugger is active!
+2024-01-03 10:29:08,177 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:29:53,775 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:29:53,999 INFO: * Restarting with stat
+2024-01-03 10:29:55,295 WARNING: * Debugger is active!
+2024-01-03 10:29:55,296 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:30:06,666 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:30:06,795 INFO: * Restarting with stat
+2024-01-03 10:30:08,164 WARNING: * Debugger is active!
+2024-01-03 10:30:08,166 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:30:22,784 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:30:22,955 INFO: * Restarting with stat
+2024-01-03 10:30:24,117 WARNING: * Debugger is active!
+2024-01-03 10:30:24,118 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:30:38,734 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:30:38,890 INFO: * Restarting with stat
+2024-01-03 10:30:40,062 WARNING: * Debugger is active!
+2024-01-03 10:30:40,063 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:32:49,563 INFO: * Detected change in '/app/src/module/hoge.py', reloading
+2024-01-03 10:32:49,895 INFO: * Restarting with stat
+2024-01-03 10:32:51,978 WARNING: * Debugger is active!
+2024-01-03 10:32:51,980 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:33:24,208 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:33:24,452 INFO: * Restarting with stat
+2024-01-03 10:33:25,718 WARNING: * Debugger is active!
+2024-01-03 10:33:25,719 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:34:19,496 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:34:19,653 INFO: * Restarting with stat
+2024-01-03 10:34:20,738 WARNING: * Debugger is active!
+2024-01-03 10:34:20,739 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:34:24,920 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:34:25,095 INFO: * Restarting with stat
+2024-01-03 10:34:26,348 WARNING: * Debugger is active!
+2024-01-03 10:34:26,350 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:34:45,114 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:34:45,324 INFO: * Restarting with stat
+2024-01-03 10:34:46,417 WARNING: * Debugger is active!
+2024-01-03 10:34:46,419 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:35:00,062 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:35:00,252 INFO: * Restarting with stat
+2024-01-03 10:35:01,460 WARNING: * Debugger is active!
+2024-01-03 10:35:01,461 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:46:27,355 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:46:27,711 INFO: * Restarting with stat
+2024-01-03 10:46:28,776 WARNING: * Debugger is active!
+2024-01-03 10:46:28,778 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:49:03,194 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:49:03,479 INFO: * Restarting with stat
+2024-01-03 10:49:04,890 WARNING: * Debugger is active!
+2024-01-03 10:49:04,891 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:51:22,659 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:51:22,967 INFO: * Restarting with stat
+2024-01-03 10:51:24,375 WARNING: * Debugger is active!
+2024-01-03 10:51:24,376 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:54:25,165 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:54:25,448 INFO: * Restarting with stat
+2024-01-03 10:54:27,291 WARNING: * Debugger is active!
+2024-01-03 10:54:27,293 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:55:19,289 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:55:19,585 INFO: * Restarting with stat
+2024-01-03 10:55:21,104 WARNING: * Debugger is active!
+2024-01-03 10:55:21,105 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:55:33,693 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:55:33,889 INFO: * Restarting with stat
+2024-01-03 10:55:35,243 WARNING: * Debugger is active!
+2024-01-03 10:55:35,244 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:58:15,811 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:58:16,082 INFO: * Restarting with stat
+2024-01-03 10:58:17,331 WARNING: * Debugger is active!
+2024-01-03 10:58:17,332 INFO: * Debugger PIN: 500-599-248
+2024-01-03 10:58:40,221 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 10:58:40,446 INFO: * Restarting with stat
+2024-01-03 10:58:41,737 WARNING: * Debugger is active!
+2024-01-03 10:58:41,738 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:00:01,369 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:00:01,662 INFO: * Restarting with stat
+2024-01-03 11:00:02,885 WARNING: * Debugger is active!
+2024-01-03 11:00:02,886 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:00:39,351 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:00:39,531 INFO: * Restarting with stat
+2024-01-03 11:00:40,617 WARNING: * Debugger is active!
+2024-01-03 11:00:40,618 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:10:22,677 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:10:22,965 INFO: * Restarting with stat
+2024-01-03 11:10:24,337 WARNING: * Debugger is active!
+2024-01-03 11:10:24,347 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:10:34,751 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:10:35,034 INFO: * Restarting with stat
+2024-01-03 11:10:36,173 WARNING: * Debugger is active!
+2024-01-03 11:10:36,183 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:11:11,498 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:11:11,678 INFO: * Restarting with stat
+2024-01-03 11:11:12,861 WARNING: * Debugger is active!
+2024-01-03 11:11:12,862 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:11:31,486 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:11:31,740 INFO: * Restarting with stat
+2024-01-03 11:11:32,861 WARNING: * Debugger is active!
+2024-01-03 11:11:32,862 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:12:20,451 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:12:20,645 INFO: * Restarting with stat
+2024-01-03 11:12:21,946 WARNING: * Debugger is active!
+2024-01-03 11:12:21,948 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:13:10,769 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:13:11,052 INFO: * Restarting with stat
+2024-01-03 11:13:12,554 WARNING: * Debugger is active!
+2024-01-03 11:13:12,555 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:13:39,540 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:13:39,827 INFO: * Restarting with stat
+2024-01-03 11:13:41,266 WARNING: * Debugger is active!
+2024-01-03 11:13:41,267 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:15:58,089 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:15:58,300 INFO: * Restarting with stat
+2024-01-03 11:16:00,474 WARNING: * Debugger is active!
+2024-01-03 11:16:00,477 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:16:57,518 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:16:57,833 INFO: * Restarting with stat
+2024-01-03 11:16:59,074 WARNING: * Debugger is active!
+2024-01-03 11:16:59,075 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:21:12,145 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:21:12,431 INFO: * Restarting with stat
+2024-01-03 11:21:13,547 WARNING: * Debugger is active!
+2024-01-03 11:21:13,548 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:21:59,296 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:21:59,572 INFO: * Restarting with stat
+2024-01-03 11:22:00,817 WARNING: * Debugger is active!
+2024-01-03 11:22:00,818 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:22:22,714 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:22:22,972 INFO: * Restarting with stat
+2024-01-03 11:22:23,991 WARNING: * Debugger is active!
+2024-01-03 11:22:23,991 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:23:46,719 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:23:46,998 INFO: * Restarting with stat
+2024-01-03 11:23:48,510 WARNING: * Debugger is active!
+2024-01-03 11:23:48,511 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:24:40,341 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:24:40,516 INFO: * Restarting with stat
+2024-01-03 11:24:41,632 WARNING: * Debugger is active!
+2024-01-03 11:24:41,633 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:25:00,281 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:25:00,554 INFO: * Restarting with stat
+2024-01-03 11:25:01,804 WARNING: * Debugger is active!
+2024-01-03 11:25:01,805 INFO: * Debugger PIN: 500-599-248
+2024-01-03 11:26:38,686 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 11:26:38,860 INFO: * Restarting with stat
+2024-01-03 11:26:40,444 WARNING: * Debugger is active!
+2024-01-03 11:26:40,446 INFO: * Debugger PIN: 500-599-248
+2024-01-03 22:19:41,899 WARNING: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-01-03 22:19:41,902 INFO: * Running on http://172.22.0.2:5000/ (Press CTRL+C to quit)
+2024-01-03 22:19:41,905 INFO: * Restarting with stat
+2024-01-03 22:19:43,366 WARNING: * Debugger is active!
+2024-01-03 22:19:43,377 INFO: * Debugger PIN: 500-599-248
+2024-01-03 22:27:44,563 INFO:172.22.0.1 - - [03/Jan/2024 22:27:44] "GET /before HTTP/1.1" 200 -
+2024-01-03 22:27:45,213 INFO:172.22.0.1 - - [03/Jan/2024 22:27:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-03 22:27:56,222 INFO:172.22.0.1 - - [03/Jan/2024 22:27:56] "GET /after HTTP/1.1" 200 -
+2024-01-03 22:27:56,407 INFO:172.22.0.1 - - [03/Jan/2024 22:27:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-03 22:30:43,727 INFO:172.22.0.1 - - [03/Jan/2024 22:30:43] "GET / HTTP/1.1" 200 -
+2024-01-03 22:31:01,749 INFO:172.22.0.1 - - [03/Jan/2024 22:31:01] "GET /before HTTP/1.1" 200 -
+2024-01-03 22:32:01,483 INFO:172.22.0.1 - - [03/Jan/2024 22:32:01] "GET /before HTTP/1.1" 200 -
+2024-01-03 22:32:07,994 INFO:172.22.0.1 - - [03/Jan/2024 22:32:07] "GET / HTTP/1.1" 200 -
+2024-01-03 22:32:10,939 INFO:172.22.0.1 - - [03/Jan/2024 22:32:10] "GET /before HTTP/1.1" 200 -
+2024-01-03 22:32:19,825 INFO:172.22.0.1 - - [03/Jan/2024 22:32:19] "GET /after HTTP/1.1" 200 -
+2024-01-03 22:32:59,267 INFO:172.22.0.1 - - [03/Jan/2024 22:32:59] "GET /before HTTP/1.1" 200 -
+2024-01-03 22:32:59,482 INFO:172.22.0.1 - - [03/Jan/2024 22:32:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-03 22:33:15,799 INFO:172.22.0.1 - - [03/Jan/2024 22:33:15] "GET /after HTTP/1.1" 200 -
+2024-01-03 22:33:16,117 INFO:172.22.0.1 - - [03/Jan/2024 22:33:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-03 22:34:25,772 INFO: * Detected change in '/app/src/module/png_to_high_png.py', reloading
+2024-01-03 22:34:26,682 INFO: * Restarting with stat
+2024-01-03 22:34:29,198 WARNING: * Debugger is active!
+2024-01-03 22:34:29,201 INFO: * Debugger PIN: 500-599-248
+2024-01-03 22:34:59,258 INFO: * Detected change in '/app/src/module/png_to_high_png.py', reloading
+2024-01-03 22:34:59,590 INFO: * Restarting with stat
+2024-01-03 22:35:00,567 WARNING: * Debugger is active!
+2024-01-03 22:35:00,568 INFO: * Debugger PIN: 500-599-248
+2024-01-03 22:35:39,073 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 22:35:39,237 INFO: * Restarting with stat
+2024-01-03 22:35:40,560 WARNING: * Debugger is active!
+2024-01-03 22:35:40,561 INFO: * Debugger PIN: 500-599-248
+2024-01-03 22:36:34,736 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 22:36:34,941 INFO: * Restarting with stat
+2024-01-03 22:36:36,095 WARNING: * Debugger is active!
+2024-01-03 22:36:36,098 INFO: * Debugger PIN: 500-599-248
+2024-01-03 22:37:06,371 INFO: * Detected change in '/app/src/module/detect_rec_divide_bin_2.py', reloading
+2024-01-03 22:37:06,711 INFO: * Restarting with stat
+2024-01-03 22:37:08,088 WARNING: * Debugger is active!
+2024-01-03 22:37:08,090 INFO: * Debugger PIN: 500-599-248

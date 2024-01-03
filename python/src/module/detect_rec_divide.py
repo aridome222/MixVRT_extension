@@ -42,7 +42,7 @@ def str_green(text):
     return f"{GREEN_TEXT_START}{text}{GREEN_TEXT_END}"
 
 
-def update_text_positions(contour, text_positions, threshold_distance=300):
+def update_text_positions(contour, text_positions, threshold_distance=0):
     """
     検出した枠において、近い枠同士を結合する関数
 
@@ -76,7 +76,7 @@ def update_text_positions(contour, text_positions, threshold_distance=300):
         text_positions.append([center_x, center_y, x, y, x + w, y + h])
 
 
-def filter_contours_by_area(contours, threshold_area=0):
+def filter_contours_by_area(contours, threshold_area=10):
     """
     一定の面積以下の輪郭を除外する関数
 
@@ -99,7 +99,7 @@ def filter_contours_by_area(contours, threshold_area=0):
     return filtered_contours
 
 
-def match_red_and_green_rectangles(red_rectangles, green_rectangles, distance_threshold=850):
+def match_red_and_green_rectangles(red_rectangles, green_rectangles, distance_threshold=0):
     """
     赤枠と緑枠の対応付けを行う関数
 
@@ -207,8 +207,8 @@ def main():
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     # ファイル名を生成
-    output_file_name_A = 'web_bf.png'
-    output_file_name_B = 'web_af.png'
+    output_file_name_A = 'bf_html.png'
+    output_file_name_B = 'af_html.png'
     # ファイルパスを作成
     output_file_path_A = os.path.join(output_dir, output_file_name_A)
     output_file_path_B = os.path.join(output_dir, output_file_name_B)

@@ -29,7 +29,6 @@ import numpy as np
 import subprocess
 import math
 
-
 def main():
     # 保存先ディレクトリを作成
     output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/")
@@ -60,10 +59,6 @@ def main():
     if (width1, height1) != (width2, height2):
         img1 = cv2.resize(img1, (target_width, target_height))
         img2 = cv2.resize(img2, (target_width, target_height))
-        # # ターゲットの幅を指定し、アスペクト比を維持してリサイズ
-        # width = 1200
-        # img1 = cv2.resize(img1, (width, int(img1.shape[0] * (width / img1.shape[1]))), interpolation=cv2.INTER_AREA)
-        # img2 = cv2.resize(img2, (width, int(img2.shape[0] * (width / img2.shape[1]))), interpolation=cv2.INTER_AREA)
 
     clahe = cv2.createCLAHE(clipLimit=30.0, tileGridSize=(10, 10))
     img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
@@ -103,9 +98,21 @@ def main():
     diff_before = cv2.subtract(img1_bin_reverse, img2_bin_reverse)
     diff_after = cv2.subtract(img2_bin_reverse, img1_bin_reverse)
 
+    # 膨張処理のためのカーネルを定義
+    kernel = np.ones((5,5),np.uint8)
+
+    # 差分画像に膨張処理を適用
+    diff_expanded_before = cv2.dilate(diff_before, kernel, iterations = 5)
+    diff_expanded_after = cv2.dilate(diff_after, kernel, iterations = 5)
+
+    # 修正した差分画像を表示用にカラー変換
+    expanded_before_colored = cv2.cvtColor(diff_expanded_before, cv2.COLOR_GRAY2BGR)
+    expanded_after_colored = cv2.cvtColor(diff_expanded_after, cv2.COLOR_GRAY2BGR)
+
+    """輪郭描画"""
     # 差分画像に輪郭を描画
-    contours1, _ = cv2.findContours(diff_before, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    contours2, _ = cv2.findContours(diff_after, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    contours1, _ = cv2.findContours(diff_expanded_before, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    contours2, _ = cv2.findContours(diff_expanded_after, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     all_contours = contours1 + contours2
     print("抽出された枠の数:", len(all_contours))
 
@@ -173,25 +180,10 @@ def main():
 
     print("検出された枠ペア数:", int(len(all_text_positions)/2))
 
-    # # 枠を描画
-    # for c in correct_contours:
-    #     x, y, w, h = c
-        
-    #     if w > 1 and h > 1:
-    #         if img2[y:y+h, x:x+w].mean() > img1[y:y+h, x:x+w].mean():
-    #             # 差異が２枚目の画像で大きい場合、赤色で表示
-    #             cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 0, 255), 3)
-    #             red_rectangles.append((x, y, w, h))
-    #         else:
-    #             # 差異が１枚目の画像で大きい場合、緑色で表示
-    #             cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 255, 0), 4)
-    #             green_rectangles.append((x, y, w, h))
-
-
     # 原画像をカラーに変換
-    before = cv2.cvtColor(diff_before, cv2.COLOR_GRAY2BGR)
+    before = cv2.cvtColor(diff_expanded_before, cv2.COLOR_GRAY2BGR)
     # 原画像をカラーに変換
-    after = cv2.cvtColor(diff_after, cv2.COLOR_GRAY2BGR)
+    after = cv2.cvtColor(diff_expanded_after, cv2.COLOR_GRAY2BGR)
 
     # 枠を描画
     for c in correct_contours1:
@@ -211,137 +203,26 @@ def main():
             cv2.rectangle(after, (x, y), (x + w, y + h), (0, 255, 0), 4)
             green_rectangles.append((x, y, w, h))
 
-    # red_rectangles の各矩形を x^2 + y^2 の和で昇順にソートする
-    red_rectangles.sort(key=lambda rect: math.sqrt(rect[0]**2 + rect[1]**2))
-    # red_rectangles の各矩形を x^2 + y^2 の和で昇順にソートする
-    green_rectangles.sort(key=lambda rect: math.sqrt(rect[0]**2 + rect[1]**2))
 
-    # 対応する赤枠と緑枠を表示
-    match_list = []  # マッチング結果を格納するリスト
-    used_green_rect_indices = set()  # すでに対応付けされた緑枠のインデックスを格納する集合
-    for i, (x1, y1, w1, h1) in enumerate(red_rectangles, start=1):
-        min_distance = float('inf')  # 最小距離を初期化
-        closest_green_rect_index = None  # 最も近い緑枠のインデックスを初期化
-        
-        for j, (x2, y2, w2, h2) in enumerate(green_rectangles, start=1):
-            if j-1 in used_green_rect_indices:  # すでに対応付けされた緑枠はスキップする
-                continue
-            
-            # 赤枠と緑枠の中心座標を計算
-            center_x1 = x1 + w1 // 2
-            center_y1 = y1 + h1 // 2
-            center_x2 = x2 + w2 // 2
-            center_y2 = y2 + h2 // 2
-            
-            # 中心座標間の距離を計算
-            distance = np.sqrt((center_x1 - center_x2)**2 + (center_y1 - center_y2)**2)
-            
-            if distance < 850 and distance < min_distance:  # 適切な距離の閾値を設定
-                min_distance = distance
-                closest_green_rect_index = j-1
-        
-        if closest_green_rect_index is not None:
-            match_list.append((i, closest_green_rect_index+1, red_rectangles[i-1], green_rectangles[closest_green_rect_index]))
-            used_green_rect_indices.add(closest_green_rect_index)  # 対応付けされた緑枠のインデックスを集合に追加する
-            # print(f"赤枠{i:2} と緑枠{closest_green_rect_index+1:2} は対応します")
-            
-
-    # # 対応する赤枠と緑枠を表示
-    # match_list = []  # マッチング結果を格納するリスト
-    # for i, (x1, y1, w1, h1) in enumerate(red_rectangles, start=1):
-    #     min_distance = float('inf')  # 最小距離を初期化
-    #     closest_green_rect_index = None  # 最も近い緑枠のインデックスを初期化
-    #     # 赤枠の中心座標を計算
-    #     center_x1 = x1 + w1 // 2
-    #     center_y1 = y1 + h1 // 2
-        
-    #     for j, (x2, y2, w2, h2) in enumerate(green_rectangles, start=1):
-    #         # 緑枠の中心座標を計算
-    #         center_x2 = x2 + w2 // 2
-    #         center_y2 = y2 + h2 // 2
-            
-    #         # 中心座標間の距離を計算
-    #         distance = np.sqrt((center_x1 - center_x2)**2 + (center_y1 - center_y2)**2)
-    #         # print(f"(赤枠{i}, 緑枠{j})のdistance: {distance}")
-    #         if distance < 650 and distance < min_distance:  # 適切な距離の閾値を設定
-    #             min_distance = distance
-    #             closest_green_rect_index = j-1
-        
-    #     if closest_green_rect_index is not None:
-    #         match_list.append((i, closest_green_rect_index+1, red_rectangles[i-1], green_rectangles[closest_green_rect_index]))
-    #         print(f"赤枠{i:2} と緑枠{closest_green_rect_index+1:2} は対応します")
-
-    # 赤枠に番号を割り振りながら座標を出力
-    for i, (x, y, w, h) in enumerate(red_rectangles, start=1):
-        cv2.putText(before, str(i), (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
-        # print(f"赤枠{i:2}: x座標 ={x:5}, y座標 ={y:5}, 幅 ={w:4}, 高さ ={h:3}")
-
-    # 緑枠に番号を割り振りながら座標を出力
-    for i, (x, y, w, h) in enumerate(green_rectangles, start=1):
-        cv2.putText(after, str(i), (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3)
-        # print(f"緑枠{i:2}: x座標 ={x:5}, y座標 ={y:5}, 幅 ={w:4}, 高さ ={h:3}")
-
-
-
-    ### 差異が検出されたか判定 ###
-    # ある閾値以上の白いピクセルが存在する場合、差分があると判断する
-    threshold = 100  # 適切な閾値を選択
-    red_text_start = "\033[91m"
-    red_text_end = "\033[0m"
-    green_text_start = "\033[92m"
-    green_text_end = "\033[0m"
-
-    # 座標の違いから配置の差異を検出
-    # match_listを使用して、赤枠と緑枠の座標の差を求める
-    count = 0
-    # 幅と高さの差の許容誤差
-    tolerance = 5
-    for i, (red_point, green_point, red_rect, green_rect) in enumerate(match_list, start=1):
-        x1, y1, w1, h1 = red_rect
-        x2, y2, w2, h2 = green_rect
-        
-        # 赤枠と緑枠の座標の差を計算
-        x_diff = x1 - x2
-        y_diff = y1 - y2
-        w_diff = w1 - w2
-        h_diff = h1 - h2
-
-        # 幅と高さの差が許容誤差以内のとき
-        if abs(w_diff) <= tolerance and abs(h_diff) <= tolerance:
-            # x座標またはy座標の差が0以外のとき
-            if x_diff != 0 or y_diff != 0:
-                count += 1 # いくつ差異箇所があったかをカウント
-            
-            # 差を表示
-            # print(f"(赤枠{red_point}, 緑枠{green_point}): x座標差={abs(x_diff):5}, y座標差={abs(y_diff):5}, 幅差={abs(w_diff):2}, 高低差={abs(h_diff):2}")
-
-    if count > 0:
-        print(f"{red_text_start}配置の差異を {count} 箇所検出しました{red_text_end}")
-    else:
-        print(f"{green_text_start}配置の差異はありません{green_text_end}")
-
-    # 差分画像を保存
+    # 差分画像の保存
     output_file_name1 = "before.png"
     output_file_name2 = "after.png"
     output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "test_png")
     # フォルダが存在しない場合は作成
     if not os.path.exists(output_dir2):
         os.makedirs(output_dir2)
-        command = f"sudo chown -R aridome:aridome {output_dir2}"
-        # コマンドを実行
-        subprocess.call(command, shell=True)
 
     # ファイルパスを作成
     output_file_path = os.path.join(output_dir2, output_file_name1)
 
     # 画像を保存する
-    cv2.imwrite(output_file_path, diff_before)
+    cv2.imwrite(output_file_path, diff_expanded_before)
 
     # ファイルパスを作成
     output_file_path = os.path.join(output_dir2, output_file_name2)
 
     # 画像を保存する
-    cv2.imwrite(output_file_path, diff_after)
+    cv2.imwrite(output_file_path, diff_expanded_after)
 
     print(f"2つの画像の差異部分に枠をつけたカラー画像をに保存しました")
 

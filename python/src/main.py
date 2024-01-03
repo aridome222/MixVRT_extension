@@ -3,7 +3,11 @@
 from module import detect_rec_divide
 from module import detect_rec_divide_url
 from module import detect_rec_divide_bin
+from module import detect_rec_divide_bin_2
 from module import detect_rec_divide_akaze
+from module import test_before
+from module import test_after
+
 import sys
 
 
@@ -24,11 +28,11 @@ def main():
     # url2 = sys.argv[2]
 
     # # test_slt_addShotのmain関数を呼び出す（URL1）
-    # shot1 = test_slt_addShot.Test_slt_input_addShot(url1)
+    # shot1 = test_before.Test_slt_input_addShot(url1)
     # img1_path = shot1.test_singlelinetext()
 
     # # test_slt_addShotのmain関数を呼び出す（URL2）
-    # shot2 = test_slt_addShot.Test_slt_input_addShot(url2)
+    # shot2 = test_after.Test_slt_input_addShot(url2)
     # img2_path = shot2.test_singlelinetext()
 
     # # detect_rec_divideのmain関数を呼び出す
@@ -40,8 +44,11 @@ def main():
     # # detect_rec_divide_binのmain関数を呼び出す
     # detect_rec_divide_bin.main()
 
-    # detect_rec_divide_akazeのmain関数を呼び出す
-    detect_rec_divide_akaze.main()
+    # detect_rec_divide_bin2のmain関数を呼び出す
+    detect_rec_divide_bin_2.main()
+
+    # # detect_rec_divide_akazeのmain関数を呼び出す
+    # detect_rec_divide_akaze.main()
 
     # return diff_img1, diff_img2
 

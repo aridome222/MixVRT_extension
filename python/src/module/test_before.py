@@ -17,7 +17,7 @@ import difflib
 import subprocess
 
 
-class TestSingleLineText_snapShot():
+class Test_screenShot_bf_html():
   def setup_method(self, method):
     options = Options()
     # options.add_argument('--headless')  # ヘッドレスモードでブラウザを起動
@@ -30,7 +30,7 @@ class TestSingleLineText_snapShot():
   def teardown_method(self, method):
     self.driver.quit()
   
-  def test_singlelinetext(self):
+  def test_screenShot_bf_html(self):
     # photolizeにログインする
     self.driver.get("http://host.docker.internal:5000/before")
     self.driver.set_window_size(1463, 1032)

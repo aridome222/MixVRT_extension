@@ -228,8 +228,8 @@ def main():
         subprocess.call(command, shell=True)
 
     # ファイル名を生成
-    output_file_name_A = 'web_bf.png'
-    output_file_name_B = 'web_af.png'
+    output_file_name_A = 'bf_html.png'
+    output_file_name_B = 'af_html.png'
     # ファイルパスを作成
     output_file_path_A = os.path.join(output_dir, output_file_name_A)
     output_file_path_B = os.path.join(output_dir, output_file_name_B)
