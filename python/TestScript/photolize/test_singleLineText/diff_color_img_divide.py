@@ -18,8 +18,8 @@ if not os.path.exists(output_dir):
     subprocess.call(command, shell=True)
 
 # ファイル名を生成
-output_file_name_A = 'web_before.png'
-output_file_name_B = 'web_after.png'
+output_file_name_A = 'bf_html2.png'
+output_file_name_B = 'af_html2.png'
 # ファイルパスを作成
 output_file_path_A = os.path.join(output_dir, output_file_name_A)
 output_file_path_B = os.path.join(output_dir, output_file_name_B)
