@@ -35,6 +35,9 @@ def main():
     # フォルダが存在しない場合は作成
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
+        command = f"sudo chown -R aridome:aridome {output_dir}"
+        # コマンドを実行
+        subprocess.call(command, shell=True)
     
     """変更前画像読み込み"""
     # ファイル名を生成
