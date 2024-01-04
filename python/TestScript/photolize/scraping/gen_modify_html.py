@@ -21,7 +21,7 @@ UNIQUE_CLASS_BEFORE_CSS = """
                 left: 0;
                 right: 0;
                 bottom: 0;
-                border: 3px solid red;
+                border: 3px solid rgb(255, 0, 0);
                 /* 枠線のスタイル */
                 z-index: 1;
                 /* 必要に応じて調整 */
@@ -34,7 +34,7 @@ UNIQUE_CLASS_BEFORE_CSS = """
                 /* 上からの距離を微調整 */
                 left: 5px;
                 /* 左からの距離を微調整 */
-                color: red;
+                color: rgb(255, 0, 0);
                 font-size: 12px;
                 z-index: 1;
             }
@@ -54,7 +54,7 @@ UNIQUE_CLASS_AFTER_CSS = """
                 left: 0;
                 right: 0;
                 bottom: 0;
-                border: 3px solid green;
+                border: 3px solid rgb(0, 255, 0);
                 /* 枠線のスタイル */
                 z-index: 1;
                 /* 必要に応じて調整 */
@@ -67,7 +67,7 @@ UNIQUE_CLASS_AFTER_CSS = """
                 /* 上からの距離を微調整 */
                 left: 5px;
                 /* 左からの距離を微調整 */
-                color: green;
+                color: rgb(0, 255, 0);
                 font-size: 12px;
                 z-index: 1;
             }
@@ -98,7 +98,7 @@ def create_html_with_css_selectors(selectors, bf_or_af_html):
                 left: 0;
                 right: 0;
                 bottom: 0;
-                border: 3px solid red;
+                border: 3px solid rgb(255, 0, 0);
                 z-index: 1;
             }}
 
@@ -107,7 +107,7 @@ def create_html_with_css_selectors(selectors, bf_or_af_html):
                 position: absolute;
                 top: 5px;
                 left: 5px;
-                color: red;
+                color: rgb(255, 0, 0);
                 font-size: 12px;
                 z-index: 1;
             }}
@@ -126,7 +126,7 @@ def create_html_with_css_selectors(selectors, bf_or_af_html):
                 left: 0;
                 right: 0;
                 bottom: 0;
-                border: 3px solid green;
+                border: 3px solid rgb(0, 255, 0);
                 z-index: 1;
             }}
 
@@ -135,7 +135,7 @@ def create_html_with_css_selectors(selectors, bf_or_af_html):
                 position: absolute;
                 top: 5px;
                 left: 5px;
-                color: green;
+                color: rgb(0, 255, 0);
                 font-size: 12px;
                 z-index: 1;
             }}

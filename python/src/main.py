@@ -1,6 +1,6 @@
 # main.pyファイル
 
-from module import detect_rec_bf_af
+from module import detect_rec_img
 # from module import test_before
 # from module import test_after
 
@@ -41,7 +41,7 @@ def main():
     # detect_rec_divide_bin.main()
 
     # detect_rec_divide_bin2のmain関数を呼び出す
-    detect_rec_bf_af.main()
+    detect_rec_img.main()
 
     # # detect_rec_divide_akazeのmain関数を呼び出す
     # detect_rec_divide_akaze.main()

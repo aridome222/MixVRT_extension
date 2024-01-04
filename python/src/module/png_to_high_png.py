@@ -8,6 +8,7 @@ import aspose.words as aw
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPDF
 from pdf2image import convert_from_path
+import subprocess
 
 #  Create document object
 doc = aw.Document()
@@ -20,8 +21,12 @@ input_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
 # フォルダが存在しない場合は作成
 if not os.path.exists(input_dir):
     os.makedirs(input_dir)
+    command = f"sudo chown -R aridome:aridome {input_dir}"
+    # コマンドを実行
+    subprocess.call(command, shell=True)
+
 # ファイル名を生成
-input_file_name = 'bf_html2.png'
+input_file_name = 'noComment_af_html2.png'
 # ファイルパスを作成
 input_file_path = os.path.join(input_dir, input_file_name)
 
@@ -41,6 +46,9 @@ output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "svg_img/"
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
+    command = f"sudo chown -R aridome:aridome {output_dir2}"
+    # コマンドを実行
+    subprocess.call(command, shell=True)
 
 output_file_name = input_file_name.split(".")[0] + '.svg'
 
@@ -68,6 +76,9 @@ output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
+    command = f"sudo chown -R aridome:aridome {output_dir}"
+    # コマンドを実行
+    subprocess.call(command, shell=True)
 
 # ファイルパスを作成
 output_file_path = os.path.join(output_dir, input_file_name)

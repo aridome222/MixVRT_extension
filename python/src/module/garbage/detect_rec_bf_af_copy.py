@@ -124,11 +124,11 @@ def main():
         # 輪郭に囲まれた領域のバウンディングボックスを取得
         x, y, w, h = cv2.boundingRect(contour)
         # 元の画像に矩形を描画
-        cv2.rectangle(img1, (x, y), (x + w, y + h), (0, 0, 255), 2)
+        cv2.rectangle(img1, (x, y), (x + w, y + h), (0, 0, 255), 5)
 
     for contour in contours2:
         x, y, w, h = cv2.boundingRect(contour)
-        cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 255, 0), 5)
 
 
     # # 二値画像に直接枠を描画
