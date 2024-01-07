@@ -13,7 +13,6 @@ import difflib
 
 from flask_cors import CORS, cross_origin
 
-from main import main
 import pytest
 import shlex
 import logging
