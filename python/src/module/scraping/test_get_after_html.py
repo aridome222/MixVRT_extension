@@ -36,7 +36,7 @@ class TestClick():
     self.driver.get("http://host.docker.internal:5000/after")
     self.driver.set_window_size(1463, 1032)
 
-    url = "http://host.docker.internal:5000/after"
+    url = "http://host.docker.internal:5000/testPage_af"
     response = requests.get(url)
     html_content = response.text  # HTML コンテンツを文字列として取得
     save_html_data("after", html_content)

@@ -146,6 +146,28 @@ def before_modified_web():
 def after_modified_web():
     return render_template("after_modified.html")
 
+
+@app.route('/testPage_bf', methods=['POST', 'GET'])
+@cross_origin()
+def testPage_bf():
+    return render_template("testPage_bf.html")
+
+@app.route('/testPage_af', methods=['POST', 'GET'])
+@cross_origin()
+def testPage_af():
+    return render_template("testPage_af.html")
+
+@app.route('/testPage_bf_modified', methods=['POST', 'GET'])
+@cross_origin()
+def testPage_bf_modified():
+    return render_template("testPage_bf_modified.html")
+
+@app.route('/testPage_af_modified', methods=['POST', 'GET'])
+@cross_origin()
+def testPage_af_modified():
+    return render_template("testPage_af_modified.html")
+
+
 @app.route('/render_index/<path:page_url>')
 @cross_origin()
 def render_index(page_url):

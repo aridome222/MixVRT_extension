@@ -32,7 +32,7 @@ class Test_screenShot_modified_af_html():
   
   def test_screenShot_modified_af_html(self):
     # photolizeにログインする
-    self.driver.get("http://host.docker.internal:5000/after_modified")
+    self.driver.get("http://host.docker.internal:5000/testPage_af_modified")
     self.driver.set_window_size(1463, 1032)
     time.sleep(1)
     save_screenShot(self)

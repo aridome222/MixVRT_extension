@@ -16,12 +16,13 @@ import sys
 
 
 def main():
-    print("main.py is running.")
+    print("----main.py is running.----")
 
-    
+    # Webページの画像とHTMLを取得
+    # 初回の場合の処理を書く
 
-    # detect_rec_imgのmain関数を呼び出す
-    diff_rec_img.main()
+    # ２回目以降の場合の処理を書く
+
 
 
 if __name__ == "__main__":

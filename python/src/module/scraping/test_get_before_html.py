@@ -36,7 +36,7 @@ class TestClick():
     self.driver.get("http://host.docker.internal:5000/before")
     self.driver.set_window_size(1463, 1032)
 
-    url = "http://host.docker.internal:5000/before"
+    url = "http://host.docker.internal:5000/testPage_bf"
     response = requests.get(url)
     html_content = response.text  # HTML コンテンツを文字列として取得
     save_html_data("before", html_content)

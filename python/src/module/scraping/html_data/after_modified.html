@@ -21,18 +21,24 @@
           }
   
           .container {
+              height: 300px auto;
               width: 100%;
-              margin: 20px auto;
+              margin: 10px auto;
               overflow: hidden;
           }
   
           .main-content {
-              /* 固定の高さを設定 */
-              height: 700px;
+              height: 330px;
               background-color: #fff;
-              padding: 10px;
+              padding: 5px;
+              box-sizing: border-box;
           }
   
+         .main-content img {
+             width: 100%;
+             height: auto;
+         }
+ 
           footer {
               background-color: #333;
               color: white;
@@ -40,46 +46,6 @@
               padding: 10px 0;
               clear: both;
           }
-  
-          a {
-              color: #5f9ea0;
-              /* 青緑色 */
-              text-decoration: none;
-              /* 下線を消す */
-          }
-  
-          a:hover {
-              color: #486b6b;
-              /* ホバー時の色 */
-          }
- 
-         .image-container {
-             width: 100%;
-             text-align: center;
-             /* 画像を中央に配置する場合 */
-         }
- 
-         .image-container img {
-             width: 100%;
-             /* 画像の幅をコンテナに合わせる */
-             height: auto;
-             /* 画像の高さを自動調整 */
-             max-height: 200px;
-             /* 画像の最大高さを設定 */
-         }
- 
-         .css-image {
-             width: 130px;
-             /* 円の幅 */
-             height: 130px;
-             /* 円の高さ */
-             background-color: #7f9ff9;
-             /* 円の色 */
-             border-radius: 50%;
-             /* 円形にする */
-             margin: 0 auto 20px;
-             /* 中央に配置し、下にマージンを設定 */
-         }
       
             .uniqueClass {
                 position: relative;
@@ -112,11 +78,11 @@
                 z-index: 1;
             }
         
-            .image-container, .image-container img, .css-image {
+            .main-content img {
                 position: relative;
             }
 
-            .image-container::before, .image-container img::before, .css-image::before {
+            .main-content img::before {
                 content: '';
                 position: absolute;
                 top: 0;
@@ -127,7 +93,7 @@
                 z-index: 1;
             }
 
-            .image-container::after, .image-container img::after, .css-image::after {
+            .main-content img::after {
                 content: '';
                 position: absolute;
                 top: 5px;
@@ -141,42 +107,26 @@
   
   <body>
       <header>
-         <h1 class="uniqueClass">日々の生活の様子と街の風景</h1>
+          <h1>Single Content Web Page</h1>
       </header>
       <div class="container">
           <div class="main-content">
-             <div class="css-image uniqueClass"></div>
-              <p>
-                  早朝の街は静かで、空気は清々しい。人々はまだ目を覚ましていない。道路には僅かな車が通り、小鳥のさえずりが聞こえる。これから始まる一日に、何か新しいことが起こるかのような予感が漂う。
-                  日中は、街中が活気に満ち溢れる。商店街では店主たちが笑顔で客を迎え、市場では新鮮な食材が並ぶ。学生たちは学校へと急ぎ、サラリーマンは会社へ向かう。それぞれの日常が、この街の色とりどりの風景を作り出している。
-              </p>
-              <p>
-                  夜になると、街は別の顔を見せる。街灯がほのかに灯り、静けさが訪れる。レストランや居酒屋では、仕事帰りの人々が集まり、食事や会話で一日の疲れを癒している。どこかで聞こえる笑い声や音楽が、夜の生活の一部となっている。
-                  星空の下、公園や川辺ではカップルが散歩を楽しんでいる。街の喧騒から離れて、静かな時間を過ごしている。夜市では、地元の工芸品やスナックが売られ、訪れる人々に楽しい時間を提供している。夜の街は、昼間とは異なる魅力を持ち、人々に様々な楽しみを与えている。
-              </p>
-              <p>
-                  夜が更けるにつれて、街は静かな安らぎに包まれる。明かりの窓が少しずつ消えていき、月明かりだけが静寂を照らす。遠くでは夜行性の動物たちが活動を始め、自然のリズムが感じられる。深夜の静けさは、日々の喧噪から離れた特別な時間となる。
-                  そして、夜が明けると再び街は活動を始める。早朝のランナーや散歩する人々が姿を現し、新しい一日が始まる。パン屋では焼きたての香りが漂い、カフェでは朝の一杯が提供される。また新しい始まりを迎える街の姿は、絶え間ない変化と再生の美しさを映し出している。
-              </p>
-              <p>
-                  この街の日々は、変わらない日常の中にも小さな驚きと発見が満ちている。季節の変わり目ごとに、街の風景は微妙に変化し、住む人々に新たな喜びを与えてくれる。街角の小さな変化を楽しむことで、日々の生活に彩りを加えてくれるのだ。朝の光が街を照らすと、市場はさらに活気づく。農家から直送された新鮮な果物や野菜が並び、色とりどりの花が店頭を飾る。人々は日々の食材を選びながら、近所の人との会話を楽しむ。ここでは、食の豊かさだけでなく、地域コミュニティの温かさも感じられる。
-              </p>
-              <p>
-                  昼休みには、オフィスビルから多くのビジネスマンやビジネスウーマンが騒がしく出てくる。日常の忙しさから一時的に解放され、青空の下で食事を摂りながらのんびりと過ごす時間が訪れる。午後になると、カフェや小さなレストランはお茶やコーヒーを楽しむ人々で賑わう。窓際の席では、本を読む人、ラップトップで仕事をする人、友人と談笑する人がそれぞれの時間を過ごしている。
-              </p>
-              <p>
-                  学校が終わり、子供たちが公園で遊ぶ声が響く。彼らはサッカーボールを蹴ったり、砂場で城を作ったりしている。その無邪気な笑顔は、見る人すべてに幸せな気持ちをもたらす。この街のリズムは、住む人々の生活と息づかいに寄り添いながら、時間の流れを刻んでいく。季節の移り変わりと共にその表情を変えていく。この街に生きることは、日々の小さな驚きと生活の中で見つけた喜びを大切にしていく旅だ。
-              </p>
-              <p>
-                  街のリズムは、季節の移り変わりとともに、その色彩と活動を変えていきます。春には桜の花が開き、公園は花見を楽しむ人々で賑わいます。子供たちは新しい学年の始まりにわくわくし、桜の下で新しい友達と出会い、遊びます。街角のカフェやレストランでは、春の訪れを祝う特別なメニューが提供され、人々は暖かい日差しの中で食事を楽しみます。
-              </p>
+             <img src="https://via.placeholder.com/1200x260" alt="Placeholder Image" class="uniqueClass">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                  deserunt mollit anim id est laborum.</p>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                  rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                  explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                  consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                  dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                  incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
           </div>
       </div>
       <footer>
-          <p>&copy; 2023 日々の生活と街の風景. All rights reserved.</p>
-          <p>お問い合わせ: <a href="mailto:info@example.com">info@example.com</a></p>
-          <p><a href="site-map.html">サイトマップ</a> | <a href="about-us.html">私たちについて</a> | <a
-                  href="terms-of-use.html">利用規約</a></p>
+          <p>Footer Content</p>
       </footer>
   </body>
   
