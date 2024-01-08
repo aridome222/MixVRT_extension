@@ -1,3 +1,6 @@
+# "+"にしか対応していない、+がcssセレクタの前の行にあると、
+# そのcssセレクタが変更されていないのにもかかわらず、
+# 変更されたセレクタと判定されてしまう
 from bs4 import BeautifulSoup, Tag
 import difflib
 import os

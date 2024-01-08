@@ -54,4 +54,6 @@ RUN pip install flask_cors
 # RUN sudo apt-get update && \
 #     sudo apt-get install -y ffmpeg
 
-
+# 変更前後のhtmlを比較し、差分ファイルを処理する際に必要
+RUN pip install xmldiff
+RUN pip install HTMLCompare
