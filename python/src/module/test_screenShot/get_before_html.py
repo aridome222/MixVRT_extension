@@ -66,9 +66,6 @@ def get_before_html(driver):
     """
     url = "http://host.docker.internal:5000/before"
 
-    driver.get(url)
-    driver.set_window_size(1463, 1032)
-
     response = requests.get(url)
     html_content = response.text  # HTML コンテンツを文字列として取得
     save_html_data("before", html_content)

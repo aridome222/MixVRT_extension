@@ -147,6 +147,11 @@ def after_modified_web():
     return render_template("after_modified.html")
 
 
+@app.route('/testPage', methods=['POST', 'GET'])
+@cross_origin()
+def testPage():
+    return render_template("testPage.html")
+
 @app.route('/testPage_bf', methods=['POST', 'GET'])
 @cross_origin()
 def testPage_bf():
