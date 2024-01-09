@@ -1,3 +1,4 @@
+# 追加・削除・変更されたセレクタ名を取得するための関数
 from bs4 import BeautifulSoup, Tag
 import difflib
 import os
@@ -10,8 +11,7 @@ def apply_style_to_changes(diff_file_path):
     with open(diff_file_path, 'r') as file:
         diff_lines = file.readlines()
 
-    added_selectors = []
-    deleted_selectors = []
+    changed_selectors = []
 
     inside_style_tag = False
     for line in diff_lines:
@@ -25,12 +25,11 @@ def apply_style_to_changes(diff_file_path):
         if inside_style_tag and '{' in line:
             current_selector = line.split('{')[0].strip().strip('+').strip('-').strip()
 
-            if line.startswith('+') and current_selector not in added_selectors:
-                added_selectors.append(current_selector)
-            elif line.startswith('-') and current_selector not in deleted_selectors:
-                deleted_selectors.append(current_selector)
+            if line.startswith('+') or line.startswith('-'):
+                if current_selector not in changed_selectors:
+                    changed_selectors.append(current_selector)
 
-    return added_selectors, deleted_selectors
+    return changed_selectors
 
 
 """ main処理 """
@@ -46,8 +45,7 @@ if not os.path.exists(input_dir):
 
 diff_file_path = os.path.join(input_dir, "diff_html.txt")
 
-added_selectors, deleted_selectors = apply_style_to_changes(diff_file_path)
+changed_selectors = apply_style_to_changes(diff_file_path)
 
 ### 検証用のprint文 ###
-print(f"added_selectors:\n {added_selectors}")
-print(f"deleted_selectors:\n {deleted_selectors}")
+print(f"changed_selectors:\n {changed_selectors}")
