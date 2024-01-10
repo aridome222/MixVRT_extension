@@ -79,6 +79,7 @@ def save_html_data(html_data, dir):
   output_file_path = os.path.join(output_dir, output_file_name)
   with open(output_file_path, "w", encoding="utf-8") as f:
       f.write(html_data)
+      subprocess.run(['sudo', 'chown', 'aridome:aridome', output_file_path])
 
   print(f"HTMLデータを{output_file_path}に保存しました")
 

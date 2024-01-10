@@ -46,7 +46,7 @@ output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "svg_img/"
 # フォルダが存在しない場合は作成
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
-    command = f"sudo chown -R aridome:aridome {output_dir2}"
+    command = f"sudo chown -R aridome:aridome {output_dir}"
     # コマンドを実行
     subprocess.call(command, shell=True)
 
