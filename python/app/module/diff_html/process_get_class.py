@@ -5,6 +5,11 @@ import subprocess
 from datetime import datetime
 import re
 
+# module 内の __init__.py から関数をインポート
+from module import base_dir
+from module import diff_dir
+from module import create_dir_and_set_owner
+
 
 def apply_style_to_changes(diff_file_path):
     with open(diff_file_path, 'r') as file:
@@ -35,7 +40,7 @@ def apply_style_to_changes(diff_file_path):
 
 """ main処理 """
 # 保存先ディレクトリを指定
-input_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "html_diff/")
+input_dir = os.path.join(diff_dir, "html_diff/")
 
 # フォルダが存在しない場合は作成
 if not os.path.exists(input_dir):

@@ -30,44 +30,20 @@ import numpy as np
 import subprocess
 import math
 
-def main():
-    # 保存先ディレクトリを作成
-    input_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_img_png/")
-    # フォルダが存在しない場合は作成
-    if not os.path.exists(input_dir):
-        os.makedirs(input_dir)
-        command = f"sudo chown -R aridome:aridome {input_dir}"
-        # コマンドを実行
-        subprocess.call(command, shell=True)
+# module 内の __init__.py から関数をインポート
+from module import base_dir
+from module import diff_dir
+from module import create_dir_and_set_owner
 
-    # 保存先ディレクトリを作成
-    input_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_html_png/")
-    # フォルダが存在しない場合は作成
-    if not os.path.exists(input_dir2):
-        os.makedirs(input_dir2)
-        command = f"sudo chown -R aridome:aridome {input_dir2}"
-        # コマンドを実行
-        subprocess.call(command, shell=True)
 
-    # ファイル名を生成
-    input_file_name_img_bf = 'diff_bf_img.png'
-    input_file_name_html_bf = 'diff_bf_html.png'
-    # ファイルパスを作成
-    input_file_path_img_bf = os.path.join(input_dir, input_file_name_img_bf)
-    input_file_path_html_bf = os.path.join(input_dir2, input_file_name_html_bf)
+def main(diff_rec_bf_html, diff_rec_bf_img, diff_rec_af_html, diff_rec_af_img, high_img_path_of_bf_html, high_img_path_of_af_html):
     # 画像読み込み
-    img_bf = cv2.imread(input_file_path_img_bf)
-    html_bf = cv2.imread(input_file_path_html_bf)
+    img_bf = cv2.imread(diff_rec_bf_img)
+    html_bf = cv2.imread(diff_rec_bf_html)
 
-    # ファイル名を生成
-    input_file_name_img_af = 'diff_af_img.png'
-    input_file_name_html_af = 'diff_af_html.png'
-    # ファイルパスを作成
-    input_file_path_img_af = os.path.join(input_dir, input_file_name_img_af)
-    input_file_path_html_af = os.path.join(input_dir2, input_file_name_html_af)
     # 画像読み込み
-    img_af = cv2.imread(input_file_path_img_af)
-    html_af = cv2.imread(input_file_path_html_af)
+    img_af = cv2.imread(diff_rec_af_img)
+    html_af = cv2.imread(diff_rec_af_html)
 
     # # 画像1のサイズを取得
     # height1, width1, _ = img1.shape
@@ -111,24 +87,9 @@ def main():
 
 
     """ オリジナル画像の読み込み """
-    # 保存先ディレクトリを作成
-    input_dir3 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/")
-    # フォルダが存在しない場合は作成
-    if not os.path.exists(input_dir3):
-        os.makedirs(input_dir3)
-        command = f"sudo chown -R aridome:aridome {input_dir3}"
-        # コマンドを実行
-        subprocess.call(command, shell=True)
-
-    # ファイル名を生成
-    input_file_name_origin_html_bf = 'bf_html2.png'
-    input_file_name_origin_html_af = 'af_html2.png'
-    # ファイルパスを作成
-    input_file_path_origin_html_bf = os.path.join(input_dir3, input_file_name_origin_html_bf)
-    input_file_path_origin_html_af = os.path.join(input_dir3, input_file_name_origin_html_af)
     # 画像読み込み
-    origin_html_bf = cv2.imread(input_file_path_origin_html_bf)
-    origin_html_af = cv2.imread(input_file_path_origin_html_af)
+    origin_html_bf = cv2.imread(high_img_path_of_bf_html)
+    origin_html_af = cv2.imread(high_img_path_of_af_html)
 
 
     """ 輪郭描画 """
@@ -144,7 +105,7 @@ def main():
     # 差分画像の保存
     output_file_name1 = "subEffect_bf.png"
     output_file_name2 = "subEffect_af.png"
-    output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sub_effect_png")
+    output_dir2 = os.path.join(diff_dir, "sub_effect_png")
     # フォルダが存在しない場合は作成
     if not os.path.exists(output_dir2):
         os.makedirs(output_dir2)
@@ -165,7 +126,7 @@ def main():
     cv2.imwrite(output_file_path, origin_html_af)
 
 
-    print(f"2つの画像の差異部分に枠をつけたカラー画像をに保存しました")
+    print(f"副作用領域を検出した画像を{os.path.dirname(output_file_path)}に保存しました")
 
 
 def contours_overlap(c1, c2):

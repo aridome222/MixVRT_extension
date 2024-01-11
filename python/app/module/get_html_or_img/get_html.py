@@ -1,3 +1,4 @@
+# いらないファイルかも
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -18,25 +19,18 @@ import subprocess
 import requests
 
 
-# 省略（setup_methodに相当する処理）
-def setup_driver():
-    options = Options()
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-    driver = webdriver.Remote(command_executor='http://chrome:4444/wd/hub', options=options)
-    driver.implicitly_wait(10)
-    return driver
+# module 内の __init__.py から関数をインポート
+from module import base_dir
+from module import diff_dir
+from module import create_dir_and_set_owner
 
-# 省略（teardown_methodに相当する処理）
-def teardown_driver(driver):
-    driver.quit()
 
 # HTMLコードの保存を行う関数
 def save_html_data(file_name, html_data):
   ### HTMLデータをhtmlファイルに出力する ###
 
   # 保存先ディレクトリを指定
-  output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "html_data/")
+  output_dir = os.path.join(diff_dir, "html_data/")
   # フォルダが存在しない場合は作成
   if not os.path.exists(output_dir):
       os.makedirs(output_dir)
@@ -58,27 +52,13 @@ def save_html_data(file_name, html_data):
   print(f"HTMLデータを{output_file_path}に保存しました")
 
 
-def get_before_html(driver):
+def get_html(url, html_file_name):
     """ 
     main処理 
     
-    変更前のhtmlコードを取得する
+    htmlコードを取得する
     """
-    url = "http://host.docker.internal:5000/testPage"
 
     response = requests.get(url)
     html_content = response.text  # HTML コンテンツを文字列として取得
-    save_html_data("before", html_content)
-
-    # 画面を閉じる
-    driver.close()
-
-
-# スクリプトのエントリーポイント
-if __name__ == "__main__":
-    driver = setup_driver()
-    try:
-        # ここにメインの処理を書く
-        get_before_html(driver)
-    finally:
-        teardown_driver(driver)
+    save_html_data(html_file_name, html_content)

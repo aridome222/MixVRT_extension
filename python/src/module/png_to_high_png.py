@@ -26,7 +26,7 @@ if not os.path.exists(input_dir):
     subprocess.call(command, shell=True)
 
 # ファイル名を生成
-input_file_name = 'af_test.png'
+input_file_name = 'af_html2.png'
 # ファイルパスを作成
 input_file_path = os.path.join(input_dir, input_file_name)
 

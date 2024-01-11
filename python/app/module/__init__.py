@@ -12,6 +12,13 @@ import subprocess
 import os
 
 
+# 基本ディレクトリの設定
+base_dir = "python/app/base_dir"
+
+# 基本ディレクトリの設定
+diff_dir = "python/app/diff_dir"
+
+
 def create_dir_and_set_owner(dir):
     """
     rootで生成されたディレクトリの権限をユーザに変更し、

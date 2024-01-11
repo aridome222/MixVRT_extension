@@ -1,4 +1,8 @@
 """
+@author: aridome222
+作成日: 2024/01/10
+更新日: 2024/01/10
+
 
 試作ツール【MixVRT】のメイン処理
 
@@ -35,42 +39,50 @@ import subprocess
 import argparse
 
 # module 内の __init__.py から関数をインポート
+from module import base_dir # base_dir = "python/app/base_dir"
+from module import diff_dir # diff_dir = "python/app/diff_dir"
 from module import create_dir_and_set_owner
 
 # その他module内の関数をインポート
 from module.get_html_and_img import main as get_html_and_img_main
-from module import compare_data
+from module.compare_data import compare_data
 
 
 def main(url):
     print("----main.py is running.----")
 
-    """ 保存するディレクトリパス等の設定 """  
-    # 基本ディレクトリの設定
-    base_dir = "python/app/base_dir"
+    """ ディレクトリパス等の設定 """  
+    # 基本ディレクトリの生成
     create_dir_and_set_owner(base_dir)
-    # 現在のデータを保存するディレクトリのパスを生成
+    # 初期データを保存するディレクトリパスの設定
+    initial_dir = os.path.join(base_dir, "initial")
+    # 現在のデータを保存するディレクトリパスの設定
     current_dir = os.path.join(base_dir, "current")
     # 現在の日時に基づいたタイムスタンプを生成
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    # 新しいデータを保存するディレクトリのパスを生成
+    new_data_dir = os.path.join(base_dir, timestamp)
 
 
     """ Webページの画像とHTMLを取得 """
-    # currentディレクトリが存在しない場合（初回実行時）
-    if not os.path.exists(current_dir):
-        # currentディレクトリを作成
-        os.makedirs(current_dir)
-        command = f"sudo chown -R aridome:aridome {current_dir}"
-        # コマンドを実行
-        subprocess.call(command, shell=True)
-        # 指定したURLからHTMLと画像を取得し、currentディレクトリに保存
-        get_html_and_img_main(current_dir, url)
-        # 初回実行の場合はここで処理を"終了"
+    ### 初回実行の確認 ###
+    if not os.path.exists(initial_dir):
+        # 初期ディレクトリとcurrentディレクトリを作成
+        create_dir_and_set_owner(initial_dir)
+        if os.path.exists(current_dir):
+            shutil.rmtree(current_dir)
+        create_dir_and_set_owner(current_dir)
+        # 指定したURLからHTMLと画像を取得し、初期ディレクトリに保存
+        get_html_and_img_main(initial_dir, url)
+        try:
+            shutil.copytree(initial_dir, current_dir, dirs_exist_ok=True)  # Python 3.8 以降の場合
+        except Exception as e:
+            print(f"Error during copying: {e}")
+        # 初回実行時はここで処理を"終了"
+        print("初回実行は正常に終了しました")
         return
     
-
-    # 新しいデータを保存するディレクトリのパスを生成（２回目以降実行時）
-    new_data_dir = os.path.join(base_dir, timestamp)
+    ### ２回目以降の実行時の処理 ###
     # 新しいディレクトリを作成
     create_dir_and_set_owner(new_data_dir)
     # 指定したURLからHTMLと画像を取得し、新しいディレクトリに保存

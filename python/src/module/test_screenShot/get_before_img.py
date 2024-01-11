@@ -61,7 +61,8 @@ def get_before_img(driver):
     
     変更前のwebページ画面の画像を取得する
     """
-    url = "http://host.docker.internal:5000/before"
+    # url = "http://host.docker.internal:5000/before"
+    url = "http://host.docker.internal:5000/modified_testPage_bf"
 
     driver.get(url)
     driver.set_window_size(1463, 1032)

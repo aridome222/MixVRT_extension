@@ -1,4 +1,4 @@
-from flask import Flask, Response, request, jsonify, render_template, redirect, url_for
+from flask import Flask, Blueprint, Response, request, jsonify, render_template, redirect, url_for
 import json
 
 from threading import Thread
@@ -7,6 +7,7 @@ import os
 
 import sys
 sys.path.append('/app/src/module')
+
 # print(sys.path)
 
 import difflib
@@ -16,6 +17,14 @@ from flask_cors import CORS, cross_origin
 import pytest
 import shlex
 import logging
+
+# 基本ディレクトリの設定
+base_dir = "python/app/base_dir"
+# 
+diff_dir = "app/diff_dir"
+
+# 絶対パス指定
+diff_dir =  os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), diff_dir)
 
 
 # ロギングの設定
@@ -27,6 +36,22 @@ static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cloned
 app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 CORS(app)
 # CORS(app, origins=["http://127.0.0.1:5000"], methods=["GET", "POST"])
+
+# 別のカスタムテンプレートフォルダを設定
+template_folder2 = os.path.join(diff_dir, 'modified_html', 'templates')
+# 新しいBlueprintを作成
+new_blueprint = Blueprint('new_blueprint', __name__, template_folder=template_folder2)
+
+@new_blueprint.route('/modified_testPage_bf')
+def modified_testPage_bf():
+    return render_template('modified_testPage_bf.html')
+
+@new_blueprint.route('/modified_testPage_af')
+def modified_testPage_af():
+    return render_template('modified_testPage_af.html')
+
+# Blueprintをアプリケーションに登録
+app.register_blueprint(new_blueprint)
 
 
 def clone_or_pull_repo(repo_url, clone_dir):

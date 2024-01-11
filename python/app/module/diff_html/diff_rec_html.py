@@ -29,26 +29,16 @@ import numpy as np
 import subprocess
 import math
 
-def main():
-    # 保存先ディレクトリを作成
-    output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/")
-    # フォルダが存在しない場合は作成
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-        command = f"sudo chown -R aridome:aridome {output_dir}"
-        # コマンドを実行
-        subprocess.call(command, shell=True)
-    
-    """変更前画像読み込み"""
-    # ファイル名を生成
-    output_file_name_A = 'bf_html2.png'
-    output_file_name_B = 'noComment_bf_html2.png'
-    # ファイルパスを作成
-    output_file_path_A = os.path.join(output_dir, output_file_name_A)
-    output_file_path_B = os.path.join(output_dir, output_file_name_B)
+# module 内の __init__.py から関数をインポート
+from module import base_dir
+from module import diff_dir
+from module import create_dir_and_set_owner
 
-    img1 = cv2.imread(output_file_path_A)
-    img2 = cv2.imread(output_file_path_B)
+
+def main(high_img_path_of_bf_html, high_img_path_of_modified_bf_html, high_img_path_of_af_html, high_img_path_of_modified_af_html):
+    """変更前画像読み込み"""
+    img1 = cv2.imread(high_img_path_of_bf_html)
+    img2 = cv2.imread(high_img_path_of_modified_bf_html)
 
     # 画像1のサイズを取得
     height1, width1, _ = img1.shape
@@ -66,15 +56,8 @@ def main():
         img2 = cv2.resize(img2, (target_width, target_height))
 
     """変更後画像読み込み"""
-    # ファイル名を生成
-    output_file_name_C = 'af_html2.png'
-    output_file_name_D = 'noComment_af_html2.png'
-    # ファイルパスを作成
-    output_file_path_C = os.path.join(output_dir, output_file_name_C)
-    output_file_path_D = os.path.join(output_dir, output_file_name_D)
-
-    img3 = cv2.imread(output_file_path_C)
-    img4 = cv2.imread(output_file_path_D)
+    img3 = cv2.imread(high_img_path_of_af_html)
+    img4 = cv2.imread(high_img_path_of_modified_af_html)
 
     # 画像3のサイズを取得
     height3, width3, _ = img3.shape
@@ -119,9 +102,7 @@ def main():
 
 
     # 差分画像の保存
-    output_file_name1 = "before.png"
-    output_file_name2 = "after.png"
-    output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_html_png")
+    output_dir2 = os.path.join(diff_dir, "diff_rec_html_png")
     # フォルダが存在しない場合は作成
     if not os.path.exists(output_dir2):
         os.makedirs(output_dir2)
@@ -129,21 +110,23 @@ def main():
         # コマンドを実行
         subprocess.call(command, shell=True)
 
-    output_file_name_bf = "diff_bf_html.png"
-    output_file_name_af = "diff_af_html.png"
+    output_file_name_bf = "diff_rec_bf_html.png"
+    output_file_name_af = "diff_rec_af_html.png"
 
     # ファイルパスを作成
-    output_file_path = os.path.join(output_dir2, output_file_name_bf)
+    output_file_path_bf = os.path.join(output_dir2, output_file_name_bf)
     # 画像を保存する
-    cv2.imwrite(output_file_path, diff_bf_html_colored)
+    cv2.imwrite(output_file_path_bf, diff_bf_html_colored)
 
     # ファイルパスを作成
-    output_file_path = os.path.join(output_dir2, output_file_name_af)
+    output_file_path_af = os.path.join(output_dir2, output_file_name_af)
     # 画像を保存する
-    cv2.imwrite(output_file_path, diff_af_html_colored)
+    cv2.imwrite(output_file_path_af, diff_af_html_colored)
 
 
-    print(f"2つの画像の差異部分に枠をつけたカラー画像をに保存しました")
+    print(f"HTMLコードの変更による影響箇所を囲んだ枠のみを抽出した画像を{os.path.dirname(output_file_path_bf)}に保存しました")
+
+    return output_file_path_bf, output_file_path_af
 
 
 def filter_contours_by_area(contours, threshold_area=3000):

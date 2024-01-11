@@ -29,24 +29,15 @@ import numpy as np
 import subprocess
 import math
 
-def main():
-    # 保存先ディレクトリを作成
-    output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "high_png/")
-    # フォルダが存在しない場合は作成
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-        command = f"sudo chown -R aridome:aridome {output_dir}"
-        # コマンドを実行
-        subprocess.call(command, shell=True)
-    # ファイル名を生成
-    output_file_name_A = 'bf_test.png'
-    output_file_name_B = 'af_test.png'
-    # ファイルパスを作成
-    output_file_path_A = os.path.join(output_dir, output_file_name_A)
-    output_file_path_B = os.path.join(output_dir, output_file_name_B)
+# module 内の __init__.py から関数をインポート
+from module import base_dir
+from module import diff_dir
+from module import create_dir_and_set_owner
 
-    img1 = cv2.imread(output_file_path_A)
-    img2 = cv2.imread(output_file_path_B)
+
+def main(high_img_path_of_bf_html, high_img_path_of_af_html):
+    img1 = cv2.imread(high_img_path_of_bf_html)
+    img2 = cv2.imread(high_img_path_of_af_html)
 
     # 画像1のサイズを取得
     height1, width1, _ = img1.shape
@@ -127,43 +118,45 @@ def main():
 
 
     # 差分画像の保存
-    output_file_name1 = "before.png"
-    output_file_name2 = "after.png"
-    output_dir2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "diff_img_png")
+    output_file_name_bf_img = "diff_bf_img.png"
+    output_file_name_af_img = "diff_af_img.png"
+    output_dir = os.path.join(diff_dir, "diff_rec_img_png")
     # フォルダが存在しない場合は作成
-    if not os.path.exists(output_dir2):
-        os.makedirs(output_dir2)
-        command = f"sudo chown -R aridome:aridome {output_dir2}"
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+        command = f"sudo chown -R aridome:aridome {output_dir}"
         # コマンドを実行
         subprocess.call(command, shell=True)
 
     # ファイルパスを作成
-    output_file_path = os.path.join(output_dir2, output_file_name1)
+    output_file_path_bf_img = os.path.join(output_dir, output_file_name_bf_img)
 
     # 画像を保存する
-    cv2.imwrite(output_file_path, img1)
+    cv2.imwrite(output_file_path_bf_img, img1)
 
     # ファイルパスを作成
-    output_file_path = os.path.join(output_dir2, output_file_name2)
+    output_file_path_af_img = os.path.join(output_dir, output_file_name_af_img)
 
     # 画像を保存する
-    cv2.imwrite(output_file_path, img2)
+    cv2.imwrite(output_file_path_af_img, img2)
 
 
-    output_file_name3 = "diff_bf_img.png"
-    output_file_name4 = "diff_af_img.png"
+    output_file_name_bf_rec_img = "diff_rec_bf_img.png"
+    output_file_name_af_rec_img = "diff_rec_af_img.png"
     # ファイルパスを作成
-    output_file_path = os.path.join(output_dir2, output_file_name3)
+    output_file_path_bf_rec_img = os.path.join(output_dir, output_file_name_bf_rec_img)
     # 画像を保存する
-    cv2.imwrite(output_file_path, contour1_image)
+    cv2.imwrite(output_file_path_bf_rec_img, contour1_image)
 
     # ファイルパスを作成
-    output_file_path = os.path.join(output_dir2, output_file_name4)
+    output_file_path_af_rec_img = os.path.join(output_dir, output_file_name_af_rec_img)
     # 画像を保存する
-    cv2.imwrite(output_file_path, contour2_image)
+    cv2.imwrite(output_file_path_af_rec_img, contour2_image)
 
 
     print(f"2つの画像の差異部分に枠をつけたカラー画像をに保存しました")
+
+    return output_file_path_bf_rec_img, output_file_path_af_rec_img
 
 
 def filter_contours_by_area(contours, threshold_area=3000):

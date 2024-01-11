@@ -4,7 +4,16 @@ import os
 import subprocess
 from datetime import datetime
 import re
-import process_get_class
+
+
+# from module.diff_html import process_get_class
+
+
+# module 内の __init__.py から関数をインポート
+from module import base_dir
+from module import diff_dir
+from module import create_dir_and_set_owner
+
 
 ### 定数の定義 ###
 UNIQUE_CLASS_BEFORE_CSS = """
@@ -314,7 +323,10 @@ def generate_modified_html(diff_file_path):
     pattern = r'[^\s{}]*\s*img[^\s{}]*\s*{.*?}'
 
     # 変更されたセレクタを抽出する関数を別ファイルから呼び出し
-    changed_selectors = process_get_class.apply_style_to_changes(diff_file_path)
+    changed_selectors = apply_style_to_changes(diff_file_path)
+    flag_changed_selectors = False
+    if len(changed_selectors) > 0:
+        flag_changed_selectors = True
 
     # マッチするセレクタを格納するリスト
     img_selectors = []
@@ -332,8 +344,9 @@ def generate_modified_html(diff_file_path):
         # Find the position of the </style> tag
         style_tag_index = line.find('</style>')
         if style_tag_index != -1:
-            # Insert the CSS before the </style> tag
-            line = line[:style_tag_index] + css_selector_bf + line[style_tag_index:]
+            if flag_changed_selectors:
+                # Insert the CSS before the </style> tag
+                line = line[:style_tag_index] + css_selector_bf + line[style_tag_index:]
             if is_exist_changed_img_selectors or flag_wrapper:
                 line = line[:style_tag_index] + IMAGE_WRAPPER_CLASS_BEFORE_CSS + line[style_tag_index:]
 
@@ -343,8 +356,9 @@ def generate_modified_html(diff_file_path):
         # Find the position of the </style> tag
         style_tag_index = line.find('</style>')
         if style_tag_index != -1:
-            # Insert the CSS before the </style> tag
-            line = line[:style_tag_index] + css_selector_af + line[style_tag_index:]
+            if flag_changed_selectors:
+                # Insert the CSS before the </style> tag
+                line = line[:style_tag_index] + css_selector_af + line[style_tag_index:]
             if is_exist_changed_img_selectors or flag_wrapper:
                 line = line[:style_tag_index] + IMAGE_WRAPPER_CLASS_AFTER_CSS + line[style_tag_index:]
 
@@ -353,7 +367,7 @@ def generate_modified_html(diff_file_path):
 
     ### 編集したファイルの保存 ###
     # 保存先ディレクトリを指定
-    output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "html_data/")
+    output_dir = os.path.join(diff_dir, "modified_html", "templates")
     # フォルダが存在しない場合は作成
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -362,8 +376,8 @@ def generate_modified_html(diff_file_path):
         subprocess.call(command, shell=True)
 
     # 編集したHTMLを保存（拡張子を.htmlにする）
-    modified_before_file_path = os.path.join(output_dir, "before_modified.html")
-    modified_after_file_path = os.path.join(output_dir, "after_modified.html")
+    modified_before_file_path = os.path.join(output_dir, "modified_testPage_bf.html")
+    modified_after_file_path = os.path.join(output_dir, "modified_testPage_af.html")
 
     with open(modified_before_file_path, 'w') as file:
         file.writelines(final_bf_lines)
@@ -373,23 +387,43 @@ def generate_modified_html(diff_file_path):
         file.writelines(final_af_lines)
         subprocess.run(['sudo', 'chown', 'aridome:aridome', modified_after_file_path])
 
+    return modified_before_file_path, modified_after_file_path
 
 """
 main処理
 """
-# 保存先ディレクトリを指定
-input_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "html_diff/")
+def main(diff_html_file_path):
+    # 余分な // を 1 つの / に変更する処理
+    if diff_html_file_path.startswith('//'):
+        diff_html_file_path = '/' + diff_html_file_path.lstrip('/')
 
-# フォルダが存在しない場合は作成
-if not os.path.exists(input_dir):
-    os.makedirs(input_dir)
-    command = f"sudo chown -R aridome:aridome {input_dir}"
-    # コマンドを実行
-    subprocess.call(command, shell=True)
+    return generate_modified_html(diff_html_file_path)
 
-diff_file_path = os.path.join(input_dir, "diff_html.txt")
-# 余分な // を 1 つの / に変更する処理
-if diff_file_path.startswith('//'):
-    diff_file_path = '/' + diff_file_path.lstrip('/')
 
-generate_modified_html(diff_file_path)
+def apply_style_to_changes(diff_file_path):
+    with open(diff_file_path, 'r') as file:
+        diff_lines = file.readlines()
+
+    changed_selectors = []
+    current_selector = None
+
+    for line in diff_lines:
+        if '{' in line:
+            selector = line.split('{')[0].strip().strip('+').strip('-').strip()
+            if line.startswith('+') or line.startswith('-'):
+                if selector not in changed_selectors:
+                    changed_selectors.append(selector)
+            current_selector = selector
+            continue
+
+        if '}' in line:
+            current_selector = None
+            continue
+
+        if current_selector is not None and (line.startswith('+') or line.startswith('-')):
+            if current_selector not in changed_selectors:
+                changed_selectors.append(current_selector)
+
+    print(f"変更があったcssセレクタ: {changed_selectors}")
+
+    return changed_selectors
