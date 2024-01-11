@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MixVRT URL入力ページ</title>
+</head>
+
+<body>
+    <h1>視覚的回帰テストを実行するWebページのURLを入力</h1>
+
+    <form action="/MixVRT_diff" method="post">
+        <label for="pageUrl">WebページのURL：</label>
+        <input type="text" id="pageUrl" name="pageUrl" required>
+        <input type="submit" value="送信">
+    </form>
+
+    <script>
+        document.body.addEventListener('click', function (event) {
+            // クリックイベントを取得
+            let data = {
+                eventType: 'click',
+                element: event.target.tagName,
+                xpath: getXPathForElement(event.target),
+                timestamp: new Date().toISOString()
+            };
+
+            // サーバにデータを送信
+            fetch('http://localhost:5000/log', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+        });
+
+        // 要素のXPathを取得する関数
+        function getXPathForElement(element) {
+            const idx = (sib, name) => sib
+                ? idx(sib.previousElementSibling, name || sib.localName) + (sib.localName == name)
+                : 1;
+            const segs = elm => !elm || elm.nodeType !== 1
+                ? ['']
+                : elm.id && document.getElementById(elm.id) === elm
+                    ? [`id("${elm.id}")`]
+                    : [...segs(elm.parentNode), `${elm.localName.toLowerCase()}[${idx(elm)}]`];
+            return segs(element).join('/');
+        }
+    </script>
+</body>
+
+</html>
