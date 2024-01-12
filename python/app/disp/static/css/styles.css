@@ -1,75 +1,55 @@
-.tab {
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 120px;
+body {
+    font-family: Arial, sans-serif;
 }
 
-/* タブメニュー */
-.tab__menu {
-    display: flex;
-    align-items: flex-end;
-    /* メニューを下揃え&高さを調整 */
-    justify-content: center;
-    min-height: 50px;
-    /* メニュー切替時にタブがズレないように */
-    padding: 0;
-    margin: 0;
+.tabs {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 10px 0;
 }
 
-.tab__menu-item {
-    list-style: none;
-    width: 200px;
-    padding: 8px 5px;
-    /* メニューに高さを付ける */
-    text-align: center;
-    margin-right: 6px;
-    background-color: #cdcdcd;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+.tab-button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
     cursor: pointer;
-    transition: all .3s;
-    /* アニメーション */
+    padding: 10px 20px;
+    transition: 0.3s;
+    font-size: 17px;
 }
 
-.tab__menu-item:last-of-type {
-    margin-right: 0px;
+.tab-button:hover {
+    background-color: #ddd;
 }
 
-/* is-activeがついている時のスタイル */
-.tab__menu-item.is-active {
-    background-color: rgba(48, 172, 249);
-    color: #ffffff;
-    padding: 12px 5px;
+.tab-button.active {
+    background-color: yellow;
 }
 
-/* タブパネル */
-.tab__panel {
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.tab-content img {
     width: 100%;
+    max-width: 600px;
+    margin: 10px;
+    border: 1px solid #ccc;
 }
 
-.tab__panel-box {
-    min-height: 400px;
-    /* テキスト量が多くなっても対応できるように */
-    padding: 10px 30px;
-    border-radius: 10px;
+
+.image-container {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
 }
 
-.tab__panel-box001 {
-    background-color: rgb(205, 246, 246);
-    display: none;
-}
-
-.tab__panel-box002 {
-    background-color: rgb(249 227 243);
-    display: none;
-}
-
-.tab__panel-box003 {
-    background-color: rgb(200, 248, 195);
-    display: none;
-}
-
-/* is-showがついている時のスタイル */
-.tab__panel-box.is-show {
-    display: block;
+.caption {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #555;
 }
