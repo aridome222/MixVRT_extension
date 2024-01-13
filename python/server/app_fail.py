@@ -7,6 +7,7 @@ import os
 
 import sys
 sys.path.append('/app/src/module')
+sys.path.append('/app/disp')
 
 # print(sys.path)
 
@@ -33,9 +34,9 @@ logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s 
 
 # カスタムテンプレートフォルダと静的フォルダを設定
 template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cloned_repo', 'templates')
-# static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cloned_repo', 'static')
+static_folder = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'app', 'disp', 'static')
+
 app = Flask(__name__, template_folder=template_folder)
-# app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 CORS(app)
 # CORS(app, origins=["http://127.0.0.1:5000"], methods=["GET", "POST"])
 
@@ -61,9 +62,9 @@ app.register_blueprint(new_blueprint)
 """ MixVRTによる視覚的回帰テストの結果を表示する用のWebページ """
 # 別のカスタムテンプレートフォルダを設定
 template_folder3 = os.path.join(disp_dir, 'templates')
-static_folder3 = os.path.join(disp_dir, 'static')
+
 # 新しいBlueprintを作成
-MixVRT = Blueprint('MixVRT', __name__, template_folder=template_folder3, static_folder=static_folder3)
+MixVRT = Blueprint('MixVRT', __name__, template_folder=template_folder3, static_folder=static_folder)
 
 @MixVRT.route('/MixVRT_url', methods=['POST', 'GET'])
 @cross_origin()
@@ -97,12 +98,8 @@ def clone_or_pull_repo(repo_url, clone_dir):
         print("pullしました")
         # pullの場合のHTMLファイルおよびCSS、JSファイルに変更があるか確認
         html_file_path = os.path.join(clone_dir, "templates/index.html")
-        # css_file_path = os.path.join(clone_dir, "static/css/styles.css")
-        # js_file_path = os.path.join(clone_dir, "static/js/script.js")
         
         html_last_modified_time = get_file_timestamp(html_file_path)
-        css_last_modified_time = get_file_timestamp(css_file_path)
-        js_last_modified_time = get_file_timestamp(js_file_path)
         
         if has_file_changed(html_file_path, html_last_modified_time):
             print("変更があったため、ファイルを取得します。")
@@ -111,15 +108,6 @@ def clone_or_pull_repo(repo_url, clone_dir):
         else:
             print("変更がありません。")
             return os.path.join(clone_dir, "templates/index.html")
-        # if has_file_changed(html_file_path, html_last_modified_time) or \
-        #    has_file_changed(css_file_path, css_last_modified_time) or \
-        #    has_file_changed(js_file_path, js_last_modified_time):
-        #     print("変更があったため、ファイルを取得します。")
-        #     # 変更がある場合の処理をここに追加
-        #     return html_file_path
-        # else:
-        #     print("変更がありません。")
-        #     return os.path.join(clone_dir, "templates/index.html")
 
 # 差分情報を取得する関数
 def get_diff(old_content, new_content):
