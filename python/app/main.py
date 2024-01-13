@@ -114,4 +114,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='WebページのHTMLと画像を取得するスクリプト。')
     parser.add_argument('url', type=str, help='取得するWebページのURL。')
     args = parser.parse_args()
-    main(args.url)
+    if args.url.startswith("http://localhost"):
+        url = args.url.replace("http://localhost", "http://host.docker.internal")
+    else:
+        url = args.url
+    main(url)

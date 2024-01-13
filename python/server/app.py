@@ -101,8 +101,8 @@ def clone_or_pull_repo(repo_url, clone_dir):
         # js_file_path = os.path.join(clone_dir, "static/js/script.js")
         
         html_last_modified_time = get_file_timestamp(html_file_path)
-        css_last_modified_time = get_file_timestamp(css_file_path)
-        js_last_modified_time = get_file_timestamp(js_file_path)
+        # css_last_modified_time = get_file_timestamp(css_file_path)
+        # js_last_modified_time = get_file_timestamp(js_file_path)
         
         if has_file_changed(html_file_path, html_last_modified_time):
             print("変更があったため、ファイルを取得します。")
