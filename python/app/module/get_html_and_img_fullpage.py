@@ -29,34 +29,39 @@ def setup_driver():
 def teardown_driver(driver):
   driver.quit()
 
-# Webページの画像の保存を行う関数
 def save_screenShot(driver, dir):
-  # 保存先ディレクトリを指定
-  output_dir = os.path.join(dir, "img/")
-  # フォルダが存在しない場合は作成
-  if not os.path.exists(output_dir):
-      os.makedirs(output_dir)
-      command = f"sudo chown -R aridome:aridome {output_dir}"
-      # コマンドを実行
-      subprocess.call(command, shell=True)
-  # 現在の日付を取得してフォーマット
-  current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
-  # ファイル名を生成
-  output_file_name = f"img_{current_date}.png"
+    # 保存先ディレクトリを指定
+    output_dir = os.path.join(dir, "img/")
+    # フォルダが存在しない場合は作成
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+        command = f"sudo chown -R aridome:aridome {output_dir}"
+        # コマンドを実行
+        subprocess.call(command, shell=True)
+    # 現在の日付を取得してフォーマット
+    current_date = datetime.now().strftime("%m-%d_%H-%M-%S")
+    # ファイル名を生成
+    output_file_name = f"img_{current_date}.png"
 
-  # ファイルパスを作成
-  output_file_path = os.path.join(output_dir, output_file_name)
+    # ファイルパスを作成
+    output_file_path = os.path.join(output_dir, output_file_name)
 
-  time.sleep(0.5)
+    # 新しい部分: ページの全高さを取得
+    total_height = driver.execute_script("return document.body.scrollHeight")
 
-  # スクロールバーが表示されないようにサイズを設定
-  driver.set_window_size(1050, 1150) # 幅×高さ
+    # ブラウザの画面サイズを取得
+    window_height = driver.get_window_size()["height"]
 
-  # 追加: ここでフルページのスクリーンショットを取る
-  driver.save_screenshot(output_file_path)
+    # ページの初めから最後までスクロール
+    for i in range(0, total_height, window_height):
+        # スクロール
+        driver.execute_script(f"window.scrollTo(0, {i});")
+        time.sleep(0.5)  # スクロールの安定化のための待機
 
-  print("")
-  print(f"単一行テキストの配置画像を{output_file_path}に保存しました")
+    # スクロールが完了したらスクリーンショットを撮る
+    driver.save_screenshot(output_file_path)
+
+    print(f"フルページのスクリーンショットを{output_file_path}に保存しました")
 
 
 # HTMLコードの保存を行う関数

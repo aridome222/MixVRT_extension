@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.tabs {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 10px 0;
+}
+
+.tab-button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab-button:hover {
+    background-color: #ddd;
+}
+
+.tab-button.active {
+    background-color: yellow;
+}
+
+.tab-content {
+    display: block;
+    /* 以前は none だったが、全てのタブ内容を表示する */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.tab-content img {
+    width: auto;
+    /* 画像の自然なサイズを保持 */
+    max-width: 100%;
+    /* コンテナの幅を超えないようにする */
+    margin: 10px;
+    border: 1px solid #ccc;
+}
+
+.image-container {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    width: 100%;
+    /* コンテナを幅いっぱいに広げる */
+}
+
+.caption {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #555;
+}

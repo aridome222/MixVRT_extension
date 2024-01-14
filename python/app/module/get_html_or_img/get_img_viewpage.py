@@ -49,8 +49,8 @@ def save_screenShot(driver, modified_file_path):
   # ファイルパスを作成
   output_file_path = os.path.join(output_dir, output_file_name)
 
-  # スクロールバーが表示されないようにサイズを設定
-  driver.set_window_size(1050, 1150) # 幅×高さ
+  # # スクロールバーが表示されないようにサイズを設定
+  # driver.set_window_size(1050, 1150) # 幅×高さ
 
   time.sleep(0.5)
 
