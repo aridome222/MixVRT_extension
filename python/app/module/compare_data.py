@@ -40,7 +40,7 @@ def compare_data(current_dir, new_data_dir):
     # 変更前後のWebページの画像を高画質にした画像を生成
     high_img_path_of_bf_html = png_to_high_png.png_to_high_png(get_img_path_from_dir(current_dir))
     high_img_path_of_af_html = png_to_high_png.png_to_high_png(get_img_path_from_dir(new_data_dir))
-    # 画像比較に基づく差分箇所を囲んだ枠のみを抽出した画像を生成
+    # 画像比較に基づく差分箇所を囲んだ枠のみを抽出した画像と枠づけ処理をした画像を生成
     diff_rec_bf_img, diff_rec_af_img = diff_rec_img.main(high_img_path_of_bf_html, high_img_path_of_af_html)
 
 

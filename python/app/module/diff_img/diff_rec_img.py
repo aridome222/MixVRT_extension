@@ -90,16 +90,25 @@ def main(high_img_path_of_bf_html, high_img_path_of_af_html):
     contours1 = filter_contours_by_area(contours1)
     contours2 = filter_contours_by_area(contours2)
 
-    # 元の画像に輪郭を描画する
-    for contour in contours1:
-        # 輪郭に囲まれた領域のバウンディングボックスを取得
-        x, y, w, h = cv2.boundingRect(contour)
-        # 元の画像に矩形を描画
-        cv2.rectangle(img1, (x, y), (x + w, y + h), (0, 0, 255), 5)
+    bf_original = cv2.imread(os.path.join(images_dir, "original_png", "bf_original.png"))
+    af_original = cv2.imread(os.path.join(images_dir, "original_png", "af_original.png"))
 
-    for contour in contours2:
-        x, y, w, h = cv2.boundingRect(contour)
-        cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 255, 0), 5)
+    # この関数を使用して元の画像と高解像度の画像にバウンディングボックスを描画
+    scale_bounding_box(bf_original, img1, contours1, "before", scale_to_high_res=False)
+    scale_bounding_box(af_original, img2, contours2, "after", scale_to_high_res=False)
+
+
+    # # 元の画像に輪郭を描画する
+    # for contour in contours1:
+    #     # 輪郭に囲まれた領域のバウンディングボックスを取得
+    #     x, y, w, h = cv2.boundingRect(contour)
+    #     # 元の画像に矩形を描画
+    #     cv2.rectangle(bf_original, (x, y), (x + w, y + h), (0, 0, 255), 5)
+
+    # for contour in contours2:
+    #     x, y, w, h = cv2.boundingRect(contour)
+    #     cv2.rectangle(af_original, (x, y), (x + w, y + h), (0, 255, 0), 5)
+
 
     # 画像のサイズを取得
     height, width = img1.shape[:2]
@@ -135,7 +144,7 @@ def main(high_img_path_of_bf_html, high_img_path_of_af_html):
     output_file_path_bf_img = os.path.join(output_dir, output_file_name_bf_img)
 
     # 画像を保存する
-    cv2.imwrite(output_file_path_bf_img, img1)
+    cv2.imwrite(output_file_path_bf_img, bf_original)
     # 差分箇所に枠を付けた変更前画像をapp/disp/static/images/diff_img_pngに保存
     dest_dir = os.path.join(images_dir, "diff_img_png")
     copy_and_rename_image(output_file_path_bf_img, dest_dir, output_file_name_bf_img)
@@ -144,7 +153,7 @@ def main(high_img_path_of_bf_html, high_img_path_of_af_html):
     output_file_path_af_img = os.path.join(output_dir, output_file_name_af_img)
 
     # 画像を保存する
-    cv2.imwrite(output_file_path_af_img, img2)
+    cv2.imwrite(output_file_path_af_img, af_original)
     # 差分箇所に枠を付けた変更後画像をapp/disp/static/images/diff_img_pngに保存
     copy_and_rename_image(output_file_path_af_img, dest_dir, output_file_name_af_img)
 
@@ -165,6 +174,40 @@ def main(high_img_path_of_bf_html, high_img_path_of_af_html):
     print(f"2つの画像の差異部分に枠をつけたカラー画像をに保存しました")
 
     return output_file_path_bf_rec_img, output_file_path_af_rec_img
+
+
+def scale_bounding_box(orig_img, high_res_img, contours, bf_or_af, scale_to_high_res=True):
+    # 画像の解像度を取得
+    orig_height, orig_width = orig_img.shape[:2]
+    high_res_height, high_res_width = high_res_img.shape[:2]
+
+    # 解像度の比率を計算
+    width_ratio = high_res_width / orig_width
+    height_ratio = high_res_height / orig_height
+
+    # 輪郭に対して処理を行う
+    for contour in contours:
+        x, y, w, h = cv2.boundingRect(contour)
+
+        # スケーリングする必要がある場合、バウンディングボックスをスケーリング
+        if scale_to_high_res:
+            x = int(x * width_ratio)
+            y = int(y * height_ratio)
+            w = int(w * width_ratio)
+            h = int(h * height_ratio)
+            if bf_or_af == "before":
+                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 0, 255), 5)
+            else:
+                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 255, 0), 5)
+        else:
+            x = int(x / width_ratio)
+            y = int(y / height_ratio)
+            w = int(w / width_ratio)
+            h = int(h / height_ratio)
+            if bf_or_af == "before":
+                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 0, 255), 5)
+            else:
+                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 255, 0), 5)
 
 
 def filter_contours_by_area(contours, threshold_area=3000):

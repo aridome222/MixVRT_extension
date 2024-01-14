@@ -93,6 +93,7 @@ def main(url):
         print("初回実行は正常に終了しました")
         return
     
+    
     ### ２回目以降の実行時の処理 ###
     # 新しいディレクトリを作成
     create_dir_and_set_owner(new_data_dir)

@@ -33,6 +33,7 @@ import math
 # module 内の __init__.py から関数をインポート
 from module import base_dir
 from module import diff_dir
+from module import images_dir
 from module import create_dir_and_set_owner
 
 
@@ -91,14 +92,20 @@ def main(diff_rec_bf_html, diff_rec_bf_img, diff_rec_af_html, diff_rec_af_img, h
     origin_html_bf = cv2.imread(high_img_path_of_bf_html)
     origin_html_af = cv2.imread(high_img_path_of_af_html)
 
+    bf_original = cv2.imread(os.path.join(images_dir, "original_png", "bf_original.png"))
+    af_original = cv2.imread(os.path.join(images_dir, "original_png", "af_original.png"))
+
 
     """ 輪郭描画 """
-    # 一致しない輪郭を元の画像に描画
-    for contour in unique_contours_bf:
-        cv2.drawContours(origin_html_bf, [contour], -1, (0, 0, 255), 5)  # 赤色で描画
+    # この関数を使用して元の画像と高解像度の画像にバウンディングボックスを描画
+    scale_bounding_box(bf_original, origin_html_bf, unique_contours_bf, "before", scale_to_high_res=False)
+    scale_bounding_box(af_original, origin_html_af, unique_contours_af, "after", scale_to_high_res=False)
+    # # 一致しない輪郭を元の画像に描画
+    # for contour in unique_contours_bf:
+    #     cv2.drawContours(bf_original, [contour], -1, (0, 0, 255), 5)  # 赤色で描画
 
-    for contour in unique_contours_af:
-        cv2.drawContours(origin_html_af, [contour], -1, (0, 255, 0), 5)  # 緑色で描画
+    # for contour in unique_contours_af:
+    #     cv2.drawContours(af_original, [contour], -1, (0, 255, 0), 5)  # 緑色で描画
 
 
     """ 副作用領域を描画した画像の生成 """
@@ -117,13 +124,13 @@ def main(diff_rec_bf_html, diff_rec_bf_img, diff_rec_af_html, diff_rec_af_img, h
     output_file_path_bf = os.path.join(output_dir2, output_file_name1)
 
     # 画像を保存する
-    cv2.imwrite(output_file_path_bf, origin_html_bf)
+    cv2.imwrite(output_file_path_bf, bf_original)
 
     # ファイルパスを作成
     output_file_path_af = os.path.join(output_dir2, output_file_name2)
 
     # 画像を保存する
-    cv2.imwrite(output_file_path_af, origin_html_af)
+    cv2.imwrite(output_file_path_af, af_original)
 
 
     print(f"副作用領域を検出した画像を{os.path.dirname(output_file_path_bf)}に保存しました")
@@ -149,6 +156,40 @@ def contours_match(contour1, contour2):
                 break
         if not match:
             yield c1
+
+
+def scale_bounding_box(orig_img, high_res_img, contours, bf_or_af, scale_to_high_res=True):
+    # 画像の解像度を取得
+    orig_height, orig_width = orig_img.shape[:2]
+    high_res_height, high_res_width = high_res_img.shape[:2]
+
+    # 解像度の比率を計算
+    width_ratio = high_res_width / orig_width
+    height_ratio = high_res_height / orig_height
+
+    # 輪郭に対して処理を行う
+    for contour in contours:
+        x, y, w, h = cv2.boundingRect(contour)
+
+        # スケーリングする必要がある場合、バウンディングボックスをスケーリング
+        if scale_to_high_res:
+            x = int(x * width_ratio)
+            y = int(y * height_ratio)
+            w = int(w * width_ratio)
+            h = int(h * height_ratio)
+            if bf_or_af == "before":
+                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 0, 255), 5)
+            else:
+                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 255, 0), 5)
+        else:
+            x = int(x / width_ratio)
+            y = int(y / height_ratio)
+            w = int(w / width_ratio)
+            h = int(h / height_ratio)
+            if bf_or_af == "before":
+                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 0, 255), 5)
+            else:
+                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 255, 0), 5)
 
 
 def filter_contours_by_area(contours, threshold_area=3000):

@@ -85,7 +85,6 @@ UNIQUE_CLASS_AFTER_CSS = """
 IMAGE_WRAPPER_CLASS_BEFORE_CSS = """
             .image-wrapper {
                 position: relative;
-                display: inline-block; /* 画像の大きさに合わせてサイズを調整 */
             }
 
             .image-wrapper::before {
@@ -109,7 +108,6 @@ IMAGE_WRAPPER_CLASS_BEFORE_CSS = """
 IMAGE_WRAPPER_CLASS_AFTER_CSS = """
             .image-wrapper {
                 position: relative;
-                display: inline-block; /* 画像の大きさに合わせてサイズを調整 */
             }
 
             .image-wrapper::before {
