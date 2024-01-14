@@ -366,6 +366,7 @@ def generate_modified_html(diff_file_path):
 
 
     ### 編集したファイルの保存 ###
+    create_dir_and_set_owner(os.path.join(diff_dir, "modified_html"))
     # 保存先ディレクトリを指定
     output_dir = os.path.join(diff_dir, "modified_html", "templates")
     # フォルダが存在しない場合は作成

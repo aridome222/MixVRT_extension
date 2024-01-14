@@ -28,11 +28,14 @@ import os
 import numpy as np
 import subprocess
 import math
+import shutil
 
 # module 内の __init__.py から関数をインポート
 from module import base_dir
 from module import diff_dir
+from module import images_dir
 from module import create_dir_and_set_owner
+from module import copy_and_rename_image
 
 
 def main(high_img_path_of_bf_html, high_img_path_of_af_html):
@@ -133,12 +136,17 @@ def main(high_img_path_of_bf_html, high_img_path_of_af_html):
 
     # 画像を保存する
     cv2.imwrite(output_file_path_bf_img, img1)
+    # 差分箇所に枠を付けた変更前画像をapp/disp/static/images/diff_img_pngに保存
+    dest_dir = os.path.join(images_dir, "diff_img_png")
+    copy_and_rename_image(output_file_path_bf_img, dest_dir, output_file_name_bf_img)
 
     # ファイルパスを作成
     output_file_path_af_img = os.path.join(output_dir, output_file_name_af_img)
 
     # 画像を保存する
     cv2.imwrite(output_file_path_af_img, img2)
+    # 差分箇所に枠を付けた変更後画像をapp/disp/static/images/diff_img_pngに保存
+    copy_and_rename_image(output_file_path_af_img, dest_dir, output_file_name_af_img)
 
 
     output_file_name_bf_rec_img = "diff_rec_bf_img.png"

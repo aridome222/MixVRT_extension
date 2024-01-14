@@ -114,19 +114,21 @@ def main(diff_rec_bf_html, diff_rec_bf_img, diff_rec_af_html, diff_rec_af_img, h
         subprocess.call(command, shell=True)
 
     # ファイルパスを作成
-    output_file_path = os.path.join(output_dir2, output_file_name1)
+    output_file_path_bf = os.path.join(output_dir2, output_file_name1)
 
     # 画像を保存する
-    cv2.imwrite(output_file_path, origin_html_bf)
+    cv2.imwrite(output_file_path_bf, origin_html_bf)
 
     # ファイルパスを作成
-    output_file_path = os.path.join(output_dir2, output_file_name2)
+    output_file_path_af = os.path.join(output_dir2, output_file_name2)
 
     # 画像を保存する
-    cv2.imwrite(output_file_path, origin_html_af)
+    cv2.imwrite(output_file_path_af, origin_html_af)
 
 
-    print(f"副作用領域を検出した画像を{os.path.dirname(output_file_path)}に保存しました")
+    print(f"副作用領域を検出した画像を{os.path.dirname(output_file_path_bf)}に保存しました")
+
+    return output_file_path_bf, output_file_path_af    
 
 
 def contours_overlap(c1, c2):

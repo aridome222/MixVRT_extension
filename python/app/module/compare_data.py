@@ -15,7 +15,10 @@ import argparse
 import glob
 
 # module 内の __init__.py から関数をインポート
+from module import images_dir # images_dir = "python/app/disp/static/images"
 from module import create_dir_and_set_owner
+from module import get_img_path_from_dir
+from module import copy_and_rename_image
 
 # その他module内の関数をインポート
 from module import png_to_high_png
@@ -37,6 +40,7 @@ def compare_data(current_dir, new_data_dir):
     # 変更前後のWebページの画像を高画質にした画像を生成
     high_img_path_of_bf_html = png_to_high_png.png_to_high_png(get_img_path_from_dir(current_dir))
     high_img_path_of_af_html = png_to_high_png.png_to_high_png(get_img_path_from_dir(new_data_dir))
+    # 画像比較に基づく差分箇所を囲んだ枠のみを抽出した画像を生成
     diff_rec_bf_img, diff_rec_af_img = diff_rec_img.main(high_img_path_of_bf_html, high_img_path_of_af_html)
 
 
@@ -52,6 +56,10 @@ def compare_data(current_dir, new_data_dir):
     # 枠付け処理をした変更前後のWebページの画像を取得
     img_path_of_modified_bf_html = get_img.main(modified_bf_url, modified_before_file_path)
     img_path_of_modified_af_html = get_img.main(modified_af_url, modified_after_file_path)
+    # 枠づけ処理をした変更前後のWebページ画像をapp/disp/static/images/diff_html_pngに保存
+    dest_dir = os.path.join(images_dir, "diff_html_png")
+    copy_and_rename_image(img_path_of_modified_bf_html, dest_dir, "diff_bf_html.png")
+    copy_and_rename_image(img_path_of_modified_af_html, dest_dir, "diff_af_html.png")
     # 枠付け処理をした変更前後のWebページの画像を高画質にした画像を生成
     high_img_path_of_modified_bf_html = png_to_high_png.png_to_high_png(img_path_of_modified_bf_html)
     high_img_path_of_modified_af_html = png_to_high_png.png_to_high_png(img_path_of_modified_af_html)
@@ -60,7 +68,12 @@ def compare_data(current_dir, new_data_dir):
 
 
     """ 副作用領域を抽出する """
-    gen_subEffect.main(diff_rec_bf_html, diff_rec_bf_img, diff_rec_af_html, diff_rec_af_img, high_img_path_of_bf_html, high_img_path_of_af_html)
+    # 抽出した副作用領域を描画した画像を生成
+    subEffect_bf, subEffect_af = gen_subEffect.main(diff_rec_bf_html, diff_rec_bf_img, diff_rec_af_html, diff_rec_af_img, high_img_path_of_bf_html, high_img_path_of_af_html)
+    # 枠づけ処理をした変更前後のWebページ画像をapp/disp/static/images/sub_effect_pngに保存
+    dest_dir = os.path.join(images_dir, "sub_effect_png")
+    copy_and_rename_image(subEffect_bf, dest_dir, "bf_sub_effect.png")
+    copy_and_rename_image(subEffect_af, dest_dir, "af_sub_effect.png")
 
 
     """ 様々な差分画像を差分Webページに表示する """
@@ -76,17 +89,3 @@ def compare_data(current_dir, new_data_dir):
     command = f"sudo chown -R aridome:aridome {current_dir}"
     # コマンドを実行
     subprocess.call(command, shell=True)
-
-
-def get_img_path_from_dir(dir):
-    # 指定ディレクトリ内のすべての '.png' リストを取得
-    img_path = glob.glob(os.path.join(dir, '**', '*.png'), recursive=True)
-
-    # 画像が見つかった場合、最初の画像のパスを使用
-    if img_path:
-        first_img_path = img_path[0]
-        print("Found HTML file:", first_img_path)
-        return first_img_path
-    else:
-        print("No HTML files found in the directory.")
-        return None

@@ -41,7 +41,10 @@ import argparse
 # module 内の __init__.py から関数をインポート
 from module import base_dir # base_dir = "python/app/base_dir"
 from module import diff_dir # diff_dir = "python/app/diff_dir"
+from module import images_dir # images_dir = "python/app/disp/static/images"
+from module import get_img_path_from_dir
 from module import create_dir_and_set_owner
+from module import search_copy_and_rename_image
 
 # その他module内の関数をインポート
 from module.get_html_and_img import main as get_html_and_img_main
@@ -62,8 +65,10 @@ def main(url):
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     # 新しいデータを保存するディレクトリのパスを生成
     new_data_dir = os.path.join(base_dir, timestamp)
+    # 差分ディレクトリの生成
+    create_dir_and_set_owner(diff_dir)
 
-
+    
     """ Webページの画像とHTMLを取得 """
     ### 初回実行の確認 ###
     if not os.path.exists(initial_dir):
@@ -78,6 +83,12 @@ def main(url):
             shutil.copytree(initial_dir, current_dir, dirs_exist_ok=True)  # Python 3.8 以降の場合
         except Exception as e:
             print(f"Error during copying: {e}")
+
+        # 初回実行時のオリジナル画像をapp/disp/static/images/original_png/に保存
+        # current_dir下にある画像を宛先のディレクトリに任意の名前でコピー
+        dest_dir = os.path.join(images_dir, "original_png")
+        search_copy_and_rename_image(current_dir, dest_dir, "bf_original.png")
+
         # 初回実行時はここで処理を"終了"
         print("初回実行は正常に終了しました")
         return
@@ -87,6 +98,14 @@ def main(url):
     create_dir_and_set_owner(new_data_dir)
     # 指定したURLからHTMLと画像を取得し、新しいディレクトリに保存
     get_html_and_img_main(new_data_dir, url)
+
+
+    """ これから比較する変更前後のオリジナル画像をapp/disp/static/images/original_pngに保存 """
+    # 変更前後のオリジナル画像をapp/disp/static/images/original_png/に保存
+    # current_dir下にある画像を宛先のディレクトリに任意の名前でコピー
+    dest_dir = os.path.join(images_dir, "original_png")
+    search_copy_and_rename_image(current_dir, dest_dir, "bf_original.png")
+    search_copy_and_rename_image(new_data_dir, dest_dir, "af_original.png")
 
 
     """ 変更前後のWebページにおける画像とHTMLの比較 """
@@ -107,7 +126,6 @@ def main(url):
     command = f"sudo chown -R aridome:aridome {current_dir}"
     # コマンドを実行
     subprocess.call(command, shell=True)
-
 
 
 if __name__ == "__main__":

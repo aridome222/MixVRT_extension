@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint, Response, request, send_file, jsonify, render_template, redirect, url_for
+from flask import Flask, Blueprint, Response, request, jsonify, render_template, redirect, url_for
 import json
 
 from threading import Thread
@@ -28,12 +28,15 @@ diff_dir = "app/diff_dir"
 diff_dir =  os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), diff_dir)
 
 
-""" MixVRTによる視覚的回帰テストの結果を表示する用のWebページ """
+# ロギングの設定
+logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s %(levelname)s:%(message)s')
+
 # カスタムテンプレートフォルダと静的フォルダを設定
-template_folder = os.path.join(disp_dir, 'templates')
-static_folder = os.path.join(disp_dir, 'static')
-MixVRT = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
-CORS(MixVRT)
+template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cloned_repo', 'templates')
+# static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cloned_repo', 'static')
+app = Flask(__name__, template_folder=template_folder)
+# app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
+CORS(app)
 # CORS(app, origins=["http://127.0.0.1:5000"], methods=["GET", "POST"])
 
 
@@ -52,14 +55,30 @@ def modified_testPage_af():
     return render_template('modified_testPage_af.html')
 
 # Blueprintをアプリケーションに登録
-MixVRT.register_blueprint(new_blueprint)
+app.register_blueprint(new_blueprint)
 
 
-""" MixVRTの機能が正しく機能するかを確認する用のルーティング """
+""" MixVRTによる視覚的回帰テストの結果を表示する用のWebページ """
 # 別のカスタムテンプレートフォルダを設定
-template_folder3 = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cloned_repo', 'templates')
+template_folder3 = os.path.join(disp_dir, 'templates')
+static_folder3 = os.path.join(disp_dir, 'static')
 # 新しいBlueprintを作成
-repo = Blueprint('repo', __name__, template_folder=template_folder3)
+MixVRT = Blueprint('MixVRT', __name__, template_folder=template_folder3, static_folder=static_folder3)
+
+@MixVRT.route('/MixVRT_url', methods=['POST', 'GET'])
+@cross_origin()
+def MixVRT_url():
+    return render_template('MixVRT_url.html')
+
+@MixVRT.route('/MixVRT_diff', methods=['POST', 'GET'])
+@cross_origin()
+def MixVRT_diff():
+    return render_template('MixVRT_diff.html')
+
+
+# Blueprintをアプリケーションに登録
+app.register_blueprint(MixVRT)
+
 
 def clone_or_pull_repo(repo_url, clone_dir):
     clone_thread = None  # 初期化
@@ -123,7 +142,7 @@ def get_html_file(directory):
                 return os.path.join(root, file)
     return None
 
-@repo.route('/')
+@app.route('/')
 def input_url():
     repo_url = "https://github.com/aridome222/web_diff.git"
 
@@ -139,7 +158,7 @@ def input_url():
     else:
         return "HTML-file is Already up to date."
 
-@repo.route('/index', methods=['POST', 'GET'])
+@app.route('/index', methods=['POST', 'GET'])
 @cross_origin()
 def index():
     if request.method == 'POST':
@@ -165,60 +184,60 @@ def index():
         else:
             return "HTML-file is Already up to date."
         
-@repo.route('/before', methods=['POST', 'GET'])
+@app.route('/before', methods=['POST', 'GET'])
 @cross_origin()
 def before_web():
     return render_template("before.html")
 
-@repo.route('/after', methods=['POST', 'GET'])
+@app.route('/after', methods=['POST', 'GET'])
 @cross_origin()
 def after_web():
     return render_template("after.html")
 
-@repo.route('/before_modified', methods=['POST', 'GET'])
+@app.route('/before_modified', methods=['POST', 'GET'])
 @cross_origin()
 def before_modified_web():
     return render_template("before_modified.html")
 
-@repo.route('/after_modified', methods=['POST', 'GET'])
+@app.route('/after_modified', methods=['POST', 'GET'])
 @cross_origin()
 def after_modified_web():
     return render_template("after_modified.html")
 
 
-@repo.route('/testPage', methods=['POST', 'GET'])
+@app.route('/testPage', methods=['POST', 'GET'])
 @cross_origin()
 def testPage():
     return render_template("testPage.html")
 
-@repo.route('/testPage_bf', methods=['POST', 'GET'])
+@app.route('/testPage_bf', methods=['POST', 'GET'])
 @cross_origin()
 def testPage_bf():
     return render_template("testPage_bf.html")
 
-@repo.route('/testPage_af', methods=['POST', 'GET'])
+@app.route('/testPage_af', methods=['POST', 'GET'])
 @cross_origin()
 def testPage_af():
     return render_template("testPage_af.html")
 
-@repo.route('/testPage_bf_modified', methods=['POST', 'GET'])
+@app.route('/testPage_bf_modified', methods=['POST', 'GET'])
 @cross_origin()
 def testPage_bf_modified():
     return render_template("testPage_bf_modified.html")
 
-@repo.route('/testPage_af_modified', methods=['POST', 'GET'])
+@app.route('/testPage_af_modified', methods=['POST', 'GET'])
 @cross_origin()
 def testPage_af_modified():
     return render_template("testPage_af_modified.html")
 
 
-@repo.route('/render_index/<path:page_url>')
+@app.route('/render_index/<path:page_url>')
 @cross_origin()
 def render_index(page_url):
     return render_template("index.html", page_url=page_url)
 
 
-@repo.route('/piza-form')
+@app.route('/piza-form')
 def piza_form():
     repo_url = "https://github.com/aridome222/web_diff.git"
 
@@ -235,7 +254,7 @@ def piza_form():
         return "HTML-file is Already up to date."
     
 
-@repo.route('/log', methods=['POST'])
+@app.route('/log', methods=['POST'])
 @cross_origin()
 def log_event():
     data = request.get_json()
@@ -244,7 +263,7 @@ def log_event():
     return jsonify({"status": "success"}), 200
 
 
-@repo.route('/console', methods=['POST'])
+@app.route('/console', methods=['POST'])
 def log():
     log_data = request.json
     print(log_data)  # コンソールに出力
@@ -257,7 +276,7 @@ def log():
     return jsonify({'status': 'success'})
 
 
-@repo.route('/diff', methods=['POST'])
+@app.route('/diff', methods=['POST'])
 @cross_origin()
 def diff():
     data = request.get_json()
@@ -270,7 +289,7 @@ def diff():
     return jsonify({'diff_image_url1': diff_img1, 'diff_image_url2': diff_img2})
 
 
-@repo.route('/confirmation', methods=['POST'])
+@app.route('/confirmation', methods=['POST'])
 def confirmation():
     # フォームからデータを取得
     name = request.form.get('name')
@@ -285,21 +304,96 @@ def confirmation():
     # テンプレートにデータを渡して確認ページをレンダリング
     return render_template('confirmation.html', name=name, phone=phone, email=email, pizza_type=pizza_type, pizza_size=pizza_size, pizza_quantity=pizza_quantity, delivery_time=delivery_time, comments=comments)
 
-# Blueprintをアプリケーションに登録
-MixVRT.register_blueprint(repo)
+
+# def run_diff_program(url1, url2):
+#     # URLのエスケープ確認
+#     print(f"url1: {url1}")
+#     print(f"url2: {url2}")
+
+#     # まず、テストを呼び出すためにsys.argvを準備
+#     sys.argv = [
+#         "pytest",
+#         "-s",
+#         "-v",
+#         "--cache-clear",
+#         "/python/src/module/test_slt_addShot.py",
+#         "-k",
+#         "test_singlelinetext",
+#         "--",
+#         url1,  # ここでテストメソッドに渡す引数を指定
+#     ]
+
+#     # テストの実行
+#     with pytest.warns(None) as record:  # Noneを渡すことで全ての警告を無視
+#         pytest.main()
+
+#     # デバッグのためにrecordを出力
+#     print("-------------------------")
+#     print(record)
+#     print("-------------------------")
+
+#     # recordが空の場合に対処
+#     if record:
+#         # ここで差分検出プログラムを実行
+#         # 例: subprocess.run(['python', 'path/to/your_diff_program.py', img1_path, img2_path], check=True)
+#         # 実際のプログラムのパスと引数は適切に設定してください
+
+#         # 引数を適切にエスケープ
+#         url1_escaped = shlex.quote(url1)
+
+#         # コマンドの実行
+#         cmd1 = f"docker exec -it zenn_selenium-python-1 python -m pytest -s --cache-clear /python/src/test_slt_addShot.py {url1_escaped}"
+#         print(f"cmd1: {cmd1}")
+#         result1 = subprocess.run(cmd1, text=True, shell=True)
+#         print(f"stdout1: {result1.stdout}")
+#         print(f"stderr1: {result1.stderr}")
+#         img1_path = result1.stdout.strip()
+
+#         # 同じことをurl2に対して繰り返します
+#         sys.argv[-1] = url2
+
+#         # 引数を適切にエスケープ
+#         url2_escaped = shlex.quote(url2)
+
+#         # コマンドの実行
+#         cmd2 = f"docker exec -it zenn_selenium-python-1 python -m pytest -s --cache-clear /python/src/test_slt_addShot.py {url2_escaped}"
+#         print(f"cmd2: {cmd2}")
+#         result2 = subprocess.run(cmd2, text=True, shell=True)
+#         print(f"stdout2: {result2.stdout}")
+#         print(f"stderr2: {result2.stderr}")
+#         img2_path = result2.stdout.strip()
+
+#         # デバッグのためにrecordを出力
+#         print("-------------------------")
+#         print(record)
+#         print("-------------------------")
+
+#         diff_img1, diff_img2 = detect_rec_divide_url.main(img1_path, img2_path)
+#         return diff_img1, diff_img2
+#     else:
+#         # recordが空の場合、エラー処理またはデフォルトの値を返すなど、適切な対処を行う
+#         return None, None
 
 
+# def run_diff_program(url1, url2):
+#     # ここで差分検出プログラムを実行
+#     # 例: subprocess.run(['python', 'path/to/your_diff_program.py', url1, url2], check=True)
+#     # 実際のプログラムのパスと引数は適切に設定してください
+#     # 生成された差分画像のパスを返す
 
-@MixVRT.route('/MixVRT_url', methods=['POST', 'GET'])
-@cross_origin()
-def MixVRT_url():
-    return render_template('MixVRT_url.html')
+#     # test_slt_addShot.py を直接呼び出して、生成された差分画像のファイルパスを取得
+#     cmd1 = "docker exec -it zenn_selenium-python-1 python -m pytest -s --cache-clear /python/src/test_slt_addShot.py " + url1
+#     result1 = subprocess.run(cmd1, text=True, capture_output=True, shell=True)
+#     img1_path = result1.stdout.strip()
 
-@MixVRT.route('/MixVRT_diff', methods=['POST', 'GET'])
-@cross_origin()
-def MixVRT_diff():
-    return render_template('MixVRT_diff.html')
+#     cmd2 = "docker exec -it zenn_selenium-python-1 python -m pytest -s --cache-clear /python/src/test_slt_addShot.py " + url2
+#     result2 = subprocess.run(cmd2, text=True, capture_output=True, shell=True)
+#     img2_path = result2.stdout.strip()
+
+#     diff_img1, diff_img2 = detect_rec_divide.main(img1_path, img2_path)
+    
+#     return diff_img1, diff_img2
 
 
 if __name__ == '__main__':
-    MixVRT.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
