@@ -244,7 +244,7 @@ def generate_modified_html(diff_file_path):
                     flag_wrapper = True
                 else:
                     # 行中に開始タグが存在する場合
-                    if '<' in line and '>' in line and not '</' in line:
+                    if '<' in line and '>' in line:
                         # タグ内にclass属性が既にあれば、class=""の中の末尾に uniqueClass を挿入
                         if "class=" in modified_line:
                             class_index = modified_line.find('class=')
