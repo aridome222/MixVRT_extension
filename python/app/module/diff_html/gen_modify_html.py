@@ -30,7 +30,7 @@ UNIQUE_CLASS_BEFORE_CSS = """
                 left: 0;
                 right: 0;
                 bottom: 0;
-                border: 3px solid rgb(255, 0, 0);
+                border: 5px solid rgb(255, 0, 0);
                 /* 枠線のスタイル */
                 z-index: 1;
                 /* 必要に応じて調整 */
@@ -63,7 +63,7 @@ UNIQUE_CLASS_AFTER_CSS = """
                 left: 0;
                 right: 0;
                 bottom: 0;
-                border: 3px solid rgb(0, 255, 0);
+                border: 5px solid rgb(0, 255, 0);
                 /* 枠線のスタイル */
                 z-index: 1;
                 /* 必要に応じて調整 */
@@ -94,14 +94,8 @@ IMAGE_WRAPPER_CLASS_BEFORE_CSS = """
                 left: 0;
                 right: 0;
                 bottom: 0;
-                border: 3px solid rgb(255, 0, 0); /* 枠線のスタイル */
+                border: 5px solid rgb(255, 0, 0); /* 枠線のスタイル */
                 z-index: 1;
-            }
-
-            .image-wrapper img {
-                width: 100%;
-                height: auto;
-                display: block; /* 余白を除去 */
             }
         """
 
@@ -117,14 +111,8 @@ IMAGE_WRAPPER_CLASS_AFTER_CSS = """
                 left: 0;
                 right: 0;
                 bottom: 0;
-                border: 3px solid rgb(0, 255, 0); /* 枠線のスタイル */
+                border: 5px solid rgb(0, 255, 0); /* 枠線のスタイル */
                 z-index: 1;
-            }
-
-            .image-wrapper img {
-                width: 100%;
-                height: auto;
-                display: block; /* 余白を除去 */
             }
         """
 

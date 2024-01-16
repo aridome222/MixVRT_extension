@@ -229,18 +229,18 @@ def scale_bounding_box(orig_img, high_res_img, contours, bf_or_af, scale_to_high
             w = int(w * width_ratio)
             h = int(h * height_ratio)
             if bf_or_af == "before":
-                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 0, 255), 5)
+                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 0, 255), 4)
             else:
-                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 255, 0), 5)
+                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 255, 0), 4)
         else:
             x = int(x / width_ratio)
             y = int(y / height_ratio)
             w = int(w / width_ratio)
             h = int(h / height_ratio)
             if bf_or_af == "before":
-                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 0, 255), 5)
+                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 0, 255), 4)
             else:
-                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 255, 0), 5)
+                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 255, 0), 4)
 
 
 def filter_contours_by_area(contours, threshold_area=3000):

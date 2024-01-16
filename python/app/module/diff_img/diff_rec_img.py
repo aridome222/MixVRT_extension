@@ -122,11 +122,11 @@ def main(high_img_path_of_bf_html, high_img_path_of_af_html):
         # 輪郭に囲まれた領域のバウンディングボックスを取得
         x, y, w, h = cv2.boundingRect(contour)
         # 元の画像に矩形を描画
-        cv2.rectangle(contour1_image, (x, y), (x + w, y + h), (0, 0, 255), 5)
+        cv2.rectangle(contour1_image, (x, y), (x + w, y + h), (0, 0, 255), 4)
 
     for contour in contours2:
         x, y, w, h = cv2.boundingRect(contour)
-        cv2.rectangle(contour2_image, (x, y), (x + w, y + h), (0, 255, 0), 5)
+        cv2.rectangle(contour2_image, (x, y), (x + w, y + h), (0, 255, 0), 4)
 
 
     # 差分画像の保存
@@ -196,18 +196,18 @@ def scale_bounding_box(orig_img, high_res_img, contours, bf_or_af, scale_to_high
             w = int(w * width_ratio)
             h = int(h * height_ratio)
             if bf_or_af == "before":
-                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 0, 255), 5)
+                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 0, 255), 4)
             else:
-                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 255, 0), 5)
+                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 255, 0), 4)
         else:
             x = int(x / width_ratio)
             y = int(y / height_ratio)
             w = int(w / width_ratio)
             h = int(h / height_ratio)
             if bf_or_af == "before":
-                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 0, 255), 5)
+                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 0, 255), 4)
             else:
-                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 255, 0), 5)
+                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 255, 0), 4)
 
 
 def filter_contours_by_area(contours, threshold_area=3000):
