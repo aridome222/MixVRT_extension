@@ -15,11 +15,11 @@ import difflib
 import subprocess
 import requests
 import argparse
-from Screenshot import Screenshot
+
 
 def setup_driver():
   options = Options()
-  options.add_argument('--headless')  # ヘッドレスモードでブラウザを起動
+  # options.add_argument('--headless')  # ヘッドレスモードでブラウザを起動
   options.add_argument('--no-sandbox')
   options.add_argument('--disable-dev-shm-usage')
   driver = webdriver.Remote(command_executor='http://chrome:4444/wd/hub', options=options)
@@ -47,11 +47,13 @@ def save_screenShot(driver, dir):
   # ファイルパスを作成
   output_file_path = os.path.join(output_dir, output_file_name)
 
-  ob = Screenshot.Screenshot()
+  # スクロールバーが表示されないようにサイズを設定
+  driver.set_window_size(1050, 1150) # 幅×高さ
 
-  # 追加: ここでフルページのスクリーンショットを取る  
-  ob.full_screenshot(driver, save_path=output_dir, image_name=output_file_name) 
-  # ob.full_screenshot(driver, save_path=output_dir, image_name=output_file_name, is_load_at_runtime = True, load_wait_time=10) 
+  time.sleep(0.5)
+
+  # 追加: ここでフルページのスクリーンショットを取る
+  driver.save_screenshot(output_file_path)
 
   print("")
   print(f"単一行テキストの配置画像を{output_file_path}に保存しました")
@@ -93,6 +95,7 @@ def get_html_and_img(driver, url, dir):
 
     # 画像取得
     driver.get(url)
+    driver.set_window_size(1463, 1032)
     save_screenShot(driver, dir)
 
     # HTMLコード取得

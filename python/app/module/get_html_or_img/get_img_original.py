@@ -13,7 +13,6 @@ import os
 from datetime import datetime
 import difflib
 import subprocess
-from Screenshot import Screenshot
 
 # module 内の __init__.py から関数をインポート
 from module import base_dir
@@ -23,7 +22,7 @@ from module import create_dir_and_set_owner
 
 def setup_driver():
   options = Options()
-  options.add_argument('--headless')  # ヘッドレスモードでブラウザを起動
+  # options.add_argument('--headless')  # ヘッドレスモードでブラウザを起動
   options.add_argument('--no-sandbox')
   options.add_argument('--disable-dev-shm-usage')
   driver = webdriver.Remote(command_executor='http://chrome:4444/wd/hub', options=options)
@@ -35,25 +34,33 @@ def teardown_driver(driver):
 
 # Webページの画像の保存を行う関数
 def save_screenShot(driver, modified_file_path):
-    output_dir = os.path.join(diff_dir, "img_of_modified_html/")
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-        command = f"sudo chown -R aridome:aridome {output_dir}"
-        subprocess.call(command, shell=True)
+  # 保存先ディレクトリを指定
+  output_dir = os.path.join(diff_dir, "img_of_modified_html/")
+  # フォルダが存在しない場合は作成
+  if not os.path.exists(output_dir):
+      os.makedirs(output_dir)
+      command = f"sudo chown -R aridome:aridome {output_dir}"
+      # コマンドを実行
+      subprocess.call(command, shell=True)
 
-    output_file_name = os.path.basename(modified_file_path).split(".")[0] + '.png'
-    output_file_path = os.path.join(output_dir, output_file_name)
+  # ファイル名を生成
+  output_file_name = os.path.basename(modified_file_path).split(".")[0] + '.png'
 
-    ob = Screenshot.Screenshot()
+  # ファイルパスを作成
+  output_file_path = os.path.join(output_dir, output_file_name)
 
-    # 追加: ここでフルページのスクリーンショットを取る  
-    ob.full_screenshot(driver, save_path=output_dir, image_name=output_file_name) 
-    # ob.full_screenshot(driver, save_path=output_dir, image_name=output_file_name, is_load_at_runtime = True, load_wait_time=10) 
+  # スクロールバーが表示されないようにサイズを設定
+  driver.set_window_size(1050, 1150) # 幅×高さ
 
-    print(f"フルページのスクリーンショットを{output_file_path}に保存しました")
+  time.sleep(0.5)
 
-    return output_file_path
-
+  # 追加: ここでフルページのスクリーンショットを取る
+  driver.save_screenshot(output_file_path)
+  
+  print("")
+  print(f"枠処理された画像を{output_file_path}に保存しました")
+  
+  return output_file_path
 
 
 def get_img(driver, url, modified_file_path):
@@ -63,7 +70,7 @@ def get_img(driver, url, modified_file_path):
     webページ画面の画像を取得する
     """
     driver.get(url)
-    
+    driver.set_window_size(1463, 1032)
 
     img_path = save_screenShot(driver, modified_file_path)
 
