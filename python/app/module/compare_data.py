@@ -78,14 +78,3 @@ def compare_data(current_dir, new_data_dir):
 
     """ 様々な差分画像を差分Webページに表示する """
 
-
-
-    """ 以前実行時のcurrent_dirを新しいデータディレクトリの内容に変更 """
-    # currentディレクトリがすでに存在する場合は削除
-    if os.path.exists(current_dir):
-        shutil.rmtree(current_dir)
-    # 新しいデータディレクトリの内容をcurrentディレクトリにコピー
-    shutil.copytree(new_data_dir, current_dir)
-    command = f"sudo chown -R aridome:aridome {current_dir}"
-    # コマンドを実行
-    subprocess.call(command, shell=True)
