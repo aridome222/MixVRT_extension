@@ -46,8 +46,8 @@ def main(diff_rec_bf_html, diff_rec_bf_img, diff_rec_af_html, diff_rec_af_img, h
     img_af = cv2.imread(diff_rec_af_img)
     html_af = cv2.imread(diff_rec_af_html)
 
-    # 画像1のサイズを取得
-    height1, width1 = img_bf.shape[:2]
+    # # 画像1のサイズを取得
+    # height1, width1, _ = img1.shape
 
     # # 画像2のサイズを取得
     # height2, width2, _ = img2.shape
@@ -79,14 +79,26 @@ def main(diff_rec_bf_html, diff_rec_bf_img, diff_rec_af_html, diff_rec_af_img, h
     contours_img_af, _ = cv2.findContours(img_af_bin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     contours_html_af, _ = cv2.findContours(html_af_bin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
+
+    # 新しい画像を作成（元の画像と同じサイズで黒背景）
+    contour_image1 = np.zeros_like(html_bf_bin)
+
+    # 輪郭を描画（白色で）
+    cv2.drawContours(contour_image1, contours_html_bf, -1, (255, 255, 255), thickness=cv2.FILLED)
+
+
+    # 新しい画像を作成（元の画像と同じサイズで黒背景）
+    contour_image2 = np.zeros_like(html_af_bin)
+
+    # 輪郭を描画（白色で）
+    cv2.drawContours(contour_image2, contours_html_af, -1, (255, 255, 255), thickness=cv2.FILLED)
+
     # contours1 = filter_contours_by_area(contours1)
     # contours2 = filter_contours_by_area(contours2)
 
     # 一致しない輪郭を探す
-    unique_contours_bf = list(contours_match_feature(contours_img_bf, contours_html_bf, (height1, width1))) + list(contours_match_feature(contours_html_bf, contours_img_bf, (height1, width1)))
-    unique_contours_af = list(contours_match_feature(contours_img_af, contours_html_af, (height1, width1))) + list(contours_match_feature(contours_html_af, contours_img_af, (height1, width1)))
-    # unique_contours_bf = list(contours_match(contours_img_bf, contours_html_bf)) + list(contours_match(contours_html_bf, contours_img_bf))
-    # unique_contours_af = list(contours_match(contours_img_af, contours_html_af)) + list(contours_match(contours_html_af, contours_img_af))
+    unique_contours_bf = list(contours_match(contours_img_bf, contours_html_bf)) + list(contours_match(contours_html_bf, contours_img_bf))
+    unique_contours_af = list(contours_match(contours_img_af, contours_html_af)) + list(contours_match(contours_html_af, contours_img_af))
 
 
     """ オリジナル画像の読み込み """
@@ -126,65 +138,18 @@ def main(diff_rec_bf_html, diff_rec_bf_img, diff_rec_af_html, diff_rec_af_img, h
     output_file_path_bf = os.path.join(output_dir2, output_file_name1)
 
     # 画像を保存する
-    cv2.imwrite(output_file_path_bf, bf_original)
+    cv2.imwrite(output_file_path_bf, contour_image1)
 
     # ファイルパスを作成
     output_file_path_af = os.path.join(output_dir2, output_file_name2)
 
     # 画像を保存する
-    cv2.imwrite(output_file_path_af, af_original)
+    cv2.imwrite(output_file_path_af, contour_image2)
 
 
     print(f"副作用領域を検出した画像を{os.path.dirname(output_file_path_bf)}に保存しました")
 
     return output_file_path_bf, output_file_path_af    
-
-
-def contour_to_image(contour, shape):
-    # 空の画像を作成
-    image = np.zeros(shape, np.uint8)
-    # 輪郭を画像上に描画
-    cv2.drawContours(image, [contour], -1, (255, 255, 255), thickness=cv2.FILLED)
-    return image
-
-def contours_match_feature(contour1, contour2, shape, similarity_threshold=0.5):
-    # SIFTを用いた特徴点抽出器の作成
-    sift = cv2.SIFT_create()
-
-    # FLANNベースのマッチャーのパラメータ
-    FLANN_INDEX_KDTREE = 1
-    index_params = dict(algorithm=FLANN_INDEX_KDTREE, trees=5)
-    search_params = dict(checks=50)
-    flann = cv2.FlannBasedMatcher(index_params, search_params)
-
-    unique_contours = []
-    for c1 in contour1:
-        match = False
-        # c1輪郭を画像に変換
-        c1_img = contour_to_image(c1, shape)
-        kp1, des1 = sift.detectAndCompute(c1_img, None)
-
-        for c2 in contour2:
-            # c2輪郭を画像に変換
-            c2_img = contour_to_image(c2, shape)
-            kp2, des2 = sift.detectAndCompute(c2_img, None)
-
-            # 特徴点が十分に存在するか確認
-            if des1 is not None and des2 is not None and len(des1) >= 2 and len(des2) >= 2:
-                matches = flann.knnMatch(des1, des2, k=2)
-
-                # データセットQからデータセットTに対する良いマッチを保持
-                good_matches = [m for m, n in matches if m.distance < similarity_threshold * n.distance]
-
-                # 良いマッチが十分に存在するか確認
-                if len(good_matches) > 10:
-                    match = True
-                    break
-
-        if not match:
-            unique_contours.append(c1)
-
-    return unique_contours
 
 
 # # 輪郭の類似度で一致か不一致かを判定
@@ -238,24 +203,24 @@ def contours_match_feature(contour1, contour2, shape, similarity_threshold=0.5):
 
 
 # シンプルに少しでも重なったら一致、そうでなければ不一致
-# def contours_overlap(c1, c2):
-#     # 輪郭のバウンディングボックスを取得
-#     x1, y1, w1, h1 = cv2.boundingRect(c1)
-#     x2, y2, w2, h2 = cv2.boundingRect(c2)
+def contours_overlap(c1, c2):
+    # 輪郭のバウンディングボックスを取得
+    x1, y1, w1, h1 = cv2.boundingRect(c1)
+    x2, y2, w2, h2 = cv2.boundingRect(c2)
 
-#     # バウンディングボックスが重なっているか判定
-#     return (x1 < x2 + w2 and x1 + w1 > x2 and y1 < y2 + h2 and y1 + h1 > y2)
+    # バウンディングボックスが重なっているか判定
+    return (x1 < x2 + w2 and x1 + w1 > x2 and y1 < y2 + h2 and y1 + h1 > y2)
 
 
-# def contours_match(contour1, contour2):
-#     for c1 in contour1:
-#         match = False
-#         for c2 in contour2:
-#             if contours_overlap(c1, c2):
-#                 match = True
-#                 break
-#         if not match:
-#             yield c1
+def contours_match(contour1, contour2):
+    for c1 in contour1:
+        match = False
+        for c2 in contour2:
+            if contours_overlap(c1, c2):
+                match = True
+                break
+        if not match:
+            yield c1
 
 
 def scale_bounding_box(orig_img, high_res_img, contours, bf_or_af, scale_to_high_res=True):
@@ -278,18 +243,18 @@ def scale_bounding_box(orig_img, high_res_img, contours, bf_or_af, scale_to_high
             w = int(w * width_ratio)
             h = int(h * height_ratio)
             if bf_or_af == "before":
-                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 0, 255), 5)
+                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 0, 255), 4)
             else:
-                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 255, 0), 5)
+                cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 255, 0), 4)
         else:
             x = int(x / width_ratio)
             y = int(y / height_ratio)
             w = int(w / width_ratio)
             h = int(h / height_ratio)
             if bf_or_af == "before":
-                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 0, 255), 5)
+                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 0, 255), 4)
             else:
-                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 255, 0), 5)
+                cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 255, 0), 4)
 
 
 def filter_contours_by_area(contours, threshold_area=3000):

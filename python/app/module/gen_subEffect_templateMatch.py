@@ -147,7 +147,7 @@ def contour_to_image(contour, shape):
     cv2.drawContours(image, [contour], -1, (255, 255, 255), thickness=cv2.FILLED)
     return image
 
-def contours_match_template(contour1, contour2, shape, similarity_threshold=0.9):
+def contours_match_template(contour1, contour2, shape, similarity_threshold=0.6):
     for c1 in contour1:
         match = False
         # c1輪郭を画像に変換
