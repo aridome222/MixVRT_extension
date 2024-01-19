@@ -173,7 +173,7 @@ def main(high_img_path_of_bf_html, high_img_path_of_af_html):
 
     print(f"2つの画像の差異部分に枠をつけたカラー画像をに保存しました")
 
-    return output_file_path_bf_rec_img, output_file_path_af_rec_img
+    return output_file_path_bf_img, output_file_path_af_img, output_file_path_bf_rec_img, output_file_path_af_rec_img
 
 
 def scale_bounding_box(orig_img, high_res_img, contours, bf_or_af, scale_to_high_res=True):

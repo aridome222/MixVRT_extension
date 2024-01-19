@@ -37,14 +37,14 @@ from module import images_dir
 from module import create_dir_and_set_owner
 
 
-def main(diff_bf_html, diff_bf_img, diff_af_html, diff_af_img, high_img_path_of_bf_html, high_img_path_of_af_html):
+def main(diff_rec_bf_html, diff_rec_bf_img, diff_rec_af_html, diff_rec_af_img, high_img_path_of_bf_html, high_img_path_of_af_html):
     # 画像読み込み
-    img_bf = cv2.imread(diff_bf_img)
-    html_bf = cv2.imread(diff_bf_html)
+    img_bf = cv2.imread(diff_rec_bf_img)
+    html_bf = cv2.imread(diff_rec_bf_html)
 
     # 画像読み込み
-    img_af = cv2.imread(diff_af_img)
-    html_af = cv2.imread(diff_af_html)
+    img_af = cv2.imread(diff_rec_af_img)
+    html_af = cv2.imread(diff_rec_af_html)
 
     # # 画像1のサイズを取得
     # height1, width1, _ = img1.shape
@@ -88,22 +88,18 @@ def main(diff_bf_html, diff_bf_img, diff_af_html, diff_af_img, high_img_path_of_
 
 
     """ オリジナル画像の読み込み """
+    # 画像読み込み
+    origin_html_bf = cv2.imread(high_img_path_of_bf_html)
+    origin_html_af = cv2.imread(high_img_path_of_af_html)
+
     bf_original = cv2.imread(os.path.join(images_dir, "original_png", "bf_original.png"))
     af_original = cv2.imread(os.path.join(images_dir, "original_png", "af_original.png"))
-    # 高解像度画像読み込み
-    high_bf_original = cv2.imread(high_img_path_of_bf_html)
-    high_af_original = cv2.imread(high_img_path_of_af_html)
-
-
-    """ 一致しない輪郭のうち、輪郭内の内容が類似していればレイアウトの不具合が起きていないと判定する """
-    # 類似した輪郭を除去し、類似していない輪郭のみを抽出する
-    unsimilar_contours_bf, unsimilar_contours_af = contours_similar(unique_contours_bf, unique_contours_af, high_bf_original, high_af_original)
 
 
     """ 輪郭描画 """
     # この関数を使用して元の画像と高解像度の画像にバウンディングボックスを描画
-    scale_bounding_box(bf_original, high_bf_original, unsimilar_contours_bf, "before", scale_to_high_res=False)
-    scale_bounding_box(af_original, high_af_original, unsimilar_contours_af, "after", scale_to_high_res=False)
+    scale_bounding_box(bf_original, origin_html_bf, unique_contours_bf, "before", scale_to_high_res=False)
+    scale_bounding_box(af_original, origin_html_af, unique_contours_af, "after", scale_to_high_res=False)
     # # 一致しない輪郭を元の画像に描画
     # for contour in unique_contours_bf:
     #     cv2.drawContours(bf_original, [contour], -1, (0, 0, 255), 5)  # 赤色で描画
@@ -140,93 +136,6 @@ def main(diff_bf_html, diff_bf_img, diff_af_html, diff_af_img, high_img_path_of_
     print(f"副作用領域を検出した画像を{os.path.dirname(output_file_path_bf)}に保存しました")
 
     return output_file_path_bf, output_file_path_af    
-
-
-# 輪郭内の中身同士の類似度が高ければ、それらの枠を除外
-def contours_similar(contours1, contours2, img_before, img_after, similarity_threshold=0.9):
-    # 各輪郭リストのインデックスを保持
-    updated_contours1_indices = list(range(len(contours1)))
-    updated_contours2_indices = list(range(len(contours2)))
-
-    # contours1 の各輪郭についてループ
-    for i, contour1 in enumerate(contours1):
-        x1, y1, w1, h1 = cv2.boundingRect(contour1)
-        region1 = img_before[y1:y1+h1, x1:x1+w1]
-
-        # contours2 の各輪郭についてループ
-        for j, contour2 in enumerate(contours2):
-            x2, y2, w2, h2 = cv2.boundingRect(contour2)
-            region2 = img_after[y2:y2+h2, x2:x2+w2]
-
-            # 領域間の類似度を計算
-            if compare_regions(region1, region2) > similarity_threshold:
-                # 類似度が高ければ輪郭のインデックスを削除
-                if i in updated_contours1_indices:
-                    updated_contours1_indices.remove(i)
-                if j in updated_contours2_indices:
-                    updated_contours2_indices.remove(j)
-
-    # 最終的な輪郭リストを生成
-    updated_contours1 = [contours1[i] for i in updated_contours1_indices]
-    updated_contours2 = [contours2[j] for j in updated_contours2_indices]
-
-    return updated_contours1, updated_contours2
-
-def compare_regions(region1, region2):
-    # 空の画像領域を確認
-    if region1.size == 0 or region2.size == 0:
-        return 0  # 画像領域が空の場合は、類似度を0として返す
-    
-    # 画像領域のサイズを揃える
-    h = min(region1.shape[0], region2.shape[0])
-    w = min(region1.shape[1], region2.shape[1])
-    region1_resized = cv2.resize(region1, (w, h))
-    region2_resized = cv2.resize(region2, (w, h))
-
-    # 2つの画像領域間の絶対差分を計算
-    difference = cv2.absdiff(region1_resized, region2_resized)
-
-    # 差分をグレースケールに変換（カラー画像の場合）
-    if difference.ndim == 3:
-        difference = cv2.cvtColor(difference, cv2.COLOR_BGR2GRAY)
-
-    # 差分の平均値を計算
-    mean_diff = np.mean(difference)
-
-    # 平均差分を最大可能差分で正規化して、類似度を計算（1 - mean_diff / max_diff）
-    max_diff = 255
-    similarity = 1 - (mean_diff / max_diff)
-
-    return similarity
-
-
-# 輪郭の形状が類似していれば、それを除外
-# def contours_similar(contours1, contours2, img_before, img_after, similarity_threshold=0.1):
-#     # contours1 と contours2 の輪郭のインデックスを保持するリストを作成
-#     updated_contours1 = list(range(len(contours1)))
-#     updated_contours2 = list(range(len(contours2)))
-
-#     # contours1 内の各輪郭についてループ処理
-#     for i, contour1 in enumerate(contours1):
-#         # contours2 内の各輪郭についてループ処理
-#         for j, contour2 in enumerate(contours2):
-#             # 二つの輪郭の形状の類似度を計算（値が低いほど、類似度が高い）
-#             similarity_score = cv2.matchShapes(contour1, contour2, 1, 0.0)
-
-#             # 類似度が閾値未満の場合、輪郭を「似ている」と判断
-#             if similarity_score < similarity_threshold:
-#                 # 似ている輪郭のインデックスを更新リストから削除
-#                 if i in updated_contours1:
-#                     updated_contours1.remove(i)
-#                 if j in updated_contours2:
-#                     updated_contours2.remove(j)
-
-#     # 最終的に残った輪郭のインデックスを使用して、元の輪郭リストから輪郭を取得
-#     final_contours1 = [contours1[i] for i in updated_contours1]
-#     final_contours2 = [contours2[j] for j in updated_contours2]
-
-#     # 更新された輪郭リストを返す
-#     return final_contours1, final_contours2
 
 
 # # 輪郭の類似度で一致か不一致かを判定

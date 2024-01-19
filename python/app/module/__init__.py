@@ -26,13 +26,13 @@ images_dir = "python/app/disp/static/images"
 def copy_and_rename_image(source_img, dest_dir, new_filename):
     """
     コピーして別のディレクトリに移動させたい画像をコピーし、
-    指定されたデスティネーションディレクトリに新しい名前で保存します。
+    指定された宛先のディレクトリに新しい名前で保存します。
 
     :param source_img: ソース画像のパス
-    :param dest_dir: 画像を保存するデスティネーションディレクトリのパス
+    :param dest_dir: 画像を保存する宛先のディレクトリのパス
     :param new_filename: 保存する画像の新しいファイル名
     """
-    # デスティネーションディレクトリを作成し、所有者を設定
+    # 宛先のディレクトリを作成し、所有者を設定
     create_dir_and_set_owner(dest_dir)
 
     # コピー先の新しいファイルパスを作成
@@ -45,13 +45,13 @@ def copy_and_rename_image(source_img, dest_dir, new_filename):
 def search_copy_and_rename_image(source_dir, dest_dir, new_filename):
     """
     指定されたソースディレクトリから画像をコピーし、
-    指定されたデスティネーションディレクトリに新しい名前で保存します。
+    指定された宛先のディレクトリに新しい名前で保存します。
 
     :param source_dir: ソース画像があるディレクトリのパス
-    :param dest_dir: 画像を保存するデスティネーションディレクトリのパス
+    :param dest_dir: 画像を保存する宛先のディレクトリのパス
     :param new_filename: 保存する画像の新しいファイル名
     """
-    # デスティネーションディレクトリを作成し、所有者を設定
+    # 宛先のディレクトリを作成し、所有者を設定
     create_dir_and_set_owner(dest_dir)
 
     # コピー元の画像のパスを取得
