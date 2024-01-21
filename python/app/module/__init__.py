@@ -19,6 +19,9 @@ base_dir = "python/app/base_dir"
 # 差分ディレクトリの設定
 diff_dir = "python/app/diff_dir"
 
+# 最新ディレクトリの設定
+latest_dir = "python/app/latest_dir"
+
 # 表示ディレクトリの設定
 images_dir = "python/app/disp/static/images"
 

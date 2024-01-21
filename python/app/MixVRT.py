@@ -115,12 +115,16 @@ def main(url):
 
 
     """ 以前実行時のcurrent_dirを新しいデータディレクトリの内容に変更 """
+    # 現在のデータを保存するディレクトリパスの設定
+    latest_dir = os.path.join(base_dir, "latest")
+    create_dir_and_set_owner(latest_dir)
+
     # currentディレクトリがすでに存在する場合は削除
-    if os.path.exists(current_dir):
-        shutil.rmtree(current_dir)
+    if os.path.exists(latest_dir):
+        shutil.rmtree(latest_dir)
     # 新しいデータディレクトリの内容をcurrentディレクトリにコピー
-    shutil.copytree(new_data_dir, current_dir)
-    command = f"sudo chown -R aridome:aridome {current_dir}"
+    shutil.copytree(new_data_dir, latest_dir)
+    command = f"sudo chown -R aridome:aridome {latest_dir}"
     # コマンドを実行
     subprocess.call(command, shell=True)
 
