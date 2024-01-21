@@ -212,6 +212,17 @@ def testPage_af_modified():
     return render_template("testPage_af_modified.html")
 
 
+@repo.route('/test1_bf', methods=['POST', 'GET'])
+@cross_origin()
+def test1_bf():
+    return render_template("test1_bf.html")
+
+@repo.route('/test1_af', methods=['POST', 'GET'])
+@cross_origin()
+def test1_af():
+    return render_template("test1_af.html")
+
+
 @repo.route('/render_index/<path:page_url>')
 @cross_origin()
 def render_index(page_url):
