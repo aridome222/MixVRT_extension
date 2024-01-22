@@ -83,8 +83,8 @@ def main(high_img_path_of_bf_html, high_img_path_of_af_html):
     contours1, _ = cv2.findContours(diff_expanded_before, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     contours2, _ = cv2.findContours(diff_expanded_after, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-    contours1 = filter_contours_by_area(contours1)
-    contours2 = filter_contours_by_area(contours2)
+    # contours1 = filter_contours_by_area(contours1)
+    # contours2 = filter_contours_by_area(contours2)
 
     bf_original = cv2.imread(os.path.join(images_dir, "original_png", "bf_original.png"))
     af_original = cv2.imread(os.path.join(images_dir, "original_png", "af_original.png"))

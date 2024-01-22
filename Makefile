@@ -9,5 +9,5 @@ save:
 	rm -rf python/app/base_dir/current/
 	cp -r python/app/base_dir/latest/ python/app/base_dir/current/
 
-run:
+test:
 	docker exec -it zenn_selenium-python-1 python3 python/app/MixVRT.py $(URL)
