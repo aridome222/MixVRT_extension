@@ -102,7 +102,7 @@ def main(high_img_path_of_bf_html, high_img_path_of_modified_bf_html, high_img_p
 
 
     # 差分画像の保存
-    output_dir2 = os.path.join(diff_dir, "diff_rec_html_png")
+    output_dir2 = os.path.join(diff_dir, "diff_rec_html_high_png")
     # フォルダが存在しない場合は作成
     if not os.path.exists(output_dir2):
         os.makedirs(output_dir2)

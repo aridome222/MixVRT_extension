@@ -238,20 +238,20 @@ def generate_modified_html(diff_file_path):
                     modified_line = '<div class="image-wrapper">\n' + modified_line + '</div>\n'
                     flag_wrapper = True
                 else:
-                    # 行中に開始タグが存在する場合
+                    # 行中にタグが存在するかチェック
                     if '<' in line and '>' in line:
                         # タグ内にclass属性が既にあれば、class=""の中の末尾に uniqueClass を挿入
                         if "class=" in modified_line:
                             class_index = modified_line.find('class=')
                             class_end_index = modified_line.find('"', class_index + 7)
                             modified_line = modified_line[:class_end_index] + " uniqueClass" + modified_line[class_end_index:]
-                        # タグ内にclass属性が無ければ、終了タグ直前に uniqueClass を挿入
+                        # タグ内にclass属性が無ければ、開始タグか終了タグかをチェック
                         else:
-                            tag_end_index = modified_line.find('>')
-                            modified_line = modified_line[:tag_end_index] + ' class="uniqueClass"' + modified_line[tag_end_index:]
-                    else:
-                        # 行中に開始タグが存在しない場合
-                        pass
+                            tag_start_index = modified_line.find('<')
+                            if tag_start_index != -1:  # タグが見つかった場合のみ処理を進める
+                                if modified_line[tag_start_index + 1] != '/':  # 開始タグであれば
+                                    tag_end_index = modified_line.find('>')
+                                    modified_line = modified_line[:tag_end_index] + ' class="uniqueClass"' + modified_line[tag_end_index:]
 
                 # '-'で始まる行と'+'で始まる行に別々に処理を適用
                 if line.startswith('-'):

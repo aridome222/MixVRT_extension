@@ -35,7 +35,7 @@ def teardown_driver(driver):
 
 # Webページの画像の保存を行う関数
 def save_screenShot(driver, modified_file_path):
-    output_dir = os.path.join(diff_dir, "img_of_modified_html/")
+    output_dir = os.path.join(diff_dir, "modified_html_png/")
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
         command = f"sudo chown -R aridome:aridome {output_dir}"

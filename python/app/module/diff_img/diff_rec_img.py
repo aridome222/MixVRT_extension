@@ -83,8 +83,8 @@ def main(high_img_path_of_bf_html, high_img_path_of_af_html):
     contours1, _ = cv2.findContours(diff_expanded_before, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     contours2, _ = cv2.findContours(diff_expanded_after, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-    # contours1 = filter_contours_by_area(contours1)
-    # contours2 = filter_contours_by_area(contours2)
+    contours1 = filter_contours_by_area(contours1)
+    contours2 = filter_contours_by_area(contours2)
 
     bf_original = cv2.imread(os.path.join(images_dir, "original_png", "bf_original.png"))
     af_original = cv2.imread(os.path.join(images_dir, "original_png", "af_original.png"))
@@ -128,7 +128,7 @@ def main(high_img_path_of_bf_html, high_img_path_of_af_html):
     # 差分画像の保存
     output_file_name_bf_img = "diff_bf_img.png"
     output_file_name_af_img = "diff_af_img.png"
-    output_dir = os.path.join(diff_dir, "diff_rec_img_png")
+    output_dir = os.path.join(diff_dir, "diff_img_png")
     # フォルダが存在しない場合は作成
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -153,16 +153,23 @@ def main(high_img_path_of_bf_html, high_img_path_of_af_html):
     # 差分箇所に枠を付けた変更後画像をapp/disp/static/images/diff_img_pngに保存
     copy_and_rename_image(output_file_path_af_img, dest_dir, output_file_name_af_img)
 
+    output_dir2 = os.path.join(diff_dir, "diff_rec_img_high_png")
+    # フォルダが存在しない場合は作成
+    if not os.path.exists(output_dir2):
+        os.makedirs(output_dir2)
+        command = f"sudo chown -R aridome:aridome {output_dir2}"
+        # コマンドを実行
+        subprocess.call(command, shell=True)
 
     output_file_name_bf_rec_img = "diff_rec_bf_img.png"
     output_file_name_af_rec_img = "diff_rec_af_img.png"
     # ファイルパスを作成
-    output_file_path_bf_rec_img = os.path.join(output_dir, output_file_name_bf_rec_img)
+    output_file_path_bf_rec_img = os.path.join(output_dir2, output_file_name_bf_rec_img)
     # 画像を保存する
     cv2.imwrite(output_file_path_bf_rec_img, contour1_image)
 
     # ファイルパスを作成
-    output_file_path_af_rec_img = os.path.join(output_dir, output_file_name_af_rec_img)
+    output_file_path_af_rec_img = os.path.join(output_dir2, output_file_name_af_rec_img)
     # 画像を保存する
     cv2.imwrite(output_file_path_af_rec_img, contour2_image)
 

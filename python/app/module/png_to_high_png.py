@@ -19,13 +19,13 @@ from module import diff_dir
 from module import create_dir_and_set_owner
 
 
-def png_to_high_png(img_path):
+def png_to_high_png(img_path, dest_dir):
     img = Image.open(img_path)
  
     # 画像のリサイズ（画像を 4 倍の大きさに変更）
     img_resize = ResizeImage(img, 2)
 
-    output_dir = os.path.join(os.path.dirname(img_path), "high_png/")
+    output_dir = os.path.join(diff_dir, dest_dir)
     # フォルダが存在しない場合は作成
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)

@@ -38,8 +38,8 @@ def compare_data(current_dir, new_data_dir):
 
     """ 変更前と後のWebページの画面画像を比較する """
     # 変更前後のWebページの画像を高画質にした画像を生成
-    high_img_path_of_bf_html = png_to_high_png.png_to_high_png(get_img_path_from_dir(current_dir))
-    high_img_path_of_af_html = png_to_high_png.png_to_high_png(get_img_path_from_dir(new_data_dir))
+    high_img_path_of_bf_html = png_to_high_png.png_to_high_png(get_img_path_from_dir(current_dir), "original_high_png")
+    high_img_path_of_af_html = png_to_high_png.png_to_high_png(get_img_path_from_dir(new_data_dir), "original_high_png")
     # 画像比較に基づく差分箇所を囲んだ枠のみを抽出した画像と枠づけ処理をした画像を生成
     _, _, diff_rec_bf_img, diff_rec_af_img = diff_rec_img.main(high_img_path_of_bf_html, high_img_path_of_af_html)
 
@@ -61,8 +61,8 @@ def compare_data(current_dir, new_data_dir):
     copy_and_rename_image(img_path_of_modified_bf_html, dest_dir, "diff_bf_html.png")
     copy_and_rename_image(img_path_of_modified_af_html, dest_dir, "diff_af_html.png")
     # 枠付け処理をした変更前後のWebページの画像を高画質にした画像を生成
-    high_img_path_of_modified_bf_html = png_to_high_png.png_to_high_png(img_path_of_modified_bf_html)
-    high_img_path_of_modified_af_html = png_to_high_png.png_to_high_png(img_path_of_modified_af_html)
+    high_img_path_of_modified_bf_html = png_to_high_png.png_to_high_png(img_path_of_modified_bf_html, "modifiled_html_high_png")
+    high_img_path_of_modified_af_html = png_to_high_png.png_to_high_png(img_path_of_modified_af_html, "modifiled_html_high_png")
     # HTMLコードの変更による影響箇所を囲んだ枠のみを抽出した画像を生成
     diff_rec_bf_html, diff_rec_af_html = diff_rec_html.main(high_img_path_of_bf_html, high_img_path_of_modified_bf_html, high_img_path_of_af_html, high_img_path_of_modified_af_html)
 

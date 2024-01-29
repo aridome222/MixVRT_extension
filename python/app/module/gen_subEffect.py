@@ -244,29 +244,29 @@ def compare_regions(region1, region2):
 
 
 # 枠の重なり度合いで一致かどうかを判定
-# def contours_overlap(c1, c2):
-#     # 輪郭のバウンディングボックスを取得
-#     x1, y1, w1, h1 = cv2.boundingRect(c1)
-#     x2, y2, w2, h2 = cv2.boundingRect(c2)
+def contours_overlap(c1, c2):
+    # 輪郭のバウンディングボックスを取得
+    x1, y1, w1, h1 = cv2.boundingRect(c1)
+    x2, y2, w2, h2 = cv2.boundingRect(c2)
 
-#     # バウンディングボックスが重なっているか判定
-#     if not (x1 < x2 + w2 and x1 + w1 > x2 and y1 < y2 + h2 and y1 + h1 > y2):
-#         return False
+    # バウンディングボックスが重なっているか判定
+    if not (x1 < x2 + w2 and x1 + w1 > x2 and y1 < y2 + h2 and y1 + h1 > y2):
+        return False
 
-#     # 重なり部分のバウンディングボックスを計算
-#     overlap_x = max(x1, x2)
-#     overlap_y = max(y1, y2)
-#     overlap_w = min(x1 + w1, x2 + w2) - overlap_x
-#     overlap_h = min(y1 + h1, y2 + h2) - overlap_y
-#     overlap_area = overlap_w * overlap_h
+    # 重なり部分のバウンディングボックスを計算
+    overlap_x = max(x1, x2)
+    overlap_y = max(y1, y2)
+    overlap_w = min(x1 + w1, x2 + w2) - overlap_x
+    overlap_h = min(y1 + h1, y2 + h2) - overlap_y
+    overlap_area = overlap_w * overlap_h
 
-#     # 小さい方のバウンディングボックスの面積を計算
-#     area1 = w1 * h1
-#     area2 = w2 * h2
-#     smaller_area = min(area1, area2)
+    # 小さい方のバウンディングボックスの面積を計算
+    area1 = w1 * h1
+    area2 = w2 * h2
+    smaller_area = min(area1, area2)
 
-#     # 重なりが小さい方の面積の60%以上であればTrueを返す
-#     return overlap_area / smaller_area >= 0.6
+    # 重なりが小さい方の面積の60%以上であればTrueを返す
+    return overlap_area / smaller_area >= 0.5
 
 # def contours_match(contour1, contour2):
 #     for c1 in contour1:
@@ -280,13 +280,13 @@ def compare_regions(region1, region2):
 
 
 # シンプルに少しでも重なったら一致、そうでなければ不一致
-def contours_overlap(c1, c2):
-    # 輪郭のバウンディングボックスを取得
-    x1, y1, w1, h1 = cv2.boundingRect(c1)
-    x2, y2, w2, h2 = cv2.boundingRect(c2)
+# def contours_overlap(c1, c2):
+#     # 輪郭のバウンディングボックスを取得
+#     x1, y1, w1, h1 = cv2.boundingRect(c1)
+#     x2, y2, w2, h2 = cv2.boundingRect(c2)
 
-    # バウンディングボックスが重なっているか判定
-    return (x1 < x2 + w2 and x1 + w1 > x2 and y1 < y2 + h2 and y1 + h1 > y2)
+#     # バウンディングボックスが重なっているか判定
+#     return (x1 < x2 + w2 and x1 + w1 > x2 and y1 < y2 + h2 and y1 + h1 > y2)
 
 
 def contours_match(contour1, contour2):
