@@ -14,30 +14,39 @@ from module import diff_dir
 from module import create_dir_and_set_owner
 
 
+def process_html(html_content):
+    soup = BeautifulSoup(html_content, 'html.parser')
+    # soup = BeautifulSoup(soup.prettify(), 'html.parser')
+
+    # 処理するタグのリスト
+    tags_to_process = ['p']
+
+    for tag_name in tags_to_process:
+        for tag in soup.find_all(tag_name):
+            tag.string = ' '.join(tag.get_text().split())
+
+    return str(soup)
+
 def save_diff_html_data(html_data_file, html_data_file_2):
+    # HTMLデータの読み込みと処理
+    with open(html_data_file, 'r', encoding='utf-8') as file:
+        html_content_1 = process_html(file.read())
+
+    with open(html_data_file_2, 'r', encoding='utf-8') as file:
+        html_content_2 = process_html(file.read())
+
     ### ２つのHTMLデータの差分をtxtファイルに出力する ###
-    
-    # 保存先ディレクトリを指定
     output_dir = os.path.join(diff_dir, "html_diff/")
-    # フォルダが存在しない場合は作成
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
         command = f"sudo chown -R aridome:aridome {output_dir}"
-        # コマンドを実行
         subprocess.call(command, shell=True)
 
-
-    # # 現在の日付を取得してフォーマット
-    # current_date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    # # ファイル名を生成
-    # output_file_name = f"diff_{current_date}.txt"
     output_file_name = "diff_html.txt"
-
-    # 差異を別ファイルに出力
-    differ = difflib.Differ()
-    diff = differ.compare(html_data_file.splitlines(), html_data_file_2.splitlines())
-
     output_file_path = os.path.join(output_dir, output_file_name)
+
+    differ = difflib.Differ()
+    diff = differ.compare(html_content_1.splitlines(), html_content_2.splitlines())
 
     with open(output_file_path, "w", encoding="utf-8") as f:
         for line in diff:
@@ -69,11 +78,4 @@ def gen_diff_html(current_dir, new_data_dir):
     before_file_path = get_html_path_from_dir(current_dir)
     after_file_path = get_html_path_from_dir(new_data_dir)
 
-    # HTMLファイルを読み込む
-    with open(before_file_path, 'r') as file:
-        before_html = file.read()
-
-    with open(after_file_path, 'r') as file:
-        after_html = file.read()
-
-    return save_diff_html_data(before_html, after_html)
+    return save_diff_html_data(before_file_path, after_file_path)
