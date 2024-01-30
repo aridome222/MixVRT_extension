@@ -12,7 +12,7 @@ sys.path.append('/app/src/module')
 
 import difflib
 
-from flask_cors import CORS, cross_origin
+# from flask_cors import CORS, cross_origin
 
 import pytest
 import shlex
@@ -33,7 +33,7 @@ diff_dir =  os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file_
 template_folder = os.path.join(disp_dir, 'templates')
 static_folder = os.path.join(disp_dir, 'static')
 MixVRT = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
-CORS(MixVRT)
+# CORS(MixVRT)
 # CORS(app, origins=["http://127.0.0.1:5000"], methods=["GET", "POST"])
 
 
@@ -43,13 +43,13 @@ template_folder2 = os.path.join(diff_dir, 'modified_html', 'templates')
 # 新しいBlueprintを作成
 new_blueprint = Blueprint('new_blueprint', __name__, template_folder=template_folder2)
 
-@new_blueprint.route('/modified_testPage_bf')
-def modified_testPage_bf():
-    return render_template('modified_testPage_bf.html')
+# @new_blueprint.route('/modified_testPage_bf')
+# def modified_testPage_bf():
+#     return render_template('modified_testPage_bf.html')
 
-@new_blueprint.route('/modified_testPage_af')
-def modified_testPage_af():
-    return render_template('modified_testPage_af.html')
+# @new_blueprint.route('/modified_testPage_af')
+# def modified_testPage_af():
+#     return render_template('modified_testPage_af.html')
 
 # Blueprintをアプリケーションに登録
 MixVRT.register_blueprint(new_blueprint)
@@ -140,7 +140,7 @@ def input_url():
         return "HTML-file is Already up to date."
 
 @repo.route('/index', methods=['POST', 'GET'])
-@cross_origin()
+# @cross_origin()
 def index():
     if request.method == 'POST':
         # POSTリクエストの処理
@@ -166,65 +166,92 @@ def index():
             return "HTML-file is Already up to date."
         
 @repo.route('/before', methods=['POST', 'GET'])
-@cross_origin()
+# @cross_origin()
 def before_web():
     return render_template("before.html")
 
 @repo.route('/after', methods=['POST', 'GET'])
-@cross_origin()
+# @cross_origin()
 def after_web():
     return render_template("after.html")
 
 @repo.route('/before_modified', methods=['POST', 'GET'])
-@cross_origin()
+# @cross_origin()
 def before_modified_web():
     return render_template("before_modified.html")
 
 @repo.route('/after_modified', methods=['POST', 'GET'])
-@cross_origin()
+# @cross_origin()
 def after_modified_web():
     return render_template("after_modified.html")
 
 
 @repo.route('/testPage', methods=['POST', 'GET'])
-@cross_origin()
+# @cross_origin()
 def testPage():
     return render_template("testPage.html")
 
 @repo.route('/testPage_bf', methods=['POST', 'GET'])
-@cross_origin()
+# @cross_origin()
 def testPage_bf():
     return render_template("testPage_bf.html")
 
 @repo.route('/testPage_af', methods=['POST', 'GET'])
-@cross_origin()
+# @cross_origin()
 def testPage_af():
     return render_template("testPage_af.html")
 
 @repo.route('/testPage_bf_modified', methods=['POST', 'GET'])
-@cross_origin()
+# @cross_origin()
 def testPage_bf_modified():
     return render_template("testPage_bf_modified.html")
 
 @repo.route('/testPage_af_modified', methods=['POST', 'GET'])
-@cross_origin()
+# @cross_origin()
 def testPage_af_modified():
     return render_template("testPage_af_modified.html")
 
 
 @repo.route('/test1_bf', methods=['POST', 'GET'])
-@cross_origin()
+# @cross_origin()
 def test1_bf():
     return render_template("test1_bf.html")
 
 @repo.route('/test1_af', methods=['POST', 'GET'])
-@cross_origin()
+# @cross_origin()
 def test1_af():
     return render_template("test1_af.html")
 
 
+################################################
+
+# 実験に用いるWebページ
+
+################################################
+
+@repo.route('/experiment/ex1_bf', methods=['POST', 'GET'])
+# @cross_origin()
+def ex1_bf():
+    return render_template("experiment/ex1_bf.html")
+
+@repo.route('/experiment/ex1_af', methods=['POST', 'GET'])
+# @cross_origin()
+def ex1_af():
+    return render_template("experiment/ex1_af.html")
+
+
+
+
+
+################################################
+
+# 実験に用いるWebページ
+
+################################################
+
+
 @repo.route('/render_index/<path:page_url>')
-@cross_origin()
+# @cross_origin()
 def render_index(page_url):
     return render_template("index.html", page_url=page_url)
 
@@ -247,7 +274,7 @@ def piza_form():
     
 
 @repo.route('/log', methods=['POST'])
-@cross_origin()
+# @cross_origin()
 def log_event():
     data = request.get_json()
     logging.info(f"Log data: {data}")  # ログデータをファイルに書き込む
@@ -268,17 +295,17 @@ def log():
     return jsonify({'status': 'success'})
 
 
-@repo.route('/diff', methods=['POST'])
-@cross_origin()
-def diff():
-    data = request.get_json()
-    url1 = data.get('url1')
-    url2 = data.get('url2')
+# @repo.route('/diff', methods=['POST'])
+# # @cross_origin()
+# def diff():
+#     data = request.get_json()
+#     url1 = data.get('url1')
+#     url2 = data.get('url2')
 
-    # 差分検出プログラムを実行して差分画像のパスを取得
-    diff_img1, diff_img2 = run_diff_program(url1, url2)
+#     # 差分検出プログラムを実行して差分画像のパスを取得
+#     diff_img1, diff_img2 = run_diff_program(url1, url2)
 
-    return jsonify({'diff_image_url1': diff_img1, 'diff_image_url2': diff_img2})
+#     return jsonify({'diff_image_url1': diff_img1, 'diff_image_url2': diff_img2})
 
 
 @repo.route('/confirmation', methods=['POST'])
@@ -302,15 +329,32 @@ MixVRT.register_blueprint(repo)
 
 
 @MixVRT.route('/MixVRT_url', methods=['POST', 'GET'])
-@cross_origin()
+# @cross_origin()
 def MixVRT_url():
     return render_template('MixVRT_url.html')
 
 @MixVRT.route('/MixVRT_diff', methods=['POST', 'GET'])
-@cross_origin()
+# @cross_origin()
 def MixVRT_diff():
     return render_template('MixVRT_diff.html')
 
+@MixVRT.route('/MixVRT_test', methods=['POST', 'GET'])
+# @cross_origin()
+def MixVRT_test():
+    return render_template('MixVRT_test.html')
+
+@MixVRT.route('/test', methods=['POST', 'GET'])
+# @cross_origin()
+def test():
+    return render_template('test.html')
+
+@MixVRT.route('/modified_testPage_bf')
+def modified_testPage_bf():
+    return render_template('modified_testPage_bf.html')
+
+@MixVRT.route('/modified_testPage_af')
+def modified_testPage_af():
+    return render_template('modified_testPage_af.html')
 
 if __name__ == '__main__':
     MixVRT.run(host='0.0.0.0', port=5000, debug=True)

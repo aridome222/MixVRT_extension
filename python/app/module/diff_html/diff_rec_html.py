@@ -40,39 +40,39 @@ def main(high_img_path_of_bf_html, high_img_path_of_modified_bf_html, high_img_p
     img1 = cv2.imread(high_img_path_of_bf_html)
     img2 = cv2.imread(high_img_path_of_modified_bf_html)
 
-    # 画像1のサイズを取得
-    height1, width1, _ = img1.shape
+    # # 画像1のサイズを取得
+    # height1, width1, _ = img1.shape
 
-    # 画像2のサイズを取得
-    height2, width2, _ = img2.shape
+    # # 画像2のサイズを取得
+    # height2, width2, _ = img2.shape
 
-    # ターゲットのサイズ
-    target_width = 2613
-    target_height = 2567
+    # # ターゲットのサイズ
+    # target_width = 2613
+    # target_height = 2567
 
-    # サイズが異なる場合はリサイズ
-    if (width1, height1) != (width2, height2):
-        img1 = cv2.resize(img1, (target_width, target_height))
-        img2 = cv2.resize(img2, (target_width, target_height))
+    # # サイズが異なる場合はリサイズ
+    # if (width1, height1) != (width2, height2):
+    #     img1 = cv2.resize(img1, (target_width, target_height))
+    #     img2 = cv2.resize(img2, (target_width, target_height))
 
     """変更後画像読み込み"""
     img3 = cv2.imread(high_img_path_of_af_html)
     img4 = cv2.imread(high_img_path_of_modified_af_html)
 
-    # 画像3のサイズを取得
-    height3, width3, _ = img3.shape
+    # # 画像3のサイズを取得
+    # height3, width3, _ = img3.shape
 
-    # 画像4のサイズを取得
-    height4, width4, _ = img4.shape
+    # # 画像4のサイズを取得
+    # height4, width4, _ = img4.shape
 
-    # ターゲットのサイズ
-    target_width = 2613
-    target_height = 2567
+    # # ターゲットのサイズ
+    # target_width = 2613
+    # target_height = 2567
 
-    # サイズが異なる場合はリサイズ
-    if (width3, height3) != (width4, height4):
-        img3 = cv2.resize(img3, (target_width, target_height))
-        img4 = cv2.resize(img4, (target_width, target_height))
+    # # サイズが異なる場合はリサイズ
+    # if (width3, height3) != (width4, height4):
+    #     img3 = cv2.resize(img3, (target_width, target_height))
+    #     img4 = cv2.resize(img4, (target_width, target_height))
 
 
     """画像処理"""

@@ -143,7 +143,7 @@ def main(diff_bf_html, diff_bf_img, diff_af_html, diff_af_img, high_img_path_of_
 
 
 # 輪郭内の中身同士の類似度が高ければ、それらの枠を除外
-def contours_similar(contours1, contours2, img_before, img_after, similarity_threshold=0.9):
+def contours_similar(contours1, contours2, img_before, img_after, similarity_threshold=0.95):
     # 各輪郭リストのインデックスを保持
     updated_contours1_indices = list(range(len(contours1)))
     updated_contours2_indices = list(range(len(contours2)))

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>サンプルページ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav {
+            overflow: auto;
+            background-color: #333;
+        }
+
+        .nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .left {
+            width: 60%;
+            float: left;
+            padding: 20px;
+        }
+
+        .right {
+            width: 40%;
+            float: right;
+            padding: 20px;
+            overflow: visible;
+        }
+
+        .footer {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .overlap {
+            position: relative;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>私のWebサイト</h1>
+    </div>
+
+    <div class="nav">
+        <a href="#home">ホーム</a>
+        <a href="#news">ニュース</a>
+        <a href="#contact">コンタクト</a>
+        <a href="#about">アバウト</a>
+    </div>
+
+    <div class="container">
+        <div class="left">
+            <h2>メインコンテンツ</h2>
+            <p>このセクションには、メインコンテンツが表示されます。</p>
+        </div>
+        <div class="right">
+            <h2>サイドバー</h2>
+            <p>このサイドバーは、メインコンテンツの隣に表示されます。</p>
+            <img src="image.jpg" style="width: 100%;">
+        </div>
+        <div class="overlap">
+            <h3>重なり合う要素</h3>
+            <p>このテキストは他の要素と重なりません。</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>フッターコンテンツ</p>
+    </div>
+
+</body>
+
+</html>
