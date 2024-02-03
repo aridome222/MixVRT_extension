@@ -57,3 +57,5 @@ RUN pip install flask_cors
 # 変更前後のhtmlを比較し、差分ファイルを処理する際に必要
 RUN pip install xmldiff
 RUN pip install HTMLCompare
+
+RUN pip install Selenium-Screenshot

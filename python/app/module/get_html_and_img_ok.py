@@ -16,17 +16,10 @@ import subprocess
 import requests
 import argparse
 from Screenshot import Screenshot
-from selenium.webdriver.support import expected_conditions as EC
-
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
 
 def setup_driver():
   options = Options()
-  # options.add_argument('--headless')  # ヘッドレスモードでブラウザを起動
+  options.add_argument('--headless')  # ヘッドレスモードでブラウザを起動
   options.add_argument('--no-sandbox')
   options.add_argument('--disable-dev-shm-usage')
   driver = webdriver.Remote(command_executor='http://chrome:4444/wd/hub', options=options)
@@ -55,19 +48,6 @@ def save_screenShot(driver, dir):
   output_file_path = os.path.join(output_dir, output_file_name)
 
   ob = Screenshot.Screenshot()
-
-  #ウインドウサイズをWebサイトに合わせて変更
-  width = driver.execute_script("return document.body.scrollWidth;")
-  height = driver.execute_script("return document.body.scrollHeight;")
-  driver.set_window_size(width,height)
-
-  # タイムアウト判定を行う
-  try:
-      # 全てのコンテンツが読み込まれるまで待機
-      WebDriverWait(driver, 15).until(EC.presence_of_all_elements_located)
-  except TimeoutException as e:
-      # 例外処理
-      print(e)
 
   # 追加: ここでフルページのスクリーンショットを取る  
   ob.full_screenshot(driver, save_path=output_dir, image_name=output_file_name) 

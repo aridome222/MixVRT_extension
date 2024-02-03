@@ -97,6 +97,8 @@ def main(diff_rec_bf_html, diff_rec_bf_img, diff_rec_af_html, diff_rec_af_img, h
     bf_original = cv2.imread(os.path.join(images_dir, "original_png", "bf_original.png"))
     af_original = cv2.imread(os.path.join(images_dir, "original_png", "af_original.png"))
 
+    unsimilar_contours_bf, unsimilar_contours_af = contours_match_feature(unique_contours_bf, unique_contours_af, (height1, width1))
+
 
     """ 輪郭描画 """
     # この関数を使用して元の画像と高解像度の画像にバウンディングボックスを描画

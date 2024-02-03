@@ -17,7 +17,6 @@ from module import create_dir_and_set_owner
 
 ### 定数の定義 ###
 UNIQUE_CLASS_BEFORE_CSS = """
-<style>
             .uniqueClass {
                 position: relative;
                 /* 親要素のその他のスタイリング */
@@ -48,11 +47,9 @@ UNIQUE_CLASS_BEFORE_CSS = """
                 font-size: 12px;
                 z-index: 1;
             }
-</style>
         """
 
 UNIQUE_CLASS_AFTER_CSS = """
-<style>
             .uniqueClass {
                 position: relative;
                 /* 親要素のその他のスタイリング */
@@ -83,11 +80,9 @@ UNIQUE_CLASS_AFTER_CSS = """
                 font-size: 12px;
                 z-index: 1;
             }
-</style>
         """
 
 IMAGE_WRAPPER_CLASS_BEFORE_CSS = """
-<style>
             .image-wrapper {
                 position: relative;
             }
@@ -102,11 +97,9 @@ IMAGE_WRAPPER_CLASS_BEFORE_CSS = """
                 border: 5px solid rgb(255, 0, 0); /* 枠線のスタイル */
                 z-index: 1;
             }
-</style>
         """
 
 IMAGE_WRAPPER_CLASS_AFTER_CSS = """
-<style>
             .image-wrapper {
                 position: relative;
             }
@@ -121,7 +114,6 @@ IMAGE_WRAPPER_CLASS_AFTER_CSS = """
                 border: 5px solid rgb(0, 255, 0); /* 枠線のスタイル */
                 z-index: 1;
             }
-</style>
         """
 
 
@@ -138,7 +130,6 @@ def create_html_with_css_selectors(selectors, bf_or_af_html):
     if bf_or_af_html == "before":
         # Creating CSS rules
         css_selector = f"""
-        <style>
             {grouped_selectors} {{
                 position: relative;
             }}
@@ -163,12 +154,10 @@ def create_html_with_css_selectors(selectors, bf_or_af_html):
                 font-size: 12px;
                 z-index: 1;
             }}
-        </style>
         """
     elif bf_or_af_html == "after":
         # Creating CSS rules
         css_selector = f"""
-        <style>
             {grouped_selectors} {{
                 position: relative;
             }}
@@ -193,7 +182,6 @@ def create_html_with_css_selectors(selectors, bf_or_af_html):
                 font-size: 12px;
                 z-index: 1;
             }}
-        </style>
         """
 
     return css_selector
@@ -292,7 +280,7 @@ def generate_modified_html(diff_file_path):
     add_uniClass_af_lines = []
     for line in modified_before_lines:
         # Find the position of the </style> tag
-        style_tag_index = line.find('</head>')
+        style_tag_index = line.find('</style>')
         if style_tag_index != -1:
             # Insert the CSS before the </style> tag
             line = line[:style_tag_index] + UNIQUE_CLASS_BEFORE_CSS + line[style_tag_index:]
@@ -300,7 +288,7 @@ def generate_modified_html(diff_file_path):
 
     for line in modified_after_lines:
         # Find the position of the </style> tag
-        style_tag_index = line.find('</head>')
+        style_tag_index = line.find('</style>')
         if style_tag_index != -1:
             # Insert the CSS before the </style> tag
             line = line[:style_tag_index] + UNIQUE_CLASS_AFTER_CSS + line[style_tag_index:]
@@ -340,7 +328,7 @@ def generate_modified_html(diff_file_path):
     css_selector_af = create_html_with_css_selectors(changed_selectors, "after")
     for line in add_uniClass_bf_lines:
         # Find the position of the </style> tag
-        style_tag_index = line.find('</head>')
+        style_tag_index = line.find('</style>')
         if style_tag_index != -1:
             if flag_changed_selectors:
                 # Insert the CSS before the </style> tag
@@ -352,7 +340,7 @@ def generate_modified_html(diff_file_path):
 
     for line in add_uniClass_af_lines:
         # Find the position of the </style> tag
-        style_tag_index = line.find('</head>')
+        style_tag_index = line.find('</style>')
         if style_tag_index != -1:
             if flag_changed_selectors:
                 # Insert the CSS before the </style> tag

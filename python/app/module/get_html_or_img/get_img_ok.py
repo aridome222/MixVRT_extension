@@ -15,8 +15,6 @@ import difflib
 import subprocess
 from Screenshot import Screenshot
 
-from selenium.common.exceptions import TimeoutException
-
 # module 内の __init__.py から関数をインポート
 from module import base_dir
 from module import diff_dir
@@ -25,7 +23,7 @@ from module import create_dir_and_set_owner
 
 def setup_driver():
   options = Options()
-#   options.add_argument('--headless')  # ヘッドレスモードでブラウザを起動
+  options.add_argument('--headless')  # ヘッドレスモードでブラウザを起動
   options.add_argument('--no-sandbox')
   options.add_argument('--disable-dev-shm-usage')
   driver = webdriver.Remote(command_executor='http://chrome:4444/wd/hub', options=options)
@@ -47,19 +45,6 @@ def save_screenShot(driver, modified_file_path):
     output_file_path = os.path.join(output_dir, output_file_name)
 
     ob = Screenshot.Screenshot()
-
-    #ウインドウサイズをWebサイトに合わせて変更
-    width = driver.execute_script("return document.body.scrollWidth;")
-    height = driver.execute_script("return document.body.scrollHeight;")
-    driver.set_window_size(width,height)
-
-      # タイムアウト判定を行う
-    try:
-        # 全てのコンテンツが読み込まれるまで待機
-        WebDriverWait(driver, 15).until(EC.presence_of_all_elements_located)
-    except TimeoutException as e:
-        # 例外処理
-        print(e)
 
     # 追加: ここでフルページのスクリーンショットを取る  
     ob.full_screenshot(driver, save_path=output_dir, image_name=output_file_name) 

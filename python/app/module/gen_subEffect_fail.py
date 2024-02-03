@@ -83,10 +83,8 @@ def main(diff_bf_html, diff_bf_img, diff_af_html, diff_af_img, high_img_path_of_
     # contours2 = filter_contours_by_area(contours2)
 
     # 一致しない輪郭を探す
-    unique_contours_bf = list(contours_match(contours_img_bf, contours_html_bf))
-    unique_contours_af = list(contours_match(contours_img_af, contours_html_af))
-    # unique_contours_bf = list(contours_match(contours_img_bf, contours_html_bf)) + list(contours_match(contours_html_bf, contours_img_bf))
-    # unique_contours_af = list(contours_match(contours_img_af, contours_html_af)) + list(contours_match(contours_html_af, contours_img_af))
+    unique_contours_bf = list(contours_match(contours_img_bf, contours_html_bf)) + list(contours_match(contours_html_bf, contours_img_bf))
+    unique_contours_af = list(contours_match(contours_img_af, contours_html_af)) + list(contours_match(contours_html_af, contours_img_af))
 
 
     """ オリジナル画像の読み込み """
@@ -161,11 +159,12 @@ def contours_similar(contours1, contours2, img_before, img_after, similarity_thr
             region2 = img_after[y2:y2+h2, x2:x2+w2]
 
             # 領域間の類似度を計算
-            if compare_regions(region1, region2) > similarity_threshold:
+            if i == 0:
+                print(compare_regions(region1, region2, w1, h1, w2, h2, similarity_threshold))
+            if compare_regions(region1, region2, w1, h1, w2, h2, similarity_threshold) > similarity_threshold:
                 # 類似度が高ければ輪郭のインデックスを削除
-                if i in updated_contours1_indices:
+                if i in updated_contours1_indices and j in updated_contours2_indices:
                     updated_contours1_indices.remove(i)
-                if j in updated_contours2_indices:
                     updated_contours2_indices.remove(j)
 
     # 最終的な輪郭リストを生成
@@ -174,11 +173,11 @@ def contours_similar(contours1, contours2, img_before, img_after, similarity_thr
 
     return updated_contours1, updated_contours2
 
-def compare_regions(region1, region2):
+def compare_regions(region1, region2, w1, h1, w2, h2, similarity_threshold):
     # 空の画像領域を確認
     if region1.size == 0 or region2.size == 0:
         return 0  # 画像領域が空の場合は、類似度を0として返す
-    
+        
     # 画像領域のサイズを揃える
     h = min(region1.shape[0], region2.shape[0])
     w = min(region1.shape[1], region2.shape[1])
@@ -198,6 +197,12 @@ def compare_regions(region1, region2):
     # 平均差分を最大可能差分で正規化して、類似度を計算（1 - mean_diff / max_diff）
     max_diff = 255
     similarity = 1 - (mean_diff / max_diff)
+
+    if (w1 > w2 and h1 > h2) or (w1 < w2 and h1 < h2):
+        similarity = similarity * ((min(w1, w2) * min(h1, h2)) / (max(w1, w2) * max(h1, h2)))
+    else:
+        similarity = similarity * ((min(w1, w2) * min(h1, h2)) / (max(w1, w2) * min(h1, h2) + min(w1, w2) * max(h1, h2) - min(w1, w2) * min(h1, h2)))
+
 
     return similarity
 
@@ -244,20 +249,9 @@ def compare_regions(region1, region2):
 #         if not match:
 #             yield c1
 
-def is_parent_child(c1, c2):
-    # 輪郭c1とc2のバウンディングボックスを取得
-    x1, y1, w1, h1 = cv2.boundingRect(c1)
-    x2, y2, w2, h2 = cv2.boundingRect(c2)
-    
-    # c2がc1の内部に完全に含まれているかチェック
-    return x1 <= x2 and y1 <= y2 and (x1 + w1) >= (x2 + w2) and (y1 + h1) >= (y2 + h2)
 
 # 枠の重なり度合いで一致かどうかを判定
-def contours_overlap(c1, c2, ignore_parent_child=True):
-    # if ignore_parent_child and (is_parent_child(c1, c2) or is_parent_child(c2, c1)):
-    #     # 親子関係がある場合は、無視する
-    #     return False
- 
+def contours_overlap(c1, c2):
     # 輪郭のバウンディングボックスを取得
     x1, y1, w1, h1 = cv2.boundingRect(c1)
     x2, y2, w2, h2 = cv2.boundingRect(c2)
@@ -343,10 +337,10 @@ def scale_bounding_box(orig_img, high_res_img, contours, bf_or_af, scale_to_high
             h = int(h / height_ratio)
             if bf_or_af == "before":
                 cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 0, 255), 4)
-                # cv2.putText(orig_img, str(i+1), (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
+                cv2.putText(orig_img, str(i+1), (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
             else:
                 cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 255, 0), 4)
-                # cv2.putText(orig_img, str(i+1), (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+                cv2.putText(orig_img, str(i+1), (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
 
 def filter_contours_by_area(contours, threshold_area=3000):

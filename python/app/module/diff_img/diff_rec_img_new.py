@@ -57,6 +57,23 @@ def main(high_img_path_of_bf_html, high_img_path_of_af_html):
     #     img1 = cv2.resize(img1, (target_width, target_height))
     #     img2 = cv2.resize(img2, (target_width, target_height))
 
+    # 画像1と画像2の高さを取得
+    height1, width1, _ = img1.shape
+    height2, width2, _ = img2.shape
+
+    # 画像の高さを比較して、より低い画像に白い背景を追加
+    if height1 < height2:
+        # 画像1が低い場合
+        diff = height2 - height1
+        white_patch = np.ones((diff, width1, 3), dtype=np.uint8) * 255  # 白い背景を作成
+        img1 = np.vstack((img1, white_patch))  # 画像1の下に白い背景を追加
+    elif height2 < height1:
+        # 画像2が低い場合
+        diff = height1 - height2
+        white_patch = np.ones((diff, width2, 3), dtype=np.uint8) * 255  # 白い背景を作成
+        img2 = np.vstack((img2, white_patch))  # 画像2の下に白い背景を追加
+
+
     # clahe = cv2.createCLAHE(clipLimit=30.0, tileGridSize=(10, 10))
     img1_gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
     img2_gray = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
@@ -88,6 +105,21 @@ def main(high_img_path_of_bf_html, high_img_path_of_af_html):
 
     bf_original = cv2.imread(os.path.join(images_dir, "original_png", "bf_original.png"))
     af_original = cv2.imread(os.path.join(images_dir, "original_png", "af_original.png"))
+
+    # 画像1と画像2の高さを取得
+    height3, width3, _ = bf_original.shape
+    height4, width4, _ = af_original.shape
+
+    if height3 < height4:
+        # 画像3が低い場合
+        diff = height4 - height3
+        white_patch = np.ones((diff, width3, 3), dtype=np.uint8) * 255  # 白い背景を作成
+        bf_original = np.vstack((bf_original, white_patch))  # 画像3の下に白い背景を追加
+    elif height4 < height3:
+        # 画像4が低い場合
+        diff = height3 - height4
+        white_patch = np.ones((diff, width4, 3), dtype=np.uint8) * 255  # 白い背景を作成
+        af_original = np.vstack((af_original, white_patch))  # 画像2の下に白い背景を追加
 
     # この関数を使用して元の画像と高解像度の画像にバウンディングボックスを描画
     scale_bounding_box(bf_original, img1, contours1, "before", scale_to_high_res=False)
@@ -188,17 +220,8 @@ def scale_bounding_box(orig_img, high_res_img, contours, bf_or_af, scale_to_high
     width_ratio = high_res_width / orig_width
     height_ratio = high_res_height / orig_height
 
-    # sorted_contours = sorted(contours, key=lambda cont: cv2.boundingRect(cont)[1])  # まずy座標でソート
-    # sorted_contours = sorted(sorted_contours, key=lambda cont: cv2.boundingRect(cont)[0])  # 次にx座標でソート
-
-    # sorted_contours = sorted(contours, key=lambda cont: (cv2.boundingRect(cont)[1], cv2.boundingRect(cont)[0]))
-
-    # sorted_contours = sorted(contours, key=lambda cont: (cv2.boundingRect(cont)[0])**2 + (cv2.boundingRect(cont)[1])**2)
-
-    sorted_contours = sorted(contours, key=lambda cont: (cv2.boundingRect(cont)[0])**2 + (cv2.boundingRect(cont)[1])**2)
-
     # 輪郭に対して処理を行う
-    for i, contour in enumerate(sorted_contours):
+    for contour in contours:
         x, y, w, h = cv2.boundingRect(contour)
 
         # スケーリングする必要がある場合、バウンディングボックスをスケーリング
@@ -209,10 +232,8 @@ def scale_bounding_box(orig_img, high_res_img, contours, bf_or_af, scale_to_high
             h = int(h * height_ratio)
             if bf_or_af == "before":
                 cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 0, 255), 4)
-                cv2.putText(orig_img, str(i+1), (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
             else:
                 cv2.rectangle(high_res_img, (x, y), (x + w, y + h), (0, 255, 0), 4)
-                cv2.putText(orig_img, str(i+1), (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
         else:
             x = int(x / width_ratio)
             y = int(y / height_ratio)
@@ -220,10 +241,8 @@ def scale_bounding_box(orig_img, high_res_img, contours, bf_or_af, scale_to_high
             h = int(h / height_ratio)
             if bf_or_af == "before":
                 cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 0, 255), 4)
-                # cv2.putText(orig_img, str(i+1), (x, y + h), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
             else:
                 cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 255, 0), 4)
-                # cv2.putText(orig_img, str(i+1), (x, y + h), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
 
 def filter_contours_by_area(contours, threshold_area=3000):

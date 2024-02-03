@@ -343,6 +343,36 @@ def MixVRT_diff():
 def MixVRT_test():
     return render_template('MixVRT_test.html')
 
+@MixVRT.route('/MixVRT_test_af', methods=['POST', 'GET'])
+# @cross_origin()
+def MixVRT_test_af():
+    return render_template('MixVRT_test_af.html')
+
+@MixVRT.route('/before', methods=['POST', 'GET'])
+# @cross_origin()
+def before():
+    return render_template('before.html')
+
+@MixVRT.route('/after', methods=['POST', 'GET'])
+# @cross_origin()
+def after():
+    return render_template('after.html')
+
+@MixVRT.route('/ari_eval_bf', methods=['POST', 'GET'])
+# @cross_origin()
+def ari_eval_bf():
+    return render_template('ari_eval_bf.html')
+
+@MixVRT.route('/ari_eval_af', methods=['POST', 'GET'])
+# @cross_origin()
+def ari_eval_af():
+    return render_template('ari_eval_af.html')
+
+@MixVRT.route('/ari_eval', methods=['POST', 'GET'])
+# @cross_origin()
+def ari_eval():
+    return render_template('ari_eval.html')
+
 @MixVRT.route('/test', methods=['POST', 'GET'])
 # @cross_origin()
 def test():

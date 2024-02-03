@@ -21,7 +21,7 @@ input_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "img/")
 if not os.path.exists(input_dir):
     os.makedirs(input_dir)
 # ファイル名を生成
-input_file_name = 'existTool_af_not_rec.png'
+input_file_name = 'original.png'
 # ファイルパスを作成
 input_file_path = os.path.join(input_dir, input_file_name)
 

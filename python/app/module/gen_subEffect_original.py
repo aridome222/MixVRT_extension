@@ -83,10 +83,8 @@ def main(diff_bf_html, diff_bf_img, diff_af_html, diff_af_img, high_img_path_of_
     # contours2 = filter_contours_by_area(contours2)
 
     # 一致しない輪郭を探す
-    unique_contours_bf = list(contours_match(contours_img_bf, contours_html_bf))
-    unique_contours_af = list(contours_match(contours_img_af, contours_html_af))
-    # unique_contours_bf = list(contours_match(contours_img_bf, contours_html_bf)) + list(contours_match(contours_html_bf, contours_img_bf))
-    # unique_contours_af = list(contours_match(contours_img_af, contours_html_af)) + list(contours_match(contours_html_af, contours_img_af))
+    unique_contours_bf = list(contours_match(contours_img_bf, contours_html_bf)) + list(contours_match(contours_html_bf, contours_img_bf))
+    unique_contours_af = list(contours_match(contours_img_af, contours_html_af)) + list(contours_match(contours_html_af, contours_img_af))
 
 
     """ オリジナル画像の読み込み """
@@ -244,20 +242,9 @@ def compare_regions(region1, region2):
 #         if not match:
 #             yield c1
 
-def is_parent_child(c1, c2):
-    # 輪郭c1とc2のバウンディングボックスを取得
-    x1, y1, w1, h1 = cv2.boundingRect(c1)
-    x2, y2, w2, h2 = cv2.boundingRect(c2)
-    
-    # c2がc1の内部に完全に含まれているかチェック
-    return x1 <= x2 and y1 <= y2 and (x1 + w1) >= (x2 + w2) and (y1 + h1) >= (y2 + h2)
 
 # 枠の重なり度合いで一致かどうかを判定
-def contours_overlap(c1, c2, ignore_parent_child=True):
-    # if ignore_parent_child and (is_parent_child(c1, c2) or is_parent_child(c2, c1)):
-    #     # 親子関係がある場合は、無視する
-    #     return False
- 
+def contours_overlap(c1, c2):
     # 輪郭のバウンディングボックスを取得
     x1, y1, w1, h1 = cv2.boundingRect(c1)
     x2, y2, w2, h2 = cv2.boundingRect(c2)
@@ -323,7 +310,7 @@ def scale_bounding_box(orig_img, high_res_img, contours, bf_or_af, scale_to_high
     height_ratio = high_res_height / orig_height
 
     # 輪郭に対して処理を行う
-    for i, contour in enumerate(contours):
+    for contour in contours:
         x, y, w, h = cv2.boundingRect(contour)
 
         # スケーリングする必要がある場合、バウンディングボックスをスケーリング
@@ -343,10 +330,8 @@ def scale_bounding_box(orig_img, high_res_img, contours, bf_or_af, scale_to_high
             h = int(h / height_ratio)
             if bf_or_af == "before":
                 cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 0, 255), 4)
-                # cv2.putText(orig_img, str(i+1), (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
             else:
                 cv2.rectangle(orig_img, (x, y), (x + w, y + h), (0, 255, 0), 4)
-                # cv2.putText(orig_img, str(i+1), (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
 
 def filter_contours_by_area(contours, threshold_area=3000):

@@ -57,6 +57,8 @@ RUN pip install azure-ai-formrecognizer
 RUN pip install xmldiff
 RUN pip install HTMLCompare
 
+RUN pip install Selenium-Screenshot
+
 ###################################
 
 WORKDIR /app
