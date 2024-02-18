@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ログインフォーム</title>
+    <style>
+        body {
+            background-color: #eee;
+            overflow-x: hidden;
+            width: 800px;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: absolute;
+            display: flex;
+            top: 0;
+            height: 30px;
+            width: 100%;
+            padding: 15px 20px;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            font-size: 30px;
+            font-weight: bold;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            font-size: 20px;
+        }
+
+        label {
+            width: fit-content;
+        }
+
+        input {
+            width: 100%;
+        }
+
+        button {
+            display: block;
+            margin: auto;
+            padding: 5px 30px;
+            width: 200px;
+        }
+
+        li {
+            margin-top: 3px;
+            width: fit-content;
+        }
+
+        h3 {
+            width: fit-content;
+            margin-top: 15px;
+        }
+
+        footer {
+            background-color: #333;
+            position: relative;
+            margin-top: 100px;
+            padding: 100px;
+            height: 150px;
+            color: #fff;
+        }
+
+        .header {
+            white-space: nowrap;
+        }
+
+        .navRef {
+            margin: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .containerList {
+            position: relative;
+            top: 100px;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            position: relative;
+            width: 700px;
+            margin: 50px 20px;
+            padding: 30px 20px;
+            background-color: #fff;
+            border-top: solid 2px #555;
+            border-bottom: solid 2px #555;
+        }
+
+        .loginContainer {
+            height: 190px;
+            overflow: hidden;
+        }
+
+        .linkContainer {
+            height: 200px;
+        }
+
+        .title {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 30px;
+        }
+
+        .icon {
+            margin-left: 20px;
+        }
+
+        .footerTitle {
+            white-space: nowrap;
+            font-size: 25px;
+            font-weight: bold;
+            width: fit-content;
+        }
+
+        .footerLink {
+            margin: 20px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .footerContainer {
+            height: 120px;
+            overflow: hidden;
+        }
+
+        .footerList {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">有留大学 受講科目登録</div>
+        <div style="padding: 0 100px"></div>
+        <nav>
+            <a href="https://aridome-university.com/register" class="navRef">コース登録</a>
+            <a href="https://aridome-university.com/list" class="navRef">登録可能科目一覧</a>
+            <a href="https://aridome-university.com/check" class="navRef">取得単位確認</a>
+        </nav>
+    </header>
+    <main style="width: 100%">
+        <div class="containerList">
+            <div class="container loginContainer">
+                <div class="title">
+                    <h2 style="position: relative">ログインフォーム</h2>
+                    <img src="../static/img/login.png" alt="アイコン" width="30px" height="30px" class="icon" />
+                </div>
+                <form action="https://hoge-hoge-hoge.com" method="post">
+                    <div style="margin: 10px 0">
+                        <label for="username" style="display: block">ユーザ名:</label>
+                        <input type="text" id="username" name="username" required />
+                    </div>
+                    <div style="margin: 10px 0">
+                        <label for="password" style="display: block">パスワード:</label>
+                        <input type="password" id="password" name="password" required />
+                    </div>
+                    <p>
+                        *公共の場所などで用意されたフリーWi-Fiでのログインは非推奨としています。それでもログインされる場合には、使用後のログアウトをお願いします。
+                    </p>
+                    <div style="margin-top: 30px">
+                        <button type="submit">
+                            ログイン
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="container linkContainer">
+                <div class="title">
+                    <h2 style="position: relative">各種リンク</h2>
+                    <img src="../static/img/link.png" alt="アイコン" width="30px" height="30px" class="icon" />
+                </div>
+                <ul>
+                    <li>
+                        <a href="https://hoge-hoge-hoge.com/policy">本システムについてはこちら</a>
+                    </li>
+                    <li>
+                        <a href="https://aridome-home.com">有留大学ホームページ</a>
+                    </li>
+                    <ul>
+                        <li>
+                            <a href="https://aridome-home.com/student">在校生の方へ</a>
+                        </li>
+                        <li>
+                            <a href="https://aridome-home.com/teacher">教職員の方へ</a>
+                        </li>
+                        <li>
+                            <a href="https://aridome-home.com/examiness">受験生の方へ</a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="title">
+                    <h2 style="position: relative">お問い合わせ</h2>
+                    <img src="../static/img/aq.png" alt="アイコン" width="30px" height="30px" class="icon" />
+                </div>
+                <p>
+                    ご不明点やご要望がございましたら、お気軽にお問合せください。ただし、お問い合わせいただく前に、以下の注意事項をご確認いただきますようお願いいたします。
+                </p>
+                <h3>お問い合わせ時の規約</h3>
+                <ul>
+                    <li>お問い合わせする際には、下記項目を必須項目としています。</li>
+                    <ul>
+                        <li>お名前</li>
+                        <li>メールアドレス</li>
+                        <li>お問い合わせ事項</li>
+                    </ul>
+                    <li>お問い合わせいただいた内容には、原則として3営業日以内に返信いたします。ただし、お問い合わせの内容や状況によっては、返信に時間がかかる場合がございますので、予めご了承ください。</li>
+                    <li>個人情報の取り扱いに関しましては、
+                        <a href="https://hoge-hoge-hoge.com/policy">こちら</a>をご参照ください。
+                    </li>
+                    <li>お問い合わせ後、自動返信メールをお送りします。もし自動返信メールが届かない場合は、迷惑メールフォルダを確認いただくか、入力いただいたメールアドレスが正しいかご確認ください。</li>
+                </ul>
+                <h3>お問い合わせフォーム</h3>
+                <form action="https://hoge-hoge-hoge.com/ask" method="post">
+                    <div style="margin: 10px 0">
+                        <label for="guestname" style="display: block">お名前:</label>
+                        <input type="text" id="guestname" name="guestname" required />
+                    </div>
+                    <div style="margin: 10px 0">
+                        <label for="mail" style="display: block">メールアドレス:</label>
+                        <input type="mail" id="mail" name="mail" required />
+                    </div>
+                    <div style="margin: 10px 0">
+                        <label for="q&a" style="display: block">お問い合わせ事項:</label>
+                        <textarea type="q&a" id="q&a" name="q&a" cols="70" rows="10"></textarea>
+                    </div>
+                    <div style="margin-top: 30px">
+                        <button type="submit">お問い合わせ送信</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footerContainer">
+            <div>
+                <div class="footerTitle">有留大学 <br> 受講科目登録</div>
+            </div>
+            <ul class="footerList">
+                <li>
+                    <a href="https://aridome-university.com/register" class="footerLink">コース登録</a>
+                </li>
+                <li>
+                    <a href="https://aridome-university.com/list" class="footerLink">登録可能科目一覧</a>
+                </li>
+                <li>
+                    <a href="https://aridome-university.com/check" class="footerLink">取得単位確認</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

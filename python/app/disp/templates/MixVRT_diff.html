@@ -11,8 +11,8 @@
     <div class="tabs">
         <button class="tab-button" onclick="openTab('tab1')">オリジナル</button>
         <button class="tab-button" onclick="openTab('tab2')">画像比較に基づく差分箇所</button>
-        <button class="tab-button" onclick="openTab('tab3')">HTMLコードの変更に基づく影響箇所</button>
-        <button class="tab-button" onclick="openTab('tab4')">レイアウトの副作用箇所</button>
+        <button class="tab-button" onclick="openTab('tab3')">HTMLコードの変更に基づく変更箇所</button>
+        <button class="tab-button" onclick="openTab('tab4')">レイアウトの不具合箇所</button>
     </div>
 
     <div class="content-container">
@@ -21,10 +21,12 @@
             <div class="image-container">
                 <p class="caption">変更前画像</p>
                 <img src="../static/images/original_png/bf_original.png" alt="変更前オリジナル画像">
+
             </div>
             <div class="image-container">
                 <p class="caption">変更後画像</p>
                 <img src="../static/images/original_png/af_original.png" alt="変更後オリジナル画像">
+
             </div>
         </div>
 
@@ -33,34 +35,40 @@
             <div class="image-container">
                 <p class="caption">変更前画像</p>
                 <img src="../static/images/diff_img_png/diff_bf_img.png" alt="画像比較に基づく差分箇所を表示した変更前画像">
+
             </div>
             <div class="image-container">
                 <p class="caption">変更後画像</p>
                 <img src="../static/images/diff_img_png/diff_af_img.png" alt="画像比較に基づく差分箇所を表示した変更後画像">
+
             </div>
         </div>
 
         <div id="tab3" class="tab-content" style="display:none">
-            <h2>HTMLコードの変更に基づく影響箇所</h2>
+            <h2>HTMLコードの変更に基づく変更箇所</h2>
             <div class="image-container">
                 <p class="caption">変更前画像</p>
-                <img src="../static/images/diff_html_png/diff_bf_html.png" alt="HTMLの変更に基づく影響箇所を表示した変更前画像">
+                <img src="../static/images/diff_html_png/diff_bf_html.png" alt="HTMLの変更に基づく変更箇所を表示した変更前画像">
+
             </div>
             <div class="image-container">
                 <p class="caption">変更後画像</p>
-                <img src="../static/images/diff_html_png/diff_af_html.png" alt="HTMLの変更に基づく影響箇所を表示した変更後画像">
+                <img src="../static/images/diff_html_png/diff_af_html.png" alt="HTMLの変更に基づく変更箇所を表示した変更後画像">
+
             </div>
         </div>
 
         <div id="tab4" class="tab-content" style="display:none">
-            <h2>レイアウトの副作用箇所</h2>
+            <h2>レイアウトの不具合箇所</h2>
             <div class="image-container">
                 <p class="caption">変更前画像</p>
                 <img src="../static/images/sub_effect_png/bf_sub_effect.png" alt="レイアウトの不具合箇所を表示した変更前画像">
+
             </div>
             <div class="image-container">
                 <p class="caption">変更後画像</p>
                 <img src="../static/images/sub_effect_png/af_sub_effect.png" alt="レイアウトの不具合箇所を表示した変更後画像">
+
             </div>
         </div>
     </div>

@@ -99,13 +99,13 @@ def main(diff_bf_html, diff_bf_img, diff_af_html, diff_af_img, high_img_path_of_
 
     """ 一致しない輪郭のうち、輪郭内の内容が類似していればレイアウトの不具合が起きていないと判定する """
     # 類似した輪郭を除去し、類似していない輪郭のみを抽出する
-    unsimilar_contours_bf, unsimilar_contours_af = contours_similar(unique_contours_bf, unique_contours_af, high_bf_original, high_af_original)
+    # unsimilar_contours_bf, unsimilar_contours_af = contours_similar(unique_contours_bf, unique_contours_af, high_bf_original, high_af_original)
 
 
     """ 輪郭描画 """
     # この関数を使用して元の画像と高解像度の画像にバウンディングボックスを描画
-    scale_bounding_box(bf_original, high_bf_original, unsimilar_contours_bf, "before", scale_to_high_res=False)
-    scale_bounding_box(af_original, high_af_original, unsimilar_contours_af, "after", scale_to_high_res=False)
+    scale_bounding_box(bf_original, high_bf_original, unique_contours_bf, "before", scale_to_high_res=False)
+    scale_bounding_box(af_original, high_af_original, unique_contours_af, "after", scale_to_high_res=False)
     # # 一致しない輪郭を元の画像に描画
     # for contour in unique_contours_bf:
     #     cv2.drawContours(bf_original, [contour], -1, (0, 0, 255), 5)  # 赤色で描画
