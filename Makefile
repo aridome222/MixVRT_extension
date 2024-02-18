@@ -10,4 +10,4 @@ save:
 	sudo cp -r python/app/base_dir/latest/ python/app/base_dir/current/
 
 test:
-	docker exec -it zenn_selenium-python-1 python3 python/app/MixVRT.py $(URL)
+	docker exec -it mixvrt-python-1 python3 python/app/MixVRT.py $(URL)

@@ -1,2 +1,2 @@
-# Zenn_selenium
+# MixVRT
 Selenium IDEで作成したスクリプトをDocker-Selenium環境で実行してテストを行うためのリポジトリです。

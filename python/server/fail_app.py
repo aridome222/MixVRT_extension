@@ -62,7 +62,7 @@ def handle_push_event(data):
     clone_directory = os.path.join(current_directory, "python", "cloned_repo")
 
     # リポジトリのURL（例: https://github.com/your-username/your-repo.git）
-    repo_url = "https://github.com/aridome222/Zenn_selenium.git"
+    repo_url = "https://github.com/aridome222/MixVRT.git"
 
     try:
         # リポジトリをクローン
