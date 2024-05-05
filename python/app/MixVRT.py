@@ -1,7 +1,7 @@
 """
 @author: aridome222
 作成日: 2024/01/10
-更新日: 2024/01/10
+更新日: 2024/05/05
 
 
 試作ツール【MixVRT】のメイン処理
@@ -37,6 +37,7 @@ import shutil
 import datetime
 import subprocess
 import argparse
+import time
 
 # module 内の __init__.py から関数をインポート
 from module import base_dir # base_dir = "python/app/base_dir"
@@ -53,6 +54,9 @@ from module.compare_data import compare_data
 
 def main(url):
     print("----main.py is running.----")
+
+    # 処理開始時間を記録
+    start_time = time.time()
 
     """ ディレクトリパス等の設定 """  
     # 基本ディレクトリの生成
@@ -127,6 +131,13 @@ def main(url):
     command = f"sudo chown -R aridome:aridome {latest_dir}"
     # コマンドを実行
     subprocess.call(command, shell=True)
+
+    # 処理終了時間を記録
+    end_time = time.time()
+
+    # 処理時間を計算して表示
+    execution_time = end_time - start_time
+    print("処理時間：", execution_time, "秒")
 
 
 if __name__ == "__main__":
