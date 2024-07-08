@@ -1,162 +1,35 @@
+import os
 from lxml import html
+from lxml import etree
 
-# 変更前と変更後のHTMLを定義
-original_html = """
-<!DOCTYPE html>
-<html lang="en">
+# 保存先ディレクトリを指定
+output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "html_data/")
+# フォルダが存在しない場合は作成
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+    command = f"sudo chown -R aridome:aridome {output_dir}"
+    # コマンドを実行
+    subprocess.call(command, shell=True)
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Single Content Web Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+before_file_name = "before.html"
+after_file_name = "after.html"
 
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
+before_file_path = os.path.join(output_dir, before_file_name)
+after_file_path = os.path.join(output_dir, after_file_name)
 
-        .container {
-            height: 300px auto;
-            width: 100%;
-            margin: 10px auto;
-            overflow: hidden;
-        }
+# HTMLファイルを読み込む
+with open(before_file_path, 'r') as file:
+    before_html = file.read()
 
-        .main-content {
-            height: 330px;
-            background-color: #fff;
-            padding: 5px;
-            box-sizing: border-box;
-        }
+with open(after_file_path, 'r') as file:
+    after_html = file.read()
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            clear: both;
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <h1>Single Content Web Page</h1>
-    </header>
-    <div class="container">
-        <div class="main-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.</p>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-                dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-        </div>
-    </div>
-    <footer>
-        <p>Footer Content</p>
-    </footer>
-</body>
-
-</html>
-"""
-
-modified_html = """
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Single Content Web Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        .container {
-            height: 300px auto;
-            width: 100%;
-            margin: 10px auto;
-            overflow: hidden;
-        }
-
-        .main-content {
-            height: 330px;
-            background-color: #fff;
-            padding: 5px;
-            box-sizing: border-box;
-        }
-
-        .main-content img {
-            width: 100%;
-            height: auto;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            clear: both;
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <h1>Single Content Web Page</h1>
-    </header>
-    <div class="container">
-        <div class="main-content">
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-                dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-            <img src="https://via.placeholder.com/1200x260" alt="Placeholder Image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.</p>
-        </div>
-    </div>
-    <footer>
-        <p>Footer Content</p>
-    </footer>
-</body>
-
-</html>
-"""
+# HTMLを解析してDOMツリーを作成
+original_tree = html.fromstring(original_html)
+modified_tree = html.fromstring(modified_html)
 
 def get_full_xpath(element):
-    """ 特定の要素の完全なXPathを取得する """
+    """特定の要素の完全なXPathを取得する"""
     parts = []
     while element is not None and element.tag != 'html':
         parent = element.getparent()
@@ -166,39 +39,53 @@ def get_full_xpath(element):
         element = parent
     return '/' + '/'.join(reversed(parts))
 
-def compare_elements(elem1, elem2, path=''):
-    """ 二つの要素を比較して、変更があった要素のXpathのリストを返す """
-    full_path1 = get_full_xpath(elem1)
-    full_path2 = get_full_xpath(elem2)
-
+def compare_elements(elem1, elem2):
+    """二つの要素を比較して、実質的な変更があった要素のXpathのリストを返す"""
+    changes = []
     if elem1.tag != elem2.tag:
-        return [(full_path1, full_path2)]
-    
-    changed = []
-    # テキストの変更があった場合、変更リストに追加
-    if elem1.text != elem2.text:
-        changed.append((full_path1, full_path2))
+        changes.append((get_full_xpath(elem1), get_full_xpath(elem2)))
+    elif (elem1.text or '').strip() != (elem2.text or '').strip() or elem1.attrib != elem2.attrib:
+        changes.append((get_full_xpath(elem1), get_full_xpath(elem2)))
 
-    # 子要素の数が異なる場合、変更リストに追加
-    if len(elem1) != len(elem2):
-        changed.extend([(get_full_xpath(child), None) for child in elem1])
-        changed.extend([(None, get_full_xpath(child)) for child in elem2])
-    else:
-        # 子要素の数が同じ場合、それぞれ比較
-        for child1, child2 in zip(elem1, elem2):
-            changed.extend(compare_elements(child1, child2))
+    children1 = list(elem1)
+    children2 = list(elem2)
+    max_len = max(len(children1), len(children2))
+    for i in range(max_len):
+        if i >= len(children1):
+            changes.append((None, get_full_xpath(children2[i])))
+        elif i >= len(children2):
+            changes.append((get_full_xpath(children1[i]), None))
+        else:
+            changes.extend(compare_elements(children1[i], children2[i]))
 
-    return changed
+    return changes
 
-# HTMLを解析してDOMツリーを作成
-original_tree = html.fromstring(original_html)
-modified_tree = html.fromstring(modified_html)
+# 変更があった要素のXPathと変更内容を日本語で表示する関数
+def describe_changes(orig_path, modif_path):
+    if orig_path and modif_path:
+        return f"変更されたXPath: 元のXPath: {orig_path}, 変更後のXPath: {modif_path}"
+    elif orig_path:
+        return f"削除された要素のXPath: {orig_path}"
+    elif modif_path:
+        return f"追加された要素のXPath: {modif_path}"
 
 # body要素内での変更を比較
 changes = compare_elements(original_tree, modified_tree)
 
 # 変更があった要素の完全なXPathを表示
-for orig_path, modif_path in changes:
-    print(f"Original XPath: {orig_path if orig_path else 'Not present in original'}")
-    print(f"Modified XPath: {modif_path if modif_path else 'Not present in modified'}")
+for change in changes:
+    original_path, modified_path = change
+    print(describe_changes(original_path, modified_path))
     print("\n")
+
+
+# 要素を取得
+element = tree.xpath(modified_path)
+
+# 要素が存在する場合、その内容を変更する
+if element:
+    element[0].text = "新しい内容に変更されました。"
+
+# 変更されたHTMLを文字列として出力
+modified_html = etree.tostring(tree, pretty_print=True, encoding="unicode")
+print(modified_html)

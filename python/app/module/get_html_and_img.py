@@ -111,9 +111,19 @@ def get_html_and_img(driver, url, dir):
     # # WebページのURL
     # url = "http://host.docker.internal:5000/testPage"
 
+    # 処理開始時間を記録
+    start_time = time.time()
+
     # 画像取得
     driver.get(url)
     save_screenShot(driver, dir)
+
+    # 処理開始時間を記録
+    end_time = time.time()
+
+    # 処理時間を計算して表示
+    execution_time = end_time - start_time
+    print("処理時間：", execution_time, "秒")
 
     # HTMLコード取得
     response = requests.get(url)
