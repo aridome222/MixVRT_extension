@@ -15,7 +15,8 @@ def get_full_xpath(element):
         element = parent
     return '/' + '/'.join(reversed(parts))
 
-def compare_elements(elem1, elem2):
+
+def compare_elements(elem1, elem2, ignore_order=False):
     """二つの要素を比較して、実質的な変更があった要素のXpathのリストを返す"""
     changes = []
     if elem1.tag != elem2.tag:
@@ -25,6 +26,11 @@ def compare_elements(elem1, elem2):
 
     children1 = list(elem1)
     children2 = list(elem2)
+
+    if ignore_order:
+        children1.sort(key=lambda x: (x.tag, (x.text or '').strip(), sorted(x.attrib.items())))
+        children2.sort(key=lambda x: (x.tag, (x.text or '').strip(), sorted(x.attrib.items())))
+
     max_len = max(len(children1), len(children2))
     for i in range(max_len):
         if i >= len(children1):
@@ -32,18 +38,21 @@ def compare_elements(elem1, elem2):
         elif i >= len(children2):
             changes.append((get_full_xpath(children1[i]), None))
         else:
-            changes.extend(compare_elements(children1[i], children2[i]))
+            changes.extend(compare_elements(children1[i], children2[i], ignore_order))
 
     return changes
 
+
 # 変更があった要素のXPathと変更内容を日本語で表示する関数
-def describe_changes(orig_path, modif_path):
-    if orig_path and modif_path:
-        return f"変更されたXPath: 元のXPath: {orig_path}, 変更後のXPath: {modif_path}"
+def describe_changes(orig_path, modif_path, change_type="変更"):
+    if change_type == "移動":
+        return f"移動したXPath: 元のXPath: {orig_path}, 移動後のXPath: {modif_path}"
+    elif orig_path and modif_path:
+        return f"変更したXPath: 元のXPath: {orig_path}, 変更後のXPath: {modif_path}"
     elif orig_path:
-        return f"削除された要素のXPath: {orig_path}"
+        return f"削除した要素のXPath: {orig_path}"
     elif modif_path:
-        return f"追加された要素のXPath: {modif_path}"
+        return f"追加した要素のXPath: {modif_path}"
 
 
 # 保存先ディレクトリを指定
@@ -73,10 +82,13 @@ before_tree = html.fromstring(before_html)
 after_tree = html.fromstring(after_html)
 
 # body要素内での変更を比較
-changes = compare_elements(before_tree, after_tree)
+changes = compare_elements(before_tree, after_tree, ignore_order=True)
 
 # 変更があった要素の完全なXPathを表示
 for change in changes:
     before_path, after_path = change
-    print(describe_changes(before_path, after_path))
+    if before_path and after_path:
+        print(describe_changes(before_path, after_path, change_type="移動"))
+    else:
+        print(describe_changes(before_path, after_path))
     print("\n")

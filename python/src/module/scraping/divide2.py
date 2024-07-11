@@ -52,8 +52,8 @@ if not os.path.exists(output_dir):
     # コマンドを実行
     subprocess.call(command, shell=True)
 
-before_file_name = "before.html"
-after_file_name = "after.html"
+before_file_name = "b1.html"
+after_file_name = "a1.html"
 
 before_file_path = os.path.join(output_dir, before_file_name)
 after_file_path = os.path.join(output_dir, after_file_name)

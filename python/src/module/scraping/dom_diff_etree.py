@@ -80,3 +80,16 @@ for change in changes:
     before_path, after_path = change
     print(describe_changes(before_path, after_path))
     print("\n")
+
+
+# # 要素を取得
+# element = tree.xpath(after_path)
+
+# # 要素が存在する場合、その内容を変更する
+# if element:
+#     element[0].text = "新しい内容に変更されました。"
+
+# # 変更されたHTMLを文字列として出力
+# after_html = etree.tostring(tree, pretty_print=True, encoding="unicode")
+# print(after_html)
+
