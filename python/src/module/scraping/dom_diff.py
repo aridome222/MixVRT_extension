@@ -72,11 +72,41 @@ with open(after_file_path, 'r') as file:
 before_tree = html.fromstring(before_html)
 after_tree = html.fromstring(after_html)
 
-# body要素内での変更を比較
-changes = compare_elements(before_tree, after_tree)
+def print_dom_tree(element, prefix='', is_last=True, output_file=None):
+    # ノードをファイルに書き込む関数
+    def write_to_file(text):
+        if output_file:
+            output_file.write(text + '\n')
+        else:
+            print(text)
 
-# 変更があった要素の完全なXPathを表示
-for change in changes:
-    before_path, after_path = change
-    print(describe_changes(before_path, after_path))
-    print("\n")
+    # 現在のノードのタグを表示
+    connector = '└── ' if is_last else '├── '
+    write_to_file(prefix + connector + element.tag)
+    # 子要素のリストを取得
+    children = [e for e in element if isinstance(e.tag, str)]
+    # 子要素に対して再帰的に呼び出す
+    for i, child in enumerate(children):
+        new_prefix = prefix + ('    ' if is_last else '│   ')
+        print_dom_tree(child, new_prefix, i == len(children) - 1, output_file=output_file)
+
+
+# ファイルに出力するための準備
+with open('before_dom_tree.txt', 'w', encoding='utf-8') as f:
+    f.write("Before DOM Tree:\n")
+    print_dom_tree(before_tree, output_file=f)
+
+with open('after_dom_tree.txt', 'w', encoding='utf-8') as f:
+    f.write("After DOM Tree:\n")
+    print_dom_tree(after_tree, output_file=f)
+
+print("DOMツリーをファイルに出力しました。")
+
+# # body要素内での変更を比較
+# changes = compare_elements(before_tree, after_tree)
+
+# # 変更があった要素の完全なXPathを表示
+# for change in changes:
+#     before_path, after_path = change
+#     print(describe_changes(before_path, after_path))
+#     print("\n")
