@@ -85,12 +85,8 @@ def compare_elements(bf_elem, af_elem, ignore_order=False):
 
 
 # 変更があった要素のXPathと変更内容を日本語で表示する関数
-def describe_changes(orig_path, modif_path, change_type="変更"):
-    if change_type == "移動":
-        return f"移動前のXPath: 元のXPath: {orig_path}, 移動後のXPath: {modif_path}"
-    elif orig_path and modif_path:
-        return f"編集前のXPath: 元のXPath: {orig_path}, 編集後のXPath: {modif_path}"
-    elif orig_path:
+def describe_changes(orig_path, modif_path):
+    if orig_path:
         return f"削除された要素のXPath: {orig_path}"
     elif modif_path:
         return f"追加された要素のXPath: {modif_path}"
@@ -128,8 +124,5 @@ changes = compare_elements(before_tree, after_tree, ignore_order=True)
 # 変更があった要素の完全なXPathを表示
 for change in changes:
     before_path, after_path = change
-    if before_path and after_path:
-        print(describe_changes(before_path, after_path, change_type="移動"))
-    else:
-        print(describe_changes(before_path, after_path))
+    print(describe_changes(before_path, after_path))
     print("\n")

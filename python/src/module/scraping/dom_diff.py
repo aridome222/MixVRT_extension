@@ -6,35 +6,73 @@ from lxml import etree
 
 def get_full_xpath(element):
     """特定の要素の完全なXPathを取得する"""
+    # XPathの各部分を格納するリスト
     parts = []
-    while element is not None and element.tag != 'html':
+    # 要素が空でない限り、ループし続ける
+    while element is not None:
+        # 親要素を取得する
         parent = element.getparent()
+        # 同じタグ名の兄弟要素のリストを取得
         siblings = parent.findall(element.tag) if parent is not None else [element]
-        count = siblings.index(element) + 1
-        parts.append(f"{element.tag}[{count}]")
+        if len(siblings) > 1:
+            # 兄弟要素が複数存在する場合、インデックスを追加
+            count = siblings.index(element) + 1
+            parts.append(f"{element.tag}[{count}]")
+        else:
+            # 兄弟要素が1つしか存在しない場合、インデックスを省略
+            parts.append(element.tag)
+        # 現在の要素を親要素に設定
         element = parent
+    # parts リストを逆順にしてスラッシュで結合し、ルートからの完全なXPathを構築
     return '/' + '/'.join(reversed(parts))
 
-def compare_elements(elem1, elem2):
-    """二つの要素を比較して、実質的な変更があった要素のXpathのリストを返す"""
-    changes = []
+# def compare_elements(elem1, elem2):
+#     """二つの要素を比較して、実質的な変更があった要素のXpathのリストを返す"""
+#     changes = []
+#     if elem1.tag != elem2.tag:
+#         changes.append((get_full_xpath(elem1), get_full_xpath(elem2)))
+#     elif (elem1.text or '').strip() != (elem2.text or '').strip() or elem1.attrib != elem2.attrib:
+#         changes.append((get_full_xpath(elem1), get_full_xpath(elem2)))
+
+#     children1 = list(elem1)
+#     children2 = list(elem2)
+#     max_len = max(len(children1), len(children2))
+#     for i in range(max_len):
+#         if i >= len(children1):
+#             changes.append((None, get_full_xpath(children2[i])))
+#         elif i >= len(children2):
+#             changes.append((get_full_xpath(children1[i]), None))
+#         else:
+#             changes.extend(compare_elements(children1[i], children2[i]))
+
+#     return changes
+
+def compare_elements(elem1, elem2, path=''):
+    """ 二つの要素を比較して、変更があった要素のXpathのリストを返す """
+    full_path1 = get_full_xpath(elem1)
+    full_path2 = get_full_xpath(elem2)
+    
+    changed = []
+
     if elem1.tag != elem2.tag:
         changes.append((get_full_xpath(elem1), get_full_xpath(elem2)))
     elif (elem1.text or '').strip() != (elem2.text or '').strip() or elem1.attrib != elem2.attrib:
-        changes.append((get_full_xpath(elem1), get_full_xpath(elem2)))
+        changes.append((full_path1, full_path2))
 
-    children1 = list(elem1)
-    children2 = list(elem2)
-    max_len = max(len(children1), len(children2))
-    for i in range(max_len):
-        if i >= len(children1):
-            changes.append((None, get_full_xpath(children2[i])))
-        elif i >= len(children2):
-            changes.append((get_full_xpath(children1[i]), None))
-        else:
-            changes.extend(compare_elements(children1[i], children2[i]))
+    # 子要素の数が異なる場合、変更リストに追加
+    if len(elem1) != len(elem2):
+        for child1 in elem1:
+            for child2 in elem2:
+                compare_elements(child1, child2)
 
-    return changes
+        changed.extend([(get_full_xpath(child), None) for child in elem1])
+        changed.extend([(None, get_full_xpath(child)) for child in elem2])
+    else:
+        # 子要素の数が同じ場合、それぞれ比較
+        for child1, child2 in zip(elem1, elem2):
+            changed.extend(compare_elements(child1, child2))
+
+    return changed
 
 # 変更があった要素のXPathと変更内容を日本語で表示する関数
 def describe_changes(orig_path, modif_path):
@@ -75,6 +113,7 @@ after_tree = html.fromstring(after_html)
 def print_dom_tree(element, prefix='', is_last=True, output_file=None):
     # ノードをファイルに書き込む関数
     def write_to_file(text):
+        print(text)  # ターミナルに出力
         if output_file:
             output_file.write(text + '\n')
         else:
@@ -94,19 +133,21 @@ def print_dom_tree(element, prefix='', is_last=True, output_file=None):
 # ファイルに出力するための準備
 with open('before_dom_tree.txt', 'w', encoding='utf-8') as f:
     f.write("Before DOM Tree:\n")
+    print("Before DOM Tree:")  # ターミナルに出力
     print_dom_tree(before_tree, output_file=f)
 
 with open('after_dom_tree.txt', 'w', encoding='utf-8') as f:
     f.write("After DOM Tree:\n")
+    print("\nAfter DOM Tree:")  # ターミナルに出力
     print_dom_tree(after_tree, output_file=f)
 
 print("DOMツリーをファイルに出力しました。")
 
-# # body要素内での変更を比較
-# changes = compare_elements(before_tree, after_tree)
+# body要素内での変更を比較
+changes = compare_elements(before_tree, after_tree)
 
-# # 変更があった要素の完全なXPathを表示
-# for change in changes:
-#     before_path, after_path = change
-#     print(describe_changes(before_path, after_path))
-#     print("\n")
+# 変更があった要素の完全なXPathを表示
+for change in changes:
+    before_path, after_path = change
+    print(describe_changes(before_path, after_path))
+    print("\n")
