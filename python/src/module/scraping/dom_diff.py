@@ -54,21 +54,30 @@ def compare_elements(elem1, elem2, path=''):
     
     changed = []
 
+    # タグ名が異なる場合、変更リストに追加
     if elem1.tag != elem2.tag:
-        changes.append((get_full_xpath(elem1), get_full_xpath(elem2)))
-    elif (elem1.text or '').strip() != (elem2.text or '').strip() or elem1.attrib != elem2.attrib:
-        changes.append((full_path1, full_path2))
+        changed.append((get_full_xpath(elem1), get_full_xpath(elem2)))
+    
+    # 要素のテキスト、または属性が異なる場合、変更リストに追加     
+    if (elem1.text or '').strip() != (elem2.text or '').strip() or elem1.attrib != elem2.attrib:
+        changed.append((full_path1, full_path2))
 
-    # 子要素の数が異なる場合、変更リストに追加
-    if len(elem1) != len(elem2):
-        for child1 in elem1:
-            for child2 in elem2:
-                compare_elements(child1, child2)
-
-        changed.extend([(get_full_xpath(child), None) for child in elem1])
-        changed.extend([(None, get_full_xpath(child)) for child in elem2])
+    # 変更前の子要素数 > 変更後の子要素数である場合（つまり、削除が起きた場合）
+    if len(elem1) > len(elem2):
+        pass
+        # for child1 in elem1:
+        #     for child2 in elem2:
+        #         compare_elements(child1, child2)
+    # 変更前の子要素数 < 変更後の子要素数である場合（つまり、追加が起きた場合）
+    elif len(elem1) < len(elem2):
+        pass
+        # for child1 in elem1:
+        #     for child2 in elem2:
+        #         compare_elements(child1, child2)
+        # changed.extend([(get_full_xpath(child), None) for child in elem1])
+        # changed.extend([(None, get_full_xpath(child)) for child in elem2])
     else:
-        # 子要素の数が同じ場合、それぞれ比較
+        # 変更前の子要素数 == 変更後の子要素数である場合
         for child1, child2 in zip(elem1, elem2):
             changed.extend(compare_elements(child1, child2))
 
@@ -84,6 +93,8 @@ def describe_changes(orig_path, modif_path):
         return f"追加された要素のXPath: {modif_path}"
 
 
+
+""" メイン処理 """
 # 保存先ディレクトリを指定
 output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "html_data/")
 # フォルダが存在しない場合は作成
@@ -134,7 +145,7 @@ def print_dom_tree(element, prefix='', is_last=True, output_file=None):
 with open('before_dom_tree.txt', 'w', encoding='utf-8') as f:
     f.write("Before DOM Tree:\n")
     print("Before DOM Tree:")  # ターミナルに出力
-    print_dom_tree(before_tree, output_file=f)
+    print_dom_tree(before_tree, output_file=f) # fはopen()で開いたファイルが入る
 
 with open('after_dom_tree.txt', 'w', encoding='utf-8') as f:
     f.write("After DOM Tree:\n")
