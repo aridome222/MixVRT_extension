@@ -26,16 +26,16 @@ def get_full_xpath(element):
     # parts リストを逆順にしてスラッシュで結合し、ルートからの完全なXPathを構築
     return '/' + '/'.join(reversed(parts))
 
-# def compare_elements(elem1, elem2):
+# def compare_dom(bf_elem, af_elem):
 #     """二つの要素を比較して、実質的な変更があった要素のXpathのリストを返す"""
 #     changes = []
-#     if elem1.tag != elem2.tag:
-#         changes.append((get_full_xpath(elem1), get_full_xpath(elem2)))
-#     elif (elem1.text or '').strip() != (elem2.text or '').strip() or elem1.attrib != elem2.attrib:
-#         changes.append((get_full_xpath(elem1), get_full_xpath(elem2)))
+#     if bf_elem.tag != af_elem.tag:
+#         changes.append((get_full_xpath(bf_elem), get_full_xpath(af_elem)))
+#     elif (bf_elem.text or '').strip() != (af_elem.text or '').strip() or bf_elem.attrib != af_elem.attrib:
+#         changes.append((get_full_xpath(bf_elem), get_full_xpath(af_elem)))
 
-#     children1 = list(elem1)
-#     children2 = list(elem2)
+#     children1 = list(bf_elem)
+#     children2 = list(af_elem)
 #     max_len = max(len(children1), len(children2))
 #     for i in range(max_len):
 #         if i >= len(children1):
@@ -43,43 +43,71 @@ def get_full_xpath(element):
 #         elif i >= len(children2):
 #             changes.append((get_full_xpath(children1[i]), None))
 #         else:
-#             changes.extend(compare_elements(children1[i], children2[i]))
+#             changes.extend(compare_dom(children1[i], children2[i]))
 
 #     return changes
 
-def compare_elements(elem1, elem2, path=''):
+def compare_elements(bf_elem, af_elem):
+    # 3. 変更前の子要素と一致する変更後の子要素を見つける
+    # 4. 見つけたら、一致した要素のペアを、一致リストに格納
+    # 5. 見つからなかったら、変更前または変更後の不一致リストに格納
+    pass
+
+
+def compare_dom(bf_elem, af_elem, path=''):
     """ 二つの要素を比較して、変更があった要素のXpathのリストを返す """
-    full_path1 = get_full_xpath(elem1)
-    full_path2 = get_full_xpath(elem2)
+    # 根ノードをスタートとして、再帰的に比較する
+    # 0. htmlタグは必ず等しいとする
+    # 1. 親要素の1つ下の階層にあるタグを見る
+    # 2. 変更前の子要素と変更後の子要素を比較する
+    # 3. 変更前の子要素と一致する変更後の子要素を見つける
+    # 4. 見つけたら、一致した要素のペアを、一致リストに格納
+    # 5. 見つからなかったら、変更前または変更後の不一致リストに格納
+    # 6. 一致リストの要素ペアの子要素同士を比較するために、再帰的に自分を呼び出す
+    # 7. 葉ノードに到達して比較ができなくなるか、一致リストに要素が無ければ、処理を終了する
+
+
+    full_path1 = get_full_xpath(bf_elem)
+    full_path2 = get_full_xpath(af_elem)
     
     changed = []
 
-    # タグ名が異なる場合、変更リストに追加
-    if elem1.tag != elem2.tag:
-        changed.append((get_full_xpath(elem1), get_full_xpath(elem2)))
-    
-    # 要素のテキスト、または属性が異なる場合、変更リストに追加     
-    if (elem1.text or '').strip() != (elem2.text or '').strip() or elem1.attrib != elem2.attrib:
-        changed.append((full_path1, full_path2))
+    # 1. 親要素の1つ下の階層にあるタグを見る
+    for bf_chlid in bf_elem:
+        for af_child in af_elem:
+            ok_pairs = []
+            # 2. 変更前の子要素と変更後の子要素を比較する
+            ok_pairs = compare_elements(bf_chlid, af_child)
+            # 6. 一致リストの要素ペアの子要素同士を比較するために、再帰的に自身を呼び出す
+            for bf_elem, af_elem in ok_pairs:
+                compare_dom(bf_elem, af_elem)
 
-    # 変更前の子要素数 > 変更後の子要素数である場合（つまり、削除が起きた場合）
-    if len(elem1) > len(elem2):
-        pass
-        # for child1 in elem1:
-        #     for child2 in elem2:
-        #         compare_elements(child1, child2)
-    # 変更前の子要素数 < 変更後の子要素数である場合（つまり、追加が起きた場合）
-    elif len(elem1) < len(elem2):
-        pass
-        # for child1 in elem1:
-        #     for child2 in elem2:
-        #         compare_elements(child1, child2)
-        # changed.extend([(get_full_xpath(child), None) for child in elem1])
-        # changed.extend([(None, get_full_xpath(child)) for child in elem2])
-    else:
-        # 変更前の子要素数 == 変更後の子要素数である場合
-        for child1, child2 in zip(elem1, elem2):
-            changed.extend(compare_elements(child1, child2))
+    # # タグ名が異なる場合、変更リストに追加
+    # if bf_elem.tag != af_elem.tag:
+    #     changed.append((get_full_xpath(bf_elem), get_full_xpath(af_elem)))
+    
+    # # 要素のテキスト、または属性が異なる場合、変更リストに追加     
+    # if (bf_elem.text or '').strip() != (af_elem.text or '').strip() or bf_elem.attrib != af_elem.attrib:
+    #     changed.append((full_path1, full_path2))
+
+    # # 変更前の子要素数 > 変更後の子要素数である場合（つまり、削除が起きた場合）
+    # if len(bf_elem) > len(af_elem):
+    #     pass
+    #     # for child1 in bf_elem:
+    #     #     for child2 in af_elem:
+    #     #         compare_dom(child1, child2)
+    # # 変更前の子要素数 < 変更後の子要素数である場合（つまり、追加が起きた場合）
+    # elif len(bf_elem) < len(af_elem):
+    #     pass
+    #     # for child1 in bf_elem:
+    #     #     for child2 in af_elem:
+    #     #         compare_dom(child1, child2)
+    #     # changed.extend([(get_full_xpath(child), None) for child in bf_elem])
+    #     # changed.extend([(None, get_full_xpath(child)) for child in af_elem])
+    # else:
+    #     # 変更前の子要素数 == 変更後の子要素数である場合
+    #     for child1, child2 in zip(bf_elem, af_elem):
+    #         changed.extend(compare_dom(child1, child2))
 
     return changed
 
@@ -155,7 +183,7 @@ with open('after_dom_tree.txt', 'w', encoding='utf-8') as f:
 print("DOMツリーをファイルに出力しました。")
 
 # body要素内での変更を比較
-changes = compare_elements(before_tree, after_tree)
+changes = compare_dom(before_tree, after_tree)
 
 # 変更があった要素の完全なXPathを表示
 for change in changes:
